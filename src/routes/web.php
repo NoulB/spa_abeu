@@ -27,3 +27,4 @@ Route::get('pacientes/criar', 'PacientesController@create')->name("form_criar_pa
 Route::post('pacientes/criar', 'PacientesController@store');
 
 
+Route::get('alunos/criar', 'AlunosController@create')->name("form_criar_alunos");

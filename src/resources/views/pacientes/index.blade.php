@@ -7,9 +7,9 @@
 @section('conteudo')
     <a href="/pacientes/criar" class="btn btn-dark mb-2">Adicionar</a>
 
-{{--    <ul class="list-group">--}}
-{{--        @foreach($pessoas as $pessoa)--}}
-{{--            <li class="list-group-item">{{ $pessoa->nome }}</li>--}}
-{{--        @endforeach--}}
-{{--    </ul>--}}
+    <ul class="list-group">
+        @foreach($pacientes as $paciente)
+            <li class="list-group-item">{{ $paciente->nome }}, Celular: {{ $paciente->celular }}</li>
+        @endforeach
+    </ul>
 @endsection
