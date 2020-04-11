@@ -5,56 +5,83 @@
 @endsection
 
 @section('conteudo')
+
     <div>
 
-        <form   method="post">
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+
+
+
+
+        <form method="post">
             @csrf
-            Nome do Paciente:<br>
-            <input type="text" name="nome" size ="50" required/><br/>
-            CPF:<br>
-            <input type="text" name="cpf"/><br/>
-            RG:<br>
-            <input type="text" name="rg"/><br/>
-            Data de Nascimento: <br>
-            <input type="date"  placeholder="dd/mm/aaaa" name="data_nascimento" required/><br/>
-            Sexo:<br/>
-            <select name="sexo"> <option value="m">Masculino</option>
-                                 <option value="f">Feminino</option>
-                                 <option value="o">Outro</option>required</select> <br/>
-            Email:<br>
-            <input type="text" name="email"/><br/>
-            Celular:
-            <input type="text" name="celular" size ="20"/><br/>
-            Telefone 2
-            <input type="text" name="telefone" size ="20"/><br/>
-            Nome do Pai:<br>
-            <input type="text" name="pai" size ="50"/><br/>
-            Nome da Mãe:<br>
-            <input type="text" name="mae" size="50" required/><br/>
-            Estado civil: <br/>
-            <select name="estado_civil"> <option value="Casado">Casado(a)</option>
-                                         <option value="Solteiro">Solteiro(a)</option>
-                                         <option value="Divorciado">Divorciado(a)</option>
-                                         <option value="Viúvo">Viúvo(a)</option> required</select> <br/>
-            Nome do(a) Cônjuge:<br/>
-            {{--            <input type="text" name="estadoc"/><br/><br/><br/>--}}
-            <input type="text" name="conjuge" size ="50" /><br/>
+            <fieldset>
+                <input placeholder="Nome completo" type="text" name="nome" size ="50"  tabindex="1" required autofocus/>
+            </fieldset>
+            <fieldset>
+                <input placeholder="CPF somente números)" type="text" name="cpf" id="idrg" tabindex="2" onkeypress="return isNumberKey(event)" required autofocus/>
+            </fieldset>
+            <fieldset>
+                <input placeholder="RG - somente números" type="text" name="rg" size ="30" tabindex="3" onkeypress="return isNumberKey(event)" required/>
+            </fieldset>
+            <fieldset>
+            Data de Nascimento:
+                <input type="date" name="data_nascimento" tabindex="4" required/>
+            </fieldset>
+            <fieldset>
+                <input placeholder="E-mail" type="text" name="email" tabindex="6"/><br/>
+            </fieldset>
+            <fieldset>
+                <input placeholder="Celular - somente números" type="text" name="celular" size ="20" tabindex="7" onkeypress="return isNumberKey(event)"/>
+                <input placeholder="Telefone 2 - somente números" type="text" name="telefone" size ="20" tabindex="8" onkeypress="return isNumberKey(event)"/>
+            </fieldset>
+            <fieldset>
+                <input placeholder="Nome do Pai" type="text" name="pai" size ="50" tabindex="9"/>
+            </fieldset>
+            <fieldset>
+                <input placeholder="Nome da Mãe" type="text" name="mae" size="50" required tabindex="10"/>
+            </fieldset>
+            <fieldset>
+                Sexo:
+                <select name="sexo" tabindex="10"> <option value="m">Masculino</option>
+                    <option value="f">Feminino</option>
+                    <option value="o">Outro</option>required</select>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                Estado civil:
+                <select id="options" name="estado_civil" onchange="verifica(this.value)">
+                    <option value="Casado">Casado(a)</option>
+                    <option value="Solteiro" selected>Solteiro(a)</option>
+                    <option value="Divorciado">Divorciado(a)</option>
+                    <option value="Viúvo">Viúvo(a)</option> required</select>
+            </fieldset>
+            <fieldset>
+                <input placeholder="Nome do(a) Cônjuge" type="text" id="input"name="conjuge" size ="50" hidden/>
+            </fieldset>
             Endereço:<br/>
-            Logradouro:
-            <input type="text" name="logradouro" size="50" required/><br/>
-            Numero:
-            <input type="text" name="numero" size="10" required/><br/>
-            Complemento:
-            <input type="text" name="complemento" size="20" required/><br/>
-            Bairro:
-            <input type="text" name="bairro" size="20" required/><br/>
-            Cidade:
-            <input type="text" name="cidade" size="20" required/><br/>
-            CEP:
-            <input type="text" name="cep" size="20" required/><br/><br/><br/>
-
+            <fieldset>
+                <input placeholder="Logradouro" type="text" name="logradouro" size="37" required tabindex="14"/>
+                <input placeholder="Numero" type="text" name="numero" size="10" required tabindex="15" onkeypress="return isNumberKey(event)"/>
+            </fieldset>
+            <fieldset>
+                <input placeholder="Complemento" type="text" name="complemento" size="20" tabindex="16"/>
+                <input placeholder="Bairro" type="text" name="bairro" size="27" required tabindex="17"/>
+            </fieldset>
+            <fieldset>
+                <input placeholder="Cidade" type="text" name="cidade" size="27" required tabindex="18"/>
+                <input placeholder="CEP" type="text" name="cep" size="20" required tabindex="19" onkeypress="return isNumberKey(event)"/>
+            </fieldset><br/>
             <button class="btn btn-primary">Adicionar</button>
-
         </form>
     </div>
+
 @endsection
