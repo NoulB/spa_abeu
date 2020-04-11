@@ -8,23 +8,10 @@
 
     <div>
 
-        @if ($errors->any())
-            <div class="alert alert-danger">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-        @endif
-
-
-
-
-        <form method="post">
+        <form   method="post">
             @csrf
             <fieldset>
-                <input placeholder="Nome completo" type="text" name="nome" size ="50"  tabindex="1" required autofocus/>
+                <input placeholder="Nome completo" type="text" name="nome" size ="50"  tabindex="1"  required autofocus/>
             </fieldset>
             <fieldset>
                 <input placeholder="CPF somente números)" type="text" name="cpf" id="idrg" tabindex="2" onkeypress="return isNumberKey(event)" required autofocus/>
@@ -41,7 +28,7 @@
             </fieldset>
             <fieldset>
                 <input placeholder="Celular - somente números" type="text" name="celular" size ="20" tabindex="7" onkeypress="return isNumberKey(event)"/>
-                <input placeholder="Telefone 2 - somente números" type="text" name="telefone" size ="20" tabindex="8" onkeypress="return isNumberKey(event)"/>
+                <input placeholder="Telefone 2" type="text" name="telefone" size ="20" tabindex="8" onkeypress="return isNumberKey(event)"/>
             </fieldset>
             <fieldset>
                 <input placeholder="Nome do Pai" type="text" name="pai" size ="50" tabindex="9"/>

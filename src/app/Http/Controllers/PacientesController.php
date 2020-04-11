@@ -27,20 +27,6 @@ class PacientesController extends Controller
 
     public function store(Request $request)
     {
-        $validacao = $request->validate([
-            'nome' => 'required',
-            'cpf' => 'required|numeric',
-            'rg' => 'required|numeric',
-            'data_nascimento' => 'required',
-            'sexo' => 'required',
-            'mae' => 'required',
-            'estado_civil' => 'required',
-            'logradouro' => 'required',
-            'numero' => 'required|numeric',
-            'bairro' => 'required',
-            'cidade' => 'required',
-            'cep' =>'required|numeric',
-        ]);
 
         $paciente = Paciente::create($request->all());
         $request->session()

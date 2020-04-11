@@ -22,34 +22,34 @@
 
 </div>
 
-<script language = javascript>
-    function isNumberKey(evt)
-    {
-        var charCode = (evt.which) ? evt.which : event.keyCode
-        if (charCode > 31 && (charCode < 48 || charCode > 57))
-            return false;
-        return true;
-    }
+{{--<script language = javascript>--}}
+{{--    function isNumberKey(evt)--}}
+{{--    {--}}
+{{--        var charCode = (evt.which) ? evt.which : event.keyCode--}}
+{{--        if (charCode > 31 && (charCode < 48 || charCode > 57))--}}
+{{--            return false;--}}
+{{--        return true;--}}
+{{--    }--}}
 
-    function verifica(value) {
-        var input = document.getElementById("input");
+{{--    function verifica(value) {--}}
+{{--        var input = document.getElementById("input");--}}
 
-        if (value == 'Casado') {
-            input.hidden = false;
-        } else if (value == 'Solteiro') {
-            input.hidden = true;
-            input.value = "";
-        }
-        else if (value == 'Viúvo') {
-            input.hidden = true;
-            input.value = "";
-        }
-        else if (value == 'Divorciado') {
-            input.hidden = true;
-            input.value = "";
-        }
-    }
-</script>
+{{--        if (value == 'Casado') {--}}
+{{--            input.hidden = false;--}}
+{{--        } else if (value == 'Solteiro') {--}}
+{{--            input.hidden = true;--}}
+{{--            input.value = "";--}}
+{{--        }--}}
+{{--        else if (value == 'Viúvo') {--}}
+{{--            input.hidden = true;--}}
+{{--            input.value = "";--}}
+{{--        }--}}
+{{--        else if (value == 'Divorciado') {--}}
+{{--            input.hidden = true;--}}
+{{--            input.value = "";--}}
+{{--        }--}}
+{{--    }--}}
+{{--</script>--}}
 
 </body>
 
