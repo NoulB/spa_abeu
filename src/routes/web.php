@@ -24,7 +24,11 @@ Route::delete('/series/{id}', 'SeriesController@destroy');
 
 Route::get('pacientes', 'PacientesController@index')->name("listar_pacientes");
 Route::get('pacientes/criar', 'PacientesController@create')->name("form_criar_pacientes");
-Route::post('pacientes/criar', 'PacientesController@store');
+Route::post('pacientes/criar', 'PacientesController@store')->name("salva_pacientes");
+Route::put('pacientes/alterar', 'PacientesController@update')->name("altera_pacientes");
 
+Route::get('supervisores', 'SupervisoresController@index')->name("listar_supervisores");
+Route::get('supervisores/criar', 'Supervisores@create')->name("form_criar_supervisores");
+Route::post('supervisores/criar', 'Supervisores@store')->name("salva_supervisores");
 
 Route::get('alunos/criar', 'AlunosController@create')->name("form_criar_alunos");
