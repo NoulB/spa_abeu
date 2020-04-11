@@ -26,5 +26,10 @@ Route::get('pacientes', 'PacientesController@index')->name("listar_pacientes");
 Route::get('pacientes/criar', 'PacientesController@create')->name("form_criar_pacientes");
 Route::post('pacientes/criar', 'PacientesController@store');
 
+Route::get('supervisores/criar', 'SupervisoresController@create')->name("form_criar_supervisores");
+
+
 
 Route::get('alunos/criar', 'AlunosController@create')->name("form_criar_alunos");
+Route::post('supervisores/criar', 'SupervisoresController@store');
+
