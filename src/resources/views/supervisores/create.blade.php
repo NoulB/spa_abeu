@@ -34,10 +34,10 @@
             <fieldset>
                 Contatos: <br>
                 <input placeholder="Celular" type="text" name="celular" size ="20" tabindex="6"
-                       onkeypress="return isNumberKey(event)"/>
+                       onkeypress="return isNumberKey(event)" required/>
                 <br>
                 <br>
-                <input placeholder="E-mail" type="text" name="email" size="50" tabindex="7"/><br/>
+                <input placeholder="E-mail" type="text" name="email" size="50" tabindex="7" required/><br/>
 
             </fieldset>
             <fieldset>

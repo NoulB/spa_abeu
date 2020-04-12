@@ -13,7 +13,7 @@ class SupervisoresController extends Controller
     public function index(Request $request)
     {
 
-        $supervisores = Supervisor::query()->where('status','=','1')
+        $supervisores = Supervisor::query()->where('status','=',true)
             ->orderBy('nome')
             ->get();
         $mensagem = $request->session()->get('mensagem');
