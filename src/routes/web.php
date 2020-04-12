@@ -18,7 +18,6 @@ Route::get('/', function () {
 });
 
 Route::get('/series', 'SeriesController@index')->name("listar_series");
-
 Route::get('/series/criar', 'SeriesController@create')->name("form_criar_serie");
 Route::post('/series/criar', 'SeriesController@store');
 Route::delete('/series/{id}', 'SeriesController@destroy');
@@ -29,8 +28,10 @@ Route::get('pacientes/criar', 'PacientesController@create')->name("form_criar_pa
 Route::post('pacientes/criar', 'PacientesController@store')->name("salva_paciente");
 Route::put('pacientes/editar', 'PacientesController@update')->name("editar_paciente");
 
-Route::get('supervisores', 'SupervisoresController@index')->name("listar_supervisores");
-Route::get('supervisores/criar', 'Supervisores@create')->name("form_criar_supervisore");
-Route::post('supervisores/criar', 'Supervisores@store')->name("salva_supervisore");
+Route::get('supervisores/criar', 'SupervisoresController@create')->name("form_criar_supervisores");
+
+
 
 Route::get('alunos/criar', 'AlunosController@create')->name("form_criar_alunos");
+Route::post('supervisores/criar', 'SupervisoresController@store');
+
