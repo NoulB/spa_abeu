@@ -23,6 +23,17 @@ class PacientesController extends Controller
     }
 
 
+    public function busca(Request $request)
+    {
+        $pacientes = Paciente::busca($request->criterio);
+
+        return view('pacientes.index', [
+            'pacientes' => $pacientes,
+            'criterio' => $request->criterio
+        ]);
+
+    }
+
     public function create()
     {
         return view('pacientes.create');
