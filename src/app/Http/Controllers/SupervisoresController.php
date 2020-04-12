@@ -5,23 +5,29 @@ namespace App\Http\Controllers;
 
 use App\Models\Supervisor;
 use Illuminate\Http\Request;
+use App\Http\Requests\SupervisorRequest;
 
 
 class SupervisoresController extends Controller
 {
-//    public function index(Request $request)
-//    {
-//
-//
-//        return view('supervisores.index');
-//    }
+    public function index(Request $request)
+    {
+
+        $supervisores = Supervisor::query()->where('status','=','1')
+            ->orderBy('nome')
+            ->get();
+        $mensagem = $request->session()->get('mensagem');
+
+        return view('supervisores.index', compact('supervisores', 'mensagem'));
+
+    }
 
     public function create()
     {
         return view('supervisores.create');
     }
 
-    public function store(Request $request)
+    public function store(SupervisorRequest $request)
     {
         $supervisor = Supervisor::create($request->all());
         $request->session()
@@ -29,6 +35,6 @@ class SupervisoresController extends Controller
                 'mensagem',
                 "Supervisor {$supervisor->nome} cadastrado com sucesso!"
             );
-        return redirect()->route('listar_pacientes');
+        return redirect()->route('listar_supervisores');
     }
 }

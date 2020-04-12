@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('cabecalho')
-    Lista de Pacientes
+Lista de Supervisores
 @endsection
 
 @section('conteudo')
@@ -12,18 +12,19 @@
         </div>
     @endif
 
-    <a href="/pacientes/criar" class="btn btn-dark mb-2">Adicionar</a>
+<a href="{{ route('form_criar_supervisores') }}" class="btn btn-dark mb-2">Adicionar</a>
 
     <ul class="list-group">
-        @foreach($pacientes as $paciente)
+        @foreach($supervisores as $supervisor)
             <li class="list-group-item d-flex justify-content-between">
                 <div>
-                    {{ $paciente->nome }}
+                    {{ $supervisor->nome }}
                 </div>
                 <div>
-                    Celular: {{ $paciente->celular }}
+                    Celular: {{ $supervisor->celular }}
                 </div>
             </li>
         @endforeach
     </ul>
+
 @endsection
