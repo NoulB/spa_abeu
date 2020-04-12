@@ -3,19 +3,23 @@
 
 namespace App\Http\Controllers;
 
-
-use App\Models\Pessoa;
+use App\Http\Requests\PacienteRequest;
 use App\Models\Paciente;
 use Illuminate\Http\Request;
+
 
 class PacientesController extends Controller
 {
     public function index(Request $request)
     {
-        $pacientes = Paciente::all();
 
+        $pacientes = Paciente::query()
+            ->orderBy('nome')
+            ->get();
+        $mensagem = $request->session()->get('mensagem');
 
-        return view('pacientes.index', compact('pacientes'));
+        return view('pacientes.index', compact('pacientes', 'mensagem'));
+
     }
 
 
@@ -25,30 +29,16 @@ class PacientesController extends Controller
     }
 
 
-    public function store(Request $request)
+    public function store(PacienteRequest $request)
     {
-        $validacao = $request->validate([
-            'nome' => 'required',
-            'cpf' => 'required|numeric',
-            'rg' => 'required|numeric',
-            'data_nascimento' => 'required',
-            'sexo' => 'required',
-            'mae' => 'required',
-            'estado_civil' => 'required',
-            'logradouro' => 'required',
-            'numero' => 'required|numeric',
-            'bairro' => 'required',
-            'cidade' => 'required',
-            'cep' =>'required|numeric',
-        ]);
-
         $paciente = Paciente::create($request->all());
         $request->session()
             ->flash(
-            'mensagem',
-            "Paciente {$paciente->nome} cadastrada com sucesso"
+                'mensagem',
+                "Paciente {$paciente->nome} cadastrada com sucesso"
             );
-        return redirect()->route('listar_pacientes');
+
+        return redirect('pacientes');
     }
 
 }
