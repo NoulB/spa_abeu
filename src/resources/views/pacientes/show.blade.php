@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('cabecalho')
-    Listar de Pacientes
+    Consultar de Pacientes
 @endsection
 
 @section('conteudo')
@@ -14,14 +14,7 @@
 
     <ul class="list-group">
         @foreach($pacientes as $paciente)
-            <li class="list-group-item d-flex justify-content-between">
-                <div>
-                    {{ $paciente->nome }}
-                </div>
-                <div>
-                    Celular: {{ $paciente->celular }}
-                </div>
-            </li>
+            <li class="list-group-item">{{ $paciente->nome }}, Celular: {{ $paciente->celular }}</li>
         @endforeach
     </ul>
 @endsection
