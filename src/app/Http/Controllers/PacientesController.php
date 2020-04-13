@@ -39,6 +39,13 @@ class PacientesController extends Controller
         return view('pacientes.create');
     }
 
+    public function update(PacienteRequest $request, $id)
+    {
+        $paciente = $this->paciente->find($id);
+
+        return view("pacientes.create", compact('paciente'));
+    }
+
 
     public function store(PacienteRequest $request)
     {

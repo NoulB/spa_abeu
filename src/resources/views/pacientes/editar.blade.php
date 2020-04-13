@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('cabecalho')
-    Cadastro de Pacientes
+    Editar Pacientes
 @endsection
 
 @section('conteudo')
@@ -18,7 +18,8 @@
             </div>
         @endif
 
-        <form   method="post">
+{{--        <form class="col-md-12" action="{{ url("/pacientes/{$id}/editar") }}" method="post">--}}
+        <form method="post">
             @csrf
             <fieldset>
                 <input placeholder="Nome completo" type="text" name="nome" size ="50"  tabindex="1"  required autofocus/>
@@ -32,7 +33,7 @@
                        onkeypress="return isNumberKey(event)" required/>
             </fieldset>
             <fieldset>
-            Data de Nascimento:
+                Data de Nascimento:
                 <input type="date" name="data_nascimento" tabindex="4" required/>
             </fieldset>
             <fieldset>
@@ -52,8 +53,7 @@
             </fieldset>
             <fieldset>
                 Sexo:
-                <select name="sexo" tabindex="10">
-                    <option value="m">Masculino</option>
+                <select name="sexo" tabindex="10"> <option value="m">Masculino</option>
                     <option value="f">Feminino</option>
                     <option value="o">Outro</option>required</select>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -87,5 +87,10 @@
             <button class="btn btn-primary">Adicionar</button>
         </form>
     </div>
+
+
+
+
+
 
 @endsection

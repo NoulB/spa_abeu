@@ -5,7 +5,6 @@
 @endsection
 
 @section('conteudo')
-
     <div>
 
         @if ($errors->any())
@@ -18,11 +17,10 @@
             </div>
         @endif
 
-
         <form method="post">
             @csrf
             <fieldset>
-                <input placeholder="Nome" type="text" name="nome" size ="50"  tabindex="1" required autofocus/>
+                <input placeholder="Nome Completo" type="text" name="nome" size ="50"  tabindex="1" required autofocus/>
             </fieldset>
             <br>
             <fieldset>
