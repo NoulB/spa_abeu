@@ -11,4 +11,10 @@ class Supervisor extends Model
     public $timestamps = false;
     protected $table = 'supervisores';
     protected $fillable = ['nome', 'matricula', 'crp', 'email', 'celular'];
+
+    public static function busca($criterio)
+    {
+        return static::where('nome', 'LIKE', '%' . $criterio . '%')->get();
+    }
+
 }

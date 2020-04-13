@@ -36,6 +36,7 @@ Route::put('pacientes/criar/{id}', 'PacientesController@update')->name("editar_p
 
 
 Route::get('supervisores', 'SupervisoresController@index')->name('listar_supervisores');
+Route::post('supervisores/busca', 'SupervisoresController@busca')->name("busca_supervisor");
 Route::get('supervisores/criar', 'SupervisoresController@create')->name("form_criar_supervisores");
 Route::post('supervisores/criar', 'SupervisoresController@store');
 

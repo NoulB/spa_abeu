@@ -34,16 +34,10 @@ class PacientesController extends Controller
 
     }
 
+
     public function create()
     {
         return view('pacientes.create');
-    }
-
-    public function update(PacienteRequest $request, $id)
-    {
-        $paciente = $this->paciente->find($id);
-
-        return view("pacientes.create", compact('paciente'));
     }
 
 
@@ -59,4 +53,11 @@ class PacientesController extends Controller
         return redirect('pacientes');
     }
 
+
+    public function update(PacienteRequest $request, $id)
+    {
+//        $paciente = $this->paciente->find($id);
+//
+//        return view("pacientes.create", compact('paciente'));
+    }
 }

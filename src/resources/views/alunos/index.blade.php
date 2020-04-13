@@ -1,30 +1,46 @@
 @extends('layout')
 
 @section('cabecalho')
-Lista de Alunos
+    Alunos
 @endsection
 
 @section('conteudo')
 
-    @if(!empty($mensagem))
-        <div class="alert alert-success">
-            {{ $mensagem }}
-        </div>
-    @endif
+    <div class="col-sm-12">
+        @if(!empty($mensagem))
+            <div class="alert alert-success">
+                {{ $mensagem }}
+            </div>
+        @endif
 
-<a href="{{ route('form_criar_aluno') }}" class="btn btn-dark mb-2">Adicionar</a>
+        <form class="form-inline my-2 my-lg-0 justify-content-between" action="{{ url('/alunos/busca') }}"
+              method="post">
+            <a href="/alunos/criar" class="btn btn-primary mb-2">Cadastrar Aluno</a>
+            {{ csrf_field() }}
+            <div>
+                <input class="form-control mr-sm-2" type="search" name="criterio" placeholder="Pesquisar Aluno...">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fas fa-search"></i>
+                </button>
+            </div>
+        </form>
 
-    <ul class="list-group">
-        @foreach($alunos as $aluno)
-            <li class="list-group-item d-flex justify-content-between">
-                <div>
+
+        <div class="card-columns" id="alinha">
+            @foreach($alunos as $aluno)
+                <li class="list-group-item" style="background-color: #e3f2fd;">
                     {{ $aluno->nome }}
-                </div>
-                <div>
+                    <a href="{{ url("/supervisores/excluir/$aluno->id") }}"
+                       class="btn btn-xs btn-danger btn-action">
+                        <i class="fas fa-trash-alt"></i>
+                    </a>
+                    <a href="{{ url("/alunos/editar/$aluno->id") }}" class="btn btn-xs btn-primary btn-action">
+                        <i class="fas fa-pencil-alt" float="right"></i>
+                    </a>
+                </li>
+                <li class="list-group-item">
                     Celular: {{ $aluno->celular }}
-                </div>
-            </li>
-        @endforeach
-    </ul>
-
+                </li></br>
+            @endforeach
+        </div>
+    </div>
 @endsection
