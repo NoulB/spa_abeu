@@ -13,7 +13,7 @@ class AlunoRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,14 @@ class AlunoRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'matricula'=>'required|numeric',
+            'nome' => 'required',
+            'cpf' => 'required|numeric',
+            'rg' => 'required|numeric',
+            'email' => 'required',
+            'celular' => 'required|numeric',
+            'data_nascimento' => 'required',
+            'sexo' => 'required',
         ];
     }
 }
