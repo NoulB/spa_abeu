@@ -36,4 +36,15 @@ class AlunosController extends Controller
             );
         return redirect()->route('listar_alunos');
     }
+
+    public function busca(Request $request)
+    {
+        $alunos = Aluno::busca($request->criterio);
+
+        return view('alunos.index', [
+            'alunos' => $alunos,
+            'criterio' => $request->criterio
+        ]);
+
+    }
 }

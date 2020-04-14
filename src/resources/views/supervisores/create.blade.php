@@ -44,7 +44,11 @@
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             </fieldset>
     <br/>
-            <button class="btn btn-primary">Adicionar</button>
+            <div class="form-inline my-2 my-lg-0 justify-content-sm-around">
+                <button class="btn btn-outline-primary">Adicionar</button>
+                <a href="{{ url("/supervisores") }}" class="btn btn-outline-danger">voltar</a>
+                <a href="{{ url("/") }}" class="btn btn-outline-dark">Home</a>
+            </div>
         </form>
     </div>
 

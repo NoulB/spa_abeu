@@ -15,7 +15,7 @@
 
         <form class="form-inline my-2 my-lg-0 justify-content-between" action="{{ url('/alunos/busca') }}"
               method="post">
-            <a href="/alunos/criar" class="btn btn-primary mb-2">Cadastrar Aluno</a>
+            <a href="/alunos/criar" class="btn btn-outline-primary mb-2">Adicionar</a>
             {{ csrf_field() }}
             <div>
                 <input class="form-control mr-sm-2" type="search" name="criterio" placeholder="Pesquisar Aluno...">
@@ -27,20 +27,25 @@
 
         <div class="card-columns" id="alinha">
             @foreach($alunos as $aluno)
-                <li class="list-group-item" style="background-color: #e3f2fd;">
-                    {{ $aluno->nome }}
-                    <a href="{{ url("/supervisores/excluir/$aluno->id") }}"
-                       class="btn btn-xs btn-danger btn-action">
-                        <i class="fas fa-trash-alt"></i>
-                    </a>
-                    <a href="{{ url("/alunos/editar/$aluno->id") }}" class="btn btn-xs btn-primary btn-action">
-                        <i class="fas fa-pencil-alt" float="right"></i>
-                    </a>
-                </li>
-                <li class="list-group-item">
-                    Celular: {{ $aluno->celular }}
-                </li></br>
+                <div class="card">
+                    <li class="list-group-item" style="background-color: #e3f2fd;">
+                        {{ $aluno->nome }}
+                        <a href="{{ url("/supervisores/excluir/$aluno->id") }}"
+                           class="btn btn-sm btn-outline-danger btn-action">
+                            <i class="fas fa-trash-alt"></i>
+                        </a>
+                        <a href="{{ url("/alunos/editar/$aluno->id") }}" class="btn btn-sm btn-outline-primary btn-action">
+                            <i class="fas fa-pencil-alt" float="right"></i>
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        Celular: {{ $aluno->celular }}
+                    </li>
+                </div>
             @endforeach
+        </div>
+        <div>
+            <a href="/" class="btn btn-outline-danger mb-2">voltar</a>
         </div>
     </div>
 @endsection

@@ -18,73 +18,165 @@
             </div>
         @endif
 
-        <form method="post">
-            @csrf
-            <fieldset>
-                <input placeholder="Nome completo" type="text" name="nome" size="50" tabindex="1" required autofocus/>
-            </fieldset>
-            <fieldset>
-                <input placeholder="CPF somente números)" type="text" name="cpf" tabindex="2"
-                       onkeypress="return isNumberKey(event)" required/>
 
-                <input placeholder="RG - somente números" type="text" name="rg" tabindex="3"
-                       onkeypress="return isNumberKey(event)" required/>
-            </fieldset>
-            <fieldset>
-                Data de Nascimento:<br/>
-                <input type="date" name="data_nascimento" tabindex="4" required/>
+            <form action="{{ url("/pacientes/show/") }}" method="post">
+                @csrf
+                <div>
+                    <br/>
+                    Nome:<br/>
+                    <input class="form-control col-md-6" readonly=“false” id="input1" placeholder="Nome completo"
+                           type="text" name="nome" size="50" tabindex="1" required autofocus/>
 
-                <input placeholder="E-mail" type="text" name="email" tabindex="6"/><br/>
-            </fieldset>
-            <fieldset>
-                <input placeholder="Celular - somente números" type="text" name="celular" size="20" tabindex="7"
-                       onkeypress="return isNumberKey(event)"/>
-                <input placeholder="Telefone 2" type="text" name="telefone" size="20" tabindex="8"
-                       onkeypress="return isNumberKey(event)"/>
-            </fieldset>
-            <fieldset>
-                <input placeholder="Nome do Pai" type="text" name="pai" size="50" tabindex="9"/>
-            </fieldset>
-            <fieldset>
-                <input placeholder="Nome da Mãe" type="text" name="mae" size="50" required tabindex="10"/>
-            </fieldset>
-            <fieldset>
-                Sexo:
-                <select name="sexo" tabindex="10">
-                    <option value="m">Masculino</option>
-                    <option value="f">Feminino</option>
-                    required
-                </select>
-                Estado civil:
-                <select id="options" name="estado_civil" onchange="verifica(this.value)">
-                    <option value="Casado">Casado(a)</option>
-                    <option value="Solteiro" selected>Solteiro(a)</option>
-                    <option value="Divorciado">Divorciado(a)</option>
-                    <option value="Viúvo">Viúvo(a)</option>
-                    required
-                </select>
-            </fieldset>
-            <fieldset>
-                <input placeholder="Nome do(a) Cônjuge" type="text" id="input" name="conjuge" size="50" hidden/>
-            </fieldset>
-            Endereço:<br/>
-            <fieldset>
-                <input placeholder="Logradouro" type="text" name="logradouro" size="37" required tabindex="14"/>
-                <input placeholder="Numero" type="text" name="numero" size="10" required tabindex="15"
-                       onkeypress="return isNumberKey(event)"/>
-            </fieldset>
-            <fieldset>
-                <input placeholder="Complemento" type="text" name="complemento" size="20" tabindex="16"/>
-                <input placeholder="Bairro" type="text" name="bairro" size="27" required tabindex="17"/>
-            </fieldset>
-            <fieldset>
-                <input placeholder="Cidade" type="text" name="cidade" size="27" required tabindex="18"/>
-                <input placeholder="CEP" type="text" name="cep" size="20" required tabindex="19"
-                       onkeypress="return isNumberKey(event)"/>
-            </fieldset>
-            <br/>
-            <button class="btn btn-primary">Adicionar</button>
-        </form>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        CPF: <br/>
+                        <input class="form-control" readonly=“false” id="input2" placeholder="somente números" type="text" name="cpf"
+                               tabindex="2"
+                               onkeypress="return isNumberKey(event)" required/>
+                    </div>
+                    <div class="col">
+                        RG: <br/>
+                        <input class="form-control" readonly=“false” id="input3" placeholder="somente números" type="text"
+                               name="rg" tabindex="3"
+                               onkeypress="return isNumberKey(event)" required/>
+                    </div>
+                    <div class="col">
+                        Data de Nascimento:<br/>
+                        <input class="form-control col-md-6" readonly=“false” id="input4" type="date" name="data_nascimento"
+                                tabindex="4" required/>
+                    </div>
+                </div>
+                <div>
+                    <div class="row">
+
+                        <div class="col">
+                            E-mail: <br/>
+                            <input class="form-control" readonly=“false” id="input5" placeholder="E-mail" type="text" name="email"
+                                   tabindex="6"/>
+                        </div>
+                        <div class="col">
+                            Celular: <br/>
+                            <input class="form-control col-md-6" readonly=“false” id="input6" placeholder="Celular - somente números" type="text"
+                                   name="celular"
+
+                                   size="20" tabindex="7" onkeypress="return isNumberKey(event)"/>
+                        </div>
+                        <div class="col">
+                            Telefone:<br/>
+                            <input class="form-control col-md-6" readonly=“false” id="input7" placeholder="Telefone 2" type="text" name="telefone"
+
+                                   size="20" tabindex="8"
+                                   onkeypress="return isNumberKey(event)"/>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="row">
+                        <div class="col">
+                            Nome do Pai:<br/>
+                            <input class="form-control" readonly=“false” id="input8" placeholder="Nome do Pai" type="text" name="pai"
+
+                                   tabindex="9"/>
+                        </div>
+                        <div class="col">
+                            Nome do Mae:<br/>
+                            <input class="form-control" readonly=“false” id="input9" placeholder="Nome da Mãe" type="text" name="mae"
+                                   required
+                                   tabindex="10"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="row">
+                            <div class="col">
+                                Sexo:
+                                <select class="form-control col-md-6" name="sexo" readonly=“false” id="input10" tabindex="10">
+                                    <option value="m">Masculino</option>
+                                    <option value="f">Feminino</option>
+                                    required
+                                </select>
+                            </div>
+                            <div class="col">
+                                Estado civil:
+                                <select class="form-control col-md-6" readonly=“false” id="input11" name="estado_civil"
+
+                                        onchange="verifica(this.value)">
+                                    <option value="Casado">Casado(a)</option>
+                                    <option value="Solteiro" selected>Solteiro(a)</option>
+                                    <option value="Divorciado">Divorciado(a)</option>
+                                    <option value="Viúvo">Viúvo(a)</option>
+                                    required
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        Cônjuge:
+                        <input class="form-control" readonly=“false” id="input12" placeholder="Nome do(a) Cônjuge"
+                               type="text" id="input" name="conjuge"/>
+                    </div>
+                </div>
+                <div>
+
+                </div>
+                <br/>
+                <h4>Endereço:</h4>
+                <div class="row">
+                    <div class="col">
+                        Logradouro:<br/>
+                        <input class="form-control" readonly=“false” id="input13" placeholder="Logradouro" type="text" name="logradouro"
+                               size="37" required tabindex="14"/>
+                    </div>
+                    <div class="col">
+                        <div class="row">
+                            <div class="col">
+                                Número:<br/>
+                                <input class="form-control col-md-6" readonly=“false” id="input14" placeholder="Numero" type="text" name="numero"
+                                       size="10" required tabindex="15"
+                                       onkeypress="return isNumberKey(event)"/>
+                            </div>
+                            <div class="col">
+                                Complemento:
+                                <input class="form-control" readonly=“false” id="input15" placeholder="Complemento" type="text" name="complemento"
+                                       size="20" tabindex="16"/>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <div class="row">
+                            <div class="col">
+                                Bairro: <br/>
+                                <input class="form-control" readonly=“false” id="input16" placeholder="Bairro" type="text" name="bairro"
+                                 size="27"
+                                       required tabindex="17"/>
+                            </div>
+                            <div class="col">
+                                Cidade: <br/>
+                                <input class="form-control" readonly=“false” id="input17" placeholder="Cidade" type="text" name="cidade"
+                                       size="27" required tabindex="18"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        CEP: <br/>
+                        <input class="form-control col-md-6" readonly=“false” id="input18" placeholder="CEP" type="text" name="cep"
+                               size="20" required tabindex="19" onkeypress="return isNumberKey(event)"/>
+                    </div>
+                </div>
+                <br/>
+                <div class="form-inline my-2 my-lg-0 justify-content-sm-around">
+                    <button class="btn btn-outline-primary">Adicionar</button>
+                    <a href="{{ route('listar_pacientes') }}" class="btn btn-outline-danger">voltar</a>
+                    <a href="{{ url("/") }}" class="btn btn-outline-dark">Home</a>
+                </div>
+                <br/>
+            </form>
     </div>
 
 @endsection

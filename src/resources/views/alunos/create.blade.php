@@ -20,7 +20,7 @@
         <form method="post">
             @csrf
             <fieldset>
-                <input placeholder="Matrícula" type="text" name="matricula" tabindex="1"
+                <input placeholder="Matrícula" type="text" name="matricula" tabindex="1" required
                        onkeypress="return isNumberKey(event)" autofocus>
             </fieldset>
             <fieldset>
@@ -57,14 +57,15 @@
             </br></br>
 
 
-                <div>
-                    <button class="btn btn-primary">Adicionar</button>
-                    <a href="{{ url("/alunos") }}" class="btn btn-dark btn-action">
-                        Voltar
-                    </a>
-                </div>
+
+            <div class="form-inline my-2 my-lg-0 justify-content-sm-around">
+                <button class="btn btn-outline-primary">Adicionar</button>
+                <a href="{{ url("/alunos") }}" class="btn btn-outline-danger">voltar</a>
+                <a href="{{ url("/") }}" class="btn btn-outline-dark">Home</a>
+            </div>
 
         </form>
+
     </div>
 
 

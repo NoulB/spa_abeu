@@ -15,13 +15,10 @@
         @endif
 
 
-
-
-
         <form class="form-inline my-2 my-lg-0 justify-content-between" action="{{ url('/supervisores/busca') }}"
               method="post">
-            <a href="/supervisores/criar" class="btn btn-primary mb-2">Cadastrar Supervisor</a>
-            {{ csrf_field() }}
+            <a href="/supervisores/criar" class="btn btn-outline-primary mb-2">Adicionar</a>
+
 
 {{--            PAGINAÇÃO--}}
 
@@ -35,14 +32,16 @@
                 </ul>
             </nav>
 {{--            FIM PAGINAÇÃO--}}
-            
 
-            <div>
+
+            {{ csrf_field() }}
+            <div >
                 <input class="form-control mr-sm-2" type="search" name="criterio" placeholder="Pesquisar Supervisor...">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fas fa-search"></i>
                 </button>
             </div>
         </form>
+
 
 
         <div class="card-columns" id="alinha">
@@ -51,11 +50,11 @@
                     <li class="list-group-item" style="background-color: #e3f2fd;">
                         {{ $supervisor->nome }}
                         <a href="{{ url("/supervisores/excluir/$supervisor->id") }}"
-                           class="btn btn-xs btn-danger btn-action">
+                           class="btn btn-sm btn-outline-danger btn-action">
                             <i class="fas fa-trash-alt"></i>
                         </a>
                         <a href="{{ url("/supervisores/editar/$supervisor->id") }}"
-                           class="btn btn-xs btn-primary btn-action">
+                           class="btn btn-sm btn-outline-primary btn-action">
                             <i class="fas fa-pencil-alt" float="right"></i>
                         </a>
                     </li>
@@ -65,5 +64,10 @@
                 </div>
             @endforeach
         </div>
+            <div>
+                <a href="/" class="btn btn-outline-danger mb-2">voltar</a>
+            </div>
     </div>
+
+
 @endsection
