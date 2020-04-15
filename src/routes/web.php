@@ -32,9 +32,10 @@ Route::get('pacientes/criar', 'PacientesController@create')->name("form_criar_pa
 Route::post('pacientes/criar', 'PacientesController@store')->name("salva_paciente");
 //Route::post('pacientes/show/{id}', 'PacientesController@show')->name("mostrar_paciente");
 Route::get('pacientes/show/{id}', 'PacientesController@show')->name("mostrar_paciente");
-
 Route::get('pacientes/criar/{id}', 'PacientesController@update')->name("form_criar_paciente");
 Route::put('pacientes/criar/{id}', 'PacientesController@update')->name("editar_paciente");
+Route::get('pacientes/editar/{id}', 'AlunosController@edit')->name("form_editar_paciente");
+Route::post('pacientes/update', 'AlunosController@update');
 
 
 
@@ -54,3 +55,5 @@ Route::get('alunos', 'AlunosController@index')->name("listar_alunos");
 Route::get('alunos/criar', 'AlunosController@create')->name("form_criar_aluno");
 Route::post('alunos/criar', 'AlunosController@store')->name("salva_aluno");
 Route::get('alunos/show/{id}', 'AlunosController@show')->name("mostrar_aluno");
+Route::get('alunos/editar/{id}', 'AlunosController@edit')->name("form_editar_aluno");
+Route::post('alunos/update', 'AlunosController@update');

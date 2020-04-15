@@ -19,7 +19,7 @@
         @endif
 
 
-        <form action="{{ url("/pacientes/show/") }}" method="post">
+        <form method="post">
             @csrf
             <div>
                 <br/>
@@ -176,7 +176,7 @@
             <br/><br/>
             <div class="form-inline my-2 my-lg-0 justify-content-sm-around">
                 <button class="btn btn-outline-primary">Adicionar</button>
-                <a href="{{ route('listar_pacientes') }}" class="btn btn-outline-danger">voltar</a>
+                <a href="{{ route('/') }}" class="btn btn-outline-danger">Voltar</a>
                 <a href="{{ url("/") }}" class="btn btn-outline-dark">Home</a>
             </div>
             <br/>

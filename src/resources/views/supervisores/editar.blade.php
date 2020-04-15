@@ -7,7 +7,7 @@
 @section('conteudo')
 
 
-        <form class="col-md-12" action="{{url('supervisores/update')}}" method="post">
+        <form class="col-md-12" action="{{ url('supervisores/update') }}" method="post">
             @csrf
 
 

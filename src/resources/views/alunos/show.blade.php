@@ -19,6 +19,7 @@
 
         <form action="{{ url("/alunos/show/") }}" method="post">
             @csrf
+            <input type="hidden" name="id" value="{{ $aluno->id }}">
             <div>
                 <br/>
                 Nome:<br/>
@@ -59,12 +60,10 @@
                 </div>
                 <div class="col">
                     Sexo:
-                    <select class="form-control col-md-8" name="sexo" readonly=“true” id="input8" tabindex="8"
+                    <input type="text" name="sexo" readonly=“true” id="input8" tabindex="8" required
                             value="{{ $aluno->sexo }}">
-                        <option value="m">Masculino</option>
-                        <option value="f">Feminino</option>
-                        required
-                    </select>
+
+
                 </div>
             </div>
             <br/>
@@ -85,7 +84,7 @@
             </div>
             <br/><br/>
             <div class="form-inline my-2 my-lg-0 justify-content-sm-around">
-                <a href="{{ url("/#") }}" class="btn btn-outline-primary">editar</a>
+                <a href="{{ url("/alunos/editar/$aluno->id") }}" class="btn btn-outline-primary">editar</a>
                 <a href="{{ url("/alunos") }}" class="btn btn-outline-danger">voltar</a>
                 <a href="{{ url("/") }}" class="btn btn-outline-dark">Home</a>
             </div>
