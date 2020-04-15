@@ -19,7 +19,7 @@
         @endif
 
 
-        <form action="{{ url("/pacientes/show/") }}" method="post">
+        <form method="post">
             @csrf
             <div>
                 <br/>

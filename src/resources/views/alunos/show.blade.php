@@ -59,12 +59,8 @@
                 </div>
                 <div class="col">
                     Sexo:
-                    <select class="form-control col-md-8" name="sexo" readonly=“true” id="input8" tabindex="8"
+                    <input class="form-control col-md-8" name="sexo" readonly=“true” id="input8" tabindex="8"
                             value="{{ $aluno->sexo }}">
-                        <option value="m">Masculino</option>
-                        <option value="f">Feminino</option>
-                        required
-                    </select>
                 </div>
             </div>
             <br/>
