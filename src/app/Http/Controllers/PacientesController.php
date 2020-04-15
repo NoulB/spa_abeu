@@ -27,8 +27,6 @@ class PacientesController extends Controller
     {
         $pacientes = Paciente::busca($request->criterio);
 
-
-
         return view('pacientes.index', [
             'pacientes' => $pacientes,
             'criterio' => $request->criterio
@@ -39,18 +37,9 @@ class PacientesController extends Controller
 
     public function show($id)
     {
-
         $paciente = Paciente::find($id);
 
         return view('pacientes.show', compact('paciente'));
-    }
-
-
-    protected function getPaciente($id)
-    {
-        $paciente = Paciente::find($id);
-
-        return $paciente;
     }
 
 

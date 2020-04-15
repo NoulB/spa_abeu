@@ -38,14 +38,15 @@ Route::put('pacientes/criar/{id}', 'PacientesController@update')->name("editar_p
 
 
 
-
 Route::get('supervisores', 'SupervisoresController@index')->name('listar_supervisores');
 Route::post('supervisores/busca', 'SupervisoresController@busca')->name("busca_supervisor");
 Route::get('supervisores/criar', 'SupervisoresController@create')->name("form_criar_supervisores");
 Route::post('supervisores/criar', 'SupervisoresController@store');
+Route::get('supervisores/show/{id}', 'SupervisoresController@show')->name("mostrar_supervisor");
 
 
 Route::post('alunos/busca', 'AlunosController@busca')->name("busca_aluno");
 Route::get('alunos', 'AlunosController@index')->name("listar_alunos");
 Route::get('alunos/criar', 'AlunosController@create')->name("form_criar_aluno");
 Route::post('alunos/criar', 'AlunosController@store')->name("salva_aluno");
+Route::get('alunos/show/{id}', 'AlunosController@show')->name("mostrar_aluno");

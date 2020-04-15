@@ -12,40 +12,67 @@
                 {{ $mensagem }}
             </div>
         @endif
-
-        <form class="form-inline my-2 my-lg-0 justify-content-between" action="{{ url('/alunos/busca') }}"
+        <br/>
+        <form class="form-inline my-2 my-lg-0 justify-content-between mb-" action="{{ url('/alunos/busca') }}"
               method="post">
-            <a href="/alunos/criar" class="btn btn-outline-primary mb-2">Adicionar</a>
-            {{ csrf_field() }}
             <div>
-                <input class="form-control mr-sm-2" type="search" name="criterio" placeholder="Pesquisar Aluno...">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fas fa-search"></i>
+                <input class="form-control mr-sm-2" type="search" name="criterio" placeholder="Pesquisar...">
+                <button class="btn btn-outline-primary  my-2 my-sm-0" type="submit"><i class="fas fa-search"></i>
                 </button>
             </div>
+
+            <a href="/alunos/criar" class="btn btn-outline-success ">Adicionar</a>
+            {{ csrf_field() }}
+
         </form>
 
-
-        <div class="card-columns" id="alinha">
-            @foreach($alunos as $aluno)
-                <div class="card">
-                    <li class="list-group-item" style="background-color: #e3f2fd;">
-                        {{ $aluno->nome }}
-                        <a href="{{ url("/supervisores/excluir/$aluno->id") }}"
-                           class="btn btn-sm btn-outline-danger btn-action">
-                            <i class="fas fa-trash-alt"></i>
-                        </a>
-                        <a href="{{ url("/alunos/editar/$aluno->id") }}" class="btn btn-sm btn-outline-primary btn-action">
-                            <i class="fas fa-pencil-alt" float="right"></i>
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        Celular: {{ $aluno->celular }}
-                    </li>
-                </div>
-            @endforeach
-        </div>
         <div>
-            <a href="/" class="btn btn-outline-danger mb-2">voltar</a>
+            <table class="table table-striped table-md table-borderless">
+                <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Telefone</th>
+                    <th>Ultima Consulta</th>
+                    <th>Projeto</th>
+                </tr>
+                </thead>
+                <tbody>
+                @foreach($alunos as $aluno)
+                    <tr>
+                        <td>
+                            <a href="{{ url("/alunos/show/$aluno->id") }}">
+                                {{ $aluno->nome }}
+                            </a>
+                        </td>
+                        <td>
+                            <a href="{{ url("/alunos/show/$aluno->id") }}">
+                                {{ $aluno->celular }}
+                            </a>
+                        </td>
+                        <td>
+                            <a href="{{ url("/alunos/email/$aluno->id") }}" cllink="black">
+                                {{ $aluno->email }}
+                            </a>
+                        </td>
+                        <td>
+                            <a href="{{ url("/alunos/email/$aluno->id") }}" cllink="black">
+                                GRUPO {{--{{ $aluno->email }}--}}
+                            </a>
+                        </td>
+                    </tr>
+            @endforeach
+                </tbody>
+            </table>
         </div>
+
+            <form class="navbar-form">
+                <div class=text-right>
+                    <a href="/" class="btn btn-outline-danger mb-2">voltar</a>
+
+                </div>
+            </form>
     </div>
+    <div>
+    </div>
+
 @endsection

@@ -14,13 +14,16 @@
         .btn-action {
             float: right;
         }
-        a:link{
-            text-decoration:none;
-            color:black;
+
+        a:link {
+            text-decoration: none;
+            color: black;
         }
+
         body {
             background-color: lightblue;
         }
+
         #container {
             background-color: white;
         }
@@ -33,48 +36,46 @@
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light justify-content-between" style="background-color: #e3f2fd;">
-        <div class="container">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-nav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="navbar-collapse collapse dual-nav w-100">
-                <ul class="navbar-nav">
-                    <li class="nav-item active">
-                        <a class="nav-link pl-0" href="/">Home <span class="sr-only">Home</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
+<nav class="navbar navbar-expand-lg navbar-light justify-content-between" style="background-color: #e3f2fd;">
+    <div class="container">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-nav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-collapse collapse dual-nav w-100">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link pl-0" href="/">Home <span class="sr-only">Home</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
 
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Dropdown
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <a href="#" class="navbar-brand mx-auto d-block text-center w-100"><h1>@yield('cabecalho')</h1></a>
-
-            <div class="navbar-collapse collapse dual-nav w-100">
-                <ul class="nav navbar-nav ml-auto">
-                    <li class="nav-item"><a class="nav-link" href=""><i class="fa fa-twitter"></i></a></li>
-                    <li class="nav-item"><a class="nav-link" href=""><i class="fa fa-github"></i></a></li>
-                </ul>
-            </div>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Dropdown
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </li>
+            </ul>
         </div>
-    </nav>
+        <a href="#" class="navbar-brand mx-auto d-block text-center w-100"><h1>@yield('cabecalho')</h1></a>
 
-
+        <div class="navbar-collapse collapse dual-nav w-100">
+            <ul class="nav navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href=""><i class="fa fa-twitter"></i></a></li>
+                <li class="nav-item"><a class="nav-link" href=""><i class="fa fa-github"></i></a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
 
 
 <div class="container" id="container">

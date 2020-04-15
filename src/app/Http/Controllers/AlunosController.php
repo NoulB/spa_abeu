@@ -47,4 +47,14 @@ class AlunosController extends Controller
         ]);
 
     }
+
+
+    public function show($id)
+    {
+        $aluno = Aluno::find($id);
+
+//        var_dump($aluno);
+//    exit();
+        return view('alunos.show', compact('aluno'));
+    }
 }

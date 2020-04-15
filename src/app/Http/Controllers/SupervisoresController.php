@@ -35,6 +35,14 @@ class SupervisoresController extends Controller
     }
 
 
+    public function show($id)
+    {
+        $supervisor = Supervisor::find($id);
+
+        return view('supervisores.show', compact('supervisor'));
+    }
+
+
     public function create()
     {
         return view('supervisores.create');
