@@ -174,9 +174,9 @@
         </div>
         <br/><br/>
         <div class="form-inline my-2 my-lg-0 justify-content-sm-around">
-            <a href="{{ url("/#") }}" class="btn btn-outline-primary">editar</a>
-            <a href="{{ route('listar_pacientes')  }}" class="btn btn-outline-danger">voltar</a>
-            <a href="{{ route('home') }}" class="btn btn-outline-dark">Home</a>
+            <a href="{{ url("/pacientes/editar/$paciente->id") }}" class="btn btn-outline-primary">Editar</a>
+            <a href="{{ route('/pacientes')  }}" class="btn btn-outline-danger">Voltar</a>
+            <a href="{{ route('/') }}" class="btn btn-outline-dark">Home</a>
         </div>
         <br/>
     </form>

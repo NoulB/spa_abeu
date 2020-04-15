@@ -10,6 +10,12 @@ use Illuminate\Http\Request;
 
 class PacientesController extends Controller
 {
+
+    private $paciente;
+    public function __construct()
+    {
+        $this->paciente = new Paciente();
+    }
     public function index(Request $request)
     {
 
@@ -61,11 +67,23 @@ class PacientesController extends Controller
         return redirect('pacientes');
     }
 
-
-    public function update(PacienteRequest $request, $id)
+    public function edit($id)
     {
-//        $paciente = $this->paciente->find($id);
-//
-//        return view("pacientes.create", compact('paciente'));
+        return view('pacientes.editar', [
+            'paciente' => $this->getPaciente($id)
+        ]);
+
     }
+
+    public function update(Request $request)
+    {
+        $paciente = $this->getPaciente($request->id);
+        $paciente->update($request->all());
+        return redirect('/pacientes');
+
+    }
+    protected function getPaciente($id) {
+        return $this->paciente->find($id);
+    }
+
 }

@@ -10,6 +10,11 @@ use App\Http\Requests\AlunoRequest;
 
 class AlunosController extends Controller
 {
+    private $aluno;
+    public function __construct()
+    {
+        $this->aluno = new Aluno();
+    }
     public function index(Request $request)
     {
 
@@ -57,4 +62,24 @@ class AlunosController extends Controller
 //    exit();
         return view('alunos.show', compact('aluno'));
     }
+
+    public function edit($id)
+    {
+        return view('alunos.editar', [
+            'aluno' => $this->getAluno($id)
+        ]);
+
+    }
+
+    public function update(Request $request)
+    {
+        $aluno = $this->getAluno($request->id);
+        $aluno->update($request->all());
+        return redirect('/alunos');
+
+    }
+    protected function getAluno($id) {
+        return $this->aluno->find($id);
+    }
+
 }

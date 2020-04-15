@@ -81,7 +81,7 @@
             </div>
             <br/><br/>
             <div class="form-inline my-2 my-lg-0 justify-content-sm-around">
-                <a href="{{ url("/#") }}" class="btn btn-outline-primary">editar</a>
+                <a href="{{ url("/alunos/editar/$aluno->id") }}" class="btn btn-outline-primary">editar</a>
                 <a href="{{ url("/alunos") }}" class="btn btn-outline-danger">voltar</a>
                 <a href="{{ url("/") }}" class="btn btn-outline-dark">Home</a>
             </div>
