@@ -10,66 +10,81 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
+    <style>
+        .btn-action {
+            float: right;
+        }
 
+        a:link {
+            text-decoration: none;
+            color: black;
+        }
 
+        body {
+            background-color: lightblue;
+        }
+
+        #container {
+            background-color: white;
+        }
+
+        .table-striped > tbody > tr:nth-child(2n+1) > td, .table-striped > tbody > tr:nth-child(2n+1) > th {
+            background-color: #e3f2fd;
+        }
+
+    </style>
 </head>
 <body>
 
+<nav class="navbar navbar-expand-lg navbar-light justify-content-between" style="background-color: #e3f2fd;">
+    <div class="container">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-nav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-collapse collapse dual-nav w-100">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link pl-0" href="/">Home <span class="sr-only">Home</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
 
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Dropdown
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <a href="#" class="navbar-brand mx-auto d-block text-center w-100"><h1>@yield('cabecalho')</h1></a>
 
-
-<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
-    <a class="navbar-brand" href="#">Navbar</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Dropdown
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                </div>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-            </li>
-        </ul>
-        <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
+        <div class="navbar-collapse collapse dual-nav w-100">
+            <ul class="nav navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href=""><i class="fa fa-twitter"></i></a></li>
+                <li class="nav-item"><a class="nav-link" href=""><i class="fa fa-github"></i></a></li>
+            </ul>
+        </div>
     </div>
 </nav>
 
 
-
-
-
-<div class="container">
-    <div class="jumbotron">
-        <h1>@yield('cabecalho')</h1>
-    </div>
-
+<div class="container" id="container">
     @yield('conteudo')
 
 </div>
 
-<script language = javascript>
-    function isNumberKey(evt)
-    {
+<script language=javascript>
+    function isNumberKey(evt) {
         var charCode = (evt.which) ? evt.which : event.keyCode
         if (charCode > 31 && (charCode < 48 || charCode > 57))
             return false;
@@ -84,18 +99,15 @@
         } else if (value == 'Solteiro') {
             input.hidden = true;
             input.value = "";
-        }
-        else if (value == 'Viúvo') {
+        } else if (value == 'Viúvo') {
             input.hidden = true;
             input.value = "";
-        }
-        else if (value == 'Divorciado') {
+        } else if (value == 'Divorciado') {
             input.hidden = true;
             input.value = "";
         }
     }
 </script>
-
 
 
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"

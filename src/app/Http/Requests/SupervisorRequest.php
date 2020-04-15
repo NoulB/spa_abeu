@@ -24,7 +24,7 @@ class SupervisorRequest extends FormRequest
     public function rules()
     {
         return [
-            'matricula'=>'required|numeric',
+            'id'=>'required|numeric',
             'nome' => 'required',
             'crp' => 'required',
             'email' => 'required',

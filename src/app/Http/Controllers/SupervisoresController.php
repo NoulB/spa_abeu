@@ -22,10 +22,32 @@ class SupervisoresController extends Controller
 
     }
 
+
+    public function busca(Request $request)
+    {
+        $supervisores = Supervisor::busca($request->criterio);
+
+        return view('supervisores.index', [
+            'supervisores' => $supervisores,
+            'criterio' => $request->criterio
+        ]);
+
+    }
+
+
+    public function show($id)
+    {
+        $supervisor = Supervisor::find($id);
+
+        return view('supervisores.show', compact('supervisor'));
+    }
+
+
     public function create()
     {
         return view('supervisores.create');
     }
+
 
     public function store(SupervisorRequest $request)
     {
@@ -35,6 +57,8 @@ class SupervisoresController extends Controller
                 'mensagem',
                 "Supervisor {$supervisor->nome} cadastrado com sucesso!"
             );
+
         return redirect()->route('listar_supervisores');
+
     }
 }
