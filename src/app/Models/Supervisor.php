@@ -17,9 +17,4 @@ class Supervisor extends Model
         return static::where('nome', 'LIKE', '%' . $criterio . '%')->get();
     }
 
-    public static function busca_por_id($id)
-    {
-        return static::where('id', '=', $id)->get();
-    }
-
 }

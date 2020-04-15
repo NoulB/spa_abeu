@@ -10,6 +10,12 @@ use App\Http\Requests\SupervisorRequest;
 
 class SupervisoresController extends Controller
 {
+    private $supervisor;
+    public function __construct()
+    {
+        $this->supervisor = new Supervisor();
+    }
+
     public function index(Request $request)
     {
 
@@ -59,6 +65,25 @@ class SupervisoresController extends Controller
             );
 
         return redirect()->route('listar_supervisores');
+    }
+    public function edit($id)
+    {
+         return view('supervisores.editar', [
+             'supervisor' => $this->getSupervisor($id)
+         ]);
 
     }
+
+    public function update(Request $request)
+    {
+        $supervisor = $this->getSupervisor($request->id);
+        $supervisor->update($request->all());
+        return redirect('/supervisores');
+
+    }
+    protected function getSupervisor($id) {
+        return $this->supervisor->find($id);
+    }
+
+
 }
