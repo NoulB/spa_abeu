@@ -32,7 +32,7 @@
                 <tr>
                     <th>Nome</th>
                     <th>Telefone</th>
-                    <th>Ultima Consulta</th>
+                    <th>E-mail</th>
                     <th>Projeto</th>
                 </tr>
                 </thead>

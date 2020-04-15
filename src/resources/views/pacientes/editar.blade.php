@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('cabecalho')
-Editar Cadastro de Paciente
+Editar Paciente
 @endsection
 
 @section('conteudo')
@@ -178,8 +178,8 @@ Editar Cadastro de Paciente
     <br/><br/>
     <div class="form-inline my-2 my-lg-0 justify-content-sm-around">
         <button class="btn btn-outline-primary">Salvar</button>
-        <a href="{{ route('/pacientes') }}" class="btn btn-outline-danger">Voltar</a>
-        <a href="{{ url("/") }}" class="btn btn-outline-dark">Home</a>
+        <a href="{{ route('listar_pacientes') }}" class="btn btn-outline-danger">Voltar</a>
+        <a href="{{ route('home') }}" class="btn btn-outline-dark">Home</a>
     </div>
     <br/>
     </form>
