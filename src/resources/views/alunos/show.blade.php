@@ -19,7 +19,6 @@
 
         <form action="{{ url("/alunos/show/") }}" method="post">
             @csrf
-            <input type="hidden" name="id" value="{{ $aluno->id }}">
             <div>
                 <br/>
                 Nome:<br/>
@@ -60,10 +59,8 @@
                 </div>
                 <div class="col">
                     Sexo:
-                    <input type="text" name="sexo" readonly=“true” id="input8" tabindex="8" required
+                    <input class="form-control col-md-8" name="sexo" readonly=“true” id="input8" tabindex="8"
                             value="{{ $aluno->sexo }}">
-
-
                 </div>
             </div>
             <br/>

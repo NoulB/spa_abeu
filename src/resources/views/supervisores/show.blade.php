@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('cabecalho')
-    Supervisores
+    Visualizar Supervisor
 @endsection
 
 @section('conteudo')
@@ -28,9 +28,9 @@
             <div class="row">
                 <div class="col">
                     Matricula: <br/>
-                    <input class="form-control" readonly=“true” id="input2" placeholder="somente números"
-                           type="text" name="id" value="{{ $supervisor->id }}" tabindex="2"
-                           onkeypress="return isNumberKey(event)" required/>
+                    <input class="form-control" readonly=“true” id="input2" placeholder="somente números" type="text"
+                           name="id" value="{{ $supervisor->id }}" tabindex="2" onkeypress="return isNumberKey(event)"
+                           required/>
                 </div>
                 <div class="col">
                     CRP: <br/>
@@ -53,7 +53,7 @@
                 E-mail:<br/>
                 <input class="form-control col-md-6" readonly=“true” id="input5"
                        placeholder="Celular - somente números" type="text" name="email"
-                       value="{{ $supervisor->email }}" tabindex="5" />
+                       value="{{ $supervisor->email }}" tabindex="5"/>
             </div>
             <br/><br/>
             <div class="form-inline my-2 my-lg-0 justify-content-sm-around">

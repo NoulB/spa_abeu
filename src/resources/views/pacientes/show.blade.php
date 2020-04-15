@@ -93,30 +93,19 @@
                 <div class="row">
                     <div class="col">
                         Sexo:
-                        <select class="form-control col-md-6" name="sexo" readonly=“true” id="input10" tabindex="10"
-                                value="{{ $paciente->sexo }}">
-                            <option value="m">Masculino</option>
-                            <option value="f">Feminino</option>
-                            required
-                        </select>
+                        <input class="form-control col-md-6" name="sexo" readonly=“true” id="input10" tabindex="10"
+                               value="{{ $paciente->sexo }}">
                     </div>
                     <div class="col">
                         Estado civil:
-                        <select class="form-control col-md-6" readonly=“true” id="input11" name="estado_civil"
-                                value="{{ $paciente->estado_civil }}"
-                                onchange="verifica(this.value)">
-                            <option value="Casado">Casado(a)</option>
-                            <option value="Solteiro" selected>Solteiro(a)</option>
-                            <option value="Divorciado">Divorciado(a)</option>
-                            <option value="Viúvo">Viúvo(a)</option>
-                            required
-                        </select>
+                        <input class="form-control col-md-6" readonly=“true” id="input11" name="estado_civil"
+                               value="{{ $paciente->estado_civil }}">
                     </div>
                 </div>
             </div>
             <div class="col">
                 Cônjuge:
-                <input class="form-control" readonly=“true” id="input12" placeholder="Nome do(a) Cônjuge"
+                <input class="form-control" readonly=“true” id="input12" placeholder="Não é casado..."
                        value="{{ $paciente->conjuge }}"
                        type="text" id="input" name="conjuge"/>
             </div>
@@ -186,8 +175,8 @@
         <br/><br/>
         <div class="form-inline my-2 my-lg-0 justify-content-sm-around">
             <a href="{{ url("/pacientes/editar/$paciente->id") }}" class="btn btn-outline-primary">Editar</a>
-            <a href="{{ url("/pacientes")  }}" class="btn btn-outline-danger">Voltar</a>
-            <a href="{{ url('/') }}" class="btn btn-outline-dark">Home</a>
+            <a href="{{ route('busca_paciente')  }}" class="btn btn-outline-danger">Voltar</a>
+            <a href="{{ route('home') }}" class="btn btn-outline-dark">Home</a>
         </div>
         <br/>
     </form>

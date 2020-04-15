@@ -38,7 +38,7 @@
                 <div class="col">
                     CPF: <br/>
                     <input class="form-control" id="input3" placeholder="somente números" type="text" name="cpf"
-                           tabindex="3" onkeypress="return isNumberKey(event)" maxlength="11" required/>
+                           tabindex="3" onkeypress="return isNumberKey(event)" maxlength="11" OnBlur="ValidaCPF()" required/>
                 </div>
                 <div class=" col">
                     RG: <br/>
