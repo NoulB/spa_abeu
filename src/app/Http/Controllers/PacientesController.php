@@ -61,7 +61,7 @@ class PacientesController extends Controller
         $request->session()
             ->flash(
                 'mensagem',
-                "Paciente {$paciente->nome} cadastrada com sucesso"
+                "Paciente {$paciente->nome} cadastrado com sucesso"
             );
 
         return redirect('pacientes');

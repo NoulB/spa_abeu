@@ -19,7 +19,7 @@ class SupervisoresController extends Controller
     public function index(Request $request)
     {
 
-        $supervisores = Supervisor::query()->where('status','=',true)
+        $supervisores = Supervisor::query()->where('status','=',1)
             ->orderBy('nome')
             ->get();
         $mensagem = $request->session()->get('mensagem');
@@ -61,7 +61,7 @@ class SupervisoresController extends Controller
         $request->session()
             ->flash(
                 'mensagem',
-                "Supervisor {$supervisor->nome} cadastrado com sucesso!"
+                "Supervisor(a) {$supervisor->nome} cadastrado com sucesso!"
             );
 
         return redirect()->route('listar_supervisores');

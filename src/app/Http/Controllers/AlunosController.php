@@ -37,7 +37,7 @@ class AlunosController extends Controller
         $request->session()
             ->flash(
                 'mensagem',
-                "Aluno {$aluno->nome} cadastrado com sucesso!"
+                "Aluno(a) {$aluno->nome} cadastrado com sucesso!"
             );
         return redirect()->route('listar_alunos');
     }

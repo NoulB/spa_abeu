@@ -5,7 +5,7 @@ version: "3.1"
 services:
 
     mysql:
-      image: mysql:5.7
+      image: mysql:8.0
       container_name: psicoabeu-mysql
       working_dir: /application
       volumes:
