@@ -33,8 +33,8 @@ Route::post('pacientes/criar', 'PacientesController@store')->name("salva_pacient
 //Route::post('pacientes/show/{id}', 'PacientesController@show')->name("mostrar_paciente");
 Route::get('pacientes/show/{id}', 'PacientesController@show')->name("mostrar_paciente");
 
-Route::get('pacientes/criar/{id}', 'PacientesController@update')->name("form_criar_paciente");
-Route::put('pacientes/criar/{id}', 'PacientesController@update')->name("editar_paciente");
+//Route::get('pacientes/criar/{id}', 'PacientesController@update')->name("form_criar_paciente");
+//Route::put('pacientes/criar/{id}', 'PacientesController@update')->name("editar_paciente");
 
 
 
