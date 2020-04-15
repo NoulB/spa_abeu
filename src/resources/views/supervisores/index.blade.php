@@ -53,6 +53,7 @@
                            class="btn btn-sm btn-outline-danger btn-action">
                             <i class="fas fa-trash-alt"></i>
                         </a>
+{{--                        <a href="{{action('SupervisoresController@edit', $row['id'])}}"></a>--}}
                         <a href="{{ url("/supervisores/editar/$supervisor->id") }}"
                            class="btn btn-sm btn-outline-primary btn-action">
                             <i class="fas fa-pencil-alt" float="right"></i>

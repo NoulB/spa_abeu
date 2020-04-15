@@ -24,7 +24,7 @@ class AlunoRequest extends FormRequest
     public function rules()
     {
         return [
-            'matricula'=>'required|numeric',
+            'id'=>'required|numeric',
             'nome' => 'required',
             'cpf' => 'required|numeric',
             'rg' => 'required|numeric',

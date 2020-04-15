@@ -24,7 +24,7 @@
             </fieldset>
             <br>
             <fieldset>
-                <input placeholder="Matrícula" type="text" name="matricula" size="20" tabindex="2" onkeypress="return isNumberKey(event)"/> &nbsp;&nbsp;&nbsp;
+                <input placeholder="Matrícula" type="text" name="id" size="20" tabindex="2" onkeypress="return isNumberKey(event)"/> &nbsp;&nbsp;&nbsp;
                 <input placeholder="CRP" type="text" name="crp" size ="20" tabindex="3" required/>
             </fieldset>
             <br>

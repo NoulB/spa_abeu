@@ -43,6 +43,8 @@ Route::get('supervisores', 'SupervisoresController@index')->name('listar_supervi
 Route::post('supervisores/busca', 'SupervisoresController@busca')->name("busca_supervisor");
 Route::get('supervisores/criar', 'SupervisoresController@create')->name("form_criar_supervisores");
 Route::post('supervisores/criar', 'SupervisoresController@store');
+Route::get('supervisores/editar/{id}', 'SupervisoresController@edit')->name("form_editar_supervisor");
+Route::post('supervisores/update', 'SupervisoresController@update');
 
 
 Route::post('alunos/busca', 'AlunosController@busca')->name("busca_aluno");

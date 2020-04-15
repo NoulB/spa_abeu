@@ -20,7 +20,7 @@
         <form method="post">
             @csrf
             <fieldset>
-                <input placeholder="Matrícula" type="text" name="matricula" tabindex="1" required
+                <input placeholder="Matrícula" type="text" name="id" tabindex="1" required
                        onkeypress="return isNumberKey(event)" autofocus>
             </fieldset>
             <fieldset>
