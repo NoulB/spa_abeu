@@ -122,6 +122,8 @@
 <script src="https://kit.fontawesome.com/eaac765724.js" crossorigin="anonymous"></script>
 
 
+<script src="../teste.js"></script>
+
 </body>
 
 </html>

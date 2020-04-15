@@ -1,47 +1,66 @@
 @extends('layout')
 
 @section('cabecalho')
-
+    Editar Supervisor
 @endsection
 
 @section('conteudo')
+    <div>
 
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
 
-        <form class="col-md-12" action="{{url('supervisores/update')}}" method="post">
+        <form action="{{ url("/supervisores/update/") }}" method="post">
             @csrf
+            <div>
+                <br/>
+                Nome:<br/>
+                <input class="form-control" id="input1" placeholder="Nome completo"
+                       value="{{ $supervisor->nome }}" type="text" name="nome" tabindex="1" required autofocus/>
+            </div>
+            <div class="row">
+                <div class="col">
+                    Matricula: <br/>
+                    <input class="form-control" readonly id="input2" placeholder="somente números" type="text" name="id"
+                           value="{{ $supervisor->id }}" tabindex="2" onkeypress="return isNumberKey(event)" required/>
+                </div>
+                <div class="col">
+                    CRP: <br/>
+                    <input class="form-control" readonly id="input3" placeholder="Ex: 12345/5"
+                           value="{{ $supervisor->crp }}" type="text" name="crp" tabindex="3"/>
+                </div>
+            </div>
 
-
-            <input type="hidden" name="id" value="{{ $supervisor->id }}">
-            <fieldset>
-                <input placeholder="Nome Completo" type="text" name="nome" value="{{ $supervisor->nome }}" size ="50"  tabindex="1" required autofocus/>
-            </fieldset>
             <br>
-            <fieldset>
-                <input placeholder="Matrícula" type="text" name="id" value="{{ $supervisor->id }}" size="20" tabindex="2" onkeypress="return isNumberKey(event)"/> &nbsp;&nbsp;&nbsp;
-                <input placeholder="CRP" type="text" name="crp" value="{{ $supervisor->crp }}" size ="20" tabindex="3" required/>
-            </fieldset>
-            <br>
-
-            <fieldset>
-                Contatos: <br>
-                <input placeholder="Celular" type="text" name="celular" value="{{ $supervisor->celular }}" size ="20" tabindex="6"
-                       onkeypress="return isNumberKey(event)" required/>
-                <br>
-                <br>
-                <input placeholder="E-mail" type="text" name="email" value="{{ $supervisor->email }}" size="50" tabindex="7" required/><br/>
-
-            </fieldset>
-            <fieldset>
-
-                </select>
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            </fieldset>
-    <br/>
+            <div>
+                <h4>Contatos:</h4>
+            </div>
+            <div>
+                Celular: <br/>
+                <input class="form-control col-md-6" id="input4"
+                       placeholder="Celular - somente números" type="text" name="celular"
+                       value="{{ $supervisor->celular }}" tabindex="4" onkeypress="return isNumberKey(event)"/>
+            </div>
+            <div>
+                E-mail:<br/>
+                <input class="form-control col-md-6" id="input5"
+                       placeholder="Celular - somente números" type="text" name="email"
+                       value="{{ $supervisor->email }}" tabindex="5"/>
+            </div>
+            <br/><br/>
             <div class="form-inline my-2 my-lg-0 justify-content-sm-around">
                 <button class="btn btn-outline-primary">Salvar</button>
                 <a href="{{ url("/supervisores") }}" class="btn btn-outline-danger">voltar</a>
                 <a href="{{ url("/") }}" class="btn btn-outline-dark">Home</a>
             </div>
+            <br/>
         </form>
     </div>
 
