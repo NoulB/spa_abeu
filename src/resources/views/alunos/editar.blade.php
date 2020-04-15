@@ -59,10 +59,17 @@
                 </div>
                 <div class="col">
                     Sexo:
-                    <select class="form-control col-md-8" name="sexo" value="{{ $aluno->sexo }}" id="input6" tabindex="6">
-                        <option value="Masculino">Masculino</option>
-                        <option value="Feminino">Feminino</option>
-                        required
+                    <select class="form-control col-md-8" name="sexo" onfocus="disableFirstItemOnly(this);" id="input6" tabindex="6" REQUIRED>
+
+                        <option selected value="{{$aluno->sexo}}"> {{ $aluno->sexo }} </option>
+                            <script type="text/javascript">
+                              function disableFirstItemOnly(ddl) {
+                                  ddl.options[0].hidden = true;
+                              }
+                            </script>
+                        <option onclick="Masculino"> Masculino </option>
+                        <option onclick="Feminino">Feminino</option>
+
                     </select>
                 </div>
             </div>
