@@ -56,8 +56,8 @@
                 <div class="col">
                     Sexo:
                     <select class="form-control col-md-8" name="sexo" id="input6" tabindex="6">
-                        <option value="m">Masculino</option>
-                        <option value="f">Feminino</option>
+                        <option value="Masculino">Masculino</option>
+                        <option value="Feminino">Feminino</option>
                         required
                     </select>
                 </div>
