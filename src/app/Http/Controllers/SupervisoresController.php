@@ -4,8 +4,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Supervisor;
+use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
 use App\Http\Requests\SupervisorRequest;
+
+use mysql_xdevapi\Warning;
 
 
 class SupervisoresController extends Controller
@@ -57,14 +60,22 @@ class SupervisoresController extends Controller
 
     public function store(SupervisorRequest $request)
     {
-        $supervisor = Supervisor::create($request->all());
-        $request->session()
-            ->flash(
-                'mensagem',
-                "Supervisor(a) {$supervisor->nome} cadastrado com sucesso!"
-            );
+        try {
+            $supervisor = Supervisor::create($request->all());
+            $request->session()
+                ->flash(
+                    'mensagem',
+                    "Supervisor {$supervisor->nome} cadastrado com sucesso!"
+                );
 
-        return redirect()->route('listar_supervisores');
+            return redirect()->route('listar_supervisores');
+        }
+        catch(QueryException $exception) {
+            $supervisor=$this->getSupervisor($request->id);
+            return back()->withError("Matrícula já se encontra no sistema");
+        }
+        return view('supervisores.create');
+
     }
     public function edit($id)
     {
