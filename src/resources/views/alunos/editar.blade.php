@@ -20,7 +20,7 @@
             @if (session('error'))
                 <div class="alert alert-danger">{{ session('error') }}</div>
             @endif
-        <form action="{{ url('alunos/update') }}" method="post">
+        <form name="form1" action="{{ url('alunos/update') }}" method="post">
             @csrf
 
             <input type="hidden" name="id" value="{{ $aluno->id }}">
@@ -43,9 +43,9 @@
             <div class="row">
                 <div class="col">
                     CPF: <br/>
-                    <input class="form-control" id="input3" placeholder="somente números" type="text" name="cpf"
+                    <input class="form-control" id="inputcpf" placeholder="somente números" type="text" name="cpf"
                            value="{{ $aluno->cpf }}" tabindex="3" onkeypress="return isNumberKey(event)" maxlength="11"
-                           required/>
+                           OnBlur="ValidaCPF()" required/>
                 </div>
                 <div class=" col">
                     RG: <br/>
@@ -82,9 +82,9 @@
             </div>
             <div>
                 Celular: <br/>
-                <input class="form-control col-md-6" id="input7"
+                <input class="form-control col-md-6" id="inputcel"
                        placeholder="Celular - somente números" type="text" name="celular"
-                       value="{{ $aluno->celular }}" tabindex="7" onkeypress="return isNumberKey(event)"/>
+                       value="{{ $aluno->celular }}" tabindex="7" onkeypress="return isNumberKey(event)"  maxlength="11" OnBlur="ValidaCEL()"/>
             </div>
             <div>
                 E-mail:<br/>

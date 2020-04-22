@@ -25,8 +25,8 @@ class PacienteRequest extends FormRequest
     {
         return [
             'nome' => 'required',
-            'cpf' => 'required|numeric',
-            'rg' => 'required|numeric',
+            'cpf' => 'required',
+            'rg' => 'required',
             'data_nascimento' => 'required',
             'sexo' => 'required',
             'mae' => 'required',
@@ -35,7 +35,7 @@ class PacienteRequest extends FormRequest
             'numero' => 'required|numeric',
             'bairro' => 'required',
             'cidade' => 'required',
-            'cep' =>'required|numeric',
+            'cep' =>'required',
         ];
     }
 }

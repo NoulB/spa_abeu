@@ -17,7 +17,7 @@
             </div>
         @endif
 
-        <form action="{{ url("/supervisores/update/") }}" method="post">
+        <form name="form1"action="{{ url("/supervisores/update/") }}" method="post">
             @csrf
             <div>
                 <br/>
@@ -29,7 +29,8 @@
                 <div class="col">
                     Matricula: <br/>
                     <input class="form-control" readonly id="input2" placeholder="somente números" type="text" name="id"
-                           value="{{ $supervisor->id }}" tabindex="2" onkeypress="return isNumberKey(event)" required/>
+                           value="{{ $supervisor->id }}" tabindex="2" onkeypress="return isNumberKey(event)" maxlength="16"
+                           required/>
                 </div>
                 <div class="col">
                     CRP: <br/>
@@ -44,9 +45,9 @@
             </div>
             <div>
                 Celular: <br/>
-                <input class="form-control col-md-6" id="input4"
+                <input class="form-control col-md-6" id="inputcel"
                        placeholder="Celular - somente números" type="text" name="celular"
-                       value="{{ $supervisor->celular }}" tabindex="4" onkeypress="return isNumberKey(event)"/>
+                       value="{{ $supervisor->celular }}" tabindex="4" onkeypress="return isNumberKey(event)" maxlength="11" OnBlur="ValidaCEL()"/>
             </div>
             <div>
                 E-mail:<br/>

@@ -26,10 +26,10 @@ class AlunoRequest extends FormRequest
         return [
             'id'=>'required|numeric',
             'nome' => 'required',
-            'cpf' => 'required|numeric',
-            'rg' => 'required|numeric',
+            'cpf' => 'required',
+            'rg' => 'required',
             'email' => 'required',
-            'celular' => 'required|numeric',
+            'celular' => 'required',
             'data_nascimento' => 'required',
             'sexo' => 'required',
         ];

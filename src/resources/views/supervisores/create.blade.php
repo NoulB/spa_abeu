@@ -19,7 +19,7 @@
             @if (session('error'))
                 <div class="alert alert-danger">{{ session('error') }}</div>
             @endif
-        <form method="post">
+        <form name="form1" method="post">
             @csrf
             <div>
                 <br/>
@@ -30,8 +30,8 @@
             <div class="row">
                 <div class="col">
                     Matricula: <br/>
-                    <input class="form-control" id="input2" placeholder="somente números"
-                           type="text" name="id" tabindex="2" onkeypress="return isNumberKey(event)" required/>
+                    <input class="form-control" id="inputcel" placeholder="somente números"
+                           type="text" name="id" tabindex="2" onkeypress="return isNumberKey(event)" maxlength="16" required/>
                 </div>
                 <div class="col">
                     CRP: <br/>
@@ -46,8 +46,8 @@
             </div>
             <div>
                 Celular: <br/>
-                <input class="form-control col-md-6" id="input4" placeholder="somente números"
-                       type="text" name="celular" tabindex="4" onkeypress="return isNumberKey(event)"/>
+                <input class="form-control col-md-6" id="inputcel" placeholder="somente números"
+                       type="text" name="celular" tabindex="4" onkeypress="return isNumberKey(event)"maxlength="11" OnBlur="ValidaCEL()"/>
             </div>
             <div>
                 E-mail:<br/>

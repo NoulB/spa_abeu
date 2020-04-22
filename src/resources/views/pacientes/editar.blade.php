@@ -19,8 +19,8 @@ Editar Paciente
     @endif
 
 
-    <form action="{{ url("/pacientes/update/") }}" method="post">
-    @csrf
+    <form name ="form1" action="{{ url("/pacientes/update/") }}" method="post">
+        @csrf
 
     <input type="hidden" name="id" value="{{ $paciente->id }}">
 
@@ -35,8 +35,8 @@ Editar Paciente
     <div class="row">
         <div class="col">
             CPF: <br/>
-            <input class="form-control" id="input2" placeholder="somente números" type="text" name="cpf"
-                   value="{{ $paciente->cpf }}" tabindex="2" onkeypress="return isNumberKey(event)" required/>
+            <input class="form-control" id="inputcpf" placeholder="somente números" type="text" name="cpf"
+                   value="{{ $paciente->cpf }}" tabindex="2" onkeypress="return isNumberKey(event)" required required maxlength="11" OnBlur="ValidaCPF()"/>
         </div>
         <div class="col">
             RG: <br/>
@@ -59,17 +59,17 @@ Editar Paciente
             </div>
             <div class="col">
                 Celular: <br/>
-                <input class="form-control col-md-6" id="input6" placeholder="Somente números"
-                       type="text" name="celular" value="{{ $paciente->celular }}"
+                <input class="form-control col-md-6" id="inputcel" placeholder="Somente números"
+                       type="text" name="celular" value="{{ $paciente->celular }}"required maxlength="11" OnBlur="ValidaCEL()"
 
                        size="20" tabindex="7" onkeypress="return isNumberKey(event)"/>
             </div>
             <div class="col">
                 Telefone:<br/>
-                <input class="form-control col-md-6" id="input7" placeholder="Telefone" type="text"
+                <input class="form-control col-md-6" id="inputtel" placeholder="Telefone" type="text"
                        name="telefone" value="{{ $paciente->telefone }}"
                        size="20" tabindex="8"
-                       onkeypress="return isNumberKey(event)"/>
+                       onkeypress="return isNumberKey(event)" required maxlength="11" OnBlur="ValidaTEL()"/>
             </div>
         </div>
     </div>
@@ -122,7 +122,7 @@ Editar Paciente
                 </div>
             </div>
         </div>
-        <div class="col">
+        <div class="col" id="i12" hidden>
             Cônjuge:
             <input class="form-control" id="input12" placeholder="Nome do(a) Cônjuge"
                    type="text" id="input12" name="conjuge" value="{{ $paciente->conjuge }}"/>
@@ -177,9 +177,9 @@ Editar Paciente
         </div>
         <div class="col">
             CEP: <br/>
-            <input class="form-control col-md-6" id="input18" placeholder="CEP" type="text" name="cep"
+            <input class="form-control col-md-6" id="inputcep" placeholder="CEP" type="text" name="cep"
                    value="{{ $paciente->cep }}"
-                   size="20" required tabindex="19" onkeypress="return isNumberKey(event)"/>
+                   size="20" required tabindex="19" onkeypress="return isNumberKey(event)" maxlength="8" OnBlur="ValidaCEP()"/>
         </div>
     </div>
     <br/><br/>
