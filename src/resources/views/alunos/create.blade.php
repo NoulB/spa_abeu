@@ -17,7 +17,7 @@
             </div>
         @endif
 
-        <form method="post">
+        <form name="form1" method="post">
             @csrf
             <div>
                 <br/>
@@ -30,14 +30,14 @@
                     Matricula: <br/>
                     <input class="form-control" id="input2" placeholder="somente números"
                            type="text" name="id" tabindex="2"
-                           onkeypress="return isNumberKey(event)" required/>
+                           onkeypress="return isNumberKey(event)" maxlength="16" required/>
                 </div>
                 <div class="col"></div>
             </div>
             <div class="row">
                 <div class="col">
                     CPF: <br/>
-                    <input class="form-control" id="input3" placeholder="somente números" type="text" name="cpf"
+                    <input class="form-control" id="inputcpf" placeholder="somente números" type="text" name="cpf"
                            tabindex="3" onkeypress="return isNumberKey(event)" maxlength="11" OnBlur="ValidaCPF()" required/>
                 </div>
                 <div class=" col">
@@ -50,8 +50,8 @@
 
                 <div class="col">
                     Data de Nascimento:<br/>
-                    <input class="form-control col-md-8" id="input5" type="date" name="data_nascimento" tabindex="5"
-                           required/>
+                    <input class="form-control col-md-8" id="inputdata" type="date"  name="data_nascimento" tabindex="5" OnBlur="ValidaDATA()"
+                            required/>
                 </div>
                 <div class="col">
                     Sexo:
@@ -68,9 +68,9 @@
             </div>
             <div>
                 Celular: <br/>
-                <input class="form-control col-md-6" id="input7"
+                <input class="form-control col-md-6" id="inputcel"
                        placeholder="Celular - somente números" type="text" name="celular"
-                       tabindex="7" onkeypress="return isNumberKey(event)"/>
+                       tabindex="7"  onkeypress="return isNumberKey(event)"   maxlength="11" OnBlur="ValidaCEL()" />
             </div>
             <div>
                 E-mail:<br/>
