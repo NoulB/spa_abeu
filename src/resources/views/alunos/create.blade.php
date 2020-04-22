@@ -52,7 +52,7 @@
 
                 <div class="col">
                     Data de Nascimento:<br/>
-                    <input class="form-control col-md-8" id="inputdata" type="date"  name="data_nascimento" tabindex="5" OnBlur="ValidaDATA()"
+                    <input class="form-control col-md-8" id="inputdata" type="date" min="1800-12-31" max="2999-12-31"  name="data_nascimento" tabindex="5" OnBlur="ValidaDATA()"
                             required/>
                 </div>
                 <div class="col">

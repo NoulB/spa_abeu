@@ -43,7 +43,7 @@
                 </div>
                 <div class="col">
                     Data de Nascimento:<br/>
-                    <input class="form-control col-md-6" id="input4" type="date" name="data_nascimento"
+                    <input class="form-control col-md-6" id="input4" type="date" min="1800-12-31" max="2999-12-31" name="data_nascimento"
                            tabindex="4" required/>
                 </div>
             </div>
