@@ -28,7 +28,7 @@ class SupervisorRequest extends FormRequest
             'nome' => 'required',
             'crp' => 'required',
             'email' => 'required',
-            'celular'=>'required|numeric',
+            'celular'=>'required',
         ];
     }
 }
