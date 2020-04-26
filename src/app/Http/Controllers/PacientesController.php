@@ -15,6 +15,7 @@ class PacientesController extends Controller
     public function __construct()
     {
         $this->paciente = new Paciente();
+        $this->middleware('auth');
     }
     public function index(Request $request)
     {

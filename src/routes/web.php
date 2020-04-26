@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('home/index');
-})->name("home");
+})->name("home")->middleware('auth');
 
 //Route::get('/', 'HomeController@index')->name('home');
 
