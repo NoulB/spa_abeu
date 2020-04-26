@@ -38,7 +38,6 @@
                 </thead>
                 <tbody>
                 @foreach($pacientes as $paciente)
-
                     <tr>
                         <td>
                             <a href="{{ url("/pacientes/show/$paciente->id") }}">

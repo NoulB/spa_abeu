@@ -17,6 +17,9 @@
             </div>
         @endif
 
+            @if (session('error'))
+                <div class="alert alert-danger">{{ session('error') }}</div>
+            @endif
         <form action="{{ url('alunos/update') }}" method="post">
             @csrf
 
