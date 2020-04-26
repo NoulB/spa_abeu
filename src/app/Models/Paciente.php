@@ -12,4 +12,14 @@ class Paciente extends Model
     protected $fillable = ['nome', 'cpf', 'rg', 'data_nascimento', 'sexo', 'email', 'celular', 'telefone',
                             'pai', 'mae', 'estado_civil', 'conjuge', 'logradouro', 'numero', 'complemento',
                             'bairro', 'cidade', 'cep'];
+
+    public static function busca($criterio)
+    {
+        return static::where('nome', 'LIKE', '%' . $criterio . '%')->get();
+    }
+
+    public function paciente_consultas()
+    {
+        return $this->hasMany(PacienteConsulta::class);
+    }
 }

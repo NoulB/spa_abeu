@@ -5,74 +5,88 @@
 @endsection
 
 @section('conteudo')
-    <div class="container">
+    <div>
 
-        <form id="contact" action="incluir.php" method="post">
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+            @if (session('error'))
+                <div class="alert alert-danger">{{ session('error') }}</div>
+            @endif
+        <form name="form1" method="post">
+            @csrf
+            <div>
+                <br/>
+                Nome:<br/>
+                <input class="form-control " id="input1" placeholder="Nome completo"
+                       type="text" name="nome" tabindex="1" required autofocus maxlength="250"/>
+            </div>
+            <div class="row">
+                <div class="col">
+                    Matricula: <br/>
+                    <input class="form-control" id="input2" placeholder="somente números"
+                           type="text" name="id" tabindex="2"
+                           onkeypress="return isNumberKey(event)" maxlength="16" required/>
+                </div>
+                <div class="col"></div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    CPF: <br/>
+                    <input class="form-control" id="inputcpf" placeholder="somente números" type="text" name="cpf"
+                           tabindex="3" onkeypress="return isNumberKey(event)" maxlength="11" OnBlur="ValidaCPF()" required/>
+                </div>
+                <div class=" col">
+                    RG: <br/>
+                    <input class="form-control" id="input4" tabindex="4" placeholder="somente números"
+                           type="text" name="rg" onkeypress="return isNumberKey(event)"
+                           required maxlength="16"/>
+                </div>
 
-            <h1 style="color:#585858;"> Cadastro de Alunos</h1>
-            <fieldset>
-                <input placeholder="Matrícula" type="text" name="Matrícula" tabindex="1" required autofocus>
-            </fieldset>
-            <fieldset>
-                <input placeholder="Nome completo" type="text" name="nome" tabindex="2" required autofocus>
-            </fieldset>
 
-            <fieldset>
-                <input placeholder="CPF (Digite somente números)" type="text" name="cpf" tabindex="3" required autofocus>
-            </fieldset>
-            <fieldset>
-                <input placeholder="RG (Digite somente números)" type="text" name="rg" tabindex="4" required autofocus>
-            </fieldset>
-            <fieldset>
-                <input placeholder="Email" type="email" name="email" tabindex="5" required autofocus>
-            </fieldset>
-            <fieldset>
-                <input placeholder="Celular (Digite somente números)" type="tel" name="cel" tabindex="6" required autofocus>
-            </fieldset>
-            <h2 style="color:#151515;">Data de nascimento:</h2 >
-            <fieldset>
-                <input placeholder="Data nascimento" type="date" name="data_nascimento" tabindex="7" required autofocus>
-            </fieldset>
-            <fieldset>
-                <h2 style="color:#151515;">Sexo:</h2>
-                <select name="sexo">
-                    <option value="m"  name ="sexo" id="homem"  tabindex="8" required autofocus selected>Masculino</option>
-                    <option value="f" name ="sexo" id="fem" tabindex="9" required autofocus >Feminino</option>
-                    <option value="o" name ="sexo" id="outros" tabindex="10" required autofocus>Outro</option>
-                </select></fieldset>
-            <br><form id="contact" action="incluirteste3.php" method="post">
-                <h1 style="color:#585858;"> Dados pessoais do Alunos</h1>
-                <fieldset>
-                    <input placeholder="Logradouro" type="text" name="Logradouro" tabindex="11" required autofocus>
-                </fieldset>
-                <fieldset>
-                    <input placeholder="Numero (Digite somente números)" type="text" name="Numero" tabindex="12" required autofocus>
-                </fieldset>
-
-                <fieldset>
-                    <input placeholder="Complemento " type="text" name="Complemento" tabindex="13" required autofocus>
-                </fieldset>
-                <fieldset>
-                    <input placeholder="Bairro " type="text" name="Bairro" tabindex="14" required autofocus>
-                </fieldset>
-                <fieldset>
-                    <input placeholder="Cidade" type="text" name="Cidade" tabindex="15" required autofocus>
-                </fieldset>
-                <fieldset>
-                    <input placeholder="CEP (Digite somente números)" type="text" name="CEP" tabindex="16" required autofocus>
-                </fieldset>
-                <fieldset>
-                    <input placeholder="Telefone (Digite somente números)" type="tel" name="Telefone" tabindex="17" required autofocus>
-                </fieldset>
-                <fieldset>
-                    <button name="submit" type="submit" style="color:#151515;" id="contact-submit" data-submit="...Sending">Cadastrar</button>
-
-                    <p class="c"> <a href="index.php" style="text-decoration:none;color:#151515;" title="Voltar">Voltar</a></p>
-
-                </fieldset>
-            </form>
+                <div class="col">
+                    Data de Nascimento:<br/>
+                    <input class="form-control col-md-8" id="inputdata" type="date" min="1800-12-31" max="2999-12-31"  name="data_nascimento" tabindex="5" OnBlur="ValidaDATA()"
+                            required/>
+                </div>
+                <div class="col">
+                    Sexo:
+                    <select class="form-control col-md-8" name="sexo" id="input6" tabindex="6">
+                        <option value="Masculino">Masculino</option>
+                        <option value="Feminino">Feminino</option>
+                        required
+                    </select>
+                </div>
+            </div>
+            <br/>
+            <div>
+                <h4>Contatos:</h4>
+            </div>
+            <div>
+                Celular: <br/>
+                <input class="form-control col-md-6" id="inputcel"
+                       placeholder="Celular - somente números" type="text" name="celular"
+                       tabindex="7"  onkeypress="return isNumberKey(event)"   maxlength="11" OnBlur="ValidaCEL()" />
+            </div>
+            <div>
+                E-mail:<br/>
+                <input class="form-control col-md-6" id="input8" placeholder="e-mail" type="text" tabindex="8"
+                       name="email" maxlength="64"/>
+            </div>
+            <br/><br/>
+            <div class="form-inline my-2 my-lg-0 justify-content-sm-around">
+                <button class="btn btn-outline-primary">Adicionar</button>
+                <a href="{{ url("/alunos") }}" class="btn btn-outline-danger">voltar</a>
+                <a href="{{ url("/") }}" class="btn btn-outline-dark">Home</a>
+            </div>
+            <br/>
         </form>
     </div>
-
 
 @endsection
