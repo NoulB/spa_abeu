@@ -6,8 +6,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\PacienteRequest;
 use App\Models\Paciente;
 use Illuminate\Http\Request;
-
-
+use Carbon\Carbon;
 class PacientesController extends Controller
 {
 
@@ -51,6 +50,7 @@ class PacientesController extends Controller
 
     public function create()
     {
+
         return view('pacientes.create');
     }
 
@@ -85,5 +85,6 @@ class PacientesController extends Controller
     protected function getPaciente($id) {
         return $this->paciente->find($id);
     }
+
 
 }

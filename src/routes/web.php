@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use Carbon\Carbon;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -57,3 +57,6 @@ Route::post('alunos/criar', 'AlunosController@store')->name("salva_aluno");
 Route::get('alunos/show/{id}', 'AlunosController@show')->name("mostrar_aluno");
 Route::get('alunos/editar/{id}', 'AlunosController@edit')->name("form_editar_aluno");
 Route::post('alunos/update', 'AlunosController@update');
+
+
+

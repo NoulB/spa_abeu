@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 class Paciente extends Model
 {
     public $timestamps = false;
-    protected $fillable = ['nome', 'cpf', 'rg', 'data_nascimento', 'sexo', 'email', 'celular', 'telefone',
+    protected $fillable = ['nome', 'cpf', 'rg', 'data_nascimento','age', 'sexo', 'email', 'celular', 'telefone',
                             'pai', 'mae', 'estado_civil', 'conjuge', 'logradouro', 'numero', 'complemento',
                             'bairro', 'cidade', 'cep'];
 
@@ -17,4 +17,6 @@ class Paciente extends Model
     {
         return static::where('nome', 'LIKE', '%' . $criterio . '%')->get();
     }
+
+
 }

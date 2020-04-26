@@ -29,14 +29,14 @@
                 <br/>
                 Nome:<br/>
                 <input class="form-control " id="input1" placeholder="Nome completo"
-                       type="text" name="nome" value="{{ $aluno->nome }}" tabindex="1" required autofocus/>
+                       type="text" name="nome" value="{{ $aluno->nome }}" tabindex="1" required autofocus maxlength="250"/>
             </div>
             <div class="row">
                 <div class="col">
                     Matricula: <br/>
                     <input class="form-control" id="input2" placeholder="somente números"
                            type="text" name="id" value="{{ $aluno->id }}" tabindex="2" readonly
-                           onkeypress="return isNumberKey(event)" required/>
+                           onkeypress="return isNumberKey(event)" required maxlength="16"/>
                 </div>
                 <div class="col"></div>
             </div>
@@ -45,13 +45,13 @@
                     CPF: <br/>
                     <input class="form-control" id="inputcpf" placeholder="somente números" type="text" name="cpf"
                            value="{{ $aluno->cpf }}" tabindex="3" onkeypress="return isNumberKey(event)" maxlength="11"
-                           OnBlur="ValidaCPF()" required/>
+                           OnBlur="ValidaCPF()" required />
                 </div>
                 <div class=" col">
                     RG: <br/>
                     <input class="form-control" id="input4" tabindex="4" placeholder="somente números"
                            type="text" name="rg" value="{{ $aluno->rg }}" onkeypress="return isNumberKey(event)"
-                           required/>
+                           required maxlength="16"/>
                 </div>
 
 
@@ -89,7 +89,7 @@
             <div>
                 E-mail:<br/>
                 <input class="form-control col-md-6" id="input8" placeholder="e-mail" type="text" tabindex="8"
-                       name="email" value="{{ $aluno->email }}"/>
+                       name="email" value="{{ $aluno->email }}" maxlength="64"/>
             </div>
             <br/><br/>
             <div class="form-inline my-2 my-lg-0 justify-content-sm-around">

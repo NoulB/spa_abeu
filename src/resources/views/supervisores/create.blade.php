@@ -25,18 +25,18 @@
                 <br/>
                 Nome:<br/>
                 <input class="form-control" id="input1" placeholder="Nome completo"
-                       type="text" name="nome" tabindex="1" required autofocus/>
+                       type="text" name="nome" tabindex="1" required autofocus maxlength="256"/>
             </div>
             <div class="row">
                 <div class="col">
                     Matricula: <br/>
-                    <input class="form-control" id="inputcel" placeholder="somente números"
+                    <input class="form-control" id="input2" placeholder="somente números"
                            type="text" name="id" tabindex="2" onkeypress="return isNumberKey(event)" maxlength="16" required/>
                 </div>
                 <div class="col">
                     CRP: <br/>
                     <input class="form-control" id="input3" placeholder="Ex: 12345/5"
-                           type="text" name="crp" tabindex="3">
+                           type="text" name="crp" tabindex="3" maxlength="16">
                 </div>
             </div>
 
@@ -52,7 +52,7 @@
             <div>
                 E-mail:<br/>
                 <input class="form-control col-md-6" id="input5" placeholder="e-mail"
-                       type="text" name="email" tabindex="5"/>
+                       type="text" name="email" tabindex="5" maxlength="64"/>
             </div>
             <br/><br/>
             <div class="form-inline my-2 my-lg-0 justify-content-sm-around">
