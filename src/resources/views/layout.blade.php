@@ -122,7 +122,9 @@
 
 </div>
 
+
 <script language=javascript>
+
     function isNumberKey(evt) {
         var charCode = (evt.which) ? evt.which : event.keyCode
         if (charCode > 31 && (charCode < 48 || charCode > 57))
@@ -131,21 +133,93 @@
     }
 
     function verifica(value) {
-        var input = document.getElementById("input");
+        var input11 = document.getElementById("input11");
 
         if (value == 'Casado') {
-            input.hidden = false;
+            i12.hidden = false;
         } else if (value == 'Solteiro') {
-            input.hidden = true;
-            input.value = "";
+            i12.hidden = true;
+            i12.value = "";
         } else if (value == 'Viúvo') {
-            input.hidden = true;
-            input.value = "";
+            i12.hidden = true;
+            i12.value = "";
         } else if (value == 'Divorciado') {
-            input.hidden = true;
-            input.value = "";
+            i12.hidden = true;
+            i12.value = "";
         }
     }
+    function ValidaCPF(){
+        var inputcpf=document.forms.form1.inputcpf.value;
+        var cpfValido = /^(([0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2}))$/;
+        inputcpf = inputcpf.replace( /(\d{3})(\d)/ , "$1.$2"); //Coloca um ponto entre o terceiro e o quarto dígitos
+        inputcpf = inputcpf.replace( /(\d{3})(\d)/ , "$1.$2"); //Coloca um ponto entre o terceiro e o quarto dígitos
+        //de novo (para o segundo bloco de números)
+        inputcpf = inputcpf.replace( /(\d{3})(\d{1,2})$/ , "$1-$2"); //Coloca um hífen entre o terceiro e o quarto dígitos
+
+        var valorValido = document.getElementById("inputcpf").value = inputcpf;
+    }
+    function ValidaCEL(){
+        var inputcel=document.forms.form1.inputcel.value;
+        var celValido = /^(([0-9]{2}.[0-9]{5}.[0-9]{4}))$/;
+        inputcel = inputcel.replace( /(\d{2})(\d{5})(\d{4})/, '($1) $2-$3');
+        var valorValido = document.getElementById("inputcel").value = inputcel;
+    }
+    function ValidaTEL(){
+        var inputtel=document.forms.form1.inputtel.value;
+        var telValido = /^(([0-9]{2}.[0-9]{8}))$/;
+        inputtel = inputtel.replace( /(\d{2})(\d{8})/, '($1) $2');
+        var valorValido = document.getElementById("inputtel").value = inputtel;
+    }
+    function ValidaCEP(){
+        var inputcep=document.forms.form1.inputcep.value;
+        var cepValido = /^(([0-9]{2}.[0-9]{8}))$/;
+        inputcep = inputcep.replace( /(\d{5})(\d{3})/, '$1-$2');
+        var valorValido = document.getElementById("inputcep").value =inputcep;
+    }
+
+
+    document.getElementById("input4").addEventListener('change', function() {
+        var data = new Date(this.value);
+        if(isDate_(this.value) && data.getFullYear() > 1900)
+            document.getElementById("idade").value = calculateAge(this.value);
+    });
+
+    function calculateAge(dobString) {
+        var dob = new Date(dobString);
+        var currentDate = new Date();
+        var currentYear = currentDate.getFullYear();
+        var birthdayThisYear = new Date(currentYear, dob.getMonth(), dob.getDate());
+        var age = currentYear - dob.getFullYear();
+        if(birthdayThisYear > currentDate) {
+            age--;
+        }
+        return age;
+    }
+
+    function calcular(data) {
+        var data = document.form.nascimento.value;
+        alert(data);
+        var partes = data.split("/");
+        var junta = partes[2]+"-"+partes[1]+"-"+partes[0];
+        document.form.idade.value = (calculateAge(junta));
+    }
+
+    var isDate_ = function(input) {
+        var status = false;
+        if (!input || input.length <= 0) {
+            status = false;
+        } else {
+            var result = new Date(input);
+            if (result == 'Invalid Date') {
+                status = false;
+            } else {
+                status = true;
+            }
+        }
+        return status;
+    }
+
+
 </script>
 
 

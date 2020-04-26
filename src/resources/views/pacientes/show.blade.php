@@ -42,10 +42,17 @@
             </div>
             <div class="col">
                 Data de Nascimento:<br/>
-                <input class="form-control col-md-6" readonly=“true” id="input4" type="date" name="data_nascimento"
+                <input class="form-control col-md-8" readonly=“true” id="input4" type="date" name="data_nascimento"
                        value="{{ $paciente->data_nascimento }}" tabindex="4" required/>
             </div>
+            <div class="col">
+                Idade:<br/>
+                <input class="form-control col-md-6" type="num" name="idade" id="idade" class="form-control" placeholder="Idade" readonly=“true”
+                       value= "{{\Carbon\Carbon::parse($paciente->data_nascimento)->age}}"
+            required/>
         </div>
+
+            </div>
         <div>
             <div class="row">
 
@@ -175,11 +182,12 @@
         <br/><br/>
         <div class="form-inline my-2 my-lg-0 justify-content-sm-around">
             <a href="{{ url("/pacientes/editar/$paciente->id") }}" class="btn btn-outline-primary">Editar</a>
-            <a href="{{ route('busca_paciente')  }}" class="btn btn-outline-danger">Voltar</a>
+            <a href="{{ url("/pacientes")  }}" class="btn btn-outline-danger">Voltar</a>
             <a href="{{ route('home') }}" class="btn btn-outline-dark">Home</a>
         </div>
         <br/>
     </form>
     </div>
-
 @endsection
+
+
