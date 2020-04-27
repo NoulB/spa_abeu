@@ -1,7 +1,7 @@
 CREATE TABLE IF NOT EXISTS `spa`.`consultas` (
   `id` INT NOT NULL AUTO_INCREMENT,
-  `alunos_id` INT NOT NULL,
-  `supervisores_id` INT NULL,
+  `alunos_id` VARCHAR(16) NOT NULL,
+  `supervisores_id` VARCHAR(16) NULL,
   `dia` DATE NOT NULL,
   `hora` TIME NOT NULL,
   `consultorio` VARCHAR(16) NOT NULL,

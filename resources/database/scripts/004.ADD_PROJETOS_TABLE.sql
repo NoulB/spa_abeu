@@ -4,7 +4,7 @@ CREATE TABLE IF NOT EXISTS `spa`.`projetos`(
     `ano` YEAR NOT NULL,
     `semestre` TINYINT,
     `status` TINYINT,
-    `supervisor_id` INT,
+    `supervisor_id` VARCHAR(16),
     PRIMARY KEY (`id`),
     FOREIGN KEY (`supervisor_id`)
     REFERENCES `spa`.`supervisores`(`id`)
