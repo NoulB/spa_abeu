@@ -11,11 +11,14 @@ use App\Http\Requests\AlunoRequest;
 
 class AlunosController extends Controller
 {
+
+
     private $aluno;
 
     public function __construct()
     {
         $this->aluno = new Aluno();
+        $this->middleware('auth');
     }
 
     public function index(Request $request)

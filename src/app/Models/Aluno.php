@@ -15,4 +15,14 @@ class Aluno extends Model
     {
         return static::where('nome', 'LIKE', '%' . $criterio . '%')->get();
     }
+
+    public function aluno_projetos()
+    {
+        return $this->hasMany(AlunoProjeto::class);
+    }
+
+    public function consultas()
+    {
+        return $this->hasMany(Consulta::class);
+    }
 }

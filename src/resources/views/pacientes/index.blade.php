@@ -32,7 +32,7 @@
                 <tr>
                     <th>Nome</th>
                     <th>Telefone</th>
-                    <th>Ultima Consulta</th>
+                    <th>Idade</th>
                     <th>CPF</th>
                 </tr>
                 </thead>
@@ -51,7 +51,7 @@
                         </td>
                         <td>
                             <a href="{{ url("/consulta/ultima/$paciente->id") }}" cllink="black">
-                                Data da Última Consulta
+                                {{\Carbon\Carbon::parse($paciente->data_nascimento)->age}}
                             </a>
                         </td>
                         <td>

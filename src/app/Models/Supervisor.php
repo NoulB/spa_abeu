@@ -17,4 +17,10 @@ class Supervisor extends Model
         return static::where('nome', 'LIKE', '%' . $criterio . '%')->get();
     }
 
+    public function projetos()
+    {
+        return $this->hasMany(Projeto::class);
+    }
+
+
 }

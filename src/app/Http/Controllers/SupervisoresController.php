@@ -17,6 +17,7 @@ class SupervisoresController extends Controller
     public function __construct()
     {
         $this->supervisor = new Supervisor();
+        $this->middleware('auth');
     }
 
     public function index(Request $request)

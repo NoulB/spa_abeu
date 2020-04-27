@@ -53,7 +53,7 @@
 
                 <div class="col">
                     Data de Nascimento:<br/>
-                    <input class="form-control col-md-8" readonly=“true” id="input7" type="date"
+                    <input class="form-control col-md-8" readonly=“true” id="input7" type="date" max="2999-12-31"
                            name="data_nascimento"
                            value="{{ $aluno->data_nascimento }}" tabindex="7" required/>
                 </div>

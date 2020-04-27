@@ -19,32 +19,36 @@
         @endif
 
 
-        <form method="post">
+        <form name="form1" method="post">
             @csrf
             <div>
                 <br/>
                 Nome:<br/>
                 <input class="form-control col-md-6" id="input1" placeholder="Nome completo"
-                       type="text" name="nome" size="50" tabindex="1" required autofocus/>
+                       type="text" name="nome" size="50" tabindex="1" required autofocus maxlength="250"/>
 
             </div>
             <div class="row">
                 <div class="col">
                     CPF: <br/>
-                    <input class="form-control" id="input2" placeholder="somente números" type="text" name="cpf"
+                    <input class="form-control" id="inputcpf" placeholder="somente números" type="text" name="cpf"
                            tabindex="2"
-                           onkeypress="return isNumberKey(event)" required/>
+                           onkeypress="return isNumberKey(event)" required maxlength="11" OnBlur="ValidaCPF()"/>
                 </div>
                 <div class="col">
                     RG: <br/>
-                    <input class="form-control" id="input3" placeholder="somente números" type="text"
+                    <input class="form-control" id="input2" placeholder="somente números" type="text"
                            name="rg" tabindex="3"
-                           onkeypress="return isNumberKey(event)" required/>
+                           onkeypress="return isNumberKey(event)"  required required maxlength="16"/>
                 </div>
                 <div class="col">
                     Data de Nascimento:<br/>
-                    <input class="form-control col-md-6" id="input4" type="date" name="data_nascimento"
+                    <input class="form-control col-md-8" id="input4" type="date" min="1800-12-31" max="2999-12-31" name="data_nascimento"
                            tabindex="4" required/>
+                </div>
+                <div class="col">
+                    Idade:<br/>
+                    <input class="form-control col-md-6" type="num" name="idade" id="idade" class="form-control" placeholder="Idade" disabled>
                 </div>
             </div>
             <div>
@@ -53,23 +57,21 @@
                     <div class="col">
                         E-mail: <br/>
                         <input class="form-control" id="input5" placeholder="E-mail" type="text" name="email"
-                               tabindex="6"/>
+                               tabindex="6" maxlength="64"/>
                     </div>
                     <div class="col">
                         Celular: <br/>
-                        <input class="form-control col-md-6" id="input6" placeholder="Celular - somente números"
+                        <input class="form-control col-md-6" id="inputcel" placeholder="Celular - somente números"
                                type="text"
                                name="celular"
-
-                               size="20" tabindex="7" onkeypress="return isNumberKey(event)"/>
+                               size="20" tabindex="7" onkeypress="return isNumberKey(event)" maxlength="11" OnBlur="ValidaCEL()"/>
                     </div>
                     <div class="col">
                         Telefone:<br/>
-                        <input class="form-control col-md-6" id="input7" placeholder="Telefone 2" type="text"
+                        <input class="form-control col-md-6" id="inputtel" placeholder="Telefone 2" type="text"
                                name="telefone"
-
                                size="20" tabindex="8"
-                               onkeypress="return isNumberKey(event)"/>
+                               onkeypress="return isNumberKey(event)" maxlength="11" OnBlur="ValidaTEL()"/>
                     </div>
                 </div>
             </div>
@@ -78,14 +80,12 @@
                     <div class="col">
                         Nome do Pai:<br/>
                         <input class="form-control" id="input8" placeholder="Nome do Pai" type="text" name="pai"
-
-                               tabindex="9"/>
+                               tabindex="9" maxlength="256"/>
                     </div>
                     <div class="col">
                         Nome do Mae:<br/>
-                        <input class="form-control" id="input9" placeholder="Nome da Mãe" type="text" name="mae"
-                               required
-                               tabindex="10"/>
+                        <input class="form-control" id="input9" placeholder="Nome da Mãe" type="text" name="mae" tabindex="10" maxlength="256"
+                               required/>
                     </div>
                 </div>
             </div>
@@ -114,10 +114,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="col">
-                    Cônjuge:
+                <div class="col" id="i12" hidden>
+                     Cônjuge:
                     <input class="form-control" id="input12" placeholder="Nome do(a) Cônjuge"
-                           type="text" id="input12" name="conjuge"/>
+                           type="text" name="conjuge" maxlength="256"/>
                 </div>
             </div>
             <div>
@@ -129,7 +129,7 @@
                 <div class="col">
                     Logradouro:<br/>
                     <input class="form-control" id="input13" placeholder="Logradouro" type="text" name="logradouro"
-                           size="37" required tabindex="14"/>
+                           size="37" tabindex="14" maxlength="256" required />
                 </div>
                 <div class="col">
                     <div class="row">
@@ -137,14 +137,14 @@
                             Número:<br/>
                             <input class="form-control col-md-6" id="input14" placeholder="Numero" type="text"
                                    name="numero"
-                                   size="10" required tabindex="15"
+                                   size="10" required tabindex="15" maxlength="8"
                                    onkeypress="return isNumberKey(event)"/>
                         </div>
                         <div class="col">
                             Complemento:
                             <input class="form-control" id="input15" placeholder="Complemento" type="text"
                                    name="complemento"
-                                   size="20" tabindex="16"/>
+                                   size="20" tabindex="16" maxlength="64"/>
 
                         </div>
                     </div>
@@ -158,19 +158,19 @@
                             Bairro: <br/>
                             <input class="form-control" id="input16" placeholder="Bairro" type="text" name="bairro"
                                    size="27"
-                                   required tabindex="17"/>
+                                   required tabindex="17" maxlength="64"/>
                         </div>
                         <div class="col">
                             Cidade: <br/>
                             <input class="form-control" id="input17" placeholder="Cidade" type="text" name="cidade"
-                                   size="27" required tabindex="18"/>
+                                   size="27" required tabindex="18"maxlength="64"/>
                         </div>
                     </div>
                 </div>
                 <div class="col">
                     CEP: <br/>
-                    <input class="form-control col-md-6" id="input18" placeholder="CEP" type="text" name="cep"
-                           size="20" required tabindex="19" onkeypress="return isNumberKey(event)"/>
+                    <input class="form-control col-md-6" id="inputcep" placeholder="CEP" type="text" name="cep"
+                           size="20" required tabindex="19" onkeypress="return isNumberKey(event)" maxlength="8" OnBlur="ValidaCEP()"/>
                 </div>
             </div>
             <br/><br/>
@@ -184,3 +184,4 @@
     </div>
 
 @endsection
+
