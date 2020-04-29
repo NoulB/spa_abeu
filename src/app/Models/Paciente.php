@@ -17,4 +17,9 @@ class Paciente extends Model
     {
         return static::where('nome', 'LIKE', '%' . $criterio . '%')->get();
     }
+
+    public function paciente_consultas()
+    {
+        return $this->hasMany(PacienteConsulta::class);
+    }
 }

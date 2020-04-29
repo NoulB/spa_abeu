@@ -29,7 +29,7 @@ Editar Paciente
         <br/>
         Nome:<br/>
         <input class="form-control col-md-6" id="input1" placeholder="Nome completo"
-               type="text" name="nome" value="{{ $paciente->nome }}" size="50" tabindex="1" required autofocus/>
+               type="text" name="nome" value="{{ $paciente->nome }}" size="50" tabindex="1" required autofocus maxlength="250"/>
 
     </div>
     <div class="row">
@@ -41,21 +41,27 @@ Editar Paciente
         <div class="col">
             RG: <br/>
             <input class="form-control" id="input3" placeholder="somente números" type="text"
-            name="rg" value="{{ $paciente->rg }}" tabindex="3" onkeypress="return isNumberKey(event)" required/>
+            name="rg" value="{{ $paciente->rg }}" tabindex="3" onkeypress="return isNumberKey(event)" size="20" maxlength="16" required/>
         </div>
         <div class="col">
             Data de Nascimento:<br/>
-            <input class="form-control col-md-6" id="input4" type="date" name="data_nascimento"
+            <input class="form-control col-md-8" id="input4" type="date" min="1800-12-31" max="2999-12-31" name="data_nascimento"
                    value="{{ $paciente->data_nascimento }}" tabindex="4" required/>
         </div>
+        <div class="col">
+            Idade:<br/>
+            <input class="form-control col-md-3" type="num" name="idade" id="idade" class="form-control" placeholder="Idade" disabled
+                   value= "{{\Carbon\Carbon::parse($paciente->data_nascimento)->age}}">
+        </div>
     </div>
+
     <div>
         <div class="row">
 
             <div class="col">
                 E-mail: <br/>
-                <input class="form-control" id="input5" placeholder="E-mail" type="text" name="email"
-                       value="{{ $paciente->email }}" tabindex="6"/>
+                <input class="form-control " size="10" id="input5" placeholder="E-mail" type="text" name="email"
+                       value="{{ $paciente->email }}" tabindex="6" maxlength="64"/>
             </div>
             <div class="col">
                 Celular: <br/>
@@ -79,14 +85,14 @@ Editar Paciente
                 Nome do Pai:<br/>
                 <input class="form-control" id="input8" placeholder="Nome do Pai" type="text" name="pai"
                        value="{{ $paciente->pai }}"
-                       tabindex="9"/>
+                       tabindex="9" maxlength="256"/>
             </div>
             <div class="col">
                 Nome do Mae:<br/>
                 <input class="form-control" id="input9" placeholder="Nome da Mãe" type="text" name="mae"
                        value="{{ $paciente->mae }}"
                        required
-                       tabindex="10"/>
+                       tabindex="10" maxlength="256"/>
             </div>
         </div>
     </div>
@@ -95,10 +101,17 @@ Editar Paciente
             <div class="row">
                 <div class="col">
                     Sexo:
-                    <select class="form-control col-md-6" name="sexo" value="{{ $paciente->sexo }}" id="input10" tabindex="10">
-                        <option value="Masculino">Masculino</option>
-                        <option value="Feminino">Feminino</option>
-                        required
+                    <select class="form-control col-md-6" name="sexo" onfocus="disableFirstItemOnly(this);" id="input10" tabindex="10">
+
+                        <option selected value="{{$paciente->sexo}}"> {{ $paciente->sexo }} </option>
+                            <script type="text/javascript">
+                                    function disableFirstItemOnly(ddl) {
+                                        ddl.options[0].hidden = true;
+                                    }
+                                </script>
+                                <option onclick="Masculino"> Masculino </option>
+                                <option onclick="Feminino">Feminino</option>
+
                     </select>
                 </div>
                 <div class="col">
@@ -118,7 +131,7 @@ Editar Paciente
         <div class="col" id="i12" hidden>
             Cônjuge:
             <input class="form-control" id="input12" placeholder="Nome do(a) Cônjuge"
-                   type="text" id="input12" name="conjuge" value="{{ $paciente->conjuge }}"/>
+                   type="text" id="input12" name="conjuge" value="{{ $paciente->conjuge }}" maxlength="256"/>
         </div>
     </div>
     <div>
@@ -131,7 +144,7 @@ Editar Paciente
             Logradouro:<br/>
             <input class="form-control" id="input13" placeholder="Logradouro" type="text" name="logradouro"
                    value="{{ $paciente->logradouro }}"
-                   size="37" required tabindex="14"/>
+                   size="37" required tabindex="14" maxlength="256"/>
         </div>
         <div class="col">
             <div class="row">
@@ -140,13 +153,13 @@ Editar Paciente
                     <input class="form-control col-md-6" id="input14" placeholder="Numero" type="text"
                            name="numero" value="{{ $paciente->numero }}"
                            size="10" required tabindex="15"
-                           onkeypress="return isNumberKey(event)"/>
+                           onkeypress="return isNumberKey(event)" maxlength="8"/>
                 </div>
                 <div class="col">
                     Complemento:
                     <input class="form-control" id="input15" placeholder="Complemento" type="text"
                            name="complemento" value="{{ $paciente->complemento }}"
-                           size="20" tabindex="16"/>
+                           size="20" tabindex="16" maxlength="64"/>
 
                 </div>
             </div>
@@ -159,12 +172,12 @@ Editar Paciente
                 <div class="col">
                     Bairro: <br/>
                     <input class="form-control" id="input16" placeholder="Bairro" type="text" name="bairro"
-                           value="{{ $paciente->bairro }}" size="27" required tabindex="17"/>
+                           value="{{ $paciente->bairro }}" size="27" required tabindex="17" maxlength="64"/>
                 </div>
                 <div class="col">
                     Cidade: <br/>
                     <input class="form-control" id="input17" placeholder="Cidade" type="text" name="cidade"
-                           value="{{ $paciente->cidade }}" size="27" required tabindex="18"/>
+                           value="{{ $paciente->cidade }}" size="27" required tabindex="18" maxlength="64"/>
                 </div>
             </div>
         </div>

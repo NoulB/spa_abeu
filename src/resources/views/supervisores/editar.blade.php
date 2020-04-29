@@ -23,7 +23,7 @@
                 <br/>
                 Nome:<br/>
                 <input class="form-control" id="input1" placeholder="Nome completo"
-                       value="{{ $supervisor->nome }}" type="text" name="nome" tabindex="1" required autofocus/>
+                       value="{{ $supervisor->nome }}" type="text" name="nome" tabindex="1" required autofocus maxlength="256"/>
             </div>
             <div class="row">
                 <div class="col">
@@ -35,7 +35,7 @@
                 <div class="col">
                     CRP: <br/>
                     <input class="form-control" readonly id="input3" placeholder="Ex: 12345/5"
-                           value="{{ $supervisor->crp }}" type="text" name="crp" tabindex="3"/>
+                           value="{{ $supervisor->crp }}" type="text" name="crp" tabindex="3" maxlength="16"/>
                 </div>
             </div>
 
@@ -53,7 +53,7 @@
                 E-mail:<br/>
                 <input class="form-control col-md-6" id="input5"
                        placeholder="Celular - somente números" type="text" name="email"
-                       value="{{ $supervisor->email }}" tabindex="5"/>
+                       value="{{ $supervisor->email }}" tabindex="5" maxlength="64" />
             </div>
             <br/><br/>
             <div class="form-inline my-2 my-lg-0 justify-content-sm-around">

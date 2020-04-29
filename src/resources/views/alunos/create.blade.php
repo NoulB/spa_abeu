@@ -16,14 +16,16 @@
                 </ul>
             </div>
         @endif
-
+            @if (session('error'))
+                <div class="alert alert-danger">{{ session('error') }}</div>
+            @endif
         <form name="form1" method="post">
             @csrf
             <div>
                 <br/>
                 Nome:<br/>
                 <input class="form-control " id="input1" placeholder="Nome completo"
-                       type="text" name="nome" tabindex="1" required autofocus/>
+                       type="text" name="nome" tabindex="1" required autofocus maxlength="250"/>
             </div>
             <div class="row">
                 <div class="col">
@@ -44,13 +46,13 @@
                     RG: <br/>
                     <input class="form-control" id="input4" tabindex="4" placeholder="somente números"
                            type="text" name="rg" onkeypress="return isNumberKey(event)"
-                           required/>
+                           required maxlength="16"/>
                 </div>
 
 
                 <div class="col">
                     Data de Nascimento:<br/>
-                    <input class="form-control col-md-8" id="inputdata" type="date"  name="data_nascimento" tabindex="5" OnBlur="ValidaDATA()"
+                    <input class="form-control col-md-8" id="inputdata" type="date" min="1800-12-31" max="2999-12-31"  name="data_nascimento" tabindex="5" OnBlur="ValidaDATA()"
                             required/>
                 </div>
                 <div class="col">
@@ -75,7 +77,7 @@
             <div>
                 E-mail:<br/>
                 <input class="form-control col-md-6" id="input8" placeholder="e-mail" type="text" tabindex="8"
-                       name="email"/>
+                       name="email" maxlength="64"/>
             </div>
             <br/><br/>
             <div class="form-inline my-2 my-lg-0 justify-content-sm-around">
