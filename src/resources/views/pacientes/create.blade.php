@@ -169,7 +169,7 @@
                 </div>
                 <div class="col">
                     CEP: <br/>
-                    <input class="form-control col-md-6" id="inputcep" placeholder="CEP" type="text" name="cep"
+                    <input class="form-control col-md-6" id="inputcep" placeholder="somente números" type="text" name="cep"
                            size="20" required tabindex="19" onkeypress="return isNumberKey(event)" maxlength="8" OnBlur="ValidaCEP()"/>
                 </div>
             </div>
