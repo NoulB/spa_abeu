@@ -21,11 +21,20 @@
 
         <form name="form1" method="post">
             @csrf
-            <div>
-                <br/>
-                Nome:<br/>
-                <input class="form-control col-md-6" id="input1" placeholder="Nome completo"
-                       type="text" name="nome" size="50" tabindex="1" required autofocus maxlength="250"/>
+            <div class="row">
+                <div class="col">
+                    <br/>
+                    Nome:<br/>
+                    <input class="form-control "  id="input1" placeholder="Nome completo"
+                           type="text" name="nome" size="50" tabindex="1" required autofocus maxlength="250"/>
+                </div>
+                    <div class="col">
+                        <br/>
+                        Data de Incrição do Paciente: <br/>
+                        <input class="form-control col-md-6"  id="createate" type="date" name="createate"
+                               name="Data do Cadastro do Paciente"
+                            onkeypress="return isNumberKey(event)"/>
+                    </div>
 
             </div>
             <div class="row">
@@ -43,36 +52,44 @@
                 </div>
                 <div class="col">
                     Data de Nascimento:<br/>
-                    <input class="form-control col-md-8" id="input4" type="date" min="1800-12-31" max="2999-12-31" name="data_nascimento"
+                    <input class="form-control col-md-11" id="input4" type="date" min="1800-12-31" max="2999-12-31" name="data_nascimento"
                            tabindex="4" required/>
                 </div>
                 <div class="col">
                     Idade:<br/>
-                    <input class="form-control col-md-6" type="num" name="idade" id="idade" class="form-control" placeholder="Idade" disabled>
+                    <input class="form-control col-md-7" type="num" name="idade" id="idade" class="form-control" placeholder="Idade" disabled>
                 </div>
             </div>
             <div>
                 <div class="row">
-
                     <div class="col">
                         E-mail: <br/>
                         <input class="form-control" id="input5" placeholder="E-mail" type="text" name="email"
                                tabindex="6" maxlength="64"/>
                     </div>
                     <div class="col">
+                        <div class="row">
+                            <div class="col">
                         Celular: <br/>
-                        <input class="form-control col-md-6" id="inputcel" placeholder="Celular - somente números"
+                        <input class="form-control col-md-11" id="inputcel" placeholder="Celular - somente números"
                                type="text"
                                name="celular"
                                size="20" tabindex="7" onkeypress="return isNumberKey(event)" maxlength="11" OnBlur="ValidaCEL()"/>
                     </div>
                     <div class="col">
+                        <div class="row">
+                            <div class="col">
                         Telefone:<br/>
-                        <input class="form-control col-md-6" id="inputtel" placeholder="Telefone 2" type="text"
+                        <input class="form-control col-md-7" id="inputtel" placeholder="Telefone 2" type="text"
                                name="telefone"
                                size="20" tabindex="8"
                                onkeypress="return isNumberKey(event)" maxlength="11" OnBlur="ValidaTEL()"/>
+                            </div>
+                        </div>
                     </div>
+                        </div>
+
+                </div>
                 </div>
             </div>
             <div>
@@ -184,4 +201,6 @@
     </div>
 
 @endsection
+
+
 

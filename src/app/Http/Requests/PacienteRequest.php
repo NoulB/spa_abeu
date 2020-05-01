@@ -36,6 +36,7 @@ class PacienteRequest extends FormRequest
             'bairro' => 'required',
             'cidade' => 'required',
             'cep' =>'required',
+            'createate',
         ];
     }
 }

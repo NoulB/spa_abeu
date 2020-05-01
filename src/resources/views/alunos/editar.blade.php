@@ -43,9 +43,9 @@
             <div class="row">
                 <div class="col">
                     CPF: <br/>
-                    <input class="form-control" id="inputcpf" placeholder="somente números" type="text" name="cpf"
+                    <input class="form-control"  readonly=“true” id="inputcpf" placeholder="somente números" type="text" name="cpf"
                            value="{{ $aluno->cpf }}" tabindex="3" onkeypress="return isNumberKey(event)" maxlength="11"
-                           OnBlur="ValidaCPF()" required />
+                            required />
                 </div>
                 <div class=" col">
                     RG: <br/>
@@ -80,17 +80,23 @@
             <div>
                 <h4>Contatos:</h4>
             </div>
-            <div>
+            <div class="row">
+                <div class="col">
                 Celular: <br/>
-                <input class="form-control col-md-6" id="inputcel"
+                <input class="form-control " id="inputcel"
                        placeholder="Celular - somente números" type="text" name="celular"
                        value="{{ $aluno->celular }}" tabindex="7" onkeypress="return isNumberKey(event)"  maxlength="11" OnBlur="ValidaCEL()"/>
             </div>
-            <div>
+                <div class="col"></div>
+            </div>
+                <div class="row">
+                    <div class="col">
                 E-mail:<br/>
-                <input class="form-control col-md-6" id="input8" placeholder="e-mail" type="text" tabindex="8"
+                <input class="form-control " id="input8" placeholder="e-mail" type="text" tabindex="8"
                        name="email" value="{{ $aluno->email }}" maxlength="64"/>
             </div>
+                    <div class="col"></div>
+                </div>
             <br/><br/>
             <div class="form-inline my-2 my-lg-0 justify-content-sm-around">
                 <button class="btn btn-outline-primary">Salvar</button>

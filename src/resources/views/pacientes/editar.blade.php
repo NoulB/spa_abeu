@@ -24,19 +24,19 @@ Editar Paciente
 
     <input type="hidden" name="id" value="{{ $paciente->id }}">
 
-
-        <div>
+        <div class="row">
+            <div class="col">
         <br/>
         Nome:<br/>
-        <input class="form-control col-md-6" id="input1" placeholder="Nome completo"
+        <input class="form-control " id="input1" placeholder="Nome completo"
                type="text" name="nome" value="{{ $paciente->nome }}" size="50" tabindex="1" required autofocus maxlength="250"/>
-
     </div>
+        </div>
     <div class="row">
         <div class="col">
             CPF: <br/>
-            <input class="form-control" id="inputcpf" placeholder="somente números" type="text" name="cpf"
-                   value="{{ $paciente->cpf }}" tabindex="2" onkeypress="return isNumberKey(event)" required required maxlength="11" OnBlur="ValidaCPF()"/>
+            <input class="form-control" readonly=“true” id="inputcpf" placeholder="somente números" type="text" name="cpf"
+                   value="{{ $paciente->cpf }}" tabindex="2" onkeypress="return isNumberKey(event)" required required maxlength="11" />
         </div>
         <div class="col">
             RG: <br/>
@@ -45,40 +45,41 @@ Editar Paciente
         </div>
         <div class="col">
             Data de Nascimento:<br/>
-            <input class="form-control col-md-8" id="input4" type="date" min="1800-12-31" max="2999-12-31" name="data_nascimento"
+            <input class="form-control col-md-11" id="input4" type="date" min="1800-12-31" max="2999-12-31" name="data_nascimento"
                    value="{{ $paciente->data_nascimento }}" tabindex="4" required/>
         </div>
         <div class="col">
             Idade:<br/>
-            <input class="form-control col-md-3" type="num" name="idade" id="idade" class="form-control" placeholder="Idade" disabled
+            <input class="form-control col-md-7" type="num" name="idade" id="idade" class="form-control" placeholder="Idade" disabled
                    value= "{{\Carbon\Carbon::parse($paciente->data_nascimento)->age}}">
         </div>
     </div>
 
     <div>
         <div class="row">
-
             <div class="col">
                 E-mail: <br/>
                 <input class="form-control " size="10" id="input5" placeholder="E-mail" type="text" name="email"
                        value="{{ $paciente->email }}" tabindex="6" maxlength="64"/>
             </div>
             <div class="col">
+                <div class="row">
+                    <div class="col">
                 Celular: <br/>
-                <input class="form-control col-md-6" id="inputcel" placeholder="Somente números"
+                <input class="form-control col-md-11" id="inputcel" placeholder="Somente números"
                        type="text" name="celular" value="{{ $paciente->celular }}"required maxlength="11" OnBlur="ValidaCEL()"
-
                        size="20" tabindex="7" onkeypress="return isNumberKey(event)"/>
             </div>
             <div class="col">
+                <div class="row">
+                    <div class="col">
                 Telefone:<br/>
-                <input class="form-control col-md-6" id="inputtel" placeholder="Telefone" type="text"
+                <input class="form-control col-md-7" id="inputtel" placeholder="Telefone" type="text"
                        name="telefone" value="{{ $paciente->telefone }}"
                        size="20" tabindex="8"
                        onkeypress="return isNumberKey(event)" required maxlength="11" OnBlur="ValidaTEL()"/>
-            </div>
-        </div>
-    </div>
+                    </div></div></div></div></div></div>
+
     <div>
         <div class="row">
             <div class="col">
