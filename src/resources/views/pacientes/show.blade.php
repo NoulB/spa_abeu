@@ -19,12 +19,25 @@
 
     <form action="{{ url("/pacientes/show/") }}" method="post">
         @csrf
-        <div>
+        <div class="row">
+            <div class="col">
             <br/>
             Nome:<br/>
-            <input class="form-control col-md-6" readonly=“true” id="input1" placeholder="Nome completo"
+            <input class="form-control " readonly=“true” id="input1" placeholder="Nome completo"
                    value="{{ $paciente->nome }}" type="text" name="nome" tabindex="1" required autofocus/>
+            </div>
+            <div class="col">
+                <br/>
+                Data de Incrição do Paciente: <br/>
+                <input class="form-control col-md-5" readonly=“true” id="createate" type="datetime"
+                       name="Data do Cadastro do Paciente"
+                       value="{{\Carbon\Carbon::parse($paciente->createate)->format('d/m/Y')}}" required
+                       tabindex="19"
+                       onkeypress="return isNumberKey(event)"/>
+
         </div>
+        </div>
+
         <div class="row">
             <div class="col">
                 CPF: <br/>
@@ -55,7 +68,6 @@
             </div>
         <div>
             <div class="row">
-
                 <div class="col">
                     E-mail: <br/>
                     <input class="form-control" readonly=“true” id="input5" placeholder="E-mail" type="text"
@@ -63,20 +75,26 @@
                            value="{{ $paciente->email }}" tabindex="6"/>
                 </div>
                 <div class="col">
+                    <div class="row">
+                        <div class="col">
                     Celular: <br/>
-                    <input class="form-control col-md-6" readonly=“true” id="input6"
+                    <input class="form-control col-md-7" readonly=“true” id="input6"
                            placeholder="Celular - somente números" type="text"
                            name="celular"
                            value="{{ $paciente->celular }}"
                            tabindex="7" onkeypress="return isNumberKey(event)"/>
-                </div>
+                        </div>
                 <div class="col">
+                    <div class="row">
+
+                        <div class="col">
                     Telefone:<br/>
-                    <input class="form-control col-md-6" readonly=“true” id="input7" placeholder="Telefone 2"
+                    <input class="form-control col-md-7" readonly=“true” id="input7" placeholder="Telefone 2"
                            type="text" name="telefone"
                            value="{{ $paciente->telefone }}"
                            tabindex="8"
                            onkeypress="return isNumberKey(event)"/>
+                        </div></div></div>
                 </div>
             </div>
         </div>
@@ -177,6 +195,25 @@
                        value="{{ $paciente->cep }}" required
                        tabindex="19"
                        onkeypress="return isNumberKey(event)"/>
+            </div></div>
+            <div class="row">
+                <div class="col">
+                    <div class="row">
+                        <div class="col">
+                            Disponibilidade:
+                            <input class="form-control col-md-6" name="sexo" readonly=“true” id="input10" tabindex="10"
+                                   value="{{ $paciente->sexo }}">
+                        </div>
+                        <div class="col">
+                            Turno:
+                            <input class="form-control col-md-6" readonly=“true” id="input11" name="estado_civil"
+                                   value="{{ $paciente->estado_civil }}">
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+
+                </div>
             </div>
         </div>
         <br/><br/>

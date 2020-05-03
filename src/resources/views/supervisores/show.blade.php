@@ -17,7 +17,7 @@
             </div>
         @endif
 
-        <form action="{{ url("/supervisores/show/") }}" method="post">
+        <div action="{{ url("/supervisores/show/") }}" method="post">
             @csrf
             <div>
                 <br/>
@@ -43,18 +43,23 @@
             <div>
                 <h4>Contatos:</h4>
             </div>
-            <div>
+            <div class="row">
+
+            <div class="col">
                 Celular: <br/>
-                <input class="form-control col-md-6" readonly=“true” id="input4"
+                <input class="form-control " readonly=“true” id="input4"
                        placeholder="Celular - somente números" type="text" name="celular"
                        value="{{ $supervisor->celular }}" tabindex="4" onkeypress="return isNumberKey(event)"/>
             </div>
-            <div>
+            <div class="col"></div></div>
+            <div class="row">
+            <div class="col">
                 E-mail:<br/>
-                <input class="form-control col-md-6" readonly=“true” id="input5"
+                <input class="form-control " readonly=“true” id="input5"
                        placeholder="Celular - somente números" type="text" name="email"
                        value="{{ $supervisor->email }}" tabindex="5"/>
             </div>
+            <div class="col"></div></div>
             <br/><br/>
             <div class="form-inline my-2 my-lg-0 justify-content-sm-around">
 
