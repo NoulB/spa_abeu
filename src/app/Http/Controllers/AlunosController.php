@@ -11,8 +11,6 @@ use App\Http\Requests\AlunoRequest;
 
 class AlunosController extends Controller
 {
-
-
     private $aluno;
 
     public function __construct()

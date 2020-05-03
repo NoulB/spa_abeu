@@ -58,6 +58,11 @@ Route::get('alunos/show/{id}', 'AlunosController@show')->name("mostrar_aluno");
 Route::get('alunos/editar/{id}', 'AlunosController@edit')->name("form_editar_aluno");
 Route::post('alunos/update', 'AlunosController@update');
 
+
+Route::get('consultas', 'ConsultasController@index')->name("listar_consultas");
+
+
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
