@@ -31,7 +31,7 @@
                     <div class="col">
                         <br/>
                         Data de Incrição do Paciente: <br/>
-                        <input class="form-control col-md-6"  id="createate" type="date" name="createate"
+                        <input class="form-control col-md-6"  id="created_at" type="date" name="created_at"
                                name="Data do Cadastro do Paciente"
                             onkeypress="return isNumberKey(event)"/>
                     </div>
