@@ -135,3 +135,663 @@ var isDate_ = function (input) {
     }
     return status;
 }
+
+
+    function myFunction() {
+        var checkBox = document.getElementById("Total1");
+        var text = document.getElementById("total");
+        var text2 = document.getElementById("segunda");
+        var text3 = document.getElementById("terca");
+        var text4 = document.getElementById("quarta");
+        var text5 = document.getElementById("quinta");
+        var text6 = document.getElementById("sexta");
+        var text7 = document.getElementById("sabado");
+        var text8 = document.getElementById("total2");
+        var text9 = document.getElementById("manha");
+        var text10 = document.getElementById("tarde");
+        var text11 = document.getElementById("noite");
+        var text12 = document.getElementById("08h");
+        var text13 = document.getElementById("09h");
+        var text14 = document.getElementById("10h");
+        var text15 = document.getElementById("11h");
+        var text16 = document.getElementById("13h");
+        var text17 = document.getElementById("14h");
+        var text18 = document.getElementById("15h");
+        var text19 = document.getElementById("16h");
+        var text20 = document.getElementById("17h");
+        var text21 = document.getElementById("18h");
+        var text22 = document.getElementById("19h");
+        var text23 = document.getElementById("20h");
+        if (checkBox.checked == false){
+            text2.hidden= false;
+            text3.hidden= false;
+            text4.hidden= false;
+            text5.hidden= false;
+            text6.hidden= false;
+            text7.hidden= false;
+
+
+        } else {
+            text2.hidden=true;
+            text3.hidden=true;
+            text4.hidden=true;
+            text5.hidden=true;
+            text6.hidden=true;
+            text7.hidden=true;
+            text8.hidden=false;
+            text9.hidden=false;
+            text10.hidden=false;
+            text11.hidden=false;
+            text12.hidden=true;
+            text13.hidden=true;
+            text14.hidden=true;
+            text15.hidden=true;
+            text16.hidden=true;
+            text17.hidden=true;
+            text18.hidden=true;
+            text19.hidden=true;
+            text20.hidden=true;
+            text21.hidden=true;
+            text22.hidden=true;
+            text23.hidden=true;
+            document.getElementById("tipo2").checked = false;
+            document.getElementById("tipo3").checked = false;
+            document.getElementById("tipo4").checked = false;
+            document.getElementById("tipo5").checked = false;
+            document.getElementById("tipo6").checked = false;
+            document.getElementById("tipo7").checked = false;
+            document.getElementById("tipomanha").checked = false;
+            document.getElementById("tipotarde").checked = false;
+            document.getElementById("tiponoite").checked = false;
+            document.getElementById("tipo08h").checked = false;
+            document.getElementById("tipo09h").checked = false;
+            document.getElementById("tipo10h").checked = false;
+            document.getElementById("tipo11h").checked = false;
+            document.getElementById("tipo13h").checked = false;
+            document.getElementById("tipo14h").checked = false;
+            document.getElementById("tipo15h").checked = false;
+            document.getElementById("tipo16h").checked = false;
+            document.getElementById("tipo17h").checked = false;
+            document.getElementById("tipo18h").checked = false;
+            document.getElementById("tipo19h").checked = false;
+            document.getElementById("tipo20h").checked = false;
+        }
+    }
+
+function myFunction1() {
+    var checkBox = document.getElementById("Total22");
+    var text2 = document.getElementById("manha");
+    var text3 = document.getElementById("tarde");
+    var text4 = document.getElementById("noite");
+    var text5 = document.getElementById("08h");
+    var text6 = document.getElementById("09h");
+    var text7 = document.getElementById("10h");
+    var text8 = document.getElementById("11h");
+    var text9 = document.getElementById("13h");
+    var text10 = document.getElementById("14h");
+    var text11 = document.getElementById("15h");
+    var text12 = document.getElementById("16h");
+    var text13 = document.getElementById("17h");
+    var text14 = document.getElementById("18h");
+    var text15 = document.getElementById("19h");
+    var text16 = document.getElementById("20h");
+
+    if (checkBox.checked == false){
+        text2.hidden= false;
+        text3.hidden= false;
+        text4.hidden= false;
+
+
+        document.getElementById("tipomanha").checked = false;
+        document.getElementById("tipotarde").checked = false;
+        document.getElementById("tiponoite").checked = false;
+        document.getElementById("tipo08h").checked = false;
+        document.getElementById("tipo09h").checked = false;
+        document.getElementById("tipo10h").checked = false;
+        document.getElementById("tipo11h").checked = false;
+        document.getElementById("tipo13h").checked = false;
+        document.getElementById("tipo14h").checked = false;
+        document.getElementById("tipo15h").checked = false;
+        document.getElementById("tipo16h").checked = false;
+        document.getElementById("tipo17h").checked = false;
+        document.getElementById("tipo18h").checked = false;
+        document.getElementById("tipo19h").checked = false;
+        document.getElementById("tipo20h").checked = false;
+
+    } else {
+        text2.hidden=true;
+        text3.hidden=true;
+        text4.hidden=true;
+        text5.hidden=true;
+        text6.hidden=true;
+        text7.hidden=true;
+        text8.hidden=true;
+        text9.hidden=true;
+        text10.hidden=true;
+        text11.hidden=true;
+        text12.hidden=true;
+        text13.hidden=true;
+        text14.hidden=true;
+        text15.hidden=true;
+        text16.hidden=true;
+
+
+    }
+}
+function myFunction2() {
+    var checkBox = document.getElementById("tipomanha");
+    var text2 = document.getElementById("08h");
+    var text3 = document.getElementById("09h");
+    var text4 = document.getElementById("10h");
+    var text5 = document.getElementById("11h");
+
+    if (checkBox.checked == true){
+        text2.hidden= false;
+        text3.hidden= false;
+        text4.hidden= false;
+        text5.hidden= false;
+
+
+
+    } else {
+        text2.hidden=true;
+        text3.hidden=true;
+        text4.hidden=true;
+        text5.hidden=true;
+
+    }
+}
+function myFunction3() {
+    var checkBox = document.getElementById("tipotarde");
+    var text2 = document.getElementById("13h");
+    var text3 = document.getElementById("14h");
+    var text4 = document.getElementById("15h");
+    var text5 = document.getElementById("16h");
+    var text6 = document.getElementById("17h");
+
+
+    if (checkBox.checked == true){
+        text2.hidden= false;
+        text3.hidden= false;
+        text4.hidden= false;
+        text5.hidden= false;
+        text6.hidden= false;
+
+
+
+    } else {
+        text2.hidden=true;
+        text3.hidden=true;
+        text4.hidden=true;
+        text5.hidden=true;
+        text6.hidden=true;
+
+    }
+}
+function myFunction4() {
+    var checkBox = document.getElementById("tiponoite");
+    var text2 = document.getElementById("18h");
+    var text3 = document.getElementById("19h");
+    var text4 = document.getElementById("20h");
+
+    if (checkBox.checked == true){
+        text2.hidden= false;
+        text3.hidden= false;
+        text4.hidden= false;
+
+
+
+    } else {
+        text2.hidden=true;
+        text3.hidden=true;
+        text4.hidden=true;
+
+    }
+}
+    function myFunction5() {
+    var checkBox = document.getElementById("tipo7");
+    var text2 = document.getElementById("total2");
+    var text3 = document.getElementById("tarde");
+    var text4 = document.getElementById("noite");
+    var text17 = document.getElementById("manha");
+    var text5 = document.getElementById("08h");
+    var text6 = document.getElementById("09h");
+    var text7 = document.getElementById("10h");
+    var text8 = document.getElementById("11h");
+    var text9 = document.getElementById("13h");
+    var text10 = document.getElementById("14h");
+    var text11 = document.getElementById("15h");
+    var text12 = document.getElementById("16h");
+    var text13 = document.getElementById("17h");
+    var text14 = document.getElementById("18h");
+    var text15 = document.getElementById("19h");
+    var text16 = document.getElementById("20h");
+    var text18 = document.getElementById("tipo6");
+    var text19 = document.getElementById("tipo2");
+    var text20 = document.getElementById("tipo3");
+    var text21 = document.getElementById("tipo4");
+    var text22 = document.getElementById("tipo5");
+
+    if (checkBox.checked == false ) {
+        text2.hidden = false;
+        text3.hidden = false;
+        text4.hidden = false;
+        text17.hidden = false;
+
+        document.getElementById("tipo2").checked = false;
+        document.getElementById("tipo3").checked = false;
+        document.getElementById("tipo4").checked = false;
+        document.getElementById("tipo5").checked = false;
+        document.getElementById("tipo6").checked = false;  }
+    else if(checkBox.checked == true && text18.checked == true || (checkBox.checked == true && text19.checked == true) ||
+        (checkBox.checked == true && text20.checked == true)||(checkBox.checked == true && text21.checked == true) ||
+        (checkBox.checked == true && text22.checked == true)  ){
+        text17.hidden = false;
+    }
+    else if (checkBox.checked == true )
+    {
+        text2.hidden = true;
+        text3.hidden = true;
+        text4.hidden = true;
+        text5.hidden = true;
+        text6.hidden = true;
+        text7.hidden = true;
+        text8.hidden = true;
+        text9.hidden = true;
+        text10.hidden = true;
+        text11.hidden = true;
+        text12.hidden = true;
+        text13.hidden = true;
+        text14.hidden = true;
+        text15.hidden = true;
+        text16.hidden = true;
+        document.getElementById("Total22").checked = false;
+        document.getElementById("tipomanha").checked = false;
+        document.getElementById("tipotarde").checked = false;
+        document.getElementById("tiponoite").checked = false;
+        document.getElementById("tipo08h").checked = false;
+        document.getElementById("tipo09h").checked = false;
+        document.getElementById("tipo10h").checked = false;
+        document.getElementById("tipo11h").checked = false;
+        document.getElementById("tipo13h").checked = false;
+        document.getElementById("tipo14h").checked = false;
+        document.getElementById("tipo15h").checked = false;
+        document.getElementById("tipo16h").checked = false;
+        document.getElementById("tipo17h").checked = false;
+        document.getElementById("tipo18h").checked = false;
+        document.getElementById("tipo19h").checked = false;
+        document.getElementById("tipo20h").checked = false;
+
+    }
+
+}
+
+function myFunction6() {
+    var checkBox = document.getElementById("tipo6");
+    var text= document.getElementById("tipo7");
+    var text2 = document.getElementById("total2");
+    var text3 = document.getElementById("tarde");
+    var text4 = document.getElementById("noite");
+    var text17 = document.getElementById("manha");
+    var text5 = document.getElementById("08h");
+    var text6 = document.getElementById("09h");
+    var text7 = document.getElementById("10h");
+    var text8 = document.getElementById("11h");
+    var text9 = document.getElementById("13h");
+    var text10 = document.getElementById("14h");
+    var text11 = document.getElementById("15h");
+    var text12 = document.getElementById("16h");
+    var text13 = document.getElementById("17h");
+    var text14 = document.getElementById("18h");
+    var text15 = document.getElementById("19h");
+    var text16 = document.getElementById("20h");
+
+    if (checkBox.checked == false) {
+        text2.hidden = false;
+        text3.hidden = false;
+        text4.hidden = false;
+        text17.hidden = false;
+        document.getElementById("tipo2").checked = false;
+        document.getElementById("tipo3").checked = false;
+        document.getElementById("tipo4").checked = false;
+        document.getElementById("tipo5").checked = false;
+        document.getElementById("tipo7").checked = false;
+    }
+    else if(checkBox.checked == true && text.checked == true){
+        text3.hidden = false;
+        text4.hidden = false;
+    }
+    else if(checkBox.checked == false && text.checked == true){
+        text3.hidden = true;
+        text4.hidden = true;
+    }
+
+    else {
+        text2.hidden = true;
+        text5.hidden = true;
+        text6.hidden = true;
+        text7.hidden = true;
+        text8.hidden = true;
+        text9.hidden = true;
+        text10.hidden = true;
+        text11.hidden = true;
+        text12.hidden = true;
+        text13.hidden = true;
+        text14.hidden = true;
+        text15.hidden = true;
+        text16.hidden = true;
+        text17.hidden = true;
+        document.getElementById("Total22").checked = false;
+        document.getElementById("tipomanha").checked = false;
+        document.getElementById("tipotarde").checked = false;
+        document.getElementById("tiponoite").checked = false;
+        document.getElementById("tipo08h").checked = false;
+        document.getElementById("tipo09h").checked = false;
+        document.getElementById("tipo10h").checked = false;
+        document.getElementById("tipo11h").checked = false;
+        document.getElementById("tipo13h").checked = false;
+        document.getElementById("tipo14h").checked = false;
+        document.getElementById("tipo15h").checked = false;
+        document.getElementById("tipo16h").checked = false;
+        document.getElementById("tipo17h").checked = false;
+        document.getElementById("tipo18h").checked = false;
+        document.getElementById("tipo19h").checked = false;
+        document.getElementById("tipo20h").checked = false;
+    }
+}
+function myFunction7() {
+    var checkBox = document.getElementById("tipo5");
+    var text= document.getElementById("tipo7");
+    var text2 = document.getElementById("total2");
+    var text3 = document.getElementById("tarde");
+    var text4 = document.getElementById("noite");
+    var text17 = document.getElementById("manha");
+    var text5 = document.getElementById("08h");
+    var text6 = document.getElementById("09h");
+    var text7 = document.getElementById("10h");
+    var text8 = document.getElementById("11h");
+    var text9 = document.getElementById("13h");
+    var text10 = document.getElementById("14h");
+    var text11 = document.getElementById("15h");
+    var text12 = document.getElementById("16h");
+    var text13 = document.getElementById("17h");
+    var text14 = document.getElementById("18h");
+    var text15 = document.getElementById("19h");
+    var text16 = document.getElementById("20h");
+
+    if (checkBox.checked == false) {
+        text2.hidden = false;
+        text3.hidden = false;
+        text4.hidden = false;
+        text17.hidden = false;
+        document.getElementById("tipo2").checked = false;
+        document.getElementById("tipo3").checked = false;
+        document.getElementById("tipo4").checked = false;
+        document.getElementById("tipo5").checked = false;
+        document.getElementById("tipo6").checked = false;
+        document.getElementById("tipo7").checked = false;
+    }
+    else if(checkBox.checked == true && text.checked == true){
+        text3.hidden = false;
+        text4.hidden = false;
+    }
+    else if(checkBox.checked == false && text.checked == true){
+        text3.hidden = true;
+        text4.hidden = true;
+    }
+
+    else {
+        text2.hidden = true;
+        text5.hidden = true;
+        text6.hidden = true;
+        text7.hidden = true;
+        text8.hidden = true;
+        text9.hidden = true;
+        text10.hidden = true;
+        text11.hidden = true;
+        text12.hidden = true;
+        text13.hidden = true;
+        text14.hidden = true;
+        text15.hidden = true;
+        text16.hidden = true;
+        text17.hidden = true;
+        document.getElementById("Total22").checked = false;
+        document.getElementById("tipomanha").checked = false;
+        document.getElementById("tipotarde").checked = false;
+        document.getElementById("tiponoite").checked = false;
+        document.getElementById("tipo08h").checked = false;
+        document.getElementById("tipo09h").checked = false;
+        document.getElementById("tipo10h").checked = false;
+        document.getElementById("tipo11h").checked = false;
+        document.getElementById("tipo13h").checked = false;
+        document.getElementById("tipo14h").checked = false;
+        document.getElementById("tipo15h").checked = false;
+        document.getElementById("tipo16h").checked = false;
+        document.getElementById("tipo17h").checked = false;
+        document.getElementById("tipo18h").checked = false;
+        document.getElementById("tipo19h").checked = false;
+        document.getElementById("tipo20h").checked = false;
+    }
+}
+function myFunction8() {
+    var checkBox = document.getElementById("tipo4");
+    var text= document.getElementById("tipo7");
+    var text2 = document.getElementById("total2");
+    var text3 = document.getElementById("tarde");
+    var text4 = document.getElementById("noite");
+    var text17 = document.getElementById("manha");
+    var text5 = document.getElementById("08h");
+    var text6 = document.getElementById("09h");
+    var text7 = document.getElementById("10h");
+    var text8 = document.getElementById("11h");
+    var text9 = document.getElementById("13h");
+    var text10 = document.getElementById("14h");
+    var text11 = document.getElementById("15h");
+    var text12 = document.getElementById("16h");
+    var text13 = document.getElementById("17h");
+    var text14 = document.getElementById("18h");
+    var text15 = document.getElementById("19h");
+    var text16 = document.getElementById("20h");
+
+    if (checkBox.checked == false) {
+        text2.hidden = false;
+        text3.hidden = false;
+        text4.hidden = false;
+        text17.hidden = false;
+        document.getElementById("tipo2").checked = false;
+        document.getElementById("tipo3").checked = false;
+        document.getElementById("tipo4").checked = false;
+        document.getElementById("tipo5").checked = false;
+        document.getElementById("tipo6").checked = false;
+        document.getElementById("tipo7").checked = false;
+    }
+    else if(checkBox.checked == true && text.checked == true){
+        text3.hidden = false;
+        text4.hidden = false;
+    }
+    else if(checkBox.checked == false && text.checked == true){
+        text3.hidden = true;
+        text4.hidden = true;
+    }
+
+    else {
+        text2.hidden = true;
+        text5.hidden = true;
+        text6.hidden = true;
+        text7.hidden = true;
+        text8.hidden = true;
+        text9.hidden = true;
+        text10.hidden = true;
+        text11.hidden = true;
+        text12.hidden = true;
+        text13.hidden = true;
+        text14.hidden = true;
+        text15.hidden = true;
+        text16.hidden = true;
+        text17.hidden = true;
+        document.getElementById("Total22").checked = false;
+        document.getElementById("tipomanha").checked = false;
+        document.getElementById("tipotarde").checked = false;
+        document.getElementById("tiponoite").checked = false;
+        document.getElementById("tipo08h").checked = false;
+        document.getElementById("tipo09h").checked = false;
+        document.getElementById("tipo10h").checked = false;
+        document.getElementById("tipo11h").checked = false;
+        document.getElementById("tipo13h").checked = false;
+        document.getElementById("tipo14h").checked = false;
+        document.getElementById("tipo15h").checked = false;
+        document.getElementById("tipo16h").checked = false;
+        document.getElementById("tipo17h").checked = false;
+        document.getElementById("tipo18h").checked = false;
+        document.getElementById("tipo19h").checked = false;
+        document.getElementById("tipo20h").checked = false;
+    }
+}
+function myFunction9() {
+    var checkBox = document.getElementById("tipo3");
+    var text= document.getElementById("tipo7");
+    var text2 = document.getElementById("total2");
+    var text3 = document.getElementById("tarde");
+    var text4 = document.getElementById("noite");
+    var text17 = document.getElementById("manha");
+    var text5 = document.getElementById("08h");
+    var text6 = document.getElementById("09h");
+    var text7 = document.getElementById("10h");
+    var text8 = document.getElementById("11h");
+    var text9 = document.getElementById("13h");
+    var text10 = document.getElementById("14h");
+    var text11 = document.getElementById("15h");
+    var text12 = document.getElementById("16h");
+    var text13 = document.getElementById("17h");
+    var text14 = document.getElementById("18h");
+    var text15 = document.getElementById("19h");
+    var text16 = document.getElementById("20h");
+
+    if (checkBox.checked == false) {
+        text2.hidden = false;
+        text3.hidden = false;
+        text4.hidden = false;
+        text17.hidden = false;
+        document.getElementById("tipo2").checked = false;
+        document.getElementById("tipo3").checked = false;
+        document.getElementById("tipo4").checked = false;
+        document.getElementById("tipo5").checked = false;
+        document.getElementById("tipo6").checked = false;
+        document.getElementById("tipo7").checked = false;
+    }
+    else if(checkBox.checked == true && text.checked == true){
+        text3.hidden = false;
+        text4.hidden = false;
+    }
+    else if(checkBox.checked == false && text.checked == true){
+        text3.hidden = true;
+        text4.hidden = true;
+    }
+
+    else {
+        text2.hidden = true;
+        text5.hidden = true;
+        text6.hidden = true;
+        text7.hidden = true;
+        text8.hidden = true;
+        text9.hidden = true;
+        text10.hidden = true;
+        text11.hidden = true;
+        text12.hidden = true;
+        text13.hidden = true;
+        text14.hidden = true;
+        text15.hidden = true;
+        text16.hidden = true;
+        text17.hidden = true;
+        document.getElementById("Total22").checked = false;
+        document.getElementById("tipomanha").checked = false;
+        document.getElementById("tipotarde").checked = false;
+        document.getElementById("tiponoite").checked = false;
+        document.getElementById("tipo08h").checked = false;
+        document.getElementById("tipo09h").checked = false;
+        document.getElementById("tipo10h").checked = false;
+        document.getElementById("tipo11h").checked = false;
+        document.getElementById("tipo13h").checked = false;
+        document.getElementById("tipo14h").checked = false;
+        document.getElementById("tipo15h").checked = false;
+        document.getElementById("tipo16h").checked = false;
+        document.getElementById("tipo17h").checked = false;
+        document.getElementById("tipo18h").checked = false;
+        document.getElementById("tipo19h").checked = false;
+        document.getElementById("tipo20h").checked = false;
+    }
+}
+function myFunction10() {
+    var checkBox = document.getElementById("tipo2");
+    var text= document.getElementById("tipo7");
+    var text2 = document.getElementById("total2");
+    var text3 = document.getElementById("tarde");
+    var text4 = document.getElementById("noite");
+    var text17 = document.getElementById("manha");
+    var text5 = document.getElementById("08h");
+    var text6 = document.getElementById("09h");
+    var text7 = document.getElementById("10h");
+    var text8 = document.getElementById("11h");
+    var text9 = document.getElementById("13h");
+    var text10 = document.getElementById("14h");
+    var text11 = document.getElementById("15h");
+    var text12 = document.getElementById("16h");
+    var text13 = document.getElementById("17h");
+    var text14 = document.getElementById("18h");
+    var text15 = document.getElementById("19h");
+    var text16 = document.getElementById("20h");
+
+    if (checkBox.checked == false) {
+        text2.hidden = false;
+        text3.hidden = false;
+        text4.hidden = false;
+        text17.hidden = false;
+        document.getElementById("tipo2").checked = false;
+        document.getElementById("tipo3").checked = false;
+        document.getElementById("tipo4").checked = false;
+        document.getElementById("tipo5").checked = false;
+        document.getElementById("tipo6").checked = false;
+        document.getElementById("tipo7").checked = false;
+    }
+    else if(checkBox.checked == true && text.checked == true){
+        text3.hidden = false;
+        text4.hidden = false;
+    }
+    else if(checkBox.checked == false && text.checked == true){
+        text3.hidden = true;
+        text4.hidden = true;
+    }
+
+    else {
+        text2.hidden = true;
+        text5.hidden = true;
+        text6.hidden = true;
+        text7.hidden = true;
+        text8.hidden = true;
+        text9.hidden = true;
+        text10.hidden = true;
+        text11.hidden = true;
+        text12.hidden = true;
+        text13.hidden = true;
+        text14.hidden = true;
+        text15.hidden = true;
+        text16.hidden = true;
+        text17.hidden = true;
+        document.getElementById("Total22").checked = false;
+        document.getElementById("tipomanha").checked = false;
+        document.getElementById("tipotarde").checked = false;
+        document.getElementById("tiponoite").checked = false;
+        document.getElementById("tipo08h").checked = false;
+        document.getElementById("tipo09h").checked = false;
+        document.getElementById("tipo10h").checked = false;
+        document.getElementById("tipo11h").checked = false;
+        document.getElementById("tipo13h").checked = false;
+        document.getElementById("tipo14h").checked = false;
+        document.getElementById("tipo15h").checked = false;
+        document.getElementById("tipo16h").checked = false;
+        document.getElementById("tipo17h").checked = false;
+        document.getElementById("tipo18h").checked = false;
+        document.getElementById("tipo19h").checked = false;
+        document.getElementById("tipo20h").checked = false;
+    }
+}

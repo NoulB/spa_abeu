@@ -78,7 +78,7 @@ Editar Paciente
                        name="telefone" value="{{ $paciente->telefone }}"
                        size="20" tabindex="8"
                        onkeypress="return isNumberKey(event)" required maxlength="11" OnBlur="ValidaTEL()"/>
-                    </div></div></div></div></div></div>
+                    </div></div></div></div></div></div></div>
 
     <div>
         <div class="row">

@@ -9,20 +9,21 @@ function verifica(value) {
     var input11 = document.getElementById("input11");
 
     if (value == 'Casado') {
-        i12.hidden = false;
+        input12.hidden = false;
     } else if (value == 'Solteiro') {
-        i12.hidden = true;
-        i12.value = "";
+        input12.hidden = true;
+        input12.value = "";
     } else if (value == 'Viúvo') {
-        i12.hidden = true;
-        i12.value = "";
+        input12.hidden = true;
+        input12.value = "";
     } else if (value == 'Divorciado') {
-        i12.hidden = true;
-        i12.value = "";
+        input12.hidden = true;
+        input12.value = "";
     }
 }
 
-function verificarCPF(strCPF) {
+
+    function verificarCPF(strCPF) {
     var Soma;
     var Resto;
     Soma = 0;
@@ -132,3 +133,19 @@ function calculateAge(dobString) {
     }
 
 
+    function teste(valuer) {
+        var teste01 = document.getElementById("teste01");
+
+        if (valuer == 'Casado') {
+            input12.hidden = false;
+        } else if (valuer == 'Solteiro') {
+            input12.hidden = true;
+            input12.value = "";
+        } else if (valuer == 'Viúvo') {
+            input12.hidden = true;
+            input12.value = "";
+        } else if (valuer == 'Divorciado') {
+            input12.hidden = true;
+            input12.value = "";
+        }
+    }
