@@ -111,6 +111,7 @@
 <script src="<?php echo asset('js/popper_min.js')?>"></script>
 <script src="<?php echo('js/bootstrap_min.js')?>"></script>
 <script src="<?php echo asset('js/fontawesome.js')?>"></script>
+<script src="<?php echo asset('js/fontawesome.js')?>"></script>
 
 </body>
 

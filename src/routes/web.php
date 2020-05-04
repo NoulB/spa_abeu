@@ -30,10 +30,7 @@ Route::post('pacientes', 'PacientesController@index')->name("busca_paciente");
 Route::post('pacientes/busca', 'PacientesController@busca')->name("busca_paciente");
 Route::get('pacientes/criar', 'PacientesController@create')->name("form_criar_paciente");
 Route::post('pacientes/criar', 'PacientesController@store')->name("salva_paciente");
-//Route::post('pacientes/show/{id}', 'PacientesController@show')->name("mostrar_paciente");
 Route::get('pacientes/show/{id}', 'PacientesController@show')->name("mostrar_paciente");
-//Route::get('pacientes/criar/{id}', 'PacientesController@update')->name("form_criar_paciente");
-//Route::put('pacientes/criar/{id}', 'PacientesController@update')->name("editar_paciente");
 Route::get('pacientes/editar/{id}', 'PacientesController@edit')->name("form_editar_paciente");
 Route::post('pacientes/update', 'PacientesController@update');
 
@@ -60,6 +57,8 @@ Route::post('alunos/update', 'AlunosController@update');
 
 
 Route::get('consultas', 'ConsultasController@index')->name("listar_consultas");
+Route::get('consultas/criar', 'ConsultasController@create')->name("form_agenda_consulta");
+Route::post('consultas/criar', 'ConsultasController@store')->name("salva_consulta");
 
 
 

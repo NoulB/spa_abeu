@@ -4,6 +4,7 @@
 namespace App\Http\Controllers;
 
 
+use App\Models\Paciente;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -24,9 +25,21 @@ class ConsultasController extends Controller
 
         $mensagem = $request->session()->get('mensagem');
 
-//        return var_dump($consultas);
-//        exit;
         return view('consultas.index', compact('consultas', 'mensagem'));
 
     }
+
+
+    public function create()
+    {
+        return view('consultas.create');
+    }
+
+    public function busca_paciente(Request $request)
+    {
+        $pacientes = Paciente::busca($request->criterio);
+
+        return $pacientes;
+    }
+
 }
