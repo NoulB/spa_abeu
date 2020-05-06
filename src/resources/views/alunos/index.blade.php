@@ -1,4 +1,5 @@
 @extends('layout')
+<title>Início do Aluno</title>
 
 @section('cabecalho')
     Alunos

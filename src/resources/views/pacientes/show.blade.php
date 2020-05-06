@@ -1,5 +1,5 @@
 @extends('layout')
-
+<title>Paciente</title>
 @section('cabecalho')
     Paciente
 @endsection

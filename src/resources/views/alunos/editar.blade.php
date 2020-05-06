@@ -1,5 +1,5 @@
 @extends('layout')
-
+<title>Editar Aluno</title>
 @section('cabecalho')
     Editar Cadastro de Aluno
 @endsection
@@ -85,7 +85,7 @@
                 Celular: <br/>
                 <input class="form-control " id="inputcel"
                        placeholder="Celular - somente números" type="text" name="celular"
-                       value="{{ $aluno->celular }}" tabindex="7" onkeypress="return isNumberKey(event)"  maxlength="11" OnBlur="ValidaCEL()"/>
+                       value="{{ $aluno->celular }}" tabindex="7" onkeypress="return isNumberKey(event)"  maxlength="11" OnBlur="ValidaCEL()" onclick="desvalidarCEL()"/>
             </div>
                 <div class="col"></div>
             </div>
