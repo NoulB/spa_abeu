@@ -1,5 +1,5 @@
 @extends('layout')
-
+<title>Início do Paciente</title>
 @section('cabecalho')
     Pacientes
 @endsection
@@ -16,12 +16,12 @@
         <form class="form-inline my-2 my-lg-0 justify-content-between mb-" action="{{ url('/pacientes/busca') }}"
               method="post">
             <div>
-                <input class="form-control mr-sm-2" type="search" name="criterio" placeholder="Pesquisar...">
-                <button class="btn btn-outline-primary  my-2 my-sm-0" type="submit"><i class="fas fa-search"></i>
+                <input class="form-control mr-sm-2" type="search" name="criterio" placeholder="Pesquisar..." >
+                <button class="btn btn-primary  my-2 my-sm-0" type="submit"><i class="fas fa-search"></i>
                 </button>
             </div>
 
-            <a href="/pacientes/criar" class="btn btn-outline-success ">Adicionar</a>
+            <a href="/pacientes/criar" class="btn btn-success ">Adicionar</a>
             {{ csrf_field() }}
 
         </form>
@@ -50,7 +50,7 @@
                             </a>
                         </td>
                         <td>
-                            <a href="{{ url("/consulta/ultima/$paciente->id") }}" cllink="black">
+                            <a href="{{ url("/pacientes/show/$paciente->id") }}" cllink="black">
                                 {{\Carbon\Carbon::parse($paciente->data_nascimento)->age}}
                             </a>
                         </td>
@@ -67,7 +67,7 @@
         </div>
         <form class="navbar-form">
             <div class=text-right>
-                <a href="/" class="btn btn-outline-danger mb-2">voltar</a>
+                <a href="/" class="btn btn-danger mb-2">Voltar</a>
 
             </div>
         </form>

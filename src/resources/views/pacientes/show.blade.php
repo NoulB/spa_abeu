@@ -1,5 +1,5 @@
 @extends('layout')
-
+<title>Paciente</title>
 @section('cabecalho')
     Paciente
 @endsection
@@ -19,12 +19,25 @@
 
     <form action="{{ url("/pacientes/show/") }}" method="post">
         @csrf
-        <div>
+        <div class="row">
+            <div class="col">
             <br/>
             Nome:<br/>
-            <input class="form-control col-md-6" readonly=“true” id="input1" placeholder="Nome completo"
+            <input class="form-control " readonly=“true” id="input1" placeholder="Nome completo"
                    value="{{ $paciente->nome }}" type="text" name="nome" tabindex="1" required autofocus/>
+            </div>
+            <div class="col">
+                <br/>
+                Data de Incrição do Paciente: <br/>
+                <input class="form-control col-md-5" readonly=“true” id="createate" type="datetime"
+                       name="Data do Cadastro do Paciente"
+                       value="{{\Carbon\Carbon::parse($paciente->createate)->format('d/m/Y')}}" required
+                       tabindex="19"
+                       onkeypress="return isNumberKey(event)"/>
+
         </div>
+        </div>
+
         <div class="row">
             <div class="col">
                 CPF: <br/>
@@ -42,12 +55,12 @@
             </div>
             <div class="col">
                 Data de Nascimento:<br/>
-                <input class="form-control col-md-8" readonly=“true” id="input4" type="date" name="data_nascimento"
+                <input class="form-control col-md-11" readonly=“true” id="input4" type="date" name="data_nascimento"
                        value="{{ $paciente->data_nascimento }}" tabindex="4" required/>
             </div>
             <div class="col">
                 Idade:<br/>
-                <input class="form-control col-md-6" type="num" name="idade" id="idade" class="form-control" placeholder="Idade" readonly=“true”
+                <input class="form-control col-md-7" type="num" name="idade" id="idade" class="form-control" placeholder="Idade" readonly=“true”
                        value= "{{\Carbon\Carbon::parse($paciente->data_nascimento)->age}}"
             required/>
         </div>
@@ -55,7 +68,6 @@
             </div>
         <div>
             <div class="row">
-
                 <div class="col">
                     E-mail: <br/>
                     <input class="form-control" readonly=“true” id="input5" placeholder="E-mail" type="text"
@@ -63,20 +75,26 @@
                            value="{{ $paciente->email }}" tabindex="6"/>
                 </div>
                 <div class="col">
+                    <div class="row">
+                        <div class="col">
                     Celular: <br/>
-                    <input class="form-control col-md-6" readonly=“true” id="input6"
+                    <input class="form-control col-md-11" readonly=“true” id="input6"
                            placeholder="Celular - somente números" type="text"
                            name="celular"
                            value="{{ $paciente->celular }}"
                            tabindex="7" onkeypress="return isNumberKey(event)"/>
-                </div>
+                        </div>
                 <div class="col">
+                    <div class="row">
+
+                        <div class="col">
                     Telefone:<br/>
-                    <input class="form-control col-md-6" readonly=“true” id="input7" placeholder="Telefone 2"
+                    <input class="form-control col-md-7" readonly=“true” id="input7" placeholder="Telefone 2"
                            type="text" name="telefone"
                            value="{{ $paciente->telefone }}"
                            tabindex="8"
                            onkeypress="return isNumberKey(event)"/>
+                        </div></div></div>
                 </div>
             </div>
         </div>
@@ -177,13 +195,14 @@
                        value="{{ $paciente->cep }}" required
                        tabindex="19"
                        onkeypress="return isNumberKey(event)"/>
-            </div>
+            </div></div>
+
         </div>
         <br/><br/>
         <div class="form-inline my-2 my-lg-0 justify-content-sm-around">
-            <a href="{{ url("/pacientes/editar/$paciente->id") }}" class="btn btn-outline-primary">Editar</a>
-            <a href="{{ url("/pacientes")  }}" class="btn btn-outline-danger">Voltar</a>
-            <a href="{{ route('home') }}" class="btn btn-outline-dark">Home</a>
+            <a href="{{ url("/pacientes/editar/$paciente->id") }}" class="btn btn-success">Editar</a>
+            <a href="{{ url("/pacientes")  }}" class="btn btn-danger">Voltar</a>
+            <a href="{{ route('home') }}" class="btn btn-primary">Home</a>
         </div>
         <br/>
     </form>

@@ -1,7 +1,7 @@
 @extends('layout')
-<title>Início do Supervisor</title>
+
 @section('cabecalho')
-    Supervisores
+    Consultas de Hoje
 @endsection
 
 @section('conteudo')
@@ -13,7 +13,7 @@
             </div>
         @endif
         <br/>
-        <form class="form-inline my-2 my-lg-0 justify-content-between mb-" action="{{ url('/supervisores/busca') }}"
+        <form class="form-inline my-2 my-lg-0 justify-content-between mb-" action="{{ url('/pacientes/busca') }}"
               method="post">
             <div>
                 <input class="form-control mr-sm-2" type="search" name="criterio" placeholder="Pesquisar...">
@@ -21,7 +21,7 @@
                 </button>
             </div>
 
-            <a href="/supervisores/criar" class="btn btn-success ">Adicionar</a>
+            <a href="/consultas/criar" class="btn btn-success ">Adicionar</a>
             {{ csrf_field() }}
 
         </form>
@@ -30,35 +30,35 @@
             <table class="table table-striped table-md table-borderless">
                 <thead>
                 <tr>
-                    <th>Nome</th>
-                    <th>Telefone</th>
-                    <th>E-mail</th>
-                    <th>CRP</th>
+                    <th>Paciente</th>
+                    <th>Aluno</th>
+                    <th>Hora</th>
+                    <th>Consultório</th>
                 </tr>
                 </thead>
                 <tbody>
-                @foreach($supervisores as $supervisor)
+                @foreach($consultas as $consulta)
 
                     <tr>
                         <td>
-                            <a href="{{ url("/supervisores/show/$supervisor->id") }}">
-                                {{ $supervisor->nome }}
+                            <a href="{{ url("/consultas/show/$consulta->id") }}">
+                                {{ $consulta->paciente }}
                             </a>
                         </td>
                         <td>
-                            <a href="{{ url("/supervisores/show/$supervisor->id") }}">
-                                {{ $supervisor->celular }}
-                            </a>
+{{--                            <a href="{{ url("/pacientes/show/$paciente->id") }}">--}}
+                                {{ $consulta->aluno }}
+{{--                            </a>--}}
                         </td>
                         <td>
-                            <a href="{{ url("/supervisores/show/$supervisor->id") }}" cllink="black">
-                                {{ $supervisor->email }}
-                            </a>
+{{--                            <a href="{{ url("/consulta/ultima/$paciente->id") }}" cllink="black">--}}
+                                {{ $consulta->hora }}
+{{--                            </a>--}}
                         </td>
                         <td>
-                            <a href="{{ url("/supervisores/show/$supervisor->id") }}" cllink="black">
-                                {{ $supervisor->crp }}
-                            </a>
+{{--                            <a href="{{ url("/pacientes/show/$paciente->id") }}" cllink="black">--}}
+                                {{ $consulta->consultorio }}
+{{--                            </a>--}}
                         </td>
                     </tr>
 

@@ -1,7 +1,7 @@
 @extends('layout')
-
+<title>Supervisor</title>
 @section('cabecalho')
-    Visualizar Supervisor
+    Supervisor
 @endsection
 
 @section('conteudo')
@@ -17,7 +17,7 @@
             </div>
         @endif
 
-        <form action="{{ url("/supervisores/show/") }}" method="post">
+        <div action="{{ url("/supervisores/show/") }}" method="post">
             @csrf
             <div>
                 <br/>
@@ -43,24 +43,29 @@
             <div>
                 <h4>Contatos:</h4>
             </div>
-            <div>
+            <div class="row">
+
+            <div class="col">
                 Celular: <br/>
-                <input class="form-control col-md-6" readonly=“true” id="input4"
+                <input class="form-control " readonly=“true” id="input4"
                        placeholder="Celular - somente números" type="text" name="celular"
                        value="{{ $supervisor->celular }}" tabindex="4" onkeypress="return isNumberKey(event)"/>
             </div>
-            <div>
+            <div class="col"></div></div>
+            <div class="row">
+            <div class="col">
                 E-mail:<br/>
-                <input class="form-control col-md-6" readonly=“true” id="input5"
+                <input class="form-control " readonly=“true” id="input5"
                        placeholder="Celular - somente números" type="text" name="email"
                        value="{{ $supervisor->email }}" tabindex="5"/>
             </div>
+            <div class="col"></div></div>
             <br/><br/>
             <div class="form-inline my-2 my-lg-0 justify-content-sm-around">
 
-                <a href="{{ url("/supervisores/editar/$supervisor->id") }}" class="btn btn-outline-primary">editar</a>
-                <a href="{{ url("/supervisores") }}" class="btn btn-outline-danger">voltar</a>
-                <a href="{{ url("/") }}" class="btn btn-outline-dark">Home</a>
+                <a href="{{ url("/supervisores/editar/$supervisor->id") }}" class="btn btn-success">Editar</a>
+                <a href="{{ url("/supervisores") }}" class="btn btn-danger">Voltar</a>
+                <a href="{{ url("/") }}" class="btn btn-primary">Home</a>
             </div>
             <br/>
         </form>

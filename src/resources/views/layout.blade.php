@@ -1,7 +1,6 @@
 <!doctype html>
 <html lang="pt-br">
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -34,25 +33,62 @@
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-light justify-content-between" style="background-color: #e3f2fd;">
-    <div class="container">
+
+    <div class="collapse navbar-collapse">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-nav">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="navbar-collapse collapse dual-nav w-100">
+        <div class="collapse navbar-collapse  dual-nav w-100">
             <ul class="navbar-nav">
                 <li class="nav-item active">
                     <a class="nav-link pl-0" href="/">Home <span class="sr-only">Home</span></a>
                 </li>
-                <li class="nav-item">
+              {{--  <li class="nav-item">
                     <a class="nav-link" href="#">Link</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
+                </li>--}}
+               {{-- <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>--}}
 
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Dropdown
+                        Alunos
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Pacientes
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Supervisores
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Agendamentos
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="#">Action</a>
@@ -63,7 +99,7 @@
                 </li>
             </ul>
         </div>
-        <a href="#" class="navbar-brand mx-auto d-block text-center w-100"><h1>@yield('cabecalho')</h1></a>
+        <a href="#" class="navbar-brand col mx-auto d-block text-center w-100"><h3>@yield('cabecalho')</h3></a>
 
         <div class="navbar-collapse collapse dual-nav w-100">
             <!-- Right Side Of Navbar -->
@@ -111,6 +147,7 @@
 <script src="<?php echo asset('js/slim_min.js')?>"></script>
 <script src="<?php echo asset('js/popper_min.js')?>"></script>
 <script src="<?php echo('js/bootstrap_min.js')?>"></script>
+<script src="<?php echo asset('js/fontawesome.js')?>"></script>
 <script src="<?php echo asset('js/fontawesome.js')?>"></script>
 
 </body>

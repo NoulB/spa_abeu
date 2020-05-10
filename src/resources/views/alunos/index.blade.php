@@ -1,4 +1,5 @@
 @extends('layout')
+<title>Início do Aluno</title>
 
 @section('cabecalho')
     Alunos
@@ -17,11 +18,11 @@
               method="post">
             <div>
                 <input class="form-control mr-sm-2" type="search" name="criterio" placeholder="Pesquisar...">
-                <button class="btn btn-outline-primary  my-2 my-sm-0" type="submit"><i class="fas fa-search"></i>
+                <button class="btn btn-primary  my-2 my-sm-0" type="submit"><i class="fas fa-search"></i>
                 </button>
             </div>
 
-            <a href="/alunos/criar" class="btn btn-outline-success ">Adicionar</a>
+            <a href="/alunos/criar" class="btn btn-success ">Adicionar</a>
             {{ csrf_field() }}
 
         </form>
@@ -67,7 +68,7 @@
 
             <form class="navbar-form">
                 <div class=text-right>
-                    <a href="/" class="btn btn-outline-danger mb-2">voltar</a>
+                    <a href="/" class="btn btn-danger mb-2">Voltar</a>
 
                 </div>
             </form>

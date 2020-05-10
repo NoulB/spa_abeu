@@ -1,7 +1,8 @@
 @extends('layout')
-
+<title>Entrando</title>
 @section('conteudo')
-<div class="container">
+        <meta http-equiv="refresh" content="2; URL='/'"/>
+    <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -13,8 +14,10 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
                     Você está logado!
+                </div>
+                <div>
+                    <a href="{{ url("/") }}" style="float: right" class="btn btn-outline-primary">Entrar</a>
                 </div>
             </div>
         </div>

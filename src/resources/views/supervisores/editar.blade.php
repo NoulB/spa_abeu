@@ -1,5 +1,5 @@
 @extends('layout')
-
+<title>Editar Supervisor</title>
 @section('cabecalho')
     Editar Supervisor
 @endsection
@@ -43,23 +43,30 @@
             <div>
                 <h4>Contatos:</h4>
             </div>
-            <div>
+            <div class="row">
+                <div class="col">
                 Celular: <br/>
-                <input class="form-control col-md-6" id="inputcel"
+                <input class="form-control " id="inputcel"
                        placeholder="Celular - somente números" type="text" name="celular"
-                       value="{{ $supervisor->celular }}" tabindex="4" onkeypress="return isNumberKey(event)" maxlength="11" OnBlur="ValidaCEL()"/>
+                       value="{{ $supervisor->celular }}" tabindex="4" onkeypress="return isNumberKey(event)" maxlength="11" OnBlur="ValidaCEL()" onclick="desvalidarCEL()"/>
             </div>
-            <div>
-                E-mail:<br/>
-                <input class="form-control col-md-6" id="input5"
+                <div class="col"></div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+            E-mail:<br/>
+                <input class="form-control " id="input5"
                        placeholder="Celular - somente números" type="text" name="email"
                        value="{{ $supervisor->email }}" tabindex="5" maxlength="64" />
             </div>
-            <br/><br/>
+                <div class="col"></div>
+            </div>
+                <br/><br/>
             <div class="form-inline my-2 my-lg-0 justify-content-sm-around">
-                <button class="btn btn-outline-primary">Salvar</button>
-                <a href="{{ url("/supervisores") }}" class="btn btn-outline-danger">voltar</a>
-                <a href="{{ url("/") }}" class="btn btn-outline-dark">Home</a>
+                <button class="btn btn-success">Salvar</button>
+                <a href="{{ url("/supervisores") }}" class="btn btn-danger">Voltar</a>
+                <a href="{{ url("/") }}" class="btn btn-primary">Home</a>
             </div>
             <br/>
         </form>

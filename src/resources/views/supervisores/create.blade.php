@@ -1,7 +1,7 @@
 @extends('layout')
-
+<title>Cadastro de Supervisor</title>
 @section('cabecalho')
-    Cadastro de Supervisores
+    Cadastro de Supervisor
 @endsection
 
 @section('conteudo')
@@ -31,7 +31,7 @@
                 <div class="col">
                     Matricula: <br/>
                     <input class="form-control" id="input2" placeholder="somente números"
-                           type="text" name="id" tabindex="2" onkeypress="return isNumberKey(event)" maxlength="16" required/>
+                           type="text" name="id" tabindex="2" onkeypress="return isNumberKey(event)" maxlength="8" required/>
                 </div>
                 <div class="col">
                     CRP: <br/>
@@ -44,21 +44,25 @@
             <div>
                 <h4>Contatos:</h4>
             </div>
-            <div>
+            <div class="row">
+                <div class="col">
                 Celular: <br/>
-                <input class="form-control col-md-6" id="inputcel" placeholder="somente números"
-                       type="text" name="celular" tabindex="4" onkeypress="return isNumberKey(event)"maxlength="11" OnBlur="ValidaCEL()"/>
+                <input class="form-control " id="inputcel" placeholder="somente números"
+                       type="text" name="celular" tabindex="4" onkeypress="return isNumberKey(event)"maxlength="11" OnBlur="ValidaCEL()" onclick="desvalidarCEL()"/>
             </div>
-            <div>
+                <div class="col"></div></div>
+                <div class="row">
+                    <div class="col">
                 E-mail:<br/>
-                <input class="form-control col-md-6" id="input5" placeholder="e-mail"
+                <input class="form-control " id="input5" placeholder="e-mail"
                        type="text" name="email" tabindex="5" maxlength="64"/>
             </div>
+                    <div class="col"></div></div>
             <br/><br/>
             <div class="form-inline my-2 my-lg-0 justify-content-sm-around">
-                <button class="btn btn-outline-primary">Adicionar</button>
-                <a href="{{ url("/supervisores") }}" class="btn btn-outline-danger">Voltar</a>
-                <a href="{{ url("/") }}" class="btn btn-outline-dark">Home</a>
+                <button class="btn btn-success">Adicionar</button>
+                <a href="{{ url("/supervisores") }}" class="btn btn-danger">Voltar</a>
+                <a href="{{ url("/") }}" class="btn btn-primary">Home</a>
             </div>
             <br/>
         </form>
