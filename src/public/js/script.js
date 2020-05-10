@@ -149,3 +149,4 @@ function calculateAge(dobString) {
             input12.value = "";
         }
     }
+

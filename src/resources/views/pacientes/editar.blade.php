@@ -24,13 +24,29 @@ Editar Paciente
 
     <input type="hidden" name="id" value="{{ $paciente->id }}">
 
-        <div class="row">
-            <div class="col">
-        <br/>
-        Nome:<br/>
-        <input class="form-control " id="input1" placeholder="Nome completo"
-               type="text" name="nome" value="{{ $paciente->nome }}" size="50" tabindex="1" required autofocus maxlength="250"/>
-    </div>
+
+            <div class="row">
+                <div class="col">
+                    <br/>
+                    Nome:<br/>
+                    <input class="form-control " id="input1" placeholder="Nome completo"
+                           type="text" name="nome" value="{{ $paciente->nome }}" size="50" tabindex="1" required autofocus maxlength="250"/>
+                </div>
+                <div class="col">
+                    <br/>
+                    Data de Incrição do Paciente: <br/>
+                    <input class="form-control col-md-5" readonly=“true” id="createate" type="datetime"
+                           name="Data do Cadastro do Paciente"
+                           value="{{\Carbon\Carbon::parse($paciente->createate)->format('d/m/Y')}}" required
+                           tabindex="19"
+                           onkeypress="return isNumberKey(event)"/>
+
+                </div>
+
+
+
+
+
         </div>
     <div class="row">
         <div class="col">
@@ -191,9 +207,9 @@ Editar Paciente
     </div>
     <br/><br/>
     <div class="form-inline my-2 my-lg-0 justify-content-sm-around">
-        <button class="btn btn-outline-primary">Salvar</button>
-        <a href="{{ route('listar_pacientes') }}" class="btn btn-outline-danger">Voltar</a>
-        <a href="{{ route('home') }}" class="btn btn-outline-dark">Home</a>
+        <button class="btn btn-success">Salvar</button>
+        <a href="{{ route('listar_pacientes') }}" class="btn btn-danger">Voltar</a>
+        <a href="{{ route('home') }}" class="btn btn-primary">Home</a>
     </div>
     <br/>
     </form>

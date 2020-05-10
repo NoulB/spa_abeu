@@ -1,7 +1,7 @@
 @extends('layout')
 <title>Editar Aluno</title>
 @section('cabecalho')
-    Editar Cadastro de Aluno
+    Editar Aluno
 @endsection
 
 @section('conteudo')
@@ -43,9 +43,10 @@
             <div class="row">
                 <div class="col">
                     CPF: <br/>
-                    <input class="form-control"  readonly=“true” id="inputcpf" placeholder="somente números" type="text" name="cpf"
+                    <input class="form-control" readonly=“true” id="inputcpf" placeholder="somente números" type="text"
+                           name="cpf"
                            value="{{ $aluno->cpf }}" tabindex="3" onkeypress="return isNumberKey(event)" maxlength="11"
-                            required />
+                           required/>
                 </div>
                 <div class=" col">
                     RG: <br/>
@@ -57,20 +58,22 @@
 
                 <div class="col">
                     Data de Nascimento:<br/>
-                    <input class="form-control col-md-8" id="input5" type="date" min="1800-12-31" max="2999-12-31" name="data_nascimento"
+                    <input class="form-control col-md-8" id="input5" type="date" min="1800-12-31" max="2999-12-31"
+                           name="data_nascimento"
                            value="{{ $aluno->data_nascimento }}" tabindex="5" required/>
                 </div>
                 <div class="col">
                     Sexo:
-                    <select class="form-control col-md-8" name="sexo" onfocus="disableFirstItemOnly(this);" id="input6" tabindex="6" REQUIRED>
+                    <select class="form-control col-md-8" name="sexo" onfocus="disableFirstItemOnly(this);" id="input6"
+                            tabindex="6" REQUIRED>
 
                         <option selected value="{{$aluno->sexo}}"> {{ $aluno->sexo }} </option>
-                            <script type="text/javascript">
-                              function disableFirstItemOnly(ddl) {
-                                  ddl.options[0].hidden = true;
-                              }
-                            </script>
-                        <option onclick="Masculino"> Masculino </option>
+                        <script type="text/javascript">
+                            function disableFirstItemOnly(ddl) {
+                                ddl.options[0].hidden = true;
+                            }
+                        </script>
+                        <option onclick="Masculino"> Masculino</option>
                         <option onclick="Feminino">Feminino</option>
 
                     </select>
@@ -99,9 +102,9 @@
                 </div>
             <br/><br/>
             <div class="form-inline my-2 my-lg-0 justify-content-sm-around">
-                <button class="btn btn-outline-primary">Salvar</button>
-                <a href="{{ url("/alunos") }}" class="btn btn-outline-danger">voltar</a>
-                <a href="{{ url("/") }}" class="btn btn-outline-dark">Home</a>
+                <button class="btn btn-success">Salvar</button>
+                <a href="{{ url("/alunos") }}" class="btn btn-danger">Voltar</a>
+                <a href="{{ url("/") }}" class="btn btn-primary">Home</a>
             </div>
             <br/>
         </form>

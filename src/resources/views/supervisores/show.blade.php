@@ -1,7 +1,7 @@
 @extends('layout')
-<title>Supervisores</title>
+<title>Supervisor</title>
 @section('cabecalho')
-    Visualizar Supervisor
+    Supervisor
 @endsection
 
 @section('conteudo')
@@ -63,9 +63,9 @@
             <br/><br/>
             <div class="form-inline my-2 my-lg-0 justify-content-sm-around">
 
-                <a href="{{ url("/supervisores/editar/$supervisor->id") }}" class="btn btn-outline-primary">editar</a>
-                <a href="{{ url("/supervisores") }}" class="btn btn-outline-danger">voltar</a>
-                <a href="{{ url("/") }}" class="btn btn-outline-dark">Home</a>
+                <a href="{{ url("/supervisores/editar/$supervisor->id") }}" class="btn btn-success">Editar</a>
+                <a href="{{ url("/supervisores") }}" class="btn btn-danger">Voltar</a>
+                <a href="{{ url("/") }}" class="btn btn-primary">Home</a>
             </div>
             <br/>
         </form>

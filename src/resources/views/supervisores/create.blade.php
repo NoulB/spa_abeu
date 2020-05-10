@@ -1,7 +1,7 @@
 @extends('layout')
-<title>Cadastro de Supervisores</title>
+<title>Cadastro de Supervisor</title>
 @section('cabecalho')
-    Cadastro de Supervisores
+    Cadastro de Supervisor
 @endsection
 
 @section('conteudo')
@@ -60,9 +60,9 @@
                     <div class="col"></div></div>
             <br/><br/>
             <div class="form-inline my-2 my-lg-0 justify-content-sm-around">
-                <button class="btn btn-outline-primary">Adicionar</button>
-                <a href="{{ url("/supervisores") }}" class="btn btn-outline-danger">Voltar</a>
-                <a href="{{ url("/") }}" class="btn btn-outline-dark">Home</a>
+                <button class="btn btn-success">Adicionar</button>
+                <a href="{{ url("/supervisores") }}" class="btn btn-danger">Voltar</a>
+                <a href="{{ url("/") }}" class="btn btn-primary">Home</a>
             </div>
             <br/>
         </form>
