@@ -1,5 +1,5 @@
 @extends('layout')
-
+<title>Início do Supervisor</title>
 @section('cabecalho')
     Supervisores
 @endsection

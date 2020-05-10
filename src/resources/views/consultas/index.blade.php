@@ -1,7 +1,7 @@
 @extends('layout')
-<title>Início do Paciente</title>
+
 @section('cabecalho')
-    Pacientes
+    Consultas de Hoje
 @endsection
 
 @section('conteudo')
@@ -16,12 +16,12 @@
         <form class="form-inline my-2 my-lg-0 justify-content-between mb-" action="{{ url('/pacientes/busca') }}"
               method="post">
             <div>
-                <input class="form-control mr-sm-2" type="search" name="criterio" placeholder="Pesquisar..." >
+                <input class="form-control mr-sm-2" type="search" name="criterio" placeholder="Pesquisar...">
                 <button class="btn btn-outline-primary  my-2 my-sm-0" type="submit"><i class="fas fa-search"></i>
                 </button>
             </div>
 
-            <a href="/pacientes/criar" class="btn btn-outline-success ">Adicionar</a>
+            <a href="/consultas/criar" class="btn btn-outline-success ">Adicionar</a>
             {{ csrf_field() }}
 
         </form>
@@ -30,34 +30,35 @@
             <table class="table table-striped table-md table-borderless">
                 <thead>
                 <tr>
-                    <th>Nome</th>
-                    <th>Telefone</th>
-                    <th>Idade</th>
-                    <th>CPF</th>
+                    <th>Paciente</th>
+                    <th>Aluno</th>
+                    <th>Hora</th>
+                    <th>Consultório</th>
                 </tr>
                 </thead>
                 <tbody>
-                @foreach($pacientes as $paciente)
+                @foreach($consultas as $consulta)
+
                     <tr>
                         <td>
-                            <a href="{{ url("/pacientes/show/$paciente->id") }}">
-                                {{ $paciente->nome }}
+                            <a href="{{ url("/consultas/show/$consulta->id") }}">
+                                {{ $consulta->paciente }}
                             </a>
                         </td>
                         <td>
-                            <a href="{{ url("/pacientes/show/$paciente->id") }}">
-                                {{ $paciente->celular }}
-                            </a>
+{{--                            <a href="{{ url("/pacientes/show/$paciente->id") }}">--}}
+                                {{ $consulta->aluno }}
+{{--                            </a>--}}
                         </td>
                         <td>
-                            <a href="{{ url("/pacientes/show/$paciente->id") }}" cllink="black">
-                                {{\Carbon\Carbon::parse($paciente->data_nascimento)->age}}
-                            </a>
+{{--                            <a href="{{ url("/consulta/ultima/$paciente->id") }}" cllink="black">--}}
+                                {{ $consulta->hora }}
+{{--                            </a>--}}
                         </td>
                         <td>
-                            <a href="{{ url("/pacientes/show/$paciente->id") }}" cllink="black">
-                                {{ $paciente->cpf }}
-                            </a>
+{{--                            <a href="{{ url("/pacientes/show/$paciente->id") }}" cllink="black">--}}
+                                {{ $consulta->consultorio }}
+{{--                            </a>--}}
                         </td>
                     </tr>
 

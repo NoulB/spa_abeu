@@ -1,5 +1,5 @@
 @extends('layout')
-
+<title>Editar Paciente</title>
 @section('cabecalho')
 Editar Paciente
 @endsection
@@ -68,7 +68,7 @@ Editar Paciente
                 Celular: <br/>
                 <input class="form-control col-md-11" id="inputcel" placeholder="Somente números"
                        type="text" name="celular" value="{{ $paciente->celular }}"required maxlength="11" OnBlur="ValidaCEL()"
-                       size="20" tabindex="7" onkeypress="return isNumberKey(event)"/>
+                       size="20" tabindex="7" onkeypress="return isNumberKey(event)" onclick="desvalidarCEL()"/>
             </div>
             <div class="col">
                 <div class="row">
@@ -77,7 +77,7 @@ Editar Paciente
                 <input class="form-control col-md-7" id="inputtel" placeholder="Telefone" type="text"
                        name="telefone" value="{{ $paciente->telefone }}"
                        size="20" tabindex="8"
-                       onkeypress="return isNumberKey(event)" required maxlength="11" OnBlur="ValidaTEL()"/>
+                       onkeypress="return isNumberKey(event)" required maxlength="10" OnBlur="ValidaTEL()" onclick="desvalidarTEL()"/>
                     </div></div></div></div></div></div></div>
 
     <div>
@@ -186,7 +186,7 @@ Editar Paciente
             CEP: <br/>
             <input class="form-control col-md-6" id="inputcep" placeholder="CEP" type="text" name="cep"
                    value="{{ $paciente->cep }}"
-                   size="20" required tabindex="19" onkeypress="return isNumberKey(event)" maxlength="8" OnBlur="ValidaCEP()"/>
+                   size="20" required tabindex="19" onkeypress="return isNumberKey(event)" maxlength="8" OnBlur="ValidaCEP()" onclick="desvalidarCEP()"/>
         </div>
     </div>
     <br/><br/>

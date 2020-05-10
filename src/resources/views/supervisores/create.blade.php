@@ -1,5 +1,5 @@
 @extends('layout')
-
+<title>Cadastro de Supervisores</title>
 @section('cabecalho')
     Cadastro de Supervisores
 @endsection
@@ -48,7 +48,7 @@
                 <div class="col">
                 Celular: <br/>
                 <input class="form-control " id="inputcel" placeholder="somente números"
-                       type="text" name="celular" tabindex="4" onkeypress="return isNumberKey(event)"maxlength="11" OnBlur="ValidaCEL()"/>
+                       type="text" name="celular" tabindex="4" onkeypress="return isNumberKey(event)"maxlength="11" OnBlur="ValidaCEL()" onclick="desvalidarCEL()"/>
             </div>
                 <div class="col"></div></div>
                 <div class="row">

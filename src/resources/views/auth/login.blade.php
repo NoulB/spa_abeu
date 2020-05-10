@@ -1,5 +1,5 @@
 @extends('layout')
-
+<title>Login</title>
 @section('conteudo')
 <div class="container">
     <div class="row justify-content-center">
@@ -57,11 +57,11 @@
                                     {{ __('Login') }}
                                 </button>
 
-                                @if (Route::has('password.request'))
+                               {{-- @if (Route::has('password.request'))
                                     <a class="btn btn-link" href="{{ route('password.request') }}">
                                         {{ __('Esqueceu sua senha?') }}
                                     </a>
-                                @endif
+                                @endif--}}
                             </div>
                         </div>
                     </form>
