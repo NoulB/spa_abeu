@@ -17,7 +17,7 @@
                 </div>
                 <div class="card-body">
                     <ul class="list-unstyled mt-3 mb-4">
-                        <li>Cadastro do Pacientes</li>
+                        <li>Cadastrar Pacientes</li>
                         <li>Editar Pacientes</li>
                         <li>Buscar pacientes</li>
                         <li>Listar Pacientes</li>
@@ -31,7 +31,7 @@
                 </div>
                 <div class="card-body">
                     <ul class="list-unstyled mt-3 mb-4">
-                        <li>Cadastro dos Supervisores</li>
+                        <li>Cadastrar Supervisores</li>
                         <li>Editar Supervisores</li>
                         <li>Buscar Supervisore</li>
                         <li>Listar Supervisore</li>
@@ -45,12 +45,26 @@
                 </div>
                 <div class="card-body">
                     <ul class="list-unstyled mt-3 mb-4">
-                        <li>Cadastro dos Alunos</li>
+                        <li>Cadastrar Alunos</li>
                         <li>Editar Alunos</li>
                         <li>Buscar Alunos</li>
                         <li>Listar Alunos</li>
                     </ul>
                     <a href="/alunos" class="btn btn-lg btn-block btn-primary">Alunos</a>
+                </div>
+            </div>
+            <div class="card mb-4 shadow-sm">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">Consultas</h4>
+                </div>
+                <div class="card-body">
+                    <ul class="list-unstyled mt-3 mb-4">
+                        <li>Cadastrar Consultas</li>
+                        <li>Cancelar Consultas</li>
+                        <li>Buscar Consultas</li>
+                        <li>Listar Consultas</li>
+                    </ul>
+                    <a href="/consultas" class="btn btn-lg btn-block btn-primary">Consultas</a>
                 </div>
             </div>
         </div>

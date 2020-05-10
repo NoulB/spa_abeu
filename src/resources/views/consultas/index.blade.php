@@ -21,7 +21,7 @@
                 </button>
             </div>
 
-            <a href="/pacientes/criar" class="btn btn-outline-success ">Adicionar</a>
+            <a href="/consultas/criar" class="btn btn-outline-success ">Adicionar</a>
             {{ csrf_field() }}
 
         </form>

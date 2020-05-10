@@ -19,19 +19,38 @@
         @endif
 
         @csrf
+{{--            <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>--}}
+            <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
+            <script type="text/javascript">
+                 // $(function() {
+                    $("#pesquisarp").keyup(function() {
+                        // var busca = $("#pacienteid").val();
+                         // alert (busca);
+                         //    if ($('#pesquisarp').val().length >= 3) {
+                                $.get("{!! url('consultas/pesquisarp') !!}", {pesquisarp:$('#pesquisarp')}, function (data) {
+                                    $('#search_results').html(data.pacientes.toString());
+                                });
+                            // }
+                        $.get('db_query.php',{busca:busca}, function(data){
+                            $("#search_results").html(data);
+                        });
+                        return false;
+                    });
+                 // });
+            </script>
     </div>
     <div class="row">
-        <form method="post" id="paciente" action="" class="col">
+        <form method="post" id="formconsulta" action="" class="col">
             <br/>
             Paciente:<br/>
-            <input class="form-control form-check-inline col-md-8" id="paciente" placeholder="Nome completo"
+            <input class="form-control form-check-inline col-md-8" id="pesquisarp" placeholder="Nome completo"
                    type="text" name="paciente" tabindex="1" required autofocus />
 
-            <button class="btn btn-primary  my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
-            <button class="btn btn-success  my-2 my-sm-0" type="submit"><i class="fas fa-plus"></i></button>
-        </form>
-    </div>
+            <button class="btn btn-primary  my-2 my-sm-0"><i class="fas fa-search"></i></button>
+            <button class="btn btn-success  my-2 my-sm-0"><i class="fas fa-plus"></i></button>
+
+        <p id="search_results"></p>
     <div class="row">
         <div class="col">
             <br/>
@@ -100,8 +119,8 @@
 
     <br/><br/>
     <div class="form-inline my-2 my-lg-0 justify-content-sm-around">
-        <button class="btn btn-success">Adicionar</button>
-        <a href="{{ url("/pacientes") }}" class="btn btn-secondary">Voltar</a>
+        <button class="btn btn-success" type="submit">Adicionar</button>
+        <a href="{{ url("/consultas") }}" class="btn btn-secondary">Voltar</a>
 
     </div>
     <br/>

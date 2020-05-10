@@ -42,4 +42,14 @@ class ConsultasController extends Controller
         return $pacientes;
     }
 
+    public function pesquisarp(Request $request)
+    {
+        $dados = [];
+        $dados['url'] = url('/');
+        $dados['pacientes'] = Pacientes::where('nome','like','%'.$request->input('pesquisarp').'%')->get();
+        return response()->json($dados);
+    }
+
+
+
 }

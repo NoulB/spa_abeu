@@ -50,7 +50,7 @@
                             </a>
                         </td>
                         <td>
-                            <a href="{{ url("/consulta/ultima/$paciente->id") }}" cllink="black">
+                            <a href="{{ url("/pacientes/show/$paciente->id") }}" cllink="black">
                                 {{\Carbon\Carbon::parse($paciente->data_nascimento)->age}}
                             </a>
                         </td>
