@@ -1,5 +1,5 @@
 @extends('layout')
-
+<title>Editar Supervisores</title>
 @section('cabecalho')
     Editar Supervisor
 @endsection
@@ -48,7 +48,7 @@
                 Celular: <br/>
                 <input class="form-control " id="inputcel"
                        placeholder="Celular - somente números" type="text" name="celular"
-                       value="{{ $supervisor->celular }}" tabindex="4" onkeypress="return isNumberKey(event)" maxlength="11" OnBlur="ValidaCEL()"/>
+                       value="{{ $supervisor->celular }}" tabindex="4" onkeypress="return isNumberKey(event)" maxlength="11" OnBlur="ValidaCEL()" onclick="desvalidarCEL()"/>
             </div>
                 <div class="col"></div>
             </div>

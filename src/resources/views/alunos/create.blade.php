@@ -1,8 +1,12 @@
 @extends('layout')
+<title>Cadastro de Alunos</title>
 
 @section('cabecalho')
     Cadastro de Alunos para Estágios
 @endsection
+{{--
+<title>Tela de Cadastro de Alunos</title>
+--}}
 
 @section('conteudo')
     <div>
@@ -30,7 +34,7 @@
             </div>
             <div class="col">
                 <br/>
-                Data de Incrição do Paciente: <br/>
+                Data de Inscrição de Aluno: <br/>
                 <input class="form-control col-md-5"  id="createate" type="date" name="createate"
                        name="Data do Cadastro do Paciente"
                        onkeypress="return isNumberKey(event)"/>
@@ -50,7 +54,7 @@
                 <div class="col">
                     CPF: <br/>
                     <input class="form-control" id="inputcpf" placeholder="somente números" type="text" name="cpf"
-                           tabindex="3" onkeypress="return isNumberKey(event)" maxlength="11" OnBlur="ValidaCPF()" required/>
+                           tabindex="3" onkeypress="return isNumberKey(event)" maxlength="11" OnBlur="ValidaCPF()" onclick="desvalidarCPF()" required/>
                 </div>
                 <div class=" col">
                     RG: <br/>
@@ -92,7 +96,7 @@
                 Celular: <br/>
                 <input class="form-control " id="inputcel"
                        placeholder="Celular - somente números" type="text" name="celular"
-                       tabindex="7"  onkeypress="return isNumberKey(event)"   maxlength="11" OnBlur="ValidaCEL()" />
+                       tabindex="7"  onkeypress="return isNumberKey(event)"   maxlength="11" OnBlur="ValidaCEL()" onclick="desvalidarCEL()"/>
             </div>
                 <div class="col"></div>
             </div>

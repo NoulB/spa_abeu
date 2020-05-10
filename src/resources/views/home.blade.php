@@ -1,7 +1,7 @@
 @extends('layout')
-
+<title>Entrando</title>
 @section('conteudo')
-        <meta http-equiv="refresh" content="10; URL='/'"/>
+        <meta http-equiv="refresh" content="2; URL='/'"/>
     <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
