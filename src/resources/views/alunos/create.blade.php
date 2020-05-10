@@ -1,8 +1,8 @@
 @extends('layout')
-<title>Cadastro de Alunos</title>
+<title>Cadastro de Aluno</title>
 
 @section('cabecalho')
-    Cadastro de Alunos para Estágios
+    Cadastro de Aluno
 @endsection
 {{--
 <title>Tela de Cadastro de Alunos</title>
@@ -32,13 +32,13 @@
                 <input class="form-control " id="input1" placeholder="Nome completo"
                        type="text" name="nome" tabindex="1" required autofocus maxlength="250"/>
             </div>
-            <div class="col">
-                <br/>
-                Data de Inscrição de Aluno: <br/>
-                <input class="form-control col-md-5"  id="createate" type="date" name="createate"
-                       name="Data do Cadastro do Paciente"
-                       onkeypress="return isNumberKey(event)"/>
-            </div>
+{{--            <div class="col">--}}
+{{--                <br/>--}}
+{{--                Data de Inscrição de Aluno: <br/>--}}
+{{--                <input class="form-control col-md-5"  id="createate" type="date" name="createate"--}}
+{{--                       name="Data do Cadastro do Paciente"--}}
+{{--                       onkeypress="return isNumberKey(event)"/>--}}
+{{--            </div>--}}
 
     </div>
             <div class="row">
@@ -64,29 +64,37 @@
                 </div>
                 <div class="col">
                     Data de Nascimento:<br/>
-                    <input class="form-control col-md-10" id="input4" type="date" min="1800-12-31" max="2999-12-31"  name="data_nascimento" tabindex="5" OnBlur="ValidaDATA()"
+                    <input class="form-control col-md-8" id="input4" type="date" min="1800-12-31" max="2999-12-31"  name="data_nascimento" tabindex="5" OnBlur="ValidaDATA()"
                             required/>
                 </div>
                 <div class="col">
-                    Idade:<br/>
-                    <input class="form-control col-md-7" type="num" name="idade" id="idade" class="form-control" placeholder="Idade" disabled>
-                </div>
-
-            </div>
-            <div class="row">
-            <div class="col">
                     Sexo:
-                    <select class="form-control " name="sexo" id="input6" tabindex="6">
+                    <select class="form-control col-md-8" name="sexo" id="input6" tabindex="6">
                         <option value="Masculino">Masculino</option>
                         <option value="Feminino">Feminino</option>
                         required
                     </select>
                 </div>
-                <div class="col"></div>
-                <div class="col"></div>
-                <div class="col"></div>
+{{--                <div class="col">--}}
+{{--                    Idade:<br/>--}}
+{{--                    <input class="form-control col-md-7" type="num" name="idade" id="idade" class="form-control" placeholder="Idade" disabled>--}}
+{{--                </div>--}}
 
-                </div>
+            </div>
+{{--            <div class="row">--}}
+{{--                <div class="col">--}}
+{{--                    Sexo:--}}
+{{--                    <select class="form-control " name="sexo" id="input6" tabindex="6">--}}
+{{--                        <option value="Masculino">Masculino</option>--}}
+{{--                        <option value="Feminino">Feminino</option>--}}
+{{--                        required--}}
+{{--                    </select>--}}
+{{--                </div>--}}
+{{--                <div class="col"></div>--}}
+{{--                <div class="col"></div>--}}
+{{--                <div class="col"></div>--}}
+
+{{--            </div>--}}
             <br/>
             <div>
                 <h4>Contatos:</h4>
@@ -111,9 +119,9 @@
 
                 <br/><br/>
             <div class="form-inline my-2 my-lg-0 justify-content-sm-around">
-                <button class="btn btn-outline-primary">Adicionar</button>
-                <a href="{{ url("/alunos") }}" class="btn btn-outline-danger">voltar</a>
-                <a href="{{ url("/") }}" class="btn btn-outline-dark">Home</a>
+                <button class="btn btn-success">Adicionar</button>
+                <a href="{{ url("/alunos") }}" class="btn btn-danger">Voltar</a>
+                <a href="{{ url("/") }}" class="btn btn-primary">Home</a>
             </div>
             <br/>
         </form>

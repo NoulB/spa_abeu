@@ -1,5 +1,5 @@
 @extends('layout')
-<title>Editar Supervisores</title>
+<title>Editar Supervisor</title>
 @section('cabecalho')
     Editar Supervisor
 @endsection
@@ -64,9 +64,9 @@
             </div>
                 <br/><br/>
             <div class="form-inline my-2 my-lg-0 justify-content-sm-around">
-                <button class="btn btn-outline-primary">Salvar</button>
-                <a href="{{ url("/supervisores") }}" class="btn btn-outline-danger">voltar</a>
-                <a href="{{ url("/") }}" class="btn btn-outline-dark">Home</a>
+                <button class="btn btn-success">Salvar</button>
+                <a href="{{ url("/supervisores") }}" class="btn btn-danger">Voltar</a>
+                <a href="{{ url("/") }}" class="btn btn-primary">Home</a>
             </div>
             <br/>
         </form>

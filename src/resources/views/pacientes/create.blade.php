@@ -1,7 +1,7 @@
 @extends('layout')
-<title>Cadastro de Pacientes</title>
+<title>Cadastro de Paciente</title>
 @section('cabecalho')
-    Cadastro de Pacientes
+    Cadastro de Paciente
 @endsection
 
 @section('conteudo')
@@ -399,9 +399,9 @@
 
             <br/><br/>
             <div class="form-inline my-2 my-lg-0 justify-content-sm-around">
-                <button class="btn btn-outline-primary">Adicionar</button>
-                <a href="{{ url("/pacientes") }}" class="btn btn-outline-danger">Voltar</a>
-                <a href="{{ url("/") }}" class="btn btn-outline-dark">Home</a>
+                <button class="btn btn-success">Adicionar</button>
+                <a href="{{ url("/pacientes") }}" class="btn btn-danger">Voltar</a>
+                <a href="{{ url("/") }}" class="btn btn-primary">Home</a>
             </div>
             <br/>
         </form>

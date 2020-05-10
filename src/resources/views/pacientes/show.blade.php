@@ -55,12 +55,12 @@
             </div>
             <div class="col">
                 Data de Nascimento:<br/>
-                <input class="form-control col-md-8" readonly=“true” id="input4" type="date" name="data_nascimento"
+                <input class="form-control col-md-11" readonly=“true” id="input4" type="date" name="data_nascimento"
                        value="{{ $paciente->data_nascimento }}" tabindex="4" required/>
             </div>
             <div class="col">
                 Idade:<br/>
-                <input class="form-control col-md-6" type="num" name="idade" id="idade" class="form-control" placeholder="Idade" readonly=“true”
+                <input class="form-control col-md-7" type="num" name="idade" id="idade" class="form-control" placeholder="Idade" readonly=“true”
                        value= "{{\Carbon\Carbon::parse($paciente->data_nascimento)->age}}"
             required/>
         </div>
@@ -78,7 +78,7 @@
                     <div class="row">
                         <div class="col">
                     Celular: <br/>
-                    <input class="form-control col-md-7" readonly=“true” id="input6"
+                    <input class="form-control col-md-11" readonly=“true” id="input6"
                            placeholder="Celular - somente números" type="text"
                            name="celular"
                            value="{{ $paciente->celular }}"
@@ -196,31 +196,13 @@
                        tabindex="19"
                        onkeypress="return isNumberKey(event)"/>
             </div></div>
-            <div class="row">
-                <div class="col">
-                    <div class="row">
-                        <div class="col">
-                            Disponibilidade:
-                            <input class="form-control col-md-6" name="sexo" readonly=“true” id="input10" tabindex="10"
-                                   value="{{ $paciente->sexo }}">
-                        </div>
-                        <div class="col">
-                            Turno:
-                            <input class="form-control col-md-6" readonly=“true” id="input11" name="estado_civil"
-                                   value="{{ $paciente->estado_civil }}">
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
 
-                </div>
-            </div>
         </div>
         <br/><br/>
         <div class="form-inline my-2 my-lg-0 justify-content-sm-around">
-            <a href="{{ url("/pacientes/editar/$paciente->id") }}" class="btn btn-outline-primary">Editar</a>
-            <a href="{{ url("/pacientes")  }}" class="btn btn-outline-danger">Voltar</a>
-            <a href="{{ route('home') }}" class="btn btn-outline-dark">Home</a>
+            <a href="{{ url("/pacientes/editar/$paciente->id") }}" class="btn btn-success">Editar</a>
+            <a href="{{ url("/pacientes")  }}" class="btn btn-danger">Voltar</a>
+            <a href="{{ route('home') }}" class="btn btn-primary">Home</a>
         </div>
         <br/>
     </form>
