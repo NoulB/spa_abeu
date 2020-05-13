@@ -59,7 +59,13 @@ Route::post('alunos/update', 'AlunosController@update');
 Route::get('consultas', 'ConsultasController@index')->name("listar_consultas");
 Route::get('consultas/criar', 'ConsultasController@create')->name("form_agenda_consulta");
 Route::post('consultas/criar', 'ConsultasController@store')->name("salva_consulta");
-Route::get('consultas/pesquisarp', 'ConsultasController@pesquisarp')->name("pesquisar_paciente");
+Route::get('consultas/retornop/{busca}','ConsultasController@retornop')->name("retornar_paciente");
+Route::get('consultas/retornoa/{busca}','ConsultasController@retornoa')->name("retornar_aluno");
+Route::get('consultas/retornos/{busca}','ConsultasController@retornos')->name("retornar_supervisor");
+
+
+
+
 
 
 Auth::routes();
