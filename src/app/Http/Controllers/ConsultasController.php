@@ -4,7 +4,9 @@
 namespace App\Http\Controllers;
 
 
+use App\Models\Aluno;
 use App\Models\Paciente;
+use App\Models\Supervisor;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -28,7 +30,46 @@ class ConsultasController extends Controller
         return view('consultas.index', compact('consultas', 'mensagem'));
 
     }
+    public function retornop($busca)
+    {
 
+        $pacientes = Paciente::query()
+            -> where('nome', 'like', $busca.'%')
+            ->orderBy('nome')
+            ->limit(5)
+            ->get();
+
+
+        return view('consultas.buscas.retornop', compact('pacientes'));
+
+    }
+    public function retornoa($busca)
+    {
+
+        $alunos = Aluno::query()
+            -> where('nome', 'like', $busca.'%')
+            ->orderBy('nome')
+            ->limit(5)
+            ->get();
+
+
+        return view('consultas.buscas.retornoa', compact('alunos'));
+
+    }
+
+    public function retornos($busca)
+    {
+
+        $supervisores = Supervisor::query()
+            -> where('nome', 'like', $busca.'%')
+            ->orderBy('nome')
+            ->limit(5)
+            ->get();
+
+
+        return view('consultas.buscas.retornos', compact('supervisores'));
+
+    }
 
     public function create()
     {
@@ -42,13 +83,7 @@ class ConsultasController extends Controller
         return $pacientes;
     }
 
-    public function pesquisarp(Request $request)
-    {
-        $dados = [];
-        $dados['url'] = url('/');
-        $dados['pacientes'] = Pacientes::where('nome','like','%'.$request->input('pesquisarp').'%')->get();
-        return response()->json($dados);
-    }
+
 
 
 

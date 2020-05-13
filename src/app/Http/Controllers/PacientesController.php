@@ -6,7 +6,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\PacienteRequest;
 use App\Models\Paciente;
 use Illuminate\Http\Request;
-use Carbon\Carbon;
+//use Carbon\Carbon;
 class PacientesController extends Controller
 {
 

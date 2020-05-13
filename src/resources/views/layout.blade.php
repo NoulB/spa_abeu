@@ -27,9 +27,48 @@
         .table-striped > tbody > tr:nth-child(2n+1) > td, .table-striped > tbody > tr:nth-child(2n+1) > th {
             background-color: #e3f2fd;
         }
+        /*  ESTILOS DA BUSCA DE PESSOAS NO CADASTRO DE CONSULTAS    */
+        .autocompletegroup {
+            position: relative;
+        }
+        .autocompletebox {
+            position: absolute;
+            background-color: #eee;
+            border: solid thin #ccc;
+            padding: 10px;
+            border-radius: 5px;
+            z-index: 10;
+            width: 740px;
+            margin-top: 3px;
+            display: none;
+        }
+        .autocompletebox.visible{
+            display: block;
+        }
+        .linha-retornop{
+            margin-bottom: 10px;
+            display: block;
+            cursor: pointer;
+
+        }
+        .linha-retornoa{
+            margin-bottom: 10px;
+            display: block;
+            cursor: pointer;
+
+        }
+        .linha-retornos{
+            margin-bottom: 10px;
+            display: block;
+            cursor: pointer;
+
+        }
 
     </style>
+{{--    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>--}}
+
 </head>
+
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-light justify-content-between" style="background-color: #e3f2fd;">
@@ -149,6 +188,8 @@
 <script src="<?php echo('js/bootstrap_min.js')?>"></script>
 <script src="<?php echo asset('js/fontawesome.js')?>"></script>
 <script src="<?php echo asset('js/fontawesome.js')?>"></script>
+<script src="<?php echo asset('js/jquery.min.js')?>"></script>
+
 
 </body>
 

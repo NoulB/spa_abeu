@@ -19,56 +19,153 @@
         @endif
 
         @csrf
-{{--            <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>--}}
-            <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+            <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+            <script type="text/javascript">
+        //------      PACIENTES     ------//
+                $(document).on("click", ".linha-retornop", function (e) {
+                    var obj = $(this);
+                    console.log(obj.attr("data-id"));
+                    console.log(obj.text().trim());
+                    $("#idpaciente").val(obj.attr("data-id"));
+                    $("#paciente").val(obj.text().trim());
+                    $("#returnbox-paciente").html("");
+                    $("#returnbox-paciente").removeClass("visible");
+                });
+                $(document).on("keyup", "#paciente", function (e) {
+                    var paciente = $("#paciente").val();
+                    console.log(paciente);
+                    if(paciente.length>=3) {
+                        $.ajax({
+                            method: "GET",
+                            url: "{{ url('consultas/retornop') }}" + "/" + paciente,
+                            success: function (data) {
+                                if (data.length>0) {
+                                    $("#returnbox-paciente").addClass("visible");
+                                    $("#returnbox-paciente").html(data);
+                                    // console.log("data: ", data);
+                                }
+
+                            },
+                            dataType: "html"
+                        });
+                    }
+                    else{
+                        $("#returnbox-paciente").html("");
+                        $("#returnbox-paciente").removeClass("visible");
+                    }
+                });
+
+            </script>
 
             <script type="text/javascript">
-                 // $(function() {
-                    $("#pesquisarp").keyup(function() {
-                        // var busca = $("#pacienteid").val();
-                         // alert (busca);
-                         //    if ($('#pesquisarp').val().length >= 3) {
-                                $.get("{!! url('consultas/pesquisarp') !!}", {pesquisarp:$('#pesquisarp')}, function (data) {
-                                    $('#search_results').html(data.pacientes.toString());
-                                });
-                            // }
-                        $.get('db_query.php',{busca:busca}, function(data){
-                            $("#search_results").html(data);
+            //------      ALUNOS     ------//
+                $(document).on("click", ".linha-retornoa", function (e) {
+                    var obj = $(this);
+                    console.log(obj.attr("data-id"));
+                    console.log(obj.text().trim());
+                    $("#idaluno").val(obj.attr("data-id"));
+                    $("#aluno").val(obj.text().trim());
+                    $("#returnbox-aluno").html("");
+                    $("#returnbox-aluno").removeClass("visible");
+                });
+
+                $(document).on("keyup", "#aluno", function (e) {
+                    var aluno = $("#aluno").val();
+                    console.log(aluno);
+                    if(aluno.length>=3) {
+                        $.ajax({
+                            method: "GET",
+                            url: "{{ url('consultas/retornoa') }}" + "/" + aluno,
+                            success: function (data) {
+                                if (data.length>0) {
+                                    $("#returnbox-aluno").addClass("visible");
+                                    $("#returnbox-aluno").html(data);
+                                    // console.log("data: ", data);
+                                }
+
+                            },
+                            dataType: "html"
                         });
-                        return false;
-                    });
-                 // });
+                    }
+                    else{
+                        $("#returnbox-aluno").html("");
+                        $("#returnbox-aluno").removeClass("visible");
+                    }
+                });
+
+            </script>
+
+            <script type="text/javascript">
+        //------      SUPERVISORES     ------//
+                $(document).on("click", ".linha-retornos", function (e) {
+                    var obj = $(this);
+                            console.log(obj.attr("data-id"));
+                            console.log(obj.text().trim());
+                    $("#idsupervisor").val(obj.attr("data-id"));
+                    $("#supervisor").val(obj.text().trim());
+                    $("#returnbox-supervisor").html("");
+                    $("#returnbox-supervisor").removeClass("visible");
+                });
+                $(document).on("keyup", "#supervisor", function (e) {
+                    var supervisor = $("#supervisor").val();
+                    console.log(supervisor);
+                    if(supervisor.length>=3) {
+                        $.ajax({
+                            method: "GET",
+                            url: "{{ url('consultas/retornos') }}" + "/" + supervisor,
+                            success: function (data) {
+                                if (data.length>0) {
+                                    $("#returnbox-supervisor").addClass("visible");
+                                    $("#returnbox-supervisor").html(data);
+                                    // console.log("data: ", data);
+                                }
+
+                            },
+                            dataType: "html"
+                        });
+                    }
+                    else{
+                        $("#returnbox-supervisor").html("");
+                        $("#returnbox-supervisor").removeClass("visible");
+                    }
+                });
             </script>
     </div>
     <div class="row">
-        <form method="post" id="formconsulta" action="" class="col">
+        <form method="post" id="formconsulta" autocomplete="false" action="" class="col">
+            <input type="hidden" id="idpaciente"/>
+            <input type="hidden" id="idaluno"/>
+            <input type="hidden" id="idsupervisor"/>
             <br/>
             Paciente:<br/>
-            <input class="form-control form-check-inline col-md-8" id="pesquisarp" placeholder="Nome completo"
-                   type="text" name="paciente" tabindex="1" required autofocus />
+            <div id="searchbox-paciente" class="autocompletegroup">
+            <input class="form-control form-check-inline col-md-8" id="paciente" placeholder="Nome completo" type="text"
+                   name="paciente" tabindex="1" autocomplete="false" required autofocus/>
+            <div id="returnbox-paciente" class="autocompletebox">
 
-            <button class="btn btn-primary  my-2 my-sm-0"><i class="fas fa-search"></i></button>
-            <button class="btn btn-success  my-2 my-sm-0"><i class="fas fa-plus"></i></button>
+            </div>
+            </div>
 
-        <p id="search_results"></p>
     <div class="row">
         <div class="col">
             <br/>
             Aluno:<br/>
-            <input class="form-control form-check-inline col-md-8" id="input1" placeholder="Nome completo"
-                   type="text" name="nome" size="50" tabindex="1" required autofocus maxlength="250"/>
-            <button class="btn btn-primary  my-2 my-sm-0" type="submit"><i class="fas fa-search"></i>
-            </button>
+            <div id="searchbox-aluno" class="autocompletegroup">
+            <input class="form-control form-check-inline col-md-8" id="aluno" placeholder="Nome completo" type="text"
+                   name="aluno" size="50" tabindex="2" autocomplete="no" required autofocus maxlength="250" />
+            <div id="returnbox-aluno" class="autocompletebox">
+
         </div>
     </div>
     <div class="row">
         <div class="col">
             <br/>
             Supervisor:<br/>
-            <input class="form-control form-check-inline col-md-8" id="input1" placeholder="Nome completo"
-                   type="text" name="nome" size="50" tabindex="1" required autofocus maxlength="250"/>
-            <button class="btn btn-primary  my-2 my-sm-0" type="submit"><i class="fas fa-search"></i>
-            </button>
+            <div id="searchbox-supervisor" class="autocompletegroup">
+            <input class="form-control form-check-inline col-md-8" id="supervisor" placeholder="Nome completo"
+                   type="text" name="supervisor" size="50" tabindex="3" autocomplete="no" required autofocus maxlength="250"/>
+            <div id="returnbox-supervisor" class="autocompletebox">
+
         </div>
     </div>
     <br/>
