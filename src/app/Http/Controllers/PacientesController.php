@@ -21,7 +21,7 @@ class PacientesController extends Controller
 
         $pacientes = Paciente::query()
             ->orderBy('nome')
-            ->paginate(10);
+            ->simplePaginate(10);
 
 
         $mensagem = $request->session()->get('mensagem');
@@ -33,7 +33,7 @@ class PacientesController extends Controller
 
     public function busca(Request $request)
     {
-        $pacientes = Paciente::busca($request->criterio)->paginate(10);
+        $pacientes = Paciente::busca($request->criterio)->simplePaginate(10);
 
         return view('pacientes.index', [
             'pacientes' => $pacientes,

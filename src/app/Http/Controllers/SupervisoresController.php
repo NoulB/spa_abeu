@@ -25,7 +25,7 @@ class SupervisoresController extends Controller
 
         $supervisores = Supervisor::query()->where('status','=',1)
             ->orderBy('nome')
-            ->paginate(10);
+            ->simplePaginate(10);
         $mensagem = $request->session()->get('mensagem');
 
         return view('supervisores.index', compact('supervisores', 'mensagem'));
@@ -35,7 +35,7 @@ class SupervisoresController extends Controller
 
     public function busca(Request $request)
     {
-        $supervisores = Supervisor::busca($request->criterio)->paginate(10);
+        $supervisores = Supervisor::busca($request->criterio)->simplePaginate(10);
 
         return view('supervisores.index', [
             'supervisores' => $supervisores,
