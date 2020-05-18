@@ -64,6 +64,7 @@
             @endforeach
                 </tbody>
             </table>
+            {!! $alunos->links() !!}
         </div>
 
             <form class="navbar-form">

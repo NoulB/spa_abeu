@@ -65,6 +65,7 @@
                 @endforeach
                 </tbody>
             </table>
+            {!! $supervisores->links() !!}
         </div>
         <form class="navbar-form">
             <div class=text-right>

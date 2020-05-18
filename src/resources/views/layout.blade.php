@@ -9,6 +9,7 @@
 
     <link rel="stylesheet" href="<?php echo asset('css/style.css')?>" type="text/css">
 
+
     <style>
 
         a:link {
@@ -27,10 +28,12 @@
         .table-striped > tbody > tr:nth-child(2n+1) > td, .table-striped > tbody > tr:nth-child(2n+1) > th {
             background-color: #e3f2fd;
         }
+
         /*  ESTILOS DA BUSCA DE PESSOAS NO CADASTRO DE CONSULTAS    */
         .autocompletegroup {
             position: relative;
         }
+
         .autocompletebox {
             position: absolute;
             background-color: #eee;
@@ -42,22 +45,26 @@
             margin-top: 3px;
             display: none;
         }
-        .autocompletebox.visible{
+
+        .autocompletebox.visible {
             display: block;
         }
-        .linha-retornop{
+
+        .linha-retornop {
             margin-bottom: 10px;
             display: block;
             cursor: pointer;
 
         }
-        .linha-retornoa{
+
+        .linha-retornoa {
             margin-bottom: 10px;
             display: block;
             cursor: pointer;
 
         }
-        .linha-retornos{
+
+        .linha-retornos {
             margin-bottom: 10px;
             display: block;
             cursor: pointer;
@@ -65,13 +72,13 @@
         }
 
     </style>
-{{--    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>--}}
+    {{--    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>--}}
 
 </head>
 
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-light justify-content-between" style="background-color: #e3f2fd;">
+<nav class="navbar navbar-expand-lg navbar-light justify-content-between" style="background-color: #3FBBC0;">
 
     <div class="collapse navbar-collapse">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-nav">
@@ -82,28 +89,29 @@
                 <li class="nav-item active">
                     <a class="nav-link pl-0" href="/">Home <span class="sr-only">Home</span></a>
                 </li>
-              {{--  <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li>--}}
-               {{-- <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>--}}
+                {{--  <li class="nav-item">
+                      <a class="nav-link" href="#">Link</a>
+                  </li>--}}
+                {{-- <li class="nav-item">
+                     <a class="nav-link" href="#">Link</a>--}}
 
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Alunos
-                    </a>
+                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pessoas</a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="/pacientes">Buscar Pacientes</a>
+                        <a class="dropdown-item" href="/alunos">Buscar Alunos</a>
+                        <a class="dropdown-item" href="/supervisores">Buscar Supervisores</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Something else here</a>
+                        <a class="dropdown-item" href="/pacientes/criar">Cadastrar Pacientes</a>
+                        <a class="dropdown-item" href="/alunos/criar">Cadastrar Alunos</a>
+                        <a class="dropdown-item" href="/supervisores/criar">Cadastrar Supervisores</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Pacientes
+                        Consultas
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="#">Action</a>
@@ -112,18 +120,7 @@
                         <a class="dropdown-item" href="#">Something else here</a>
                     </div>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Supervisores
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
-                </li>
+
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -155,7 +152,8 @@
                     @endif
                 @else
                     <li class="nav-item dropdown">
-                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             {{ Auth::user()->name }} <span class="caret"></span>
                         </a>
 
@@ -182,14 +180,12 @@
 
 </div>
 
+<script src="<?php echo asset('js/jquery.min.js')?>"></script>
 <script src="<?php echo asset('js/validation.js')?>"></script>
 <script src="<?php echo asset('js/slim_min.js')?>"></script>
 <script src="<?php echo asset('js/popper_min.js')?>"></script>
-<script src="<?php echo('js/bootstrap_min.js')?>"></script>
+<script src="<?php echo asset('js/bootstrap_min.js')?>"></script>
 <script src="<?php echo asset('js/fontawesome.js')?>"></script>
-<script src="<?php echo asset('js/fontawesome.js')?>"></script>
-<script src="<?php echo asset('js/jquery.min.js')?>"></script>
-
 
 </body>
 

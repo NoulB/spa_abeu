@@ -13,7 +13,7 @@ class Aluno extends Model
 
     public static function busca($criterio)
     {
-        return static::where('nome', 'LIKE', '%' . $criterio . '%')->get();
+        return static::where('nome', 'LIKE', '%' . $criterio . '%');
     }
 
     public function aluno_projetos()
