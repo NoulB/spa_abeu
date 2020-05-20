@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 
 
 use App\Models\Aluno;
+use App\Models\Consulta;
 use App\Models\Paciente;
+use App\Models\PacienteConsulta;
 use App\Models\Supervisor;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -40,7 +42,8 @@ class ConsultasController extends Controller
             ->get();
 
 
-        return view('consultas.buscas.retornop', compact('pacientes'));
+        return response()->json($pacientes);
+//        return view('consultas.buscas.retornop', compact('pacientes'));
 
     }
     public function retornoa($busca)
@@ -52,8 +55,8 @@ class ConsultasController extends Controller
             ->limit(5)
             ->get();
 
-
-        return view('consultas.buscas.retornoa', compact('alunos'));
+        return response()->json($alunos);
+//        return view('consultas.buscas.retornoa', compact('alunos'));
 
     }
 
@@ -67,7 +70,8 @@ class ConsultasController extends Controller
             ->get();
 
 
-        return view('consultas.buscas.retornos', compact('supervisores'));
+        return response()->json($supervisores);
+//        return view('consultas.buscas.retornos', compact('supervisores'));
 
     }
 
@@ -83,7 +87,29 @@ class ConsultasController extends Controller
         return $pacientes;
     }
 
+    public function store(Request $request)
+    {
+        $consulta = new Consulta;
+        $consulta->alunos_id = $request->get('idaluno');
+        $consulta->supervisores_id = $request->get('idsupervisor');
+        $consulta->dia = $request->get('dia');
+        $consulta->hora = $request->get('hora');
+        $consulta->consultorio = $request->get('consultorio');
+        $consulta->save();
 
+
+        $consid = $consulta->id;
+        $pacid = json_decode($request->get('idpaciente'));
+
+        for ($i = 0; $i < count($pacid); $i++) {
+            $pacienteconsulta = new PacienteConsulta();
+            $pacienteconsulta->pacientes_id = $pacid[$i];
+            $pacienteconsulta->consultas_id = $consid;
+            $pacienteconsulta->save();
+        }
+        $request->session();
+        return redirect('consultas');
+    }
 
 
 

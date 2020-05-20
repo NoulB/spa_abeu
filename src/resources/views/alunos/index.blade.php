@@ -17,7 +17,7 @@
         <form class="form-inline my-2 my-lg-0 justify-content-between mb-" action="{{ url('/alunos/busca') }}"
               method="get">
             <div>
-                <input class="form-control mr-sm-2" type="search" name="criterio" placeholder="Pesquisar...">
+                <input class="form-control mr-sm-2" autocomplete="off" type="search" name="criterio" placeholder="Pesquisar...">
                 <button class="btn btn-primary  my-2 my-sm-0" type="submit"><i class="fas fa-search"></i>
                 </button>
             </div>

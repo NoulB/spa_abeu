@@ -9,7 +9,6 @@
 
     <link rel="stylesheet" href="<?php echo asset('css/style.css')?>" type="text/css">
 
-
     <style>
 
         a:link {
@@ -28,12 +27,10 @@
         .table-striped > tbody > tr:nth-child(2n+1) > td, .table-striped > tbody > tr:nth-child(2n+1) > th {
             background-color: #e3f2fd;
         }
-
         /*  ESTILOS DA BUSCA DE PESSOAS NO CADASTRO DE CONSULTAS    */
         .autocompletegroup {
             position: relative;
         }
-
         .autocompletebox {
             position: absolute;
             background-color: #eee;
@@ -45,34 +42,65 @@
             margin-top: 3px;
             display: none;
         }
-
-        .autocompletebox.visible {
+        .autocompletebox.visible{
             display: block;
         }
-
-        .linha-retornop {
+        .select-class{
             margin-bottom: 10px;
             display: block;
             cursor: pointer;
 
         }
-
-        .linha-retornoa {
-            margin-bottom: 10px;
-            display: block;
-            cursor: pointer;
-
+        .chipsbox{
+            padding: 0;
         }
-
-        .linha-retornos {
-            margin-bottom: 10px;
-            display: block;
-            cursor: pointer;
-
+        .chip{
+            position: relative;
+            background-color: #CCC;
+            margin-right: 10px;
+            border-radius: 10px;
+            height: 20px;
+            padding: 0 25px 0 15px;
+            font-size: 14px;
         }
-
+        .chip a{
+            color: white;
+        }
+        .closechip{
+            position: absolute;
+            font-weight: bold;
+            font-size: 25px;
+            margin-left: 10px;
+            color: white;
+            transform: rotate(45deg);
+            top: -11px;
+            right: 2px;
+            cursor: pointer;
+        }
+        #erro-box{
+            position: relative;
+            display: none;
+            color: red;
+            font-weight: bold;
+            background-color: #eee;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        #erro-box.visible{
+            display: block;
+        }
+        .erro-box-close{
+            position: absolute;
+            font-weight: bold;
+            font-size: 40px;
+            color: black;
+            transform: rotate(45deg);
+            top: -11px;
+            right: 2px;
+            cursor: pointer;
+        }
     </style>
-    {{--    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>--}}
+{{--    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>--}}
 
 </head>
 
@@ -89,11 +117,11 @@
                 <li class="nav-item active">
                     <a class="nav-link pl-0" href="/">Home <span class="sr-only">Home</span></a>
                 </li>
-                {{--  <li class="nav-item">
-                      <a class="nav-link" href="#">Link</a>
-                  </li>--}}
-                {{-- <li class="nav-item">
-                     <a class="nav-link" href="#">Link</a>--}}
+              {{--  <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>--}}
+               {{-- <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>--}}
 
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -180,12 +208,23 @@
 
 </div>
 
-<script src="<?php echo asset('js/jquery.min.js')?>"></script>
+
+
+<script src="<?php echo asset('js/jquery_min.js')?>"></script>
+<script src="<?php echo asset('js/script.js')?>"></script>
 <script src="<?php echo asset('js/validation.js')?>"></script>
-<script src="<?php echo asset('js/slim_min.js')?>"></script>
+
+{{--Não usar esse caralho--}}
+{{--<script src="<?php echo asset('js/slim_min.js')?>"></script>--}}
+
 <script src="<?php echo asset('js/popper_min.js')?>"></script>
 <script src="<?php echo asset('js/bootstrap_min.js')?>"></script>
 <script src="<?php echo asset('js/fontawesome.js')?>"></script>
+
+
+
+
+
 
 </body>
 
