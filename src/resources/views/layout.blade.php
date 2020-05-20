@@ -45,25 +45,60 @@
         .autocompletebox.visible{
             display: block;
         }
-        .linha-retornop{
+        .select-class{
             margin-bottom: 10px;
             display: block;
             cursor: pointer;
 
         }
-        .linha-retornoa{
-            margin-bottom: 10px;
-            display: block;
-            cursor: pointer;
-
+        .chipsbox{
+            padding: 0;
         }
-        .linha-retornos{
-            margin-bottom: 10px;
-            display: block;
-            cursor: pointer;
-
+        .chip{
+            position: relative;
+            background-color: #CCC;
+            margin-right: 10px;
+            border-radius: 10px;
+            height: 20px;
+            padding: 0 25px 0 15px;
+            font-size: 14px;
         }
-
+        .chip a{
+            color: white;
+        }
+        .closechip{
+            position: absolute;
+            font-weight: bold;
+            font-size: 25px;
+            margin-left: 10px;
+            color: white;
+            transform: rotate(45deg);
+            top: -11px;
+            right: 2px;
+            cursor: pointer;
+        }
+        #erro-box{
+            position: relative;
+            display: none;
+            color: red;
+            font-weight: bold;
+            background-color: #eee;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        #erro-box.visible{
+            display: block;
+        }
+        .erro-box-close{
+            position: absolute;
+            font-weight: bold;
+            font-size: 40px;
+            color: black;
+            transform: rotate(45deg);
+            top: -11px;
+            right: 2px;
+            cursor: pointer;
+        }
     </style>
 {{--    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>--}}
 
@@ -71,7 +106,7 @@
 
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-light justify-content-between" style="background-color: #e3f2fd;">
+<nav class="navbar navbar-expand-lg navbar-light justify-content-between" style="background-color: #3FBBC0;">
 
     <div class="collapse navbar-collapse">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-nav">
@@ -90,20 +125,21 @@
 
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Alunos
-                    </a>
+                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pessoas</a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="/pacientes">Buscar Pacientes</a>
+                        <a class="dropdown-item" href="/alunos">Buscar Alunos</a>
+                        <a class="dropdown-item" href="/supervisores">Buscar Supervisores</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Something else here</a>
+                        <a class="dropdown-item" href="/pacientes/criar">Cadastrar Pacientes</a>
+                        <a class="dropdown-item" href="/alunos/criar">Cadastrar Alunos</a>
+                        <a class="dropdown-item" href="/supervisores/criar">Cadastrar Supervisores</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Pacientes
+                        Consultas
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="#">Action</a>
@@ -112,18 +148,7 @@
                         <a class="dropdown-item" href="#">Something else here</a>
                     </div>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Supervisores
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
-                </li>
+
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -155,7 +180,8 @@
                     @endif
                 @else
                     <li class="nav-item dropdown">
-                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             {{ Auth::user()->name }} <span class="caret"></span>
                         </a>
 
@@ -182,13 +208,22 @@
 
 </div>
 
+
+
+<script src="<?php echo asset('js/jquery_min.js')?>"></script>
+<script src="<?php echo asset('js/script.js')?>"></script>
 <script src="<?php echo asset('js/validation.js')?>"></script>
-<script src="<?php echo asset('js/slim_min.js')?>"></script>
+
+{{--Não usar esse caralho--}}
+{{--<script src="<?php echo asset('js/slim_min.js')?>"></script>--}}
+
 <script src="<?php echo asset('js/popper_min.js')?>"></script>
-<script src="<?php echo('js/bootstrap_min.js')?>"></script>
+<script src="<?php echo asset('js/bootstrap_min.js')?>"></script>
 <script src="<?php echo asset('js/fontawesome.js')?>"></script>
-<script src="<?php echo asset('js/fontawesome.js')?>"></script>
-<script src="<?php echo asset('js/jquery.min.js')?>"></script>
+
+
+
+
 
 
 </body>

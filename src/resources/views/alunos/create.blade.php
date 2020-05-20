@@ -9,6 +9,8 @@
 --}}
 
 @section('conteudo')
+
+
     <div>
 
         @if ($errors->any())
@@ -29,7 +31,7 @@
                 <div class="col">
                     <br/>
                 Nome:<br/>
-                <input class="form-control " id="input1" placeholder="Nome completo"
+                <input class="form-control" autocomplete="novo-nome" id="input1" placeholder="Nome completo"
                        type="text" name="nome" tabindex="1" required autofocus maxlength="250"/>
             </div>
 {{--            <div class="col">--}}
@@ -44,7 +46,7 @@
             <div class="row">
                 <div class="col">
                     Matricula: <br/>
-                    <input class="form-control" id="input2" placeholder="somente números"
+                    <input class="form-control" autocomplete="nova-matricula" id="input2" placeholder="somente números"
                            type="text" name="id" tabindex="2"
                            onkeypress="return isNumberKey(event)" maxlength="8" required/>
                 </div>
@@ -53,18 +55,18 @@
             <div class="row">
                 <div class="col">
                     CPF: <br/>
-                    <input class="form-control" id="inputcpf" placeholder="somente números" type="text" name="cpf"
+                    <input class="form-control" autocomplete="novo=cpf" id="inputcpf" placeholder="somente números" type="text" name="cpf"
                            tabindex="3" onkeypress="return isNumberKey(event)" maxlength="11" OnBlur="ValidaCPF()" onclick="desvalidarCPF()" required/>
                 </div>
                 <div class=" col">
                     RG: <br/>
-                    <input class="form-control" id="input3" tabindex="4" placeholder="somente números"
+                    <input class="form-control" autocomplete="novo-rg" id="input3" tabindex="4" placeholder="somente números"
                            type="text" name="rg" onkeypress="return isNumberKey(event)"
                            required maxlength="16"/>
                 </div>
                 <div class="col">
                     Data de Nascimento:<br/>
-                    <input class="form-control col-md-8" id="input4" type="date" min="1800-12-31" max="2999-12-31"  name="data_nascimento" tabindex="5" OnBlur="ValidaDATA()"
+                    <input class="form-control col-md-8" autocomplete="novo-nasc" id="input4" type="date" min="1800-12-31" max="2999-12-31"  name="data_nascimento" tabindex="5" OnBlur="ValidaDATA()"
                             required/>
                 </div>
                 <div class="col">
@@ -102,7 +104,7 @@
             <div class="row">
                 <div class="col">
                 Celular: <br/>
-                <input class="form-control " id="inputcel"
+                <input class="form-control" autocomplete="novo-cel" id="inputcel"
                        placeholder="Celular - somente números" type="text" name="celular"
                        tabindex="7"  onkeypress="return isNumberKey(event)"   maxlength="11" OnBlur="ValidaCEL()" onclick="desvalidarCEL()"/>
             </div>
@@ -111,7 +113,7 @@
             <div class="row">
                 <div class="col">
                 E-mail:<br/>
-                <input class="form-control" id="input8" placeholder="e-mail" type="text" tabindex="8"
+                <input class="form-control" autocomplete="novo-mail" id="input8" placeholder="e-mail" type="text" tabindex="8"
                        name="email" maxlength="64"/>
             </div>
                 <div class="col"></div>

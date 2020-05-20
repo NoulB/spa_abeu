@@ -25,13 +25,13 @@
                 <div class="col">
                     <br/>
                     Nome:<br/>
-                    <input class="form-control " id="input1" placeholder="Nome completo"
+                    <input class="form-control" autocomplete="novo-nome" id="input1" placeholder="Nome completo"
                            type="text" name="nome" size="50" tabindex="1" required autofocus maxlength="250"/>
                 </div>
                 <div class="col">
                     <br/>
                     Data de Inscrição do Paciente: <br/>
-                    <input class="form-control col-md-6" id="created_at" type="date" name="created_at"
+                    <input class="form-control col-md-6" autocomplete="novo-data" id="created_at" type="date" name="created_at"
                            name="Data do Cadastro do Paciente"
                            onkeypress="return isNumberKey(event)"/>
                 </div>
@@ -40,26 +40,26 @@
             <div class="row">
                 <div class="col">
                     CPF: <br/>
-                    <input class="form-control" id="inputcpf" placeholder="somente números" type="text" name="cpf"
+                    <input class="form-control" autocomplete="novo-cpf" id="inputcpf" placeholder="somente números" type="text" name="cpf"
                            tabindex="2"
                            onkeypress="return isNumberKey(event)" required maxlength="11" onblur="ValidaCPF()"
                            onclick="desvalidarCPF()"/>
                 </div>
                 <div class="col">
                     RG: <br/>
-                    <input class="form-control" id="input2" placeholder="somente números" type="text"
+                    <input class="form-control" autocomplete="novo-rg" id="input2" placeholder="somente números" type="text"
                            name="rg" tabindex="3"
                            onkeypress="return isNumberKey(event)" required required maxlength="16"/>
                 </div>
                 <div class="col">
                     Data de Nascimento:<br/>
-                    <input class="form-control col-md-11" id="input4" type="date" min="1800-12-31" max="2999-12-31"
+                    <input class="form-control col-md-11" autocomplete="novo-nasc" id="input4" type="date" min="1800-12-31" max="2999-12-31"
                            name="data_nascimento"
                            tabindex="4" required/>
                 </div>
                 <div class="col">
                     Idade:<br/>
-                    <input class="form-control col-md-7" type="num" name="idade" id="idade" class="form-control"
+                    <input class="form-control col-md-7" autocomplete="novo-idade" type="num" name="idade" id="idade" class="form-control"
                            placeholder="Idade" disabled>
                 </div>
             </div>
@@ -67,14 +67,14 @@
                 <div class="row">
                     <div class="col">
                         E-mail: <br/>
-                        <input class="form-control" id="input5" placeholder="E-mail" type="text" name="email"
+                        <input class="form-control" autocomplete="novo-mail" id="input5" placeholder="E-mail" type="text" name="email"
                                tabindex="6" maxlength="64"/>
                     </div>
                     <div class="col">
                         <div class="row">
                             <div class="col">
                                 Celular: <br/>
-                                <input class="form-control col-md-11" id="inputcel"
+                                <input class="form-control col-md-11" autocomplete="novo-cel" id="inputcel"
                                        placeholder="Celular - somente números"
                                        type="text"
                                        name="celular"
@@ -85,7 +85,7 @@
                                 <div class="row">
                                     <div class="col">
                                         Telefone:<br/>
-                                        <input class="form-control col-md-7" id="inputtel" placeholder="Telefone 2"
+                                        <input class="form-control col-md-7" autocomplete="novo-tel" id="inputtel" placeholder="Telefone 2"
                                                type="text"
                                                name="telefone"
                                                size="20" tabindex="8"
@@ -103,12 +103,12 @@
                 <div class="row">
                     <div class="col">
                         Nome do Pai:<br/>
-                        <input class="form-control" id="input8" placeholder="Nome do Pai" type="text" name="pai"
+                        <input class="form-control" id="input8" autocomplete="novo-nome" placeholder="Nome do Pai" type="text" name="pai"
                                tabindex="9" maxlength="256"/>
                     </div>
                     <div class="col">
                         Nome do Mae:<br/>
-                        <input class="form-control" id="input9" placeholder="Nome da Mãe" type="text" name="mae"
+                        <input class="form-control" autocomplete="novo-nome" id="input9" placeholder="Nome da Mãe" type="text" name="mae"
                                tabindex="10" maxlength="256"
                                required/>
                     </div>
@@ -141,7 +141,7 @@
                 </div>
                 <div class="col" id="i12" hidden>
                     Cônjuge:
-                    <input class="form-control" id="input12" placeholder="Nome do(a) Cônjuge"
+                    <input class="form-control" autocomplete="novo-conj" id="input12" placeholder="Nome do(a) Cônjuge"
                            type="text" name="conjuge" maxlength="256"/>
                 </div>
             </div>
@@ -153,21 +153,21 @@
             <div class="row">
                 <div class="col">
                     Logradouro:<br/>
-                    <input class="form-control" id="input13" placeholder="Logradouro" type="text" name="logradouro"
+                    <input class="form-control" autocomplete="novo-" id="input13" placeholder="Logradouro" type="text" name="logradouro"
                            size="37" tabindex="14" maxlength="256" required/>
                 </div>
                 <div class="col">
                     <div class="row">
                         <div class="col">
                             Número:<br/>
-                            <input class="form-control col-md-6" id="input14" placeholder="Numero" type="text"
+                            <input class="form-control col-md-6" autocomplete="novo-" id="input14" placeholder="Numero" type="text"
                                    name="numero"
                                    size="10" required tabindex="15" maxlength="8"
                                    onkeypress="return isNumberKey(event)"/>
                         </div>
                         <div class="col">
                             Complemento:
-                            <input class="form-control" id="input15" placeholder="Complemento" type="text"
+                            <input class="form-control" autocomplete="novo-" id="input15" placeholder="Complemento" type="text"
                                    name="complemento"
                                    size="20" tabindex="16" maxlength="64"/>
 
@@ -181,26 +181,26 @@
                     <div class="row">
                         <div class="col">
                             Bairro: <br/>
-                            <input class="form-control" id="input16" placeholder="Bairro" type="text" name="bairro"
+                            <input class="form-control" autocomplete="novo-" id="input16" placeholder="Bairro" type="text" name="bairro"
                                    size="27"
                                    required tabindex="17" maxlength="64"/>
                         </div>
                         <div class="col">
                             Cidade: <br/>
-                            <input class="form-control" id="input17" placeholder="Cidade" type="text" name="cidade"
+                            <input class="form-control" autocomplete="novo-" id="input17" placeholder="Cidade" type="text" name="cidade"
                                    size="27" required tabindex="18" maxlength="64"/>
                         </div>
                     </div>
                 </div>
                 <div class="col">
                     CEP: <br/>
-                    <input class="form-control col-md-6" id="inputcep" placeholder="somente números" type="text"
+                    <input class="form-control col-md-6" autocomplete="novo-" id="inputcep" placeholder="somente números" type="text"
                            name="cep"
                            size="20" required tabindex="19" onkeypress="return isNumberKey(event)" maxlength="8"
                            OnBlur="ValidaCEP()" onclick="desvalidarCEP()"/>
                 </div>
             </div>
-          {{--  <div class="row">
+            <div class="row">
                 <div class="col">
                     <div class="form-check form-check-inline" id="disponibilidade">
                         <h6>Disponibilidade:</h6>
@@ -394,7 +394,7 @@
                     </div>
                 </div>
 
-            </div>--}}
+            </div>
 
 
             <br/><br/>
@@ -406,6 +406,7 @@
             <br/>
         </form>
     </div>
+
 
 @endsection
 

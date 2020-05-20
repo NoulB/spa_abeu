@@ -2,7 +2,8 @@
 <title>Login</title>
 @section('conteudo')
 <div class="container">
-    <div class="row justify-content-center">
+
+    <div class="row justify-content-center" style="background-image:url(../../../public/imgs/01.jpg)">
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">{{ __('Login') }}</div>
@@ -38,6 +39,13 @@
                                 @enderror
                             </div>
                         </div>
+
+
+
+
+
+
+
 
                         <div class="form-group row">
                             <div class="col-md-6 offset-md-4">

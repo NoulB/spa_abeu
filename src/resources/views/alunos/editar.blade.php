@@ -28,13 +28,13 @@
             <div>
                 <br/>
                 Nome:<br/>
-                <input class="form-control " id="input1" placeholder="Nome completo"
+                <input class="form-control" autocomplete="novo-" id="input1" placeholder="Nome completo"
                        type="text" name="nome" value="{{ $aluno->nome }}" tabindex="1" required autofocus maxlength="250"/>
             </div>
             <div class="row">
                 <div class="col">
                     Matricula: <br/>
-                    <input class="form-control" id="input2" placeholder="somente números"
+                    <input class="form-control" autocomplete="novo-" id="input2" placeholder="somente números"
                            type="text" name="id" value="{{ $aluno->id }}" tabindex="2" readonly
                            onkeypress="return isNumberKey(event)" required maxlength="16"/>
                 </div>
@@ -43,14 +43,14 @@
             <div class="row">
                 <div class="col">
                     CPF: <br/>
-                    <input class="form-control" readonly=“true” id="inputcpf" placeholder="somente números" type="text"
+                    <input class="form-control" autocomplete="novo-" readonly=“true” id="inputcpf" placeholder="somente números" type="text"
                            name="cpf"
                            value="{{ $aluno->cpf }}" tabindex="3" onkeypress="return isNumberKey(event)" maxlength="11"
                            required/>
                 </div>
                 <div class=" col">
                     RG: <br/>
-                    <input class="form-control" id="input4" tabindex="4" placeholder="somente números"
+                    <input class="form-control" autocomplete="novo-" id="input4" tabindex="4" placeholder="somente números"
                            type="text" name="rg" value="{{ $aluno->rg }}" onkeypress="return isNumberKey(event)"
                            required maxlength="16"/>
                 </div>
@@ -58,7 +58,7 @@
 
                 <div class="col">
                     Data de Nascimento:<br/>
-                    <input class="form-control col-md-8" id="input5" type="date" min="1800-12-31" max="2999-12-31"
+                    <input class="form-control col-md-8" autocomplete="novo-" id="input5" type="date" min="1800-12-31" max="2999-12-31"
                            name="data_nascimento"
                            value="{{ $aluno->data_nascimento }}" tabindex="5" required/>
                 </div>
@@ -86,7 +86,7 @@
             <div class="row">
                 <div class="col">
                 Celular: <br/>
-                <input class="form-control " id="inputcel"
+                <input class="form-control" autocomplete="novo-" id="inputcel"
                        placeholder="Celular - somente números" type="text" name="celular"
                        value="{{ $aluno->celular }}" tabindex="7" onkeypress="return isNumberKey(event)"  maxlength="11" OnBlur="ValidaCEL()" onclick="desvalidarCEL()"/>
             </div>
@@ -95,7 +95,7 @@
                 <div class="row">
                     <div class="col">
                 E-mail:<br/>
-                <input class="form-control " id="input8" placeholder="e-mail" type="text" tabindex="8"
+                <input class="form-control" autocomplete="novo-" id="input8" placeholder="e-mail" type="text" tabindex="8"
                        name="email" value="{{ $aluno->email }}" maxlength="64"/>
             </div>
                     <div class="col"></div>

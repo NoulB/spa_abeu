@@ -24,18 +24,18 @@
             <div>
                 <br/>
                 Nome:<br/>
-                <input class="form-control" id="input1" placeholder="Nome completo"
+                <input class="form-control" autocomplete="novo-nome" id="input1" placeholder="Nome completo"
                        type="text" name="nome" tabindex="1" required autofocus maxlength="256"/>
             </div>
             <div class="row">
                 <div class="col">
                     Matricula: <br/>
-                    <input class="form-control" id="input2" placeholder="somente números"
+                    <input class="form-control" autocomplete="novo-" id="input2" placeholder="somente números"
                            type="text" name="id" tabindex="2" onkeypress="return isNumberKey(event)" maxlength="8" required/>
                 </div>
                 <div class="col">
                     CRP: <br/>
-                    <input class="form-control" id="input3" placeholder="Ex: 12345/5"
+                    <input class="form-control" autocomplete="novo-" id="input3" placeholder="Ex: 12345/5"
                            type="text" name="crp" tabindex="3" maxlength="16">
                 </div>
             </div>
@@ -47,14 +47,14 @@
             <div class="row">
                 <div class="col">
                 Celular: <br/>
-                <input class="form-control " id="inputcel" placeholder="somente números"
+                <input class="form-control " autocomplete="novo-" id="inputcel" placeholder="somente números"
                        type="text" name="celular" tabindex="4" onkeypress="return isNumberKey(event)"maxlength="11" OnBlur="ValidaCEL()" onclick="desvalidarCEL()"/>
             </div>
                 <div class="col"></div></div>
                 <div class="row">
                     <div class="col">
                 E-mail:<br/>
-                <input class="form-control " id="input5" placeholder="e-mail"
+                <input class="form-control " autocomplete="novo-" id="input5" placeholder="e-mail"
                        type="text" name="email" tabindex="5" maxlength="64"/>
             </div>
                     <div class="col"></div></div>
