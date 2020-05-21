@@ -52,7 +52,7 @@
                         </td>
                         <td>
                             <a href="{{ url("/consultas/show/$consulta->id") }}" cllink="black">
-                                {{ $consulta->dia }}
+                                {{ \Carbon\Carbon::createFromFormat('H:i:s',$consulta->hora)->format('H:i') }}
                             </a>
                         </td>
                         <td>
