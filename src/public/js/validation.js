@@ -72,32 +72,35 @@ function ValidaCPF() {
         var valorValido = document.getElementById("inputcpf").value = inputcpf;
     }
 }
+
 function desvalidarCPF() {
     var inputcpf = document.forms.form1.inputcpf.value;
     var cpfValido = /^(([0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2}))$/;
     inputcpf = inputcpf.replace(/(\d{3})(\d)/, "$1.$2"); //Coloca um ponto entre o terceiro e o quarto dígitos
     inputcpf = inputcpf.replace(/(\d{3})(\d)/, "$1.$2"); //Coloca um ponto entre o terceiro e o quarto dígitos
-    inputcpf = inputcpf.replace(".","");
-    inputcpf = inputcpf.replace(".","");
+    inputcpf = inputcpf.replace(".", "");
+    inputcpf = inputcpf.replace(".", "");
     inputcpf = inputcpf.replace(/(\d{3})(\d{1,2})$/, "$1-$2"); //Coloca um hífen entre o terceiro e o quarto dígitos
-    inputcpf = inputcpf.replace("-","");
+    inputcpf = inputcpf.replace("-", "");
 
     var valorValido = document.getElementById("inputcpf").value = inputcpf;
 }
+
 function ValidaCEL() {
     var inputcel = document.forms.form1.inputcel.value;
     var celValido = /^(([0-9]{2}.[0-9]{5}.[0-9]{4}))$/;
     inputcel = inputcel.replace(/(\d{2})(\d{5})(\d{4})/, '($1) $2-$3');
     var valorValido = document.getElementById("inputcel").value = inputcel;
 }
+
 function desvalidarCEL() {
     var inputcel = document.forms.form1.inputcel.value;
     var celValido = /^(([0-9]{2}.[0-9]{5}.[0-9]{4}))$/;
     inputcel = inputcel.replace(/(\d{2})(\d{5})(\d{4})/, '($1) $2-$3');
-    inputcel = inputcel.replace("(","");
-    inputcel = inputcel.replace(")","");
-    inputcel = inputcel.replace("-","");
-    inputcel = inputcel.replace(" ","");
+    inputcel = inputcel.replace("(", "");
+    inputcel = inputcel.replace(")", "");
+    inputcel = inputcel.replace("-", "");
+    inputcel = inputcel.replace(" ", "");
 
     var valorValido = document.getElementById("inputcel").value = inputcel;
 }
@@ -108,32 +111,36 @@ function ValidaTEL() {
     inputtel = inputtel.replace(/(\d{2})(\d{8})/, '($1) $2');
     var valorValido = document.getElementById("inputtel").value = inputtel;
 }
+
 function desvalidarTEL() {
     var inputtel = document.forms.form1.inputtel.value;
     var telValido = /^(([0-9]{2}.[0-9]{8}))$/;
     inputtel = inputtel.replace(/(\d{2})(\d{8})/, '($1) $2');
-    inputtel = inputtel.replace("(","");
-    inputtel = inputtel.replace(")","");
-    inputtel = inputtel.replace(" ","");
+    inputtel = inputtel.replace("(", "");
+    inputtel = inputtel.replace(")", "");
+    inputtel = inputtel.replace(" ", "");
 
 
     var valorValido = document.getElementById("inputtel").value = inputtel;
 }
+
 function ValidaCEP() {
     var inputcep = document.forms.form1.inputcep.value;
     var cepValido = /^(([0-9]{2}.[0-9]{8}))$/;
     inputcep = inputcep.replace(/(\d{5})(\d{3})/, '$1-$2');
     var valorValido = document.getElementById("inputcep").value = inputcep;
 }
+
 function desvalidarCEP() {
     var inputcep = document.forms.form1.inputcep.value;
     var cepValido = /^(([0-9]{2}.[0-9]{8}))$/;
     inputcep = inputcep.replace(/(\d{5})(\d{3})/, '$1-$2');
-    inputcep = inputcep.replace("-","");
+    inputcep = inputcep.replace("-", "");
     var valorValido = document.getElementById("inputcep").value = inputcep;
 }
 
-document.getElementById("input4").addEventListener('change', function () {
+
+$(document).on("change", "#data_nasc", function (e) {
     var data = new Date(this.value);
     if (isDate_(this.value) && data.getFullYear() > 1900)
         document.getElementById("idade").value = calculateAge(this.value);
@@ -149,7 +156,9 @@ function calculateAge(dobString) {
         age--;
     }
     return age;
-}
+
+
+};
 
 function calcular(data) {
     var data = document.form.nascimento.value;
@@ -203,48 +212,48 @@ function totaldias() {
     var text24 = document.getElementById("disponibilidade26");
     var text25 = document.getElementById("disponibilidade7");
 
-    if (checkBox.checked == false){
-        segunda.hidden= false;
-        terca.hidden= false;
-        quarta.hidden= false;
-        quinta.hidden= false;
-        sexta.hidden= false;
-        sabado.hidden= false;
-        text24.hidden=false;
-        text25.hidden=false;
+    if (checkBox.checked == false) {
+        segunda.hidden = false;
+        terca.hidden = false;
+        quarta.hidden = false;
+        quinta.hidden = false;
+        sexta.hidden = false;
+        sabado.hidden = false;
+        text24.hidden = false;
+        text25.hidden = false;
 
         document.getElementById("tipo2").checked = false;
         document.getElementById("tipo3").checked = false;
         document.getElementById("tipo4").checked = false;
         document.getElementById("tipo5").checked = false;
         document.getElementById("tipo6").checked = false;
-        document.getElementById("tipo7").checked =  false;
+        document.getElementById("tipo7").checked = false;
 
     } else {
-        segunda.hidden=true;
-        terca.hidden=true;
-        quarta.hidden=true;
-        quinta.hidden=true;
-        sexta.hidden=true;
-        sabado.hidden=true;
-        text8.hidden=false;
-        text9.hidden=false;
-        text10.hidden=false;
-        text11.hidden=false;
-        text12.hidden=true;
-        text13.hidden=true;
-        text14.hidden=true;
-        text15.hidden=true;
-        text16.hidden=true;
-        text17.hidden=true;
-        text18.hidden=true;
-        text19.hidden=true;
-        text20.hidden=true;
-        text21.hidden=true;
-        text22.hidden=true;
-        text23.hidden=true;
-        text24.hidden=true;
-        text25.hidden=true;
+        segunda.hidden = true;
+        terca.hidden = true;
+        quarta.hidden = true;
+        quinta.hidden = true;
+        sexta.hidden = true;
+        sabado.hidden = true;
+        text8.hidden = false;
+        text9.hidden = false;
+        text10.hidden = false;
+        text11.hidden = false;
+        text12.hidden = true;
+        text13.hidden = true;
+        text14.hidden = true;
+        text15.hidden = true;
+        text16.hidden = true;
+        text17.hidden = true;
+        text18.hidden = true;
+        text19.hidden = true;
+        text20.hidden = true;
+        text21.hidden = true;
+        text22.hidden = true;
+        text23.hidden = true;
+        text24.hidden = true;
+        text25.hidden = true;
         document.getElementById("tipo2").checked = true;
         document.getElementById("tipo3").checked = true;
         document.getElementById("tipo4").checked = true;
@@ -292,13 +301,13 @@ function totalturno() {
     var text18 = document.getElementById("turnotarde");
     var text19 = document.getElementById("turnomanha");
 
-    if (checkBox.checked == false){
-        text2.hidden= false;
-        text3.hidden= false;
-        text4.hidden= false;
-        text17.hidden= false;
-        text18.hidden= false;
-        text19.hidden= false;
+    if (checkBox.checked == false) {
+        text2.hidden = false;
+        text3.hidden = false;
+        text4.hidden = false;
+        text17.hidden = false;
+        text18.hidden = false;
+        text19.hidden = false;
 
         document.getElementById("tipomanha").checked = false;
         document.getElementById("tipotarde").checked = false;
@@ -317,24 +326,24 @@ function totalturno() {
         document.getElementById("tipo20h").checked = false;
 
     } else {
-        text2.hidden=true;
-        text3.hidden=true;
-        text4.hidden=true;
-        text5.hidden=true;
-        text6.hidden=true;
-        text7.hidden=true;
-        text8.hidden=true;
-        text9.hidden=true;
-        text10.hidden=true;
-        text11.hidden=true;
-        text12.hidden=true;
-        text13.hidden=true;
-        text14.hidden=true;
-        text15.hidden=true;
-        text16.hidden=true;
-        text17.hidden=true;
-        text18.hidden=true;
-        text19.hidden=true;
+        text2.hidden = true;
+        text3.hidden = true;
+        text4.hidden = true;
+        text5.hidden = true;
+        text6.hidden = true;
+        text7.hidden = true;
+        text8.hidden = true;
+        text9.hidden = true;
+        text10.hidden = true;
+        text11.hidden = true;
+        text12.hidden = true;
+        text13.hidden = true;
+        text14.hidden = true;
+        text15.hidden = true;
+        text16.hidden = true;
+        text17.hidden = true;
+        text18.hidden = true;
+        text19.hidden = true;
 
         document.getElementById("tipomanha").checked = true;
         document.getElementById("tipotarde").checked = true;
@@ -354,6 +363,7 @@ function totalturno() {
 
     }
 }
+
 function manhaoculta() {
     var checkBox = document.getElementById("tipomanha");
     var text2 = document.getElementById("08h");
@@ -361,19 +371,18 @@ function manhaoculta() {
     var text4 = document.getElementById("10h");
     var text5 = document.getElementById("11h");
 
-    if (checkBox.checked == true){
-        text2.hidden= false;
-        text3.hidden= false;
-        text4.hidden= false;
-        text5.hidden= false;
-
+    if (checkBox.checked == true) {
+        text2.hidden = false;
+        text3.hidden = false;
+        text4.hidden = false;
+        text5.hidden = false;
 
 
     } else {
-        text2.hidden=true;
-        text3.hidden=true;
-        text4.hidden=true;
-        text5.hidden=true;
+        text2.hidden = true;
+        text3.hidden = true;
+        text4.hidden = true;
+        text5.hidden = true;
         document.getElementById("tipo08h").checked = false;
         document.getElementById("tipo09h").checked = false;
         document.getElementById("tipo10h").checked = false;
@@ -382,6 +391,7 @@ function manhaoculta() {
 
     }
 }
+
 function tardeoculta() {
     var checkBox = document.getElementById("tipotarde");
     var text2 = document.getElementById("13h");
@@ -392,22 +402,22 @@ function tardeoculta() {
     var text7 = document.getElementById("horario1");
     var text8 = document.getElementById("turnototal");
 
-    if (checkBox.checked == true){
-        text2.hidden= false;
-        text3.hidden= false;
-        text4.hidden= false;
-        text5.hidden= false;
-        text6.hidden= false;
-        text7.hidden= false;
-        text8.hidden= true;
+    if (checkBox.checked == true) {
+        text2.hidden = false;
+        text3.hidden = false;
+        text4.hidden = false;
+        text5.hidden = false;
+        text6.hidden = false;
+        text7.hidden = false;
+        text8.hidden = true;
 
 
     } else {
-        text2.hidden=true;
-        text3.hidden=true;
-        text4.hidden=true;
-        text5.hidden=true;
-        text6.hidden=true;
+        text2.hidden = true;
+        text3.hidden = true;
+        text4.hidden = true;
+        text5.hidden = true;
+        text6.hidden = true;
         document.getElementById("tipo13h").checked = false;
         document.getElementById("tipo14h").checked = false;
         document.getElementById("tipo15h").checked = false;
@@ -416,6 +426,7 @@ function tardeoculta() {
 
     }
 }
+
 function noiteoculta() {
     var checkBox = document.getElementById("tiponoite");
     var text2 = document.getElementById("18h");
@@ -423,23 +434,23 @@ function noiteoculta() {
     var text4 = document.getElementById("20h");
     var text5 = document.getElementById("horario2");
 
-    if (checkBox.checked == true){
-        text2.hidden= false;
-        text3.hidden= false;
-        text4.hidden= false;
-        text5.hidden= false;
-
+    if (checkBox.checked == true) {
+        text2.hidden = false;
+        text3.hidden = false;
+        text4.hidden = false;
+        text5.hidden = false;
 
 
     } else {
-        text2.hidden=true;
-        text3.hidden=true;
-        text4.hidden=true;
+        text2.hidden = true;
+        text3.hidden = true;
+        text4.hidden = true;
         document.getElementById("tipo18h").checked = false;
         document.getElementById("tipo19h").checked = false;
         document.getElementById("tipo20h").checked = false;
     }
 }
+
 function sabadooculta() {
     var checkBox = document.getElementById("tipo7");
     var text2 = document.getElementById("total2");
@@ -468,7 +479,7 @@ function sabadooculta() {
     var text25 = document.getElementById("turnototal");
     var text26 = document.getElementById("tipomanha");
 
-    if (checkBox.checked == false ) {
+    if (checkBox.checked == false) {
         text2.hidden = false;
         text3.hidden = false;
         text4.hidden = false;
@@ -483,14 +494,11 @@ function sabadooculta() {
         document.getElementById("tipo5").checked = false;
         document.getElementById("tipo6").checked = false;
         document.getElementById("tipomanha").checked = false;
-    }
-    else if(checkBox.checked == true && text18.checked == true || (checkBox.checked == true && text19.checked == true) ||
-        (checkBox.checked == true && text20.checked == true)||(checkBox.checked == true && text21.checked == true) ||
-        (checkBox.checked == true && text22.checked == true)  ){
+    } else if (checkBox.checked == true && text18.checked == true || (checkBox.checked == true && text19.checked == true) ||
+        (checkBox.checked == true && text20.checked == true) || (checkBox.checked == true && text21.checked == true) ||
+        (checkBox.checked == true && text22.checked == true)) {
         text17.hidden = false;
-    }
-    else if (checkBox.checked == true )
-    {
+    } else if (checkBox.checked == true) {
         text2.hidden = true;
         text3.hidden = true;
         text4.hidden = true;
@@ -533,7 +541,7 @@ function sabadooculta() {
 
 function sextaoculta() {
     var checkBox = document.getElementById("tipo6");
-    var text= document.getElementById("tipo7");
+    var text = document.getElementById("tipo7");
     var text2 = document.getElementById("total2");
     var text3 = document.getElementById("tarde");
     var text4 = document.getElementById("noite");
@@ -550,7 +558,7 @@ function sextaoculta() {
     var text14 = document.getElementById("18h");
     var text15 = document.getElementById("19h");
     var text16 = document.getElementById("20h");
-    var text19= document.getElementById("turnomanha");
+    var text19 = document.getElementById("turnomanha");
     var text21 = document.getElementById("turnototal");
     var text22 = document.getElementById("tipotarde");
     var text23 = document.getElementById("tiponoite");
@@ -579,17 +587,13 @@ function sextaoculta() {
         document.getElementById("tipo18h").checked = false;
         document.getElementById("tipo19h").checked = false;
         document.getElementById("tipo20h").checked = false;
-    }
-    else if(checkBox.checked == true && text.checked == true){
+    } else if (checkBox.checked == true && text.checked == true) {
         text3.hidden = false;
         text4.hidden = false;
-    }
-    else if(checkBox.checked == false && text.checked == true){
+    } else if (checkBox.checked == false && text.checked == true) {
         text3.hidden = true;
         text4.hidden = true;
-    }
-
-    else {
+    } else {
         text2.hidden = true;
         text5.hidden = true;
         text6.hidden = true;
@@ -627,9 +631,10 @@ function sextaoculta() {
 
     }
 }
+
 function quintaoculta() {
     var checkBox = document.getElementById("tipo5");
-    var text= document.getElementById("tipo7");
+    var text = document.getElementById("tipo7");
     var text2 = document.getElementById("total2");
     var text3 = document.getElementById("tarde");
     var text4 = document.getElementById("noite");
@@ -646,7 +651,7 @@ function quintaoculta() {
     var text14 = document.getElementById("18h");
     var text15 = document.getElementById("19h");
     var text16 = document.getElementById("20h");
-    var text19= document.getElementById("turnomanha");
+    var text19 = document.getElementById("turnomanha");
     var text21 = document.getElementById("turnototal");
 
     if (checkBox.checked == false) {
@@ -673,17 +678,13 @@ function quintaoculta() {
         document.getElementById("tipo18h").checked = false;
         document.getElementById("tipo19h").checked = false;
         document.getElementById("tipo20h").checked = false;
-    }
-    else if(checkBox.checked == true && text.checked == true){
+    } else if (checkBox.checked == true && text.checked == true) {
         text3.hidden = false;
         text4.hidden = false;
-    }
-    else if(checkBox.checked == false && text.checked == true){
+    } else if (checkBox.checked == false && text.checked == true) {
         text3.hidden = true;
         text4.hidden = true;
-    }
-
-    else {
+    } else {
         text2.hidden = true;
         text5.hidden = true;
         text6.hidden = true;
@@ -720,9 +721,10 @@ function quintaoculta() {
         document.getElementById("sabado").checked = false;
     }
 }
+
 function quartaoculta() {
     var checkBox = document.getElementById("tipo4");
-    var text= document.getElementById("tipo7");
+    var text = document.getElementById("tipo7");
     var text2 = document.getElementById("total2");
     var text3 = document.getElementById("tarde");
     var text4 = document.getElementById("noite");
@@ -739,7 +741,7 @@ function quartaoculta() {
     var text14 = document.getElementById("18h");
     var text15 = document.getElementById("19h");
     var text16 = document.getElementById("20h");
-    var text19= document.getElementById("turnomanha");
+    var text19 = document.getElementById("turnomanha");
     var text21 = document.getElementById("turnototal");
 
     if (checkBox.checked == false) {
@@ -766,17 +768,13 @@ function quartaoculta() {
         document.getElementById("tipo18h").checked = false;
         document.getElementById("tipo19h").checked = false;
         document.getElementById("tipo20h").checked = false;
-    }
-    else if(checkBox.checked == true && text.checked == true){
+    } else if (checkBox.checked == true && text.checked == true) {
         text3.hidden = false;
         text4.hidden = false;
-    }
-    else if(checkBox.checked == false && text.checked == true){
+    } else if (checkBox.checked == false && text.checked == true) {
         text3.hidden = true;
         text4.hidden = true;
-    }
-
-    else {
+    } else {
         text2.hidden = true;
         text5.hidden = true;
         text6.hidden = true;
@@ -813,9 +811,10 @@ function quartaoculta() {
         document.getElementById("sabado").checked = false;
     }
 }
+
 function tercaoculta() {
     var checkBox = document.getElementById("tipo3");
-    var text= document.getElementById("tipo7");
+    var text = document.getElementById("tipo7");
     var text2 = document.getElementById("total2");
     var text3 = document.getElementById("tarde");
     var text4 = document.getElementById("noite");
@@ -832,7 +831,7 @@ function tercaoculta() {
     var text14 = document.getElementById("18h");
     var text15 = document.getElementById("19h");
     var text16 = document.getElementById("20h");
-    var text19= document.getElementById("turnomanha");
+    var text19 = document.getElementById("turnomanha");
     var text21 = document.getElementById("turnototal");
 
     if (checkBox.checked == false) {
@@ -859,17 +858,13 @@ function tercaoculta() {
         document.getElementById("tipo18h").checked = false;
         document.getElementById("tipo19h").checked = false;
         document.getElementById("tipo20h").checked = false;
-    }
-    else if(checkBox.checked == true && text.checked == true){
+    } else if (checkBox.checked == true && text.checked == true) {
         text3.hidden = false;
         text4.hidden = false;
-    }
-    else if(checkBox.checked == false && text.checked == true){
+    } else if (checkBox.checked == false && text.checked == true) {
         text3.hidden = true;
         text4.hidden = true;
-    }
-
-    else {
+    } else {
         text2.hidden = true;
         text5.hidden = true;
         text6.hidden = true;
@@ -906,9 +901,10 @@ function tercaoculta() {
         document.getElementById("sabado").checked = false;
     }
 }
+
 function segundaoculta() {
     var checkBox = document.getElementById("tipo2");
-    var text= document.getElementById("tipo7");
+    var text = document.getElementById("tipo7");
     var text2 = document.getElementById("total2");
     var text3 = document.getElementById("tarde");
     var text4 = document.getElementById("noite");
@@ -925,9 +921,8 @@ function segundaoculta() {
     var text14 = document.getElementById("18h");
     var text15 = document.getElementById("19h");
     var text16 = document.getElementById("20h");
-    var text19= document.getElementById("turnomanha");
+    var text19 = document.getElementById("turnomanha");
     var text21 = document.getElementById("turnototal");
-
 
 
     if (checkBox.checked == false) {
@@ -954,17 +949,13 @@ function segundaoculta() {
         document.getElementById("tipo18h").checked = false;
         document.getElementById("tipo19h").checked = false;
         document.getElementById("tipo20h").checked = false;
-    }
-    else if(checkBox.checked == true && text.checked == true){
+    } else if (checkBox.checked == true && text.checked == true) {
         text3.hidden = false;
         text4.hidden = false;
-    }
-    else if(checkBox.checked == false && text.checked == true){
+    } else if (checkBox.checked == false && text.checked == true) {
         text3.hidden = true;
         text4.hidden = true;
-    }
-
-    else {
+    } else {
         text2.hidden = true;
         text5.hidden = true;
         text6.hidden = true;

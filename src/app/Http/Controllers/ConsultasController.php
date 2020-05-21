@@ -11,27 +11,43 @@ use App\Models\PacienteConsulta;
 use App\Models\Supervisor;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 
 class ConsultasController extends Controller
+
 {
     public function index(Request $request)
     {
 
         $consultas = DB::table('consultas')
+
             -> join('alunos', 'consultas.alunos_id', '=', 'alunos.id' )
             -> join('supervisores', 'consultas.supervisores_id', '=', 'supervisores.id')
             -> join('pacientes_consultas', 'consultas.id', '=', 'pacientes_consultas.consultas_id')
             -> join('pacientes', 'pacientes.id', '=', 'pacientes_consultas.pacientes_id')
-            -> select('consultas.id', 'pacientes.nome as paciente' , 'alunos.nome as aluno', 'consultas.consultorio', 'consultas.dia', 'consultas.hora')
-            -> where('dia', '=', date("Y-m-d"))
+            -> select('consultas.id', 'alunos.nome as aluno', 'supervisores.nome as supervisor', 'consultas.consultorio', 'consultas.dia', 'consultas.hora')
+             -> where("dia", "=", Carbon::now(-3)->toDateString())
             ->orderBy('consultas.hora')
+            ->groupBy('consultas.id')
             -> get();
+//            ->simplePaginate(10);
+//        $consultas = Consulta::query()
+//            ->orderBy('dia')
+//            ->simplePaginate(10);
 
         $mensagem = $request->session()->get('mensagem');
-
         return view('consultas.index', compact('consultas', 'mensagem'));
 
     }
+
+    public function show($id)
+    {
+        $consulta = Consulta::find($id);
+
+        return view('consultas.show', compact('consulta'));
+    }
+
+
     public function retornop($busca)
     {
 
