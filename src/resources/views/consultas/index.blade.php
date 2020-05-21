@@ -30,8 +30,8 @@
             <table class="table table-striped table-md table-borderless">
                 <thead>
                 <tr>
-                    <th>Paciente</th>
                     <th>Aluno</th>
+                    <th>Supervisor</th>
                     <th>Hora</th>
                     <th>Consultório</th>
                 </tr>
@@ -42,23 +42,23 @@
                     <tr>
                         <td>
                             <a href="{{ url("/consultas/show/$consulta->id") }}">
-                                {{ $consulta->paciente }}
+                                {{ $consulta->aluno }}
                             </a>
                         </td>
                         <td>
-{{--                            <a href="{{ url("/pacientes/show/$paciente->id") }}">--}}
-                                {{ $consulta->aluno }}
-{{--                            </a>--}}
+                            <a href="{{ url("/consultas/show/$consulta->id") }}">
+                                {{ $consulta->supervisor }}
+                            </a>
                         </td>
                         <td>
-{{--                            <a href="{{ url("/consulta/ultima/$paciente->id") }}" cllink="black">--}}
-                                {{ $consulta->hora }}
-{{--                            </a>--}}
+                            <a href="{{ url("/consultas/show/$consulta->id") }}" cllink="black">
+                                {{ $consulta->dia }}
+                            </a>
                         </td>
                         <td>
-{{--                            <a href="{{ url("/pacientes/show/$paciente->id") }}" cllink="black">--}}
+                            <a href="{{ url("/consultas/show/$consulta->id") }}" cllink="black">
                                 {{ $consulta->consultorio }}
-{{--                            </a>--}}
+                            </a>
                         </td>
                     </tr>
 
