@@ -6,16 +6,19 @@ namespace App\Http\Controllers;
 use App\Http\Requests\PacienteRequest;
 use App\Models\Paciente;
 use Illuminate\Http\Request;
+
 //use Carbon\Carbon;
 class PacientesController extends Controller
 {
 
     private $paciente;
+
     public function __construct()
     {
         $this->paciente = new Paciente();
         $this->middleware('auth');
     }
+
     public function index(Request $request)
     {
 
@@ -47,7 +50,7 @@ class PacientesController extends Controller
     {
         $paciente = Paciente::find($id);
 
-return view('pacientes.show', compact('paciente'));
+        return view('pacientes.show', compact('paciente'));
     }
 
 
@@ -85,7 +88,9 @@ return view('pacientes.show', compact('paciente'));
         return redirect('/pacientes');
 
     }
-    protected function getPaciente($id) {
+
+    protected function getPaciente($id)
+    {
         return $this->paciente->find($id);
     }
 

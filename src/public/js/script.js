@@ -79,7 +79,9 @@ function generateList(data, tabela, type) {
 }
 
 $(document).on("click", function (e) {
-    console.log($("#idpaciente").val());
+    // console.log($("#idpaciente").val());
+    console.log("Nome: ", $("#nomepacienteshow").val());
+    console.log("Id: ", $("#idpacienteshow").val());
     if (!$(e.target).hasClass("select-class")) {
         $(".autocompletebox").html("");
         $(".autocompletebox").removeClass("visible");
@@ -122,6 +124,7 @@ $(document).on("submit", "#formconsulta", function (e) {
     console.log($("#idpaciente").val());
     console.log($("#idaluno").val());
     console.log($("#idsupervisor").val());
+
     if ($("input[data-valid='false']").length > 0) {
         e.preventDefault();
         var msg = "";
@@ -136,6 +139,3 @@ $(document).on("submit", "#formconsulta", function (e) {
 });
 
 //**********************                     ************************//
-
-
-
