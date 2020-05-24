@@ -20,16 +20,15 @@ class ConsultasController extends Controller
     {
 
         $consultas = DB::table('consultas')
-
-            -> join('alunos', 'consultas.alunos_id', '=', 'alunos.id' )
-            -> join('supervisores', 'consultas.supervisores_id', '=', 'supervisores.id')
-            -> join('pacientes_consultas', 'consultas.id', '=', 'pacientes_consultas.consultas_id')
-            -> join('pacientes', 'pacientes.id', '=', 'pacientes_consultas.pacientes_id')
-            -> select('consultas.id', 'alunos.nome as aluno', 'supervisores.nome as supervisor', 'consultas.consultorio', 'consultas.dia', 'consultas.hora')
-             -> where("dia", "=", Carbon::now(-3)->toDateString())
+            ->join('alunos', 'consultas.alunos_id', '=', 'alunos.id')
+            ->join('supervisores', 'consultas.supervisores_id', '=', 'supervisores.id')
+            ->join('pacientes_consultas', 'consultas.id', '=', 'pacientes_consultas.consultas_id')
+            ->join('pacientes', 'pacientes.id', '=', 'pacientes_consultas.pacientes_id')
+            ->select('consultas.id', 'alunos.nome as aluno', 'supervisores.nome as supervisor', 'consultas.consultorio', 'consultas.dia', 'consultas.hora')
+//            ->where("dia", "=", Carbon::now(-3)->toDateString())
             ->orderBy('consultas.hora')
             ->groupBy('consultas.id')
-            -> get();
+            ->get();
 //            ->simplePaginate(10);
 //        $consultas = Consulta::query()
 //            ->orderBy('dia')
@@ -43,8 +42,16 @@ class ConsultasController extends Controller
     public function show($id)
     {
         $consulta = Consulta::find($id);
+        $aluno = Aluno::where('id', $consulta->alunos_id)->first()->nome;
+        $supervisor = Supervisor::where('id', $consulta->supervisores_id)->first()->nome;
+        $pacid = PacienteConsulta::where('consultas_id', $consulta->id)->pluck('pacientes_id')->toArray();
+        $pac = Paciente::query()
+            ->whereIn('id', $pacid)
+//            ->pluck('nome')
+//            ->toArray();
+->get();
 
-        return view('consultas.show', compact('consulta'));
+        return view('consultas.show', compact('consulta','aluno', 'supervisor', 'pacid','pac'));
     }
 
 
@@ -52,7 +59,7 @@ class ConsultasController extends Controller
     {
 
         $pacientes = Paciente::query()
-            -> where('nome', 'like', $busca.'%')
+            ->where('nome', 'like', $busca . '%')
             ->orderBy('nome')
             ->limit(5)
             ->get();
@@ -62,11 +69,12 @@ class ConsultasController extends Controller
 //        return view('consultas.buscas.retornop', compact('pacientes'));
 
     }
+
     public function retornoa($busca)
     {
 
         $alunos = Aluno::query()
-            -> where('nome', 'like', $busca.'%')
+            ->where('nome', 'like', $busca . '%')
             ->orderBy('nome')
             ->limit(5)
             ->get();
@@ -80,7 +88,7 @@ class ConsultasController extends Controller
     {
 
         $supervisores = Supervisor::query()
-            -> where('nome', 'like', $busca.'%')
+            ->where('nome', 'like', $busca . '%')
             ->orderBy('nome')
             ->limit(5)
             ->get();
@@ -126,7 +134,6 @@ class ConsultasController extends Controller
         $request->session();
         return redirect('consultas');
     }
-
 
 
 }
