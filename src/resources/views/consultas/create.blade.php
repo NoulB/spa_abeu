@@ -213,7 +213,7 @@
                                     <select class="form-control col-md-5" id="consultorio" name="consultorio"
                                             onchange="verifica(this.value)"
                                     >
-                                        <option value="1">Ludoterapia</option>
+                                        <option value="Ludoterapia">Ludoterapia</option>
                                         <option value="2">Consultório 02</option>
                                         <option value="3">Consultório 03</option>
                                         <option value="4">Consultório 04</option>

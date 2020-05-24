@@ -13,7 +13,6 @@ class PacientesController extends Controller
 {
 
     private $paciente;
-
     public function __construct()
     {
         $this->paciente = new Paciente();
@@ -23,14 +22,17 @@ class PacientesController extends Controller
 
     public function index(Request $request)
     {
+
         $pacientes = Paciente::query()
             ->where('status', '!=', '4')
             ->orderBy('nome')
             ->simplePaginate(10);
 
+
         $mensagem = $request->session()->get('mensagem');
 
         return view('pacientes.index', compact('pacientes', 'mensagem'));
+
     }
 
 
@@ -44,6 +46,7 @@ class PacientesController extends Controller
             'pacientes' => $pacientes,
             'criterio' => $request->criterio
         ]);
+
     }
 
 
