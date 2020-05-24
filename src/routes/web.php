@@ -28,10 +28,12 @@ Route::get('/', function () {
 Route::get('pacientes', 'PacientesController@index')->name("listar_pacientes");
 Route::post('pacientes', 'PacientesController@index')->name("busca_paciente");
 Route::get('pacientes/busca', 'PacientesController@busca')->name("busca_paciente");
+
 Route::get('pacientes/criar', 'PacientesController@create')->name("form_criar_paciente");
 Route::post('pacientes/criar', 'PacientesController@store')->name("salva_paciente");
 Route::get('pacientes/show/{id}', 'PacientesController@show')->name("mostrar_paciente");
 Route::get('pacientes/editar/{id}', 'PacientesController@edit')->name("form_editar_paciente");
+Route::delete('pacientes/remover/{id}', 'PacientesController@destroy')->name("remove_paciente");
 Route::post('pacientes/update', 'PacientesController@update');
 
 
