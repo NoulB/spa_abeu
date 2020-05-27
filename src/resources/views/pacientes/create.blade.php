@@ -200,201 +200,151 @@
                            OnBlur="ValidaCEP()" onclick="desvalidarCEP()"/>
                 </div>
             </div>
+
             <div class="row">
                 <div class="col">
                     <div class="form-check form-check-inline" id="disponibilidade">
-                        <h6>Disponibilidade:</h6>
-                    </div></div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <div class="form-check form-check-inline" id="total">
-                        <input class="form-check-input" type="checkbox" name="disponibilidade" id="Total1" value="1d"
-                               onclick="totaldias()">
-                        <label class="form-check-label" for="Total1">Total de Dias</label>
                     </div>
                 </div>
             </div>
+            <br/>
+            <h4>Disponibilidade:&nbsp;</h4>
             <div class="row">
                 <div class="col">
-                    <div class="form-check form-check-inline" id="turnototal">
-                        <h6>Turno:</h6>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <div class="form-check form-check-inline" id="total2">
-                        <input class="form-check-input" type="checkbox" name="Turno" id="Total22"
-                               value="1t" onclick="totalturno()">
-                        <label class="form-check-label" for="Total22">Total de Turnos</label>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <div class="form-check form-check-inline" id="disponibilidade26">
-                        <h6>Disponibilidade:</h6>
+                    <div class="form-check form-check-inline">
+                        <a class="btn btn-primary btn-sm" id="totaldias" onclick="totalmarcarcheckboxdias()" >Total</a>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col">
                     <div class="form-check form-check-inline" id="segunda">
-                        <input class="form-check-input" type="checkbox" name="disponibilidade" id="tipo2" value="2"
-                               onclick="segundaoculta()">
-                        <label class="form-check-label" for="tipo2">Segunda</label>
+                        <input class="form-check-input" type="checkbox" name="disponibilidade" id="segundadia" value="segunda">
+                        <label class="form-check-label" for="segundadia">Segunda</label>
                     </div>
                     <div class="form-check form-check-inline" id="terca">
-                        <input class="form-check-input" type="checkbox" name="disponibilidade" id="tipo3"
-                               onclick="tercaoculta()">
-                        <label class="form-check-label" for="tipo3">Terça</label>
+                        <input class="form-check-input" type="checkbox" name="disponibilidade" id="tercadia" value="terca">
+
+                        <label class="form-check-label" for="tercadia">Terça</label>
                     </div>
                     <div class="form-check form-check-inline" id="quarta">
-                        <input class="form-check-input" type="checkbox" name="disponibilidade" id="tipo4"
-                               onclick="quartaoculta()">
-                        <label class="form-check-label" for="tipo4">Quarta</label>
+                        <input class="form-check-input" type="checkbox" name="disponibilidade" id="quartadia" value="quarta">
+
+                        <label class="form-check-label" for="quartadia">Quarta</label>
                     </div>
                     <div class="form-check form-check-inline" id="quinta">
-                        <input class="form-check-input" type="checkbox" name="disponibilidade" id="tipo5"
-                               onclick="quintaoculta()">
-                        <label class="form-check-label" for="tipo5">Quinta</label>
+                        <input class="form-check-input" type="checkbox" name="disponibilidade" id="quintadia" value="quinta">
+                        <label class="form-check-label" for="quintadia">Quinta</label>
                     </div>
                     <div class="form-check form-check-inline" id="sexta">
-                        <input class="form-check-input" type="checkbox" name="disponibilidade" id="tipo6" value="6"
-                               onclick="sextaoculta()">
-                        <label class="form-check-label" for="tipo6">Sexta</label>
+                        <input class="form-check-input" type="checkbox" name="disponibilidade" id="sextadia" value="sexta">
+                        <label class="form-check-label" for="sextadia">Sexta</label>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col">
                     <div class="form-check form-check-inline" id="turnotarde">
-                        <h6>Turno:</h6>
+                        <h6>Turnos:</h6>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col">
                     <div class="form-check form-check-inline" id="tarde">
-                        <input class="form-check-input" type="checkbox" name="Turno" id="tipotarde"
-                               value="3" onclick="tardeoculta()">
-                        <label class="form-check-label" for="tipotarde">Tarde:</label>
+                        <a class="btn btn-primary btn-sm " name="Turno" id="checkboxtarde" onclick="tardemarcarcheckbox()">Tarde</a>
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <div class="form-check form-check-inline" id="horariotarde" hidden>
-                        <h6>Horários:</h6>
-                    </div>
-                    <div class="form-check form-check-inline" id="13h" hidden>
-                        <input class="form-check-input" type="checkbox" name="horario" id="tipo13h"
-                               value="13">
-                        <label class="form-check-label" for="tipo13h">13h</label>
-                    </div>
-                    <div class="form-check form-check-inline" id="14h" hidden>
-                        <input class="form-check-input" type="checkbox" name="horario" id="tipo14h"
-                               value="14">
-                        <label class="form-check-label" for="tipo14h">14h</label>
-                    </div>
-                    <div class="form-check form-check-inline" id="15h" hidden>
-                        <input class="form-check-input" type="checkbox" name="horario" id="tipo15h"
-                               value="15">
-                        <label class="form-check-label" for="tipo15h">15h</label>
-                    </div>
-                    <div class="form-check form-check-inline" id="16h" hidden>
-                        <input class="form-check-input" type="checkbox" name="horario" id="tipo16h"
-                               value="16">
-                        <label class="form-check-label" for="tipo16h">16h</label>
-                    </div>
-                    <div class="form-check form-check-inline" id="17h" hidden>
-                        <input class="form-check-input" type="checkbox" name="horario" id="tipo17h"
-                               value="17">
-                        <label class="form-check-label" for="tipo17h">17h</label>
-                    </div></div></div>
-            <div class="row">
-                <div class="col">
-                    <div class="form-check form-check-inline" id="turnonoite">
-                        <h6>Turno:</h6></div></div></div>
-            <div class="form-check form-check-inline" id="noite">
-                <input class="form-check-input" type="checkbox" name="Turno" id="tiponoite"
-                       value="4" onclick="noiteoculta()">
-                <label class="form-check-label" for="tiponoite">Noite:</label>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <div class="form-check form-check-inline" id="horarionoite" hidden>
-                        <h6>Horários:</h6></div></div></div>
-            <div class="row">
-                <div class="col">
-                    <div>
-                        <div class="form-check form-check-inline" id="18h" hidden>
-                            <input class="form-check-input" type="checkbox" name="horario" id="tipo18h"
-                                   value="18">
-                            <label class="form-check-label" for="tipo18h">18h</label>
-                        </div>
-                        <div class="form-check form-check-inline" id="19h" hidden>
-                            <input class="form-check-input" type="checkbox" name="horario" id="tipo19h"
-                                   value="19">
-                            <label class="form-check-label" for="tipo19h">19h</label>
-                        </div>
-                        <div class="form-check form-check-inline" id="20h" hidden>
-                            <input class="form-check-input" type="checkbox" name="horario" id="tipo20h"
-                                   value="20">
-                            <label class="form-check-label" for="tipo20h">20h</label></div>
-                    </div></div></div>
-            <div class="row">
-                <div class="col">
-                    <div class="form-check form-check-inline" id="disponibilidade7">
-                        <h6>Disponibilidade:</h6></div></div></div>
-            <div class="row">
-                <div class="col">
-                    <div class="form-check form-check-inline" id="sabado">
-                        <input class="form-check-input" type="checkbox" name="disponibilidade" id="tipo7" value="7"
-                               onclick="sabadooculta()">
-                        <label class="form-check-label" for="tipo7">Sábado:</label>
-                    </div>
-                </div></div>
-            <div class="row">
-                <div class="col">
-                    <div class="form-check form-check-inline" id="turnomanha">
-                        <h6>Turno:</h6></div></div></div>
-            <div class="form-check form-check-inline" id="manha">
-                <input class="form-check-input" type="checkbox" name="Turno" id="tipomanha"
-                       value="2" onclick="manhaoculta()">
-                <label class="form-check-label" for="tipomanha">Manhã:</label>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <div class="form-check form-check-inline" id="horariomanha" hidden>
-                        <h6>Horários:</h6>
-                    </div></div></div>
-            <div class="row">
-                <div class="col">
-                    <div class="form-check form-check-inline" id="08h" hidden>
-                        <input class="form-check-input" type="checkbox" name="horario" id="tipo08h"
-                               value="08">
-                        <label class="form-check-label" for="tipo08h">08h</label>
-                    </div>
-                    <div class="form-check form-check-inline" id="09h" hidden>
-                        <input class="form-check-input" type="checkbox" name="horario" id="tipo09h"
-                               value="09">
-                        <label class="form-check-label" for="tipo09h">09h</label>
-                    </div>
-                    <div class="form-check form-check-inline" id="10h" hidden>
-                        <input class="form-check-input" type="checkbox" name="horario" id="tipo10h"
-                               value="10">
-                        <label class="form-check-label" for="tipo10h">10h</label>
-                    </div>
-                    <div class="form-check form-check-inline" id="11h" hidden>
-                        <input class="form-check-input" type="checkbox" name="horario" id="tipo11h"
-                               value="11">
-                        <label class="form-check-label" for="tipo11h">11h</label>
-                    </div>
+                <div class="col" id="noite">
+                    <a class="btn btn-primary btn-sm" name="Turno" id="checkboxnoite" value="4" onclick="noitemarcarcheckbox()"
+                    >Noite</a>
+                </div>
+                <div class="col" id="sabado">
+                    <a class="btn btn-warning btn-sm" name="sabado" id="checkboxsabado" value="sabado"
+                       onclick="sabadomarcarcheckbox()">Sábado</a>
+
                 </div>
 
             </div>
+            <div class="row">
+                <div class="col">
+                    <div class="form-check form-check-inline" id="13h">
+                        <input class="form-check-input" type="checkbox" name="horario" id="checkbox13h" value="13h">
+                        <label class="form-check-label" for="checkbox13h">13h</label>
+                    </div>
+                    <div class="form-check form-check-inline" id="14h">
+                        <input class="form-check-input" type="checkbox" name="horario" id="checkbox14h"
+                               value="14h">
+                        <label class="form-check-label" for="checkbox14h">14h</label>
+                    </div>
+                    <div class="form-check form-check-inline" id="15h">
+                        <input class="form-check-input" type="checkbox" name="horario" id="checkbox15h"
+                               value="15h">
+                        <label class="form-check-label" for="checkbox15h">15h</label>
+                    </div>
+                    <div class="form-check form-check-inline" id="16h">
+                        <input class="form-check-input" type="checkbox" name="horario" id="checkbox16h"
+                               value="16h">
+                        <label class="form-check-label" for="checkbox16h">16h</label>
+                    </div>
+                    <div class="form-check form-check-inline" id="17h">
+                        <input class="form-check-input" type="checkbox" name="horario" id="checkbox17h"
+                               value="17h">
+                        <label class="form-check-label" for="checkbox17h">17h</label>
+                    </div>
+                </div>
+                <div class="col">
+                    <div>
+                        <div class="form-check form-check-inline" id="18h">
+                            <input class="form-check-input" type="checkbox" name="horario" id="checkbox18h"
+                                   value="18h">
+                            <label class="form-check-label" for="checkbox18h">18h</label>
+                        </div>
+                        <div class="form-check form-check-inline" id="19h">
+                            <input class="form-check-input" type="checkbox" name="horario" id="checkbox19h"
+                                   value="19h">
+                            <label class="form-check-label" for="checkbox19h">19h</label>
+                        </div>
+                        <div class="form-check form-check-inline" id="20h">
+                            <input class="form-check-input" type="checkbox" name="horario" id="checkbox20h"
+                                   value="20h">
+                            <label class="form-check-label" for="checkbox20h">20h</label></div>
+
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-check form-check-inline" id="08h">
+                        <input class="form-check-input" type="checkbox" name="horario" id="checkbox08h"
+                               value="08h">
+                        <label class="form-check-label" for="checkbox08h">08h</label>
+                    </div>
+                    <div class="form-check form-check-inline" id="09h">
+                        <input class="form-check-input" type="checkbox" name="horario" id="checkbox09h"
+                               value="09h">
+                        <label class="form-check-label" for="checkbox09h">09h</label>
+                    </div>
+                    <div class="form-check form-check-inline" id="10h">
+                        <input class="form-check-input" type="checkbox" name="horario" id="checkbox10h"
+                               value="10h">
+                        <label class="form-check-label" for="checkbox10h">10h</label>
+                    </div>
+                    <div class="form-check form-check-inline" id="11h">
+                        <input class="form-check-input" type="checkbox" name="horario" id="checkbox11h" onclick="t()"
+                               value="11h">
+                        <label class="form-check-label" for="checkbox11h">11h</label>
+                    </div>
+
+                </div>
+            </div>
+            {{--  <div class="col" >
+                  <a class="btn btn-primary btn-sm" name="teste"  value="4" onclick="arrayhorario()" >horarios</a>
+              </div>
+              <div class="col" >
+                  <a class="btn btn-primary btn-sm" name="teste"  value="4" onclick="arraydiponibilidade()" >disponibilidade</a>
+              </div>
+   --}}
+
+
 
 
             <br/><br/>
@@ -409,6 +359,8 @@
 
 
 @endsection
+
+
 
 
 
