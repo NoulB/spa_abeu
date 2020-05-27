@@ -16,7 +16,8 @@
         <form class="form-inline my-2 my-lg-0 justify-content-between mb-" action="{{ url('/pacientes/busca') }}"
               method="post">
             <div>
-                <input class="form-control mr-sm-2" autocomplete="off" type="search" name="criterio" placeholder="Pesquisar...">
+                <input class="form-control mr-sm-2" autocomplete="off" type="search" name="criterio"
+                       placeholder="Pesquisar...">
                 <button class="btn btn-primary  my-2 my-sm-0" type="submit"><i class="fas fa-search"></i>
                 </button>
             </div>
@@ -60,12 +61,31 @@
                                 {{ $consulta->consultorio }}
                             </a>
                         </td>
+                        <td align="right">
+                            <form method="post" action="/consultas/confirmar/{{ $consulta->id }}" style="height: 1px"
+                                  onsubmit="return confirm ('Confirmar realização de consulta?')">
+                                @csrf
+                                <button class="btn btn-success mb-2 btn-sm">
+                                    <i class="fas fa-check"></i>
+                                </button>
+                            </form>
+                        </td>
+                        <td align="right">
+                            <form method="post" action="/consultas/cancelar/{{ $consulta->id }}" style="height: 1px"
+                                  onsubmit="return confirm ('Tem certeza que deseja cancelar a consulta?')">
+                                @csrf
+                                @method('DELETE')
+                                <button class="btn btn-danger mb-2 btn-sm">
+                                    <i class="fas fa-trash-alt"></i>
+                                </button>
+                            </form>
+                        </td>
                     </tr>
 
                 @endforeach
                 </tbody>
             </table>
-{{--            {!! $consultas->links() !!}--}}
+            {{--            {!! $consultas->links() !!}--}}
         </div>
         <form class="navbar-form">
             <div class=text-right>

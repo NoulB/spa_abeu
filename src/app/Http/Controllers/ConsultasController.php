@@ -18,14 +18,14 @@ class ConsultasController extends Controller
 {
     public function index(Request $request)
     {
-
         $consultas = DB::table('consultas')
             ->join('alunos', 'consultas.alunos_id', '=', 'alunos.id')
             ->join('supervisores', 'consultas.supervisores_id', '=', 'supervisores.id')
             ->join('pacientes_consultas', 'consultas.id', '=', 'pacientes_consultas.consultas_id')
             ->join('pacientes', 'pacientes.id', '=', 'pacientes_consultas.pacientes_id')
-            ->select('consultas.id', 'alunos.nome as aluno', 'supervisores.nome as supervisor', 'consultas.consultorio', 'consultas.dia', 'consultas.hora')
-//            ->where("dia", "=", Carbon::now(-3)->toDateString())
+            ->select('consultas.id', 'alunos.nome as aluno', 'supervisores.nome as supervisor',
+                'consultas.consultorio', 'consultas.dia', 'consultas.hora')
+            ->where('consultas.status', '=', 'não realizada')
             ->orderBy('consultas.hora')
             ->groupBy('consultas.id')
             ->get();
@@ -49,9 +49,9 @@ class ConsultasController extends Controller
             ->whereIn('id', $pacid)
 //            ->pluck('nome')
 //            ->toArray();
-->get();
+            ->get();
 
-        return view('consultas.show', compact('consulta','aluno', 'supervisor', 'pacid','pac'));
+        return view('consultas.show', compact('consulta', 'aluno', 'supervisor', 'pacid', 'pac'));
     }
 
 
@@ -72,7 +72,6 @@ class ConsultasController extends Controller
 
     public function retornoa($busca)
     {
-
         $alunos = Aluno::query()
             ->where('nome', 'like', $busca . '%')
             ->orderBy('nome')
@@ -81,28 +80,27 @@ class ConsultasController extends Controller
 
         return response()->json($alunos);
 //        return view('consultas.buscas.retornoa', compact('alunos'));
-
     }
+
 
     public function retornos($busca)
     {
-
         $supervisores = Supervisor::query()
             ->where('nome', 'like', $busca . '%')
             ->orderBy('nome')
             ->limit(5)
             ->get();
 
-
         return response()->json($supervisores);
 //        return view('consultas.buscas.retornos', compact('supervisores'));
-
     }
+
 
     public function create()
     {
         return view('consultas.create');
     }
+
 
     public function busca_paciente(Request $request)
     {
@@ -110,6 +108,7 @@ class ConsultasController extends Controller
 
         return $pacientes;
     }
+
 
     public function store(Request $request)
     {
@@ -136,4 +135,58 @@ class ConsultasController extends Controller
     }
 
 
+    public function destroy(Request $request)
+    {
+        $consulta = Consulta::find($request->id);
+        DB::table('consultas')
+            ->where('id', $consulta->id)
+            ->update(['status' => 'cancelada']);
+        $request->session()
+            ->flash(
+                'mensagem',
+                "Consulta cancelada com sucesso!"
+            );
+        return redirect('consultas');
+    }
+
+
+    public function confirmaConsulta(Request $request)
+    {
+        $consulta = Consulta::find($request->id);
+        DB::table('consultas')
+            ->where('id', $consulta->id)
+            ->update(['status' => 'realizada']);
+        $request->session()
+            ->flash(
+                'mensagem',
+                "Consulta relizada!"
+            );
+        return redirect('consultas');
+    }
+
+
+//    public function buscaConsultaPorPaciente(Request $request)
+//    {
+//        $paciente_id = PacienteConsulta::where('consultas_id', $consulta->id)->pluck('pacientes_id')
+//
+//        $consultas = DB::table('consultas')
+//            ->join('alunos', 'consultas.alunos_id', '=', 'alunos.id')
+//            ->join('supervisores', 'consultas.supervisores_id', '=', 'supervisores.id')
+//            ->join('pacientes_consultas', 'consultas.id', '=', 'pacientes_consultas.consultas_id')
+//            ->join('pacientes', 'pacientes.id', '=', 'pacientes_consultas.pacientes_id')
+//            ->select('consultas.id', 'alunos.nome as aluno', 'supervisores.nome as supervisor',
+//                'consultas.consultorio', 'consultas.dia', 'consultas.hora')
+//            ->whereIn()
+//            ->orderBy('consultas.hora')
+//            ->groupBy('consultas.id')
+//            ->get();
+////            ->simplePaginate(10);
+////        $consultas = Consulta::query()
+////            ->orderBy('dia')
+////            ->simplePaginate(10);
+//
+//        $mensagem = $request->session()->get('mensagem');
+//        return view('consultas.index', compact('consultas', 'mensagem'));
+//
+//    }
 }

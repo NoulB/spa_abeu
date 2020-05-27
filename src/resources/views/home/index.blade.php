@@ -6,7 +6,18 @@
 
 @section('conteudo')
 
-    <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+    <div class="pricing-header px-3 py-3 pt-md-2 pb-md-4 mx-auto text-center">
+        <form class="form-inline my-2 my-lg-0 justify-content-between mb-" action="{{ url('/pacientes/busca') }}"
+              method="get">
+            <div>
+                <input class="form-control mr-sm-2" autocomplete="off" type="search" name="criterio"
+                       placeholder="Pesquisar por paciente...">
+                <button class="btn btn-primary  " type="submit"><i class="fas fa-search"></i>
+                </button>
+            </div>
+            <a href="/pacientes/criar" class="btn btn-success ">Adicionar Paciente</a>
+            {{ csrf_field() }}
+        </form>
         <h2 class="display-4">Bem Vindo!</h2>
     </div>
     <div class="container">
