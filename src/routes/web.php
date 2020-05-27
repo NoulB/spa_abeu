@@ -28,12 +28,12 @@ Route::get('/', function () {
 Route::get('pacientes', 'PacientesController@index')->name("listar_pacientes");
 Route::post('pacientes', 'PacientesController@index')->name("busca_paciente");
 Route::get('pacientes/busca', 'PacientesController@busca')->name("busca_paciente");
-
 Route::get('pacientes/criar', 'PacientesController@create')->name("form_criar_paciente");
 Route::post('pacientes/criar', 'PacientesController@store')->name("salva_paciente");
 Route::get('pacientes/show/{id}', 'PacientesController@show')->name("mostrar_paciente");
 Route::get('pacientes/editar/{id}', 'PacientesController@edit')->name("form_editar_paciente");
 Route::delete('pacientes/remover/{id}', 'PacientesController@destroy')->name("remove_paciente");
+Route::get('pacientes/remover/{id}', 'PacientesController@destroy')->name("remove_paciente");
 Route::post('pacientes/update', 'PacientesController@update');
 
 
@@ -65,7 +65,9 @@ Route::get('consultas/show/{id}', 'ConsultasController@show')->name("mostrar_con
 Route::get('consultas/retornop/{busca}','ConsultasController@retornop')->name("retornar_paciente");
 Route::get('consultas/retornoa/{busca}','ConsultasController@retornoa')->name("retornar_aluno");
 Route::get('consultas/retornos/{busca}','ConsultasController@retornos')->name("retornar_supervisor");
-
+Route::delete('consultas/cancelar/{id}', 'ConsultasController@destroy')->name("cancela_consulta");
+Route::post('consultas/confirmar/{id}', 'ConsultasController@confirmaConsulta')->name("confirma_consulta");
+Route::post('consultas/buscar/{id}', 'ConsultasController@buscaConsultaPorPaciente')->name("busca_consulta_por_paciente");
 
 
 

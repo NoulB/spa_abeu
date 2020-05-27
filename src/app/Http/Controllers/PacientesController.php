@@ -39,7 +39,7 @@ class PacientesController extends Controller
     public function busca(Request $request)
     {
         $pacientes = Paciente::busca($request->criterio)
-            ->where('status', '=', '4')
+            ->where('status', '!=', '4')
             ->simplePaginate(10);
 
         return view('pacientes.index', [
