@@ -227,7 +227,7 @@
                                 </div>
 
                                 <div class=" col-md-3 col-xs-2 ">
-                                    <div  class="row">
+                                    <div class="row">
                                         <div class="col-auto">
                                             <h6>Dia da Consulta:&#160;</h6></div>
                                         <div class="row">
@@ -235,9 +235,9 @@
                                         </div>
                                     </div>
                                     <input class="form-control col" id="dia" type="date" min="1800-12-31"
-                                           max="2999-12-31" name="dia"
-                                           tabindex="4" required onchange="identificardata()"
-                                           onblur="esconderconsultahora()" onfocusout="mostrardata()"/>
+                                           max="2999-12-31" name="dia" tabindex="4" required
+                                           onchange="identificardata()" onkeydown="return false;"
+                                           oninput="esconderconsultahora(), mostrardata()"/>
                                 </div>
                                 <div class="col" id="tardec">
                                     <div id="horactarde" hidden>Hora da Consulta:</div>
@@ -269,7 +269,7 @@
                                 </div>
                                 <div class="col"><br/>
                                     <input class="form-control col" id="output" placeholder="Dia da semana" type="text"
-                                           value=""  disabled hidden>
+                                           value="" disabled hidden>
 
                                 </div>
 
