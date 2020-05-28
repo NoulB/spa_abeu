@@ -31,8 +31,8 @@
             <table class="table table-striped table-md table-borderless">
                 <thead>
                 <tr>
+                    <th>Paciente</th>
                     <th>Aluno</th>
-                    <th>Supervisor</th>
                     <th>Hora</th>
                     <th>Consultório</th>
                 </tr>
@@ -43,12 +43,12 @@
                     <tr>
                         <td>
                             <a href="{{ url("/consultas/show/$consulta->id") }}">
-                                {{ $consulta->aluno }}
+                                {{ $consulta->paciente }}
                             </a>
                         </td>
                         <td>
                             <a href="{{ url("/consultas/show/$consulta->id") }}">
-                                {{ $consulta->supervisor }}
+                                {{ $consulta->aluno }}
                             </a>
                         </td>
                         <td>

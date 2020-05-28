@@ -24,11 +24,11 @@ class ConsultasController extends Controller
             ->join('pacientes_consultas', 'consultas.id', '=', 'pacientes_consultas.consultas_id')
             ->join('pacientes', 'pacientes.id', '=', 'pacientes_consultas.pacientes_id')
             ->select('consultas.id', 'alunos.nome as aluno', 'supervisores.nome as supervisor',
-                'consultas.consultorio', 'consultas.dia', 'consultas.hora')
+                'consultas.consultorio', 'consultas.dia', 'consultas.hora', 'pacientes.nome as paciente', 'consultas.id as consulta')
 //            ->where("dia", "=", Carbon::now(-3)->toDateString())
             ->where('consultas.status', '=', 'não realizada')
             ->orderBy('consultas.hora')
-            ->groupBy('consultas.id')
+//            ->groupBy('consultas.id')
             ->get();
 //            ->simplePaginate(10);
 //        $consultas = Consulta::query()
@@ -36,7 +36,8 @@ class ConsultasController extends Controller
 //            ->simplePaginate(10);
 
         $mensagem = $request->session()->get('mensagem');
-        return view('consultas.index', compact('consultas', 'mensagem'));
+//        var_dump($consultas);
+        return view('consultas.index', compact('consultas',  'mensagem'));
 
     }
 
