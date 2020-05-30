@@ -17,6 +17,11 @@
             color: black;
         }
 
+        a:visited {
+            text-decoration: none;
+            color: black;
+        }
+
         body {
             background-color: lightblue;
         }

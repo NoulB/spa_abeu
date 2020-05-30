@@ -16,3 +16,4 @@ class Supervisao extends Model
         return $this->belongsTo(AgendaSupervisao::class);
     }
 }
+
