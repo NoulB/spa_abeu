@@ -13,7 +13,7 @@ class Supervisao extends Model
 
     public function agenda_supervisao()
     {
-        return $this->belongsTo(AgendaSupervisao::class);
+        return $this->belongsTo(Projeto::class);
     }
 }
 

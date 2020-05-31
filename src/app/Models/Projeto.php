@@ -18,7 +18,7 @@ class Projeto extends Model
 
     public function agenda_supervisoes()
     {
-        return $this->hasMany(AgendaSupervisao::class);
+        return $this->hasMany(Supervisao::class);
     }
 
     public function alunos_projetos()

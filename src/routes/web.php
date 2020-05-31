@@ -71,6 +71,11 @@ Route::post('consultas/buscar/{id}', 'ConsultasController@buscaConsultaPorPacien
 
 
 
+Route::get('projetos', 'ProjetosController@index')->name("listar_projetos");
+Route::get('projetos/criar', 'ProjetosController@create')->name("form_cadastra_projeto");
+Route::post('projetos/criar', 'ProjetosController@store')->name("salva_projeto");
+
+
 
 
 Auth::routes();

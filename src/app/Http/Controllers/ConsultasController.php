@@ -36,7 +36,7 @@ class ConsultasController extends Controller
 //            ->simplePaginate(10);
 
         $mensagem = $request->session()->get('mensagem');
-//        var_dump($consultas);
+
         return view('consultas.index', compact('consultas',  'mensagem'));
 
     }
