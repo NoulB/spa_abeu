@@ -2,7 +2,8 @@
 <title>Login</title>
 @section('conteudo')
 <div class="container">
-    <div class="row justify-content-center">
+
+    <div class="row justify-content-center" style="background-image:url(../../../public/imgs/01.jpg)">
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">{{ __('Login') }}</div>
@@ -39,6 +40,13 @@
                             </div>
                         </div>
 
+
+
+
+
+
+
+
                         <div class="form-group row">
                             <div class="col-md-6 offset-md-4">
                                 <div class="form-check">
@@ -57,11 +65,11 @@
                                     {{ __('Login') }}
                                 </button>
 
-                               {{-- @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Esqueceu sua senha?') }}
-                                    </a>
-                                @endif--}}
+{{--                               --}}{{-- @if (Route::has('password.request'))--}}
+{{--                                    <a class="btn btn-link" href="{{ route('password.request') }}">--}}
+{{--                                        {{ __('Esqueceu sua senha?') }}--}}
+{{--                                    </a>--}}
+{{--                                @endif--}}
                             </div>
                         </div>
                     </form>

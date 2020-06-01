@@ -9,17 +9,26 @@ use Illuminate\Database\Eloquent\Model;
 class Projeto extends Model
 {
     public $timestamps = false;
-    protected $fillable = ['id', 'nome', 'ano', 'semestre', 'status', 'supervisor_id'];
+    protected $fillable = ['id', 'nome', 'ano', 'semestre', 'status', 'supervisor_id', 'area_de_estagio', 'vagas',
+        'dia_da_semana', 'hora_inicio', 'hora_fim'];
 
     public function supervisor()
     {
         return $this->belongsTo(Supervisor::class);
     }
 
-    public function agenda_supervisoes()
+
+    public static function busca($criterio)
     {
-        return $this->hasMany(AgendaSupervisao::class);
+        return static::where('nome', 'LIKE', '%' . $criterio . '%');
     }
+
+
+    public function Supervisao()
+    {
+        return $this->hasMany(Supervisao::class);
+    }
+
 
     public function alunos_projetos()
     {

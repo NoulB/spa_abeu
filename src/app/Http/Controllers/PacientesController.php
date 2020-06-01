@@ -6,7 +6,9 @@ namespace App\Http\Controllers;
 use App\Http\Requests\PacienteRequest;
 use App\Models\Paciente;
 use Illuminate\Http\Request;
-use Carbon\Carbon;
+use Illuminate\Support\Facades\DB;
+
+//use Carbon\Carbon;
 class PacientesController extends Controller
 {
 
@@ -16,12 +18,17 @@ class PacientesController extends Controller
         $this->paciente = new Paciente();
         $this->middleware('auth');
     }
+
+
     public function index(Request $request)
     {
 
         $pacientes = Paciente::query()
+            ->where('status', '!=', '4')
             ->orderBy('nome')
-            ->get();
+            ->simplePaginate(10);
+
+
         $mensagem = $request->session()->get('mensagem');
 
         return view('pacientes.index', compact('pacientes', 'mensagem'));
@@ -31,7 +38,9 @@ class PacientesController extends Controller
 
     public function busca(Request $request)
     {
-        $pacientes = Paciente::busca($request->criterio);
+        $pacientes = Paciente::busca($request->criterio)
+            ->where('status', '!=', '4')
+            ->simplePaginate(10);
 
         return view('pacientes.index', [
             'pacientes' => $pacientes,
@@ -83,8 +92,24 @@ class PacientesController extends Controller
         return redirect('/pacientes');
 
     }
-    protected function getPaciente($id) {
+
+    protected function getPaciente($id)
+    {
         return $this->paciente->find($id);
+    }
+
+    public function destroy(Request $request)
+    {
+        $paciente = Paciente::find($request->id);
+        DB::table('pacientes')
+            ->where('id', $paciente->id)
+            ->update(['status' => '4']);
+        $request->session()
+            ->flash(
+                'mensagem',
+                "Paciente {$paciente->nome} excluido com sucesso"
+            );
+        return redirect('pacientes');
     }
 
 

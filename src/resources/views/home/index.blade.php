@@ -6,7 +6,18 @@
 
 @section('conteudo')
 
-    <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+    <div class="pricing-header px-3 py-3 pt-md-2 pb-md-4 mx-auto text-center">
+        <form class="form-inline my-2 my-lg-0 justify-content-between mb-" action="{{ url('/pacientes/busca') }}"
+              method="get">
+            <div>
+                <input class="form-control mr-sm-2" autocomplete="off" type="search" name="criterio"
+                       placeholder="Pesquisar por paciente...">
+                <button class="btn btn-primary  " type="submit"><i class="fas fa-search"></i>
+                </button>
+            </div>
+            <a href="/pacientes/criar" class="btn btn-success ">Adicionar Paciente</a>
+            {{ csrf_field() }}
+        </form>
         <h2 class="display-4">Bem Vindo!</h2>
     </div>
     <div class="container">
@@ -65,6 +76,20 @@
                         <li>Listar Consultas</li>
                     </ul>
                     <a href="/consultas" class="btn btn-lg btn-block btn-primary">Consultas</a>
+                </div>
+            </div>
+            <div class="card mb-4 shadow-sm">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">Projetos</h4>
+                </div>
+                <div class="card-body">
+                    <ul class="list-unstyled mt-3 mb-4">
+                        <li>Cadastrar Projetos</li>
+                        <li>Cancelar Projetos</li>
+                        <li>Buscar Projetos</li>
+                        <li>Listar Projetos</li>
+                    </ul>
+                    <a href="/projetos" class="btn btn-lg btn-block btn-primary">Projetos</a>
                 </div>
             </div>
         </div>

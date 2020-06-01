@@ -24,7 +24,7 @@ class AlunosController extends Controller
 
         $alunos = Aluno::query()->where('status', '=', 'aguardando')
             ->orderBy('nome')
-            ->get();
+            ->simplePaginate(10);
         $mensagem = $request->session()->get('mensagem');
 
         return view('alunos.index', compact('alunos', 'mensagem'));
@@ -56,7 +56,7 @@ class AlunosController extends Controller
 
     public function busca(Request $request)
     {
-        $alunos = Aluno::busca($request->criterio);
+        $alunos = Aluno::busca($request->criterio)->simplePaginate(10);
 
         return view('alunos.index', [
             'alunos' => $alunos,

@@ -6,7 +6,7 @@
 
 @section('conteudo')
 
-    <div class="col-sm-12">
+    <div class="col-sm-12 ">
         @if(!empty($mensagem))
             <div class="alert alert-success">
                 {{ $mensagem }}
@@ -14,14 +14,15 @@
         @endif
         <br/>
         <form class="form-inline my-2 my-lg-0 justify-content-between mb-" action="{{ url('/pacientes/busca') }}"
-              method="post">
+              method="get">
             <div>
-                <input class="form-control mr-sm-2" type="search" name="criterio" placeholder="Pesquisar..." >
+                <input class="form-control mr-sm-2" autocomplete="off" type="search" name="criterio"
+                       placeholder="Pesquisar...">
                 <button class="btn btn-primary  my-2 my-sm-0" type="submit"><i class="fas fa-search"></i>
                 </button>
             </div>
 
-            <a href="/pacientes/criar" class="btn btn-success ">Adicionar</a>
+            <a href="/pacientes/criar" class="btn btn-success ">Adicionar </a>
             {{ csrf_field() }}
 
         </form>
@@ -59,18 +60,43 @@
                                 {{ $paciente->cpf }}
                             </a>
                         </td>
+                        <td align="right">
+                            <form method="post" action="/consultas/buscar/{{ $paciente->id }}" style="height: 1px">
+                                @csrf
+                                <button class="btn btn-info mb-2 btn-sm" >consulta</button>
+                            </form>
+                        </td>
+                        <td align="right">
+                            <form method="post" action="/pacientes/remover/{{ $paciente->id }}" style="height: 15px"
+                                  onsubmit="return confirm ('Tem certeza que deseja excluir?')">
+                                @csrf
+                                @method('DELETE')
+                                <button class="btn btn-danger mb-2 btn-sm">
+                                    <i class="fas fa-trash-alt"></i>
+                                </button>
+                            </form>
+                        </td>
                     </tr>
 
                 @endforeach
                 </tbody>
             </table>
+
         </div>
-        <form class="navbar-form">
-            <div class=text-right>
-                <a href="/" class="btn btn-danger mb-2">Voltar</a>
+        <div class="row">
+            <div class="col">
+                {!! $pacientes->links() !!}
+            </div>
+            <div class="col">
+                <form class="navbar-form">
+                    <div class=text-right>
+                        <a href="/" class="btn btn-danger mb-2">Voltar</a>
+
+                    </div>
+                </form>
 
             </div>
-        </form>
+        </div>
     </div>
     <div>
     </div>
