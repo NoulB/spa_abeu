@@ -256,7 +256,7 @@
                     </div>
                 </div>
                 <div class="col" id="noite">
-                    <a class="btn btn-primary btn-sm" name="Turno" id="checkboxnoite" value="4" onclick="noitemarcarcheckbox()"
+                    <a classes="btn btn-primary btn-sm" name="Turno" id="checkboxnoite" value="4" onclick="noitemarcarcheckbox()"
                     >Noite</a>
                 </div>
                 <div class="col" id="sabado">

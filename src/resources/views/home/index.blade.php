@@ -78,6 +78,20 @@
                     <a href="/consultas" class="btn btn-lg btn-block btn-primary">Consultas</a>
                 </div>
             </div>
+            <div class="card mb-4 shadow-sm">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">Projetos</h4>
+                </div>
+                <div class="card-body">
+                    <ul class="list-unstyled mt-3 mb-4">
+                        <li>Cadastrar Projetos</li>
+                        <li>Cancelar Projetos</li>
+                        <li>Buscar Projetos</li>
+                        <li>Listar Projetos</li>
+                    </ul>
+                    <a href="/projetos" class="btn btn-lg btn-block btn-primary">Projetos</a>
+                </div>
+            </div>
         </div>
 
     </div>

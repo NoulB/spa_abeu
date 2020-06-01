@@ -11,7 +11,7 @@ class Supervisao extends Model
     public $timestamps = false;
     protected $table = "supervisoes";
 
-    public function agenda_supervisao()
+    public function Projeto()
     {
         return $this->belongsTo(Projeto::class);
     }
