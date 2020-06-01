@@ -70,7 +70,7 @@
                         <div class="col">
                             Dia:
                             <select class="form-control col-md-2" id="output" name="dia_da_semana"
-                                    onchange="verifica(this.value)">
+                                    onchange="verifica(this.value)" onclick="esconderconsultahora2()">
                                 <option value="segunda">Segunda-feira</option>
                                 <option value="terça">Terça-feira</option>
                                 <option value="quarta">Quarta-feira</option>
@@ -83,33 +83,34 @@
                     </div>
                     <br/>
                     <div>
-                        <div class="row" >
-                            <div class="col" id>
-                                <h6>Hora de início:</h6>
-                                <input class="form-control col col-md-2" id="manhaca" type="time" min="08:00" max="11:00" required name="hora_inicio"/>
+                        <div class="row" id="manhac">
+                            <div class="col" >
+                                <h6 id="horacmanha" hidden>Hora de início:</h6>
+                                <input class="form-control col col-md-2" id="manhaca" type="time" min="08:00" max="11:00" required name="hora_inicio"disabled hidden/>
                                 <br>
-                                <h6>Hora de término:</h6>
-                                <input class="form-control col col-md-2" id="manhac" type="time" min="08:10" max="12:00"required name="hora_fim"/>
+                                <h6 id="horacmanhat" hidden>Hora de término:</h6>
+                                <input class="form-control col col-md-2" id="manhacat" type="time" min="08:10" max="12:00"required name="hora_fim"disabled hidden/>
                             </div>
 
                         </div>
                     </div>
-{{--                    <div>--}}
-{{--                        <div class="row" hidden>--}}
-{{--                            <div class="col">--}}
-{{--                                <h6>Hora de início:</h6>--}}
-{{--                                <input class="form-control col col-md-2" id="tardeca" type="time" min="13:00" max="20:00" required name="hora_inicio"/>--}}
-{{--                                <br>--}}
-{{--                                <h6>Hora de término:</h6>--}}
-{{--                                <input class="form-control col col-md-2" id="tardec" type="time" min="13:10" max="21:00"required name="hora_fim"/>--}}
-{{--                            </div>--}}
+                    <div>
+                        <div class="row" id="tardec" >
+                            <div class="col" >
+                                <h6 id="horactarde" hidden>Hora de início:</h6>
+                                <input class="form-control col col-md-2" id="tardeca" type="time" min="13:00" max="20:00" required name="hora_inicio"disabled hidden/>
+                                <br>
+                                <h6 id="horactardet" hidden>Hora de término:</h6>
+                                <input class="form-control col col-md-2" id="tardecat" type="time" min="13:10" max="21:00"required name="hora_fim"disabled hidden/>
+                            </div>
 
-{{--                        </div>--}}
-{{--                    </div>--}}
+                        </div>
+                    </div>
+
                     <br>
                     <div>
                         Quantidade de vagas:
-                        <input class="form-control col-md-2" placeholder="somente números" type="text" name="vagas"
+                        <input class="form-control col-md-2" placeholder="somente números" type="text" name="vagas" id="testes"
                                onkeypress="return isNumberKey(event)" required maxlength="2"/>
                     </div>
                     <br/><br/>

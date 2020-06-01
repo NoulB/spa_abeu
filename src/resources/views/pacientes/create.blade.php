@@ -151,23 +151,31 @@
             <br/>
             <h4>Endereço:</h4>
             <div class="row">
+            <div class="col">
+                CEP: <br/>
+                <input class="form-control col-md-2" autocomplete="novo-" id="inputcep" placeholder="somente números" type="text"
+                       name="cep"
+                       size="20" required tabindex="19" onkeypress="return isNumberKey(event)" maxlength="8"
+                       OnBlur="ValidaCEP()"onchange="pesquisacep(this.value)" onclick="desvalidarCEP()"/>
+            </div></div>
+            <div class="row">
                 <div class="col">
                     Logradouro:<br/>
-                    <input class="form-control" autocomplete="novo-" id="input13" placeholder="Logradouro" type="text" name="logradouro"
+                    <input class="form-control" autocomplete="novo-" id="rua" placeholder="Logradouro" type="text" name="logradouro"
                            size="37" tabindex="14" maxlength="256" required/>
                 </div>
                 <div class="col">
                     <div class="row">
                         <div class="col">
                             Número:<br/>
-                            <input class="form-control col-md-6" autocomplete="novo-" id="input14" placeholder="Numero" type="text"
+                            <input class="form-control col-md-6" autocomplete="novo-" id="numeendereco" placeholder="Numero" type="text"
                                    name="numero"
                                    size="10" required tabindex="15" maxlength="8"
                                    onkeypress="return isNumberKey(event)"/>
                         </div>
                         <div class="col">
                             Complemento:
-                            <input class="form-control" autocomplete="novo-" id="input15" placeholder="Complemento" type="text"
+                            <input class="form-control" autocomplete="novo-" id="complemento" placeholder="Complemento" type="text"
                                    name="complemento"
                                    size="20" tabindex="16" maxlength="64"/>
 
@@ -181,23 +189,19 @@
                     <div class="row">
                         <div class="col">
                             Bairro: <br/>
-                            <input class="form-control" autocomplete="novo-" id="input16" placeholder="Bairro" type="text" name="bairro"
+                            <input class="form-control" autocomplete="novo-" id="bairro" placeholder="Bairro" type="text" name="bairro"
                                    size="27"
                                    required tabindex="17" maxlength="64"/>
                         </div>
                         <div class="col">
                             Cidade: <br/>
-                            <input class="form-control" autocomplete="novo-" id="input17" placeholder="Cidade" type="text" name="cidade"
+                            <input class="form-control" autocomplete="novo-" id="cidade" placeholder="Cidade" type="text" name="cidade"
                                    size="27" required tabindex="18" maxlength="64"/>
                         </div>
                     </div>
                 </div>
                 <div class="col">
-                    CEP: <br/>
-                    <input class="form-control col-md-6" autocomplete="novo-" id="inputcep" placeholder="somente números" type="text"
-                           name="cep"
-                           size="20" required tabindex="19" onkeypress="return isNumberKey(event)" maxlength="8"
-                           OnBlur="ValidaCEP()" onclick="desvalidarCEP()"/>
+
                 </div>
             </div>
 
@@ -256,8 +260,7 @@
                     </div>
                 </div>
                 <div class="col" id="noite">
-                    <a classes="btn btn-primary btn-sm" name="Turno" id="checkboxnoite" value="4" onclick="noitemarcarcheckbox()"
-                    >Noite</a>
+                    <a class="btn btn-success btn-sm" name="Turno" id="checkboxnoite"  onclick="noitemarcarcheckbox()">Noite</a>
                 </div>
                 <div class="col" id="sabado">
                     <a class="btn btn-warning btn-sm" name="sabado" id="checkboxsabado" value="sabado"

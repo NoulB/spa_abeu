@@ -51,12 +51,14 @@
                             </a>
                         </td>
                         <td>
-                            <a href="{{ url("/alunos/email/$aluno->id") }}" cllink="black">
+                            <a href="{{ url("/alunos/show/$aluno->id") }}" cllink="black">
+                                {{--("/alunos/email/$aluno->id")--}}
                                 {{ $aluno->email }}
                             </a>
                         </td>
                         <td>
-                            <a href="{{ url("/alunos/email/$aluno->id") }}" cllink="black">
+                            <a href="{{ url("/alunos/show/$aluno->id") }}" cllink="black">
+                                {{--("/alunos/email/$aluno->id")--}}
                                 GRUPO {{--{{ $aluno->email }}--}}
                             </a>
                         </td>
