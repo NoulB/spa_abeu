@@ -26,7 +26,7 @@
             @csrf
 
         </form>
-            <br>    
+            <br>
         <div>
             <table class="table table-striped table-md table-borderless">
                 <thead>
