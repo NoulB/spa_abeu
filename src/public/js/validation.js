@@ -304,8 +304,10 @@ function esconderconsultahora2()
 
     if(document.getElementById("output").value == "sabado")
     {
-        tardeca.value = "";
-        tardecat.value = "";
+        manhaca.value = "08:00";
+        manhacat.value = "09:00";
+        // tardeca.value = "";
+        // tardecat.value = "";
         manhaca.hidden=false;
         manhacat.hidden=false;
         manhac.hidden=false;
@@ -320,6 +322,8 @@ function esconderconsultahora2()
         manhacat.disabled=false;
         tardeca.disabled=true;
         tardecat.disabled=true;
+
+
     }
 
     else if(document.getElementById("output").value == "Domingo")
@@ -344,12 +348,14 @@ function esconderconsultahora2()
         tardecat.disabled=true;
 
 
-
     }
+
     else
     {
-        manhaca.value = "";
-        manhacat.value = "";
+        // document.getElementById("tardeca").defaultValue = "13:00";
+        // document.getElementById("tardecat").defaultValue = "13:10";
+        // manhaca.value = "";
+        // manhacat.value = "";
         manhaca.hidden=true;
         manhacat.hidden=true;
         manhac.hidden=true;
@@ -364,12 +370,17 @@ function esconderconsultahora2()
         manhacat.disabled=true;
         tardeca.disabled=false;
         tardecat.disabled=false;
+        tardeca.value = "13:00";
+        tardecat.value = "14:00";
+
+        // document.getElementById("output").value = dia;
 
 
-        document.getElementById("output").value = dia;
+
 
     }
 }
+
 
 function mostrardata() {
     var input = document.getElementById("dia").value;

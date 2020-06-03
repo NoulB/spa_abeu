@@ -76,7 +76,14 @@ Route::get('projetos/criar', 'ProjetosController@create')->name("form_cadastra_p
 Route::post('projetos/criar', 'ProjetosController@store')->name("salva_projeto");
 Route::get('projetos/busca', 'ProjetosController@busca')->name("busca_projeto");
 
-
+Route::get('PDFTDPacientes','PdfController@gerarPDFTDPacientes');
+Route::get('PDFTDSupervisores','PdfController@gerarPDFTDSupervisores');
+Route::get('PDFTDAlunos','PdfController@gerarPDFTDAlunos');
+Route::get('PDFTDConsultas','PdfController@gerarPDFTDTDConsultas');
+//Route::get('PDFTDPacientesDownload','PdfController@gerarPDFTDPacientesDownload');
+//Route::get('PDFTDSupervisoresDownload','PdfController@gerarPDFTDSupervisoresDownload');
+//Route::get('PDFTDAlunosDownload','PdfController@gerarPDFTDAlunosDownload');
+//Route::get('PDFTDConsultasDownload','PdfController@gerarPDFTDTDConsultasDownload');
 
 Auth::routes();
 

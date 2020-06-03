@@ -12,26 +12,31 @@
 
     <style>
 
+        th {
+
+            color: white;
+        }
+
         a:link {
             text-decoration: none;
-            color: black;
+            color: white;
         }
 
         a:visited {
             text-decoration: none;
-            color: black;
+            color: white;
         }
 
         body {
-            background-color: lightblue;
+            background-color: #242526;
         }
 
         #container {
-            background-color: white;
+            background-color: #3a3b3c;
         }
 
         .table-striped > tbody > tr:nth-child(2n+1) > td, .table-striped > tbody > tr:nth-child(2n+1) > th {
-            background-color: #e3f2fd;
+            background-color: #242526;
         }
         /*  ESTILOS DA BUSCA DE PESSOAS NO CADASTRO DE CONSULTAS    */
         .autocompletegroup {
@@ -165,6 +170,23 @@
                         <a class="dropdown-item" href="#">Another action</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Relatórios
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/PDFTDPacientes"target="_blank">Relatório de Pacientes</a>
+                        <a class="dropdown-item" href="/PDFTDSupervisores"target="_blank">Relatório de Supervisores</a>
+                        <a class="dropdown-item" href="/PDFTDAlunos"target="_blank">Relatório de Alunos</a>
+                        <a class="dropdown-item" href="/PDFTDConsultas" target="_blank">Relatório de Consultas</a>
+                        {{--                        <div class="dropdown-divider"></div>--}}
+                        {{--                        <a class="dropdown-item" href="/PDFTDPacientesDownload"target="_blank">Baixar Relatório de Pacientes</a>--}}
+                        {{--                        <a class="dropdown-item" href="/PDFTDSupervisoresDownload"target="_blank">Baixar Relatório de Supervisores</a>--}}
+                        {{--                        <a class="dropdown-item" href="/PDFTDAlunosDownload"target="_blank">Baixar Relatório de Alunos</a>--}}
+                        {{--                        <a class="dropdown-item" href="/PDFTDConsultasDownload" target="_blank">Baixar Relatório de Consultas</a>--}}
                     </div>
                 </li>
             </ul>

@@ -21,8 +21,8 @@
         <h2 class="display-4">Bem Vindo!</h2>
     </div>
     <div class="container">
-        <div class="card-deck mb-3 text-center">
-            <div class="card mb-4 shadow-sm">
+        <div class="card-deck mb-3 text-center text-white ">
+            <div class="card mb-4 shadow-sm bg-secondary">
                 <div class="card-header">
                     <h4 class="my-0 font-weight-normal">Pacientes</h4>
                 </div>
@@ -36,7 +36,7 @@
                     <a href="/pacientes" class="btn btn-lg btn-block btn-primary">Pacientes</a>
                 </div>
             </div>
-            <div class="card mb-4 shadow-sm">
+            <div class="card mb-4 shadow-sm bg-secondary">
                 <div class="card-header">
                     <h4 class="my-0 font-weight-normal">Supervisores</h4>
                 </div>
@@ -50,7 +50,7 @@
                     <a href="/supervisores" class="btn btn-lg btn-block btn-primary">Supervisores</a>
                 </div>
             </div>
-            <div class="card mb-4 shadow-sm">
+            <div class="card mb-4 shadow-sm bg-secondary">
                 <div class="card-header">
                     <h4 class="my-0 font-weight-normal">Alunos</h4>
                 </div>
@@ -64,7 +64,7 @@
                     <a href="/alunos" class="btn btn-lg btn-block btn-primary">Alunos</a>
                 </div>
             </div>
-            <div class="card mb-4 shadow-sm">
+            <div class="card mb-4 shadow-sm bg-secondary">
                 <div class="card-header">
                     <h4 class="my-0 font-weight-normal">Consultas</h4>
                 </div>
@@ -78,7 +78,7 @@
                     <a href="/consultas" class="btn btn-lg btn-block btn-primary">Consultas</a>
                 </div>
             </div>
-            <div class="card mb-4 shadow-sm">
+            <div class="card mb-4 shadow-sm bg-secondary">
                 <div class="card-header">
                     <h4 class="my-0 font-weight-normal">Projetos</h4>
                 </div>
