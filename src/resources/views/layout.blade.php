@@ -11,28 +11,56 @@
 
 
     <style>
+        /*MODO DARK*/
+        th {
+
+            color: white;
+        }
 
         a:link {
             text-decoration: none;
-            color: black;
+            color: white;
         }
 
         a:visited {
             text-decoration: none;
-            color: black;
+            color: white;
         }
 
         body {
-            background-color: lightblue;
+            background-color: #242526;
         }
 
         #container {
-            background-color: white;
+            background-color: #3a3b3c;
         }
 
         .table-striped > tbody > tr:nth-child(2n+1) > td, .table-striped > tbody > tr:nth-child(2n+1) > th {
-            background-color: #e3f2fd;
+            background-color: #242526;
         }
+
+        /*MODO CLARO*/
+        /*a:link {*/
+        /*    text-decoration: none;*/
+        /*    color: black;*/
+        /*}*/
+
+        /*a:visited {*/
+        /*    text-decoration: none;*/
+        /*    color: black;*/
+        /*}*/
+
+        /*body {*/
+        /*    background-color: lightblue;*/
+        /*}*/
+
+        /*#container {*/
+        /*    background-color: white;*/
+        /*}*/
+
+        /*.table-striped > tbody > tr:nth-child(2n+1) > td, .table-striped > tbody > tr:nth-child(2n+1) > th {*/
+        /*    background-color: #e3f2fd;*/
+        /*}*/
         /*  ESTILOS DA BUSCA DE PESSOAS NO CADASTRO DE CONSULTAS    */
         .autocompletegroup {
             position: relative;

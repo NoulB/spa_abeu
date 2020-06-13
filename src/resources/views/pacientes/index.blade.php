@@ -63,7 +63,7 @@
                         <td align="right">
                             <form method="post" action="/consultas/buscar/{{ $paciente->id }}" style="height: 1px">
                                 @csrf
-                                <button class="btn btn-info mb-2 btn-sm" >consulta</button>
+                                <button class="btn btn-light mb-2 btn-sm" >consulta</button>
                             </form>
                         </td>
                         <td align="right">
@@ -71,7 +71,7 @@
                                   onsubmit="return confirm ('Tem certeza que deseja excluir?')">
                                 @csrf
                                 @method('DELETE')
-                                <button class="btn btn-danger mb-2 btn-sm">
+                                <button class="btn btn-outline-danger mb-2 btn-sm">
                                     <i class="fas fa-trash-alt"></i>
                                 </button>
                             </form>
