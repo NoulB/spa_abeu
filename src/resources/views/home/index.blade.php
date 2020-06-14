@@ -15,10 +15,10 @@
                 <button class="btn btn-primary  " type="submit"><i class="fas fa-search"></i>
                 </button>
             </div>
-            <a href="/pacientes/criar" class="btn btn-success ">Adicionar Paciente</a>
+            <a href="/pacientes/criar" class="btn btn-success text-white">Adicionar Paciente</a>
             {{ csrf_field() }}
         </form>
-        <h2 class="display-4">Bem Vindo!</h2>
+        <h2 class="display-4 text-white">Bem Vindo!</h2>
     </div>
     <div class="container">
         <div class="card-deck mb-3 text-center text-white ">
@@ -33,12 +33,12 @@
                         <li>Buscar pacientes</li>
                         <li>Listar Pacientes</li>
                     </ul>
-                    <a href="/pacientes" class="btn btn-lg btn-block btn-primary">Pacientes</a>
+                    <a href="/pacientes" class="btn btn-lg btn-block btn-primary text-white">Pacientes</a>
                 </div>
             </div>
             <div class="card mb-4 shadow-sm bg-secondary">
                 <div class="card-header">
-                    <h4 class="my-0 font-weight-normal">Supervisores</h4>
+                    <h4 class="my-0 font-weight-normal ">Supervisores</h4>
                 </div>
                 <div class="card-body">
                     <ul class="list-unstyled mt-3 mb-4">
@@ -47,7 +47,7 @@
                         <li>Buscar Supervisore</li>
                         <li>Listar Supervisore</li>
                     </ul>
-                    <a href="/supervisores" class="btn btn-lg btn-block btn-primary">Supervisores</a>
+                    <a href="/supervisores" class="btn btn-lg btn-block btn-primary text-white">Supervisores</a>
                 </div>
             </div>
             <div class="card mb-4 shadow-sm bg-secondary">
@@ -61,7 +61,7 @@
                         <li>Buscar Alunos</li>
                         <li>Listar Alunos</li>
                     </ul>
-                    <a href="/alunos" class="btn btn-lg btn-block btn-primary">Alunos</a>
+                    <a href="/alunos" class="btn btn-lg btn-block btn-primary text-white">Alunos</a>
                 </div>
             </div>
             <div class="card mb-4 shadow-sm bg-secondary">
@@ -75,7 +75,7 @@
                         <li>Buscar Consultas</li>
                         <li>Listar Consultas</li>
                     </ul>
-                    <a href="/consultas" class="btn btn-lg btn-block btn-primary">Consultas</a>
+                    <a href="/consultas" class="btn btn-lg btn-block btn-primary text-white">Consultas</a>
                 </div>
             </div>
             <div class="card mb-4 shadow-sm bg-secondary">
@@ -89,7 +89,7 @@
                         <li>Buscar Projetos</li>
                         <li>Listar Projetos</li>
                     </ul>
-                    <a href="/projetos" class="btn btn-lg btn-block btn-primary">Projetos</a>
+                    <a href="/projetos" class="btn btn-lg btn-block btn-primary text-white">Projetos</a>
                 </div>
             </div>
         </div>

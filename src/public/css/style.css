@@ -71,7 +71,7 @@ hr {
     overflow: visible
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, h7, h8 {
     margin-top: 0;
     margin-bottom: .5rem
 }
@@ -351,7 +351,12 @@ template {
 .h6, h6 {
     font-size: 1rem
 }
-
+.h7, h7 {
+    font-size: 0.75rem
+}
+.h8, h8 {
+    font-size: 1rem
+}
 .lead {
     font-size: 1.25rem;
     font-weight: 300
@@ -2031,6 +2036,7 @@ pre code {
     border-color: #dee2e6
 }
 
+
 .table-dark {
     color: #fff;
     background-color: #343a40
@@ -2637,14 +2643,14 @@ a.btn.disabled, fieldset:disabled a.btn {
 
 .btn-primary {
     color: #fff;
-    background-color: #007bff;
-    border-color: #007bff
+    background-color: #1877F2;
+    border-color: #1877F2;
 }
 
 .btn-primary:hover {
     color: #fff;
     background-color: #0069d9;
-    border-color: #0062cc
+    border-color: #0062cc;
 }
 
 .btn-primary.focus, .btn-primary:focus {
@@ -10378,5 +10384,36 @@ a.text-dark:focus, a.text-dark:hover {
         border-color: #dee2e6
     }
 }
+/*.table, th, td {*/
+/*    border: 1px solid black;*/
+/*    border-collapse: collapse;*/
 
+/*}*/
+.table-condensed{
+    font-size: 10px;
+}
+/*.table.center {*/
+/*    margin-left: auto;*/
+/*    margin-right: auto;*/
+
+/*}*/
+
+/*.td, th {*/
+/*    text-align: center;*/
+/*    width: 35px;*/
+/*}*/
+
+.teste {
+    position: absolute;
+    right: 0;
+}
+
+.teste1 {
+    position: absolute;
+    left: 0;
+}
+.teste2 {
+    position: absolute;
+    right: 0;
+}
 /*# sourceMappingURL=bootstrap.min.css.map */

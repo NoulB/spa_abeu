@@ -24,13 +24,13 @@
             <div class="row">
                 <div class="col">
                     <br/>
-                    Nome:<br/>
+                    <a class="text-white">Nome:</a>
                     <input class="form-control" autocomplete="novo-nome" id="input1" placeholder="Nome completo"
                            type="text" name="nome" size="50" tabindex="1" required autofocus maxlength="250"/>
                 </div>
                 <div class="col">
                     <br/>
-                    Data de Inscrição do Paciente: <br/>
+                    <a class="text-white">Data de Inscrição do Paciente:</a>
                     <input class="form-control col-md-6" autocomplete="novo-data" id="created_at" type="date" name="created_at"
                            name="Data do Cadastro do Paciente"
                            onkeypress="return isNumberKey(event)"/>
@@ -39,26 +39,27 @@
             </div>
             <div class="row">
                 <div class="col">
-                    CPF: <br/>
+                    <a class="text-white">CPF:</a>
                     <input class="form-control" autocomplete="novo-cpf" id="inputcpf" placeholder="somente números" type="text" name="cpf"
                            tabindex="2"
                            onkeypress="return isNumberKey(event)" required maxlength="11" onblur="ValidaCPF()"
                            onclick="desvalidarCPF()"/>
                 </div>
                 <div class="col">
-                    RG: <br/>
+                    <a class="text-white">RG: </a>
                     <input class="form-control" autocomplete="novo-rg" id="input2" placeholder="somente números" type="text"
                            name="rg" tabindex="3"
                            onkeypress="return isNumberKey(event)" required required maxlength="16"/>
                 </div>
                 <div class="col">
-                    Data de Nascimento:<br/>
-                    <input class="form-control col-md-11" autocomplete="novo-nasc" id="data_nasc" type="date" min="1800-12-31" max="2999-12-31"
+                    <a class="text-white"> Data de Nascimento:</a>
+                    <input class="form-control col-md-11 " autocomplete="novo-nasc" id="data_nasc" type="date" min="1800-12-31" max="2999-12-31"
                            name="data_nascimento"
-                           tabindex="4" required/>
+                           tabindex="4" required />
                 </div>
+
                 <div class="col">
-                    Idade:<br/>
+                    <a class="text-white"> Idade:</a>
                     <input class="form-control col-md-7" autocomplete="novo-idade" type="num" name="idade" id="idade" class="form-control"
                            placeholder="Idade" disabled>
                 </div>
@@ -66,14 +67,14 @@
             <div>
                 <div class="row">
                     <div class="col">
-                        E-mail: <br/>
+                        <a class="text-white"> E-mail: </a>
                         <input class="form-control" autocomplete="novo-mail" id="input5" placeholder="E-mail" type="text" name="email"
                                tabindex="6" maxlength="64"/>
                     </div>
                     <div class="col">
                         <div class="row">
                             <div class="col">
-                                Celular: <br/>
+                                <a class="text-white"> Celular:</a>
                                 <input class="form-control col-md-11" autocomplete="novo-cel" id="inputcel"
                                        placeholder="Celular - somente números"
                                        type="text"
@@ -84,7 +85,7 @@
                             <div class="col">
                                 <div class="row">
                                     <div class="col">
-                                        Telefone:<br/>
+                                        <a class="text-white">Telefone:</a>
                                         <input class="form-control col-md-7" autocomplete="novo-tel" id="inputtel" placeholder="Telefone 2"
                                                type="text"
                                                name="telefone"
@@ -102,12 +103,12 @@
             <div>
                 <div class="row">
                     <div class="col">
-                        Nome do Pai:<br/>
+                        <a class="text-white">Nome do Pai:</a>
                         <input class="form-control" id="input8" autocomplete="novo-nome" placeholder="Nome do Pai" type="text" name="pai"
                                tabindex="9" maxlength="256"/>
                     </div>
                     <div class="col">
-                        Nome do Mae:<br/>
+                        <a class="text-white"> Nome do Mae:</a>
                         <input class="form-control" autocomplete="novo-nome" id="input9" placeholder="Nome da Mãe" type="text" name="mae"
                                tabindex="10" maxlength="256"
                                required/>
@@ -118,7 +119,7 @@
                 <div class="col">
                     <div class="row">
                         <div class="col">
-                            Sexo:
+                            <a class="text-white">Sexo:</a>
                             <select class="form-control col-md-6" name="sexo" id="input10" tabindex="10">
                                 <option value="Masculino">Masculino</option>
                                 <option value="Feminino">Feminino</option>
@@ -126,7 +127,7 @@
                             </select>
                         </div>
                         <div class="col">
-                            Estado civil:
+                            <a class="text-white">Estado civil:</a>
                             <select class="form-control col-md-6" id="input11" name="estado_civil"
 
                                     onchange="verifica(this.value)">
@@ -140,7 +141,7 @@
                     </div>
                 </div>
                 <div class="col" id="i12" hidden>
-                    Cônjuge:
+                    <a class="text-white">Cônjuge:</a>
                     <input class="form-control" autocomplete="novo-conj" id="input12" placeholder="Nome do(a) Cônjuge"
                            type="text" name="conjuge" maxlength="256"/>
                 </div>
@@ -149,10 +150,10 @@
 
             </div>
             <br/>
-            <h4>Endereço:</h4>
+            <h4 class="text-white">Endereço:</h4>
             <div class="row">
             <div class="col">
-                CEP: <br/>
+                <a class="text-white"> CEP:</a>
                 <input class="form-control col-md-2" autocomplete="novo-" id="inputcep" placeholder="somente números" type="text"
                        name="cep"
                        size="20" required tabindex="19" onkeypress="return isNumberKey(event)" maxlength="8"
@@ -160,21 +161,21 @@
             </div></div>
             <div class="row">
                 <div class="col">
-                    Logradouro:<br/>
+                    <a class="text-white">Logradouro:</a>
                     <input class="form-control" autocomplete="novo-" id="rua" placeholder="Logradouro" type="text" name="logradouro"
                            size="37" tabindex="14" maxlength="256" required/>
                 </div>
                 <div class="col">
                     <div class="row">
                         <div class="col">
-                            Número:<br/>
+                            <a class="text-white"> Número:</a>
                             <input class="form-control col-md-6" autocomplete="novo-" id="numeendereco" placeholder="Numero" type="text"
                                    name="numero"
                                    size="10" required tabindex="15" maxlength="8"
                                    onkeypress="return isNumberKey(event)"/>
                         </div>
                         <div class="col">
-                            Complemento:
+                            <a class="text-white">Complemento:</a>
                             <input class="form-control" autocomplete="novo-" id="complemento" placeholder="Complemento" type="text"
                                    name="complemento"
                                    size="20" tabindex="16" maxlength="64"/>
@@ -188,13 +189,13 @@
                 <div class="col">
                     <div class="row">
                         <div class="col">
-                            Bairro: <br/>
+                            <a class="text-white"> Bairro:</a>
                             <input class="form-control" autocomplete="novo-" id="bairro" placeholder="Bairro" type="text" name="bairro"
                                    size="27"
                                    required tabindex="17" maxlength="64"/>
                         </div>
                         <div class="col">
-                            Cidade: <br/>
+                            <a class="text-white">Cidade:</a>
                             <input class="form-control" autocomplete="novo-" id="cidade" placeholder="Cidade" type="text" name="cidade"
                                    size="27" required tabindex="18" maxlength="64"/>
                         </div>
@@ -212,11 +213,11 @@
                 </div>
             </div>
             <br/>
-            <h4>Disponibilidade:&nbsp;</h4>
+            <h4 class="text-white">Disponibilidade:&nbsp;</h4>
             <div class="row">
                 <div class="col">
                     <div class="form-check form-check-inline">
-                        <a class="btn btn-primary btn-sm" id="totaldias" onclick="totalmarcarcheckboxdias()" >Total</a>
+                        <a class="btn btn-primary btn-sm text-white" id="totaldias" onclick="totalmarcarcheckboxdias()" >Total</a>
                     </div>
                 </div>
             </div>
@@ -224,45 +225,45 @@
                 <div class="col">
                     <div class="form-check form-check-inline" id="segunda">
                         <input class="form-check-input" type="checkbox" name="disponibilidade" id="segundadia" value="segunda">
-                        <label class="form-check-label" for="segundadia">Segunda</label>
+                        <label class="form-check-label text-white" for="segundadia">Segunda</label>
                     </div>
                     <div class="form-check form-check-inline" id="terca">
-                        <input class="form-check-input" type="checkbox" name="disponibilidade" id="tercadia" value="terca">
+                        <input class="form-check-input text-white" type="checkbox" name="disponibilidade" id="tercadia" value="terca">
 
-                        <label class="form-check-label" for="tercadia">Terça</label>
+                        <label class="form-check-label text-white" for="tercadia">Terça</label>
                     </div>
                     <div class="form-check form-check-inline" id="quarta">
-                        <input class="form-check-input" type="checkbox" name="disponibilidade" id="quartadia" value="quarta">
+                        <input class="form-check-input text-white" type="checkbox" name="disponibilidade" id="quartadia" value="quarta">
 
-                        <label class="form-check-label" for="quartadia">Quarta</label>
+                        <label class="form-check-label text-white" for="quartadia">Quarta</label>
                     </div>
                     <div class="form-check form-check-inline" id="quinta">
                         <input class="form-check-input" type="checkbox" name="disponibilidade" id="quintadia" value="quinta">
-                        <label class="form-check-label" for="quintadia">Quinta</label>
+                        <label class="form-check-label text-white" for="quintadia">Quinta</label>
                     </div>
                     <div class="form-check form-check-inline" id="sexta">
                         <input class="form-check-input" type="checkbox" name="disponibilidade" id="sextadia" value="sexta">
-                        <label class="form-check-label" for="sextadia">Sexta</label>
+                        <label class="form-check-label text-white" for="sextadia">Sexta</label>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col">
                     <div class="form-check form-check-inline" id="turnotarde">
-                        <h6>Turnos:</h6>
+                        <h6 class="text-white">Turnos:</h6>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col">
-                    <div class="form-check form-check-inline" id="tarde">
+                    <div class="form-check form-check-inline text-white" id="tarde">
                         <a class="btn btn-primary btn-sm " name="Turno" id="checkboxtarde" onclick="tardemarcarcheckbox()">Tarde</a>
                     </div>
                 </div>
-                <div class="col" id="noite">
+                <div class="col text-white" id="noite">
                     <a class="btn btn-success btn-sm" name="Turno" id="checkboxnoite"  onclick="noitemarcarcheckbox()">Noite</a>
                 </div>
-                <div class="col" id="sabado">
+                <div class="col text-white" id="sabado">
                     <a class="btn btn-warning btn-sm" name="sabado" id="checkboxsabado" value="sabado"
                        onclick="sabadomarcarcheckbox()">Sábado</a>
 
@@ -273,27 +274,27 @@
                 <div class="col">
                     <div class="form-check form-check-inline" id="13h">
                         <input class="form-check-input" type="checkbox" name="horario" id="checkbox13h" value="13h">
-                        <label class="form-check-label" for="checkbox13h">13h</label>
+                        <label class="form-check-label text-white" for="checkbox13h">13h</label>
                     </div>
                     <div class="form-check form-check-inline" id="14h">
-                        <input class="form-check-input" type="checkbox" name="horario" id="checkbox14h"
+                        <input class="form-check-input " type="checkbox" name="horario" id="checkbox14h"
                                value="14h">
-                        <label class="form-check-label" for="checkbox14h">14h</label>
+                        <label class="form-check-label text-white" for="checkbox14h">14h</label>
                     </div>
                     <div class="form-check form-check-inline" id="15h">
                         <input class="form-check-input" type="checkbox" name="horario" id="checkbox15h"
                                value="15h">
-                        <label class="form-check-label" for="checkbox15h">15h</label>
+                        <label class="form-check-label text-white" for="checkbox15h">15h</label>
                     </div>
                     <div class="form-check form-check-inline" id="16h">
                         <input class="form-check-input" type="checkbox" name="horario" id="checkbox16h"
                                value="16h">
-                        <label class="form-check-label" for="checkbox16h">16h</label>
+                        <label class="form-check-label text-white" for="checkbox16h">16h</label>
                     </div>
                     <div class="form-check form-check-inline" id="17h">
                         <input class="form-check-input" type="checkbox" name="horario" id="checkbox17h"
                                value="17h">
-                        <label class="form-check-label" for="checkbox17h">17h</label>
+                        <label class="form-check-label text-white" for="checkbox17h">17h</label>
                     </div>
                 </div>
                 <div class="col">
@@ -301,17 +302,17 @@
                         <div class="form-check form-check-inline" id="18h">
                             <input class="form-check-input" type="checkbox" name="horario" id="checkbox18h"
                                    value="18h">
-                            <label class="form-check-label" for="checkbox18h">18h</label>
+                            <label class="form-check-label text-white" for="checkbox18h">18h</label>
                         </div>
                         <div class="form-check form-check-inline" id="19h">
                             <input class="form-check-input" type="checkbox" name="horario" id="checkbox19h"
                                    value="19h">
-                            <label class="form-check-label" for="checkbox19h">19h</label>
+                            <label class="form-check-label text-white" for="checkbox19h">19h</label>
                         </div>
                         <div class="form-check form-check-inline" id="20h">
                             <input class="form-check-input" type="checkbox" name="horario" id="checkbox20h"
                                    value="20h">
-                            <label class="form-check-label" for="checkbox20h">20h</label></div>
+                            <label class="form-check-label text-white" for="checkbox20h">20h</label></div>
 
                     </div>
                 </div>
@@ -319,22 +320,22 @@
                     <div class="form-check form-check-inline" id="08h">
                         <input class="form-check-input" type="checkbox" name="horario" id="checkbox08h"
                                value="08h">
-                        <label class="form-check-label" for="checkbox08h">08h</label>
+                        <label class="form-check-label text-white" for="checkbox08h">08h</label>
                     </div>
                     <div class="form-check form-check-inline" id="09h">
                         <input class="form-check-input" type="checkbox" name="horario" id="checkbox09h"
                                value="09h">
-                        <label class="form-check-label" for="checkbox09h">09h</label>
+                        <label class="form-check-label text-white" for="checkbox09h">09h</label>
                     </div>
                     <div class="form-check form-check-inline" id="10h">
                         <input class="form-check-input" type="checkbox" name="horario" id="checkbox10h"
                                value="10h">
-                        <label class="form-check-label" for="checkbox10h">10h</label>
+                        <label class="form-check-label text-white" for="checkbox10h">10h</label>
                     </div>
                     <div class="form-check form-check-inline" id="11h">
                         <input class="form-check-input" type="checkbox" name="horario" id="checkbox11h" onclick="t()"
                                value="11h">
-                        <label class="form-check-label" for="checkbox11h">11h</label>
+                        <label class="form-check-label text-white" for="checkbox11h">11h</label>
                     </div>
 
                 </div>
@@ -352,9 +353,9 @@
 
             <br/><br/>
             <div class="form-inline my-2 my-lg-0 justify-content-sm-around">
-                <button class="btn btn-success">Adicionar</button>
-                <a href="{{ url("/pacientes") }}" class="btn btn-danger">Voltar</a>
-                <a href="{{ url("/") }}" class="btn btn-primary">Home</a>
+                <button class="btn btn-success text-white">Adicionar</button>
+                <a href="{{ url("/pacientes") }}" class="btn btn-danger text-white">Voltar</a>
+                <a href="{{ url("/") }}" class="btn btn-primary text-white">Home</a>
             </div>
             <br/>
         </form>

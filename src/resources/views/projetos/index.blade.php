@@ -22,7 +22,7 @@
 {{--                </button>--}}
             </div>
 
-            <a href="/projetos/criar" class="btn btn-success ">Adicionar </a>
+            <a href="/projetos/criar" class="btn btn-success text-white">Adicionar </a>
             @csrf
 
         </form>
@@ -44,34 +44,34 @@
                 @foreach($projetos as $projeto)
                     <tr>
                         <td>
-                            <a href="{{ url("#") }}">
+                            <a class="text-white" href="{{ url("#") }}">
                                 {{ $projeto->dia }}
                             </a>
                         </td>
                         <td>
-                            <a href="{{ url("#") }}">
+                            <a class="text-white" href="{{ url("#") }}">
                                 {{ $projeto->projeto }}
                             </a>
                         </td>
                         <td>
-                            <a href="{{ url("#") }}" cllink="black">
+                            <a class="text-white" href="{{ url("#") }}" cllink="black">
                                 {{$projeto->supervisor}}
                             </a>
                         </td>
                         <td>
-                            <a href="{{ url("#") }}" cllink="black">
+                            <a class="text-white" href="{{ url("#") }}" cllink="black">
                                 {{ $projeto->area_de_estagio }}
                             </a>
                         </td>
                         <td>
-                            <a href="{{ url("#") }}" cllink="black">
+                            <a class="text-white" href="{{ url("#") }}" cllink="black">
                                 {{ \Carbon\Carbon::createFromFormat('H:i:s',$projeto->inicio)->format('H:i') }}
                                 -
                                 {{ \Carbon\Carbon::createFromFormat('H:i:s',$projeto->fim)->format('H:i') }}
                             </a>
                         </td>
                         <td>
-                            <a href="{{ url("#") }}" cllink="black">
+                            <a class="text-white" href="{{ url("#") }}" cllink="black">
                                 {{ $projeto->vagas }}
                             </a>
                         </td>
@@ -89,7 +89,7 @@
             <div class="col">
                 <form class="navbar-form">
                     <div class=text-right>
-                        <a href="/" class="btn btn-danger mb-2">Voltar</a>
+                        <a href="/" class="btn btn-danger mb-2 text-white">Voltar</a>
 
                     </div>
                 </form>

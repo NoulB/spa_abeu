@@ -24,7 +24,7 @@
 
         a:visited {
             text-decoration: none;
-            color: white;
+            color: black;
         }
 
         body {
@@ -117,7 +117,7 @@
 
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-light justify-content-between" style="background-color: #3FBBC0;">
+<nav class="navbar navbar-expand-lg navbar-light justify-content-between" style="background-color: #1877F2;">
 
     <div class="collapse navbar-collapse">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-nav">
@@ -134,11 +134,11 @@
                {{-- <li class="nav-item">
                     <a class="nav-link" href="#">Link</a>--}}
 
-                <li class="nav-item dropdown">
+                <li class="nav-item dropdown" >
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pessoas</a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="/pacientes">Buscar Pacientes</a>
+                        <a class="dropdown-item " href="/pacientes">Buscar Pacientes</a>
                         <a class="dropdown-item" href="/alunos">Buscar Alunos</a>
                         <a class="dropdown-item" href="/supervisores">Buscar Supervisores</a>
                         <div class="dropdown-divider"></div>
@@ -147,41 +147,50 @@
                         <a class="dropdown-item" href="/supervisores/criar">Cadastrar Supervisores</a>
                     </div>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Consultas
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
-                </li>
+{{--                <li class="nav-item dropdown">--}}
+{{--                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"--}}
+{{--                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">--}}
+{{--                        Consultas--}}
+{{--                    </a>--}}
+{{--                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">--}}
+{{--                        <a class="dropdown-item" href="#">Action</a>--}}
+{{--                        <a class="dropdown-item" href="#">Another action</a>--}}
+{{--                        <div class="dropdown-divider"></div>--}}
+{{--                        <a class="dropdown-item" href="#">Something else here</a>--}}
+{{--                    </div>--}}
+{{--                </li>--}}
 
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Agendamentos
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
-                </li>
+{{--                <li class="nav-item dropdown">--}}
+{{--                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"--}}
+{{--                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">--}}
+{{--                        Agendamentos--}}
+{{--                    </a>--}}
+{{--                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">--}}
+{{--                        <a class="dropdown-item" href="#">Action</a>--}}
+{{--                        <a class="dropdown-item" href="#">Another action</a>--}}
+{{--                        <div class="dropdown-divider"></div>--}}
+{{--                        <a class="dropdown-item" href="#">Something else here</a>--}}
+{{--                    </div>--}}
+{{--                </li>--}}
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Relatórios
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="/PDFTDPacientes"target="_blank">Relatório de Pacientes</a>
-                        <a class="dropdown-item" href="/PDFTDSupervisores"target="_blank">Relatório de Supervisores</a>
-                        <a class="dropdown-item" href="/PDFTDAlunos"target="_blank">Relatório de Alunos</a>
-                        <a class="dropdown-item" href="/PDFTDConsultas" target="_blank">Relatório de Consultas</a>
+                        <a class="dropdown-item" href="/PDFTDPacientesCadastrados"target="_blank">Relatório de Pacientes Ativos</a>
+                        <a class="dropdown-item" href="/PDFTDSupervisoresCadastrados"target="_blank">Relatório de Supervisores Cadastrados</a>
+                        <a class="dropdown-item" href="/PDFTDAlunosCadastrados"target="_blank">Relatório de Alunos Ativos</a>
+{{--                        <a class="dropdown-item" href="/PDFTDConsultas" target="_blank">Relatório de Consultas</a>--}}
+                        <a class="dropdown-item" href="/PDFTDConsultas2" target="_blank">Relatório de Consultas</a>
+{{--                        <a class="dropdown-item" href="/PDFTDProjetos" target="_blank">Relatório de Projetos</a>--}}
+
+
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="/PDFTDPacientesDeletados"target="_blank">Relatório de Pacientes em Espera</a>
+                        <a class="dropdown-item" href="/PDFTDSupervisoresDeletados"target="_blank">Relatório de Supervisores Deletados</a>
+                        <a class="dropdown-item" href="/PDFTDAlunosDeletados"target="_blank">Relatório de Alunos em Espera</a>
+
                         {{--                        <div class="dropdown-divider"></div>--}}
                         {{--                        <a class="dropdown-item" href="/PDFTDPacientesDownload"target="_blank">Baixar Relatório de Pacientes</a>--}}
                         {{--                        <a class="dropdown-item" href="/PDFTDSupervisoresDownload"target="_blank">Baixar Relatório de Supervisores</a>--}}

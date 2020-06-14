@@ -22,7 +22,7 @@
                 </button>
             </div>
 
-            <a href="/consultas/criar" class="btn btn-success ">Adicionar</a>
+            <a href="/consultas/criar" class="btn btn-success text-white ">Adicionar</a>
             {{ csrf_field() }}
 
         </form>
@@ -42,22 +42,22 @@
 
                     <tr>
                         <td>
-                            <a href="{{ url("/consultas/show/$consulta->id") }}">
+                            <a class="text-white" href="{{ url("/consultas/show/$consulta->id") }}">
                                 {{ $consulta->paciente }}
                             </a>
                         </td>
                         <td>
-                            <a href="{{ url("/consultas/show/$consulta->id") }}">
+                            <a class="text-white" href="{{ url("/consultas/show/$consulta->id") }}">
                                 {{ $consulta->aluno }}
                             </a>
                         </td>
                         <td>
-                            <a href="{{ url("/consultas/show/$consulta->id") }}" cllink="black">
+                            <a class="text-white" href="{{ url("/consultas/show/$consulta->id") }}" cllink="black">
                                 {{ \Carbon\Carbon::createFromFormat('H:i:s',$consulta->hora)->format('H:i') }}
                             </a>
                         </td>
                         <td>
-                            <a href="{{ url("/consultas/show/$consulta->id") }}" cllink="black">
+                            <a class="text-white" href="{{ url("/consultas/show/$consulta->id") }}" cllink="black">
                                 {{ $consulta->consultorio }}
                             </a>
                         </td>
@@ -89,7 +89,7 @@
         </div>
         <form class="navbar-form">
             <div class=text-right>
-                <a href="/" class="btn btn-danger mb-2">Voltar</a>
+                <a href="/" class="btn btn-danger mb-2 text-white">Voltar</a>
 
             </div>
         </form>
