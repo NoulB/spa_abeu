@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.12.2.final using JasperReports Library version 6.12.2-75c5e90a222ab406e416cbf590a5397028a52de3  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="relatório1" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="3a87f72b-c363-44f2-b07e-41073317e77f">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="mysql"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<queryString>
+		<![CDATA[select id,nome,cpf,rg,data_nascimento from pacientes]]>
+	</queryString>
+	<field name="id" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.label" value="id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="pacientes"/>
+	</field>
+	<field name="nome" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="nome"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="pacientes"/>
+	</field>
+	<field name="cpf" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="cpf"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="pacientes"/>
+	</field>
+	<field name="rg" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="rg"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="pacientes"/>
+	</field>
+	<field name="data_nascimento" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.label" value="data_nascimento"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="pacientes"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<textField>
+				<reportElement x="178" y="40" width="198" height="30" uuid="c9d68f9e-36d1-4b20-90a3-952485bc4a2f"/>
+				<textElement>
+					<font size="19"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Relatório de Clientes"]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<detail>
+		<band height="132" splitType="Stretch">
+			<textField>
+				<reportElement x="-11" y="50" width="100" height="30" uuid="177ac3a7-fb2d-45e9-96ac-2e48dccad737"/>
+				<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="-5" y="13" width="100" height="30" uuid="268857b4-7c7a-43c5-a910-4ee464f3f46d"/>
+				<text><![CDATA[id]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="95" y="49" width="100" height="30" uuid="3dedd911-78dd-4ea1-bd7c-13c5ee952ce2"/>
+				<textFieldExpression><![CDATA[$F{nome}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="100" y="10" width="100" height="30" uuid="d378a0e5-3455-46c1-a724-521dc375d1a6"/>
+				<text><![CDATA[nome]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="210" y="40" width="100" height="30" uuid="8d45f349-0619-4c82-8324-68c9efcd5961"/>
+				<textFieldExpression><![CDATA[$F{cpf}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="210" y="10" width="100" height="30" uuid="ec29f584-0f06-4fa0-aea6-c4af4abe180f"/>
+				<text><![CDATA[cpf]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="450" y="43" width="100" height="30" uuid="0d3e8162-3308-4794-b2d8-c5bff84207ee"/>
+				<textFieldExpression><![CDATA[$F{rg}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="450" y="10" width="100" height="30" uuid="fc16e3cb-51a6-4191-a0df-960c09bf7b6b"/>
+				<text><![CDATA[rg]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="330" y="40" width="100" height="30" uuid="e386280c-4a84-4f0e-819b-fd9ab99a122f"/>
+				<textFieldExpression><![CDATA[$F{data_nascimento}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="330" y="10" width="100" height="30" uuid="53f423f8-3538-43bb-b60a-23d5dc37c6ef"/>
+				<text><![CDATA[data_nascimento]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -86,10 +86,9 @@
 
                                 <div class=" col-md-3 col-xs-2 ">
                                     <div class="row">
-                                        <div class="col-auto">
-                                            <a class="text-white">Dia da Consulta:&#160;</a></div>
+                                        <div class="col-auto text-white">Dia da Consulta:&#160;</div>
                                         <div class="row">
-                                            <h6><b id="mostrardia" style="color:red;" value=""></b></h6>
+                                            <a><b id="mostrardia" style="color:red;" value=""></b></a>
                                         </div>
                                     </div>
                                     <input class="form-control col" id="dia" type="date" min="1800-12-31"
@@ -98,7 +97,7 @@
                                            onchange="identificardata(), esconderconsultahora(), mostrardata()"/>
                                 </div>
                                 <div class="col" id="tardec">
-                                    <div id="horactarde" hidden>Hora da Consulta:</div>
+                                    <div id="horactarde" class="text-white" hidden>Hora da Consulta:</div>
                                     <select class="form-control col-md-5" id="tardeca" name="hora" disabled hidden>
                                         {{--                                        onchange="verifica(this.value)">--}}
                                         <option value="13:00:00">13h</option>
@@ -114,7 +113,7 @@
                                     </select>
                                 </div>
                                 <div class="col" id="manhac">
-                                    <div id="horacmanha" hidden>Hora da Consulta:</div>
+                                    <div id="horacmanha" class="text-white" hidden>Hora da Consulta:</div>
                                     <select class="form-control col-md-5" id="manhaca" name="hora" disabled hidden>
                                         {{--onchange="verifica(this.value)"--}}
                                         <option value="08:00:00">08h</option>

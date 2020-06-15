@@ -1,0 +1,8 @@
+{
+    "require": {
+        "lavela/phpjasper": "^3.0",
+        "geekcom/phpjasper": "^3.3",
+        "barryvdh/laravel-dompdf": "^0.8.6",
+        "cossou/jasperphp": "^2.8"
+    }
+}
