@@ -31,7 +31,7 @@
                 <div class="col">
                     <br/>
                     Data de Inscrição do Paciente: <br/>
-                    <input class="form-control col-md-6" autocomplete="novo-data" id="created_at" type="date" name="created_at"
+                    <input class="form-control col-md-6" autocomplete="novo-data" ind="created_at" type="date" name="created_at"
                            name="Data do Cadastro do Paciente"
                            onkeypress="return isNumberKey(event)"/>
                 </div>
