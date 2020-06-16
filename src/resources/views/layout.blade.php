@@ -58,8 +58,6 @@
             border: solid 1px #5A4181;
         }
 
-
-
         body {
             background-color: #242526;
         }
