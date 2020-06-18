@@ -219,13 +219,27 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Agendamentos
+                        Relatórios
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#" style="color: #18191A;">Action</a>
-                        <a class="dropdown-item" href="#" style="color: #18191A;">Another action</a>
+                        <a class="dropdown-item" href="/PDFTDPacientesCadastrados"target="_blank" style="color: #18191A;">Relatório de Pacientes Ativos</a>
+                        <a class="dropdown-item" href="/PDFTDSupervisoresCadastrados"target="_blank" style="color: #18191A;">Relatório de Supervisores Cadastrados</a>
+                        <a class="dropdown-item" href="/PDFTDAlunosCadastrados"target="_blank" style="color: #18191A;">Relatório de Alunos Ativos</a>
+                        {{--                        <a class="dropdown-item" href="/PDFTDConsultas" target="_blank">Relatório de Consultas</a>--}}
+                        <a class="dropdown-item" href="/PDFTDConsultas2" target="_blank" style="color: #18191A;">Relatório de Consultas</a>
+                        {{--                        <a class="dropdown-item" href="/PDFTDProjetos" target="_blank">Relatório de Projetos</a>--}}
+
+
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#" style="color: #18191A;">Something else here</a>
+                        <a class="dropdown-item" href="/PDFTDPacientesDeletados"target="_blank" style="color: #18191A;">Relatório de Pacientes em Espera</a>
+                        <a class="dropdown-item" href="/PDFTDSupervisoresDeletados"target="_blank" style="color: #18191A;">Relatório de Supervisores Deletados</a>
+                        <a class="dropdown-item" href="/PDFTDAlunosDeletados"target="_blank" style="color: #18191A;">Relatório de Alunos em Espera</a>
+
+                        {{--                        <div class="dropdown-divider"></div>--}}
+                        {{--                        <a class="dropdown-item" href="/PDFTDPacientesDownload"target="_blank">Baixar Relatório de Pacientes</a>--}}
+                        {{--                        <a class="dropdown-item" href="/PDFTDSupervisoresDownload"target="_blank">Baixar Relatório de Supervisores</a>--}}
+                        {{--                        <a class="dropdown-item" href="/PDFTDAlunosDownload"target="_blank">Baixar Relatório de Alunos</a>--}}
+                        {{--                        <a class="dropdown-item" href="/PDFTDConsultasDownload" target="_blank">Baixar Relatório de Consultas</a>--}}
                     </div>
                 </li>
             </ul>
