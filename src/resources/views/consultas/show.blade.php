@@ -21,7 +21,7 @@
         <form method="post" id="formconsulta" class="col">
             @csrf
             <br/>
-            Paciente(s):<br/>
+            <a class="text-white">Paciente(s):</a>
             <div id="searchbox-paciente-show" class="autocompletegroup">
                 @foreach($pac as $p)
 
@@ -31,7 +31,7 @@
             <div class="row">
                 <div class="col">
                     <br/>
-                    Aluno:<br/>
+                    <a class="text-white">Aluno:</a>
                     <div id="searchbox-aluno" class="autocompletegroup">
                         <input class="form-control form-check-inline col-md-8 autocomplete" id="aluno" readonly="true"
                                autocomplete="off" data-valid="false"
@@ -42,7 +42,7 @@
                     <div class="row">
                         <div class="col">
                             <br/>
-                            Supervisor:<br/>
+                            <a class="text-white">Supervisor:</a>
                             <div id="searchbox-supervisor" class="autocompletegroup">
                                 <input class="form-control form-check-inline col-md-8 autocomplete" id="supervisor"
                                        type="text" name="supervisor" size="50" tabindex="3"
@@ -54,28 +54,28 @@
                             <br/>
                             <div class="row">
                                 <div class="col-md-12">
-                                    Consultório:
+                                    <a class="text-white">Consultório:</a>
                                     <input class="form-control col-md-5" id="consultorio"
                                            value="{{ $consulta->consultorio }}" readonly="true" name="consultorio"
                                     >
                                 </div>
                                 <div class="col-md-12">
-                                    Dia da Consulta:<br/>
+
+                                    <a class="text-white">Dia da Consulta:</a>
                                     <input class="form-control col-md-5" id="dia" type="date" readonly
                                            value="{{ $consulta->dia }}" name="dia"
                                            tabindex="4"/>
                                 </div>
                                 <div class="col-md-12">
-                                    Hora da Consulta:
+                                    <a class="text-white">Hora da Consulta:</a>
                                     <input class="form-control col-md-5" id="hora" name="hora" readonly
                                            value="{{ \Carbon\Carbon::createFromFormat('H:i:s',$consulta->hora)->format('H:i') }}">
                                 </div>
                             </div>
                             <br/><br/>
                             <div class="form-inline my-2 my-lg-0 justify-content-sm-around">
-                                <button class="btn btn-success" type="submit">Adicionar</button>
-                                <a href="{{ url("/consultas") }}" class="btn btn-danger">Voltar</a>
-                                <a href="{{ url("/") }}" class="btn btn-primary">Home</a>
+                                <a href="{{ url("/consultas") }}" class="btn btn-danger text-white">Voltar</a>
+                                <a href="{{ url("/") }}" class="btn btn-primary text-white">Home</a>
                             </div>
                             <br/>
                         </div>

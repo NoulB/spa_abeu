@@ -12,13 +12,13 @@ function verifica(value) {
         i12.hidden = false;
     } else if (value == 'Solteiro') {
         i12.hidden = true;
-        i12.value = "";
+        input12.value = "";
     } else if (value == 'Viúvo') {
         i12.hidden = true;
-        i12.value = "";
+        input12.value = "";
     } else if (value == 'Divorciado') {
         i12.hidden = true;
-        i12.value = "";
+        input12.value = "";
     }
 }
 
@@ -244,6 +244,7 @@ function esconderconsultahora()
 
     if(document.getElementById("output").value == "Sabado")
     {
+
         manhac.hidden=false;
         manhaca.hidden=false;
         horacmanha.hidden=false;
@@ -252,10 +253,13 @@ function esconderconsultahora()
         horactarde.hidden=true;
         manhaca.disabled=false;
         tardeca.disabled=true;
+
+
     }
 
     else if(document.getElementById("output").value == "Domingo")
     {
+
         manhac.hidden=true;
         manhaca.hidden=true;
         horacmanha.hidden=true;
@@ -265,10 +269,10 @@ function esconderconsultahora()
         manhaca.disabled=true;
         tardeca.disabled=true;
 
-
     }
     else
     {
+
         manhaca.hidden=true;
         manhac.hidden=true;
         horacmanha.hidden=true;
@@ -283,6 +287,101 @@ function esconderconsultahora()
 
     }
 }
+function esconderconsultahora2()
+{
+    var dia = document.getElementById("output").value;
+
+    var manhac= document.getElementById("manhac");
+    var manhaca= document.getElementById("manhaca");
+    var manhacat= document.getElementById("manhacat");
+    var horacmanha= document.getElementById("horacmanha");
+    var horacmanhat= document.getElementById("horacmanhat");
+    var tardec = document.getElementById("tardec");
+    var tardeca = document.getElementById("tardeca");
+    var tardecat = document.getElementById("tardecat");
+    var horactarde = document.getElementById("horactarde");
+    var horactardet = document.getElementById("horactardet");
+
+    if(document.getElementById("output").value == "sabado")
+    {
+        manhaca.value = "08:00";
+        manhacat.value = "09:00";
+        // tardeca.value = "";
+        // tardecat.value = "";
+        manhaca.hidden=false;
+        manhacat.hidden=false;
+        manhac.hidden=false;
+        horacmanha.hidden=false;
+        horacmanhat.hidden=false;
+        tardeca.hidden=true;
+        tardecat.hidden=true;
+        tardec.hidden=true;
+        horactarde.hidden=true;
+        horactardet.hidden=true;
+        manhaca.disabled=false;
+        manhacat.disabled=false;
+        tardeca.disabled=true;
+        tardecat.disabled=true;
+
+
+    }
+
+    else if(document.getElementById("output").value == "Domingo")
+    {
+        manhaca.value = "";
+        manhacat.value = "";
+        tardeca.value = "";
+        tardecat.value = "";
+        manhac.hidden=true;
+        manhaca.hidden=true;
+        manhacat.hidden=true;
+        horacmanha.hidden=true;
+        horacmanhat.hidden=true;
+        tardec.hidden=true;
+        tardeca.hidden=true;
+        tardecat.hidden=true;
+        horactarde.hidden=true;
+        horactardet.hidden=true;
+        manhaca.disabled=true;
+        manhacat.disabled=true;
+        tardeca.disabled=true;
+        tardecat.disabled=true;
+
+
+    }
+
+    else
+    {
+        // document.getElementById("tardeca").defaultValue = "13:00";
+        // document.getElementById("tardecat").defaultValue = "13:10";
+        // manhaca.value = "";
+        // manhacat.value = "";
+        manhaca.hidden=true;
+        manhacat.hidden=true;
+        manhac.hidden=true;
+        horacmanha.hidden=true;
+        horacmanhat.hidden=true;
+        tardeca.hidden=false;
+        tardecat.hidden=false;
+        tardec.hidden=false;
+        horactarde.hidden=false;
+        horactardet.hidden=false;
+        manhaca.disabled=true;
+        manhacat.disabled=true;
+        tardeca.disabled=false;
+        tardecat.disabled=false;
+        tardeca.value = "13:00";
+        tardecat.value = "14:00";
+
+        // document.getElementById("output").value = dia;
+
+
+
+
+    }
+}
+
+
 function mostrardata() {
     var input = document.getElementById("dia").value;
     var date = new Date(input).getUTCDay();
@@ -347,4 +446,72 @@ $(function(){
 
 
 
+
+function limpa_formulário_cep() {
+    //Limpa valores do formulário de cep.
+    document.getElementById('rua').value=("");
+    document.getElementById('bairro').value=("");
+    document.getElementById('cidade').value=("");
+
+}
+
+function meu_callback(conteudo) {
+    if (!("erro" in conteudo)) {
+        //Atualiza os campos com os valores.
+        document.getElementById('rua').value=(conteudo.logradouro);
+        document.getElementById('bairro').value=(conteudo.bairro);
+        document.getElementById('cidade').value=(conteudo.localidade);
+        document.getElementById('complemento').value=(conteudo.complemento);
+
+    } //end if.
+    else {
+        //CEP não Encontrado.
+        limpa_formulário_cep();
+        alert("CEP não encontrado.");
+    }
+}
+
+function pesquisacep(valor) {
+
+    //Nova variável "cep" somente com dígitos.
+    var cep = valor.replace(/\D/g, '');
+
+    //Verifica se campo cep possui valor informado.
+    if (cep != "") {
+
+        //Expressão regular para validar o CEP.
+        var validacep = /^[0-9]{8}$/;
+
+        //Valida o formato do CEP.
+        if(validacep.test(cep)) {
+
+            //Preenche os campos com "..." enquanto consulta webservice.
+            document.getElementById('rua').value="...";
+            document.getElementById('bairro').value="...";
+            document.getElementById('cidade').value="...";
+            document.getElementById('complemento').value="...";
+            document.getElementById('numeendereco').focus();
+
+
+            //Cria um elemento javascript.
+            var script = document.createElement('script');
+
+            //Sincroniza com o callback.
+            script.src = 'https://viacep.com.br/ws/'+ cep + '/json/?callback=meu_callback';
+
+            //Insere script no documento e carrega o conteúdo.
+            document.body.appendChild(script);
+
+        } //end if.
+        else {
+            //cep é inválido.
+            limpa_formulário_cep();
+            alert("Formato de CEP inválido.");
+        }
+    } //end if.
+    else {
+        //cep sem valor, limpa formulário.
+        limpa_formulário_cep();
+    }
+};
 

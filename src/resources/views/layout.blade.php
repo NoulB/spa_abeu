@@ -10,29 +10,88 @@
     <link rel="stylesheet" href="<?php echo asset('css/style.css')?>" type="text/css">
 
 
+
+
     <style>
+        /*MODO DARK*/
+        th {
+
+            color: white;
+        }
 
         a:link {
             text-decoration: none;
-            color: black;
+            color: white;
         }
 
         a:visited {
             text-decoration: none;
-            color: black;
+            color: white;
+        }
+
+        .pagination > li > a
+        {
+            background-color: white;
+            color: #5A4181;
+        }
+
+        .pagination > li > a:focus,
+        .pagination > li > a:hover,
+        .pagination > li > span:focus,
+        .pagination > li > span:hover
+        {
+            color: #5a5a5a;
+            background-color: #eee;
+            border-color: #ddd;
+        }
+
+        .pagination > .active > a
+        {
+            color: white;
+            background-color: #5A4181 !Important;
+            border: solid 1px #5A4181 !Important;
+        }
+
+        .pagination > .active > a:hover
+        {
+            background-color: #5A4181 !Important;
+            border: solid 1px #5A4181;
         }
 
         body {
-            background-color: lightblue;
+            background-color: #242526;
         }
 
         #container {
-            background-color: white;
+            background-color: #3a3b3c;
         }
 
         .table-striped > tbody > tr:nth-child(2n+1) > td, .table-striped > tbody > tr:nth-child(2n+1) > th {
-            background-color: #e3f2fd;
+            background-color: #242526;
         }
+
+        /*MODO CLARO*/
+        /*a:link {*/
+        /*    text-decoration: none;*/
+        /*    color: black;*/
+        /*}*/
+
+        /*a:visited {*/
+        /*    text-decoration: none;*/
+        /*    color: black;*/
+        /*}*/
+
+        /*body {*/
+        /*    background-color: lightblue;*/
+        /*}*/
+
+        /*#container {*/
+        /*    background-color: white;*/
+        /*}*/
+
+        /*.table-striped > tbody > tr:nth-child(2n+1) > td, .table-striped > tbody > tr:nth-child(2n+1) > th {*/
+        /*    background-color: #e3f2fd;*/
+        /*}*/
         /*  ESTILOS DA BUSCA DE PESSOAS NO CADASTRO DE CONSULTAS    */
         .autocompletegroup {
             position: relative;
@@ -70,7 +129,7 @@
             font-size: 14px;
         }
         .chip a{
-            color: white;
+            color: #242526;
         }
         .closechip{
             position: absolute;
@@ -105,6 +164,8 @@
             right: 2px;
             cursor: pointer;
         }
+
+
     </style>
 {{--    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>--}}
 
@@ -112,16 +173,16 @@
 
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-light justify-content-between" style="background-color: #3FBBC0;">
+<nav class="navbar navbar-expand-lg navbar-dark justify-content-between" style="background-color: #18191A;">
 
-    <div class="collapse navbar-collapse">
+    <div class="collapse navbar-collapse " >
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-nav">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse  dual-nav w-100">
             <ul class="navbar-nav">
                 <li class="nav-item active">
-                    <a class="nav-link pl-0" href="/">Home <span class="sr-only">Home</span></a>
+                    <a class="nav-link pl-0" href="/" >Home <span class="sr-only">Home</span></a>
                 </li>
               {{--  <li class="nav-item">
                     <a class="nav-link" href="#">Link</a>
@@ -129,17 +190,17 @@
                {{-- <li class="nav-item">
                     <a class="nav-link" href="#">Link</a>--}}
 
-                <li class="nav-item dropdown">
+                <li class="nav-item dropdown" >
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pessoas</a>
+                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >Pessoas</a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="/pacientes">Buscar Pacientes</a>
-                        <a class="dropdown-item" href="/alunos">Buscar Alunos</a>
-                        <a class="dropdown-item" href="/supervisores">Buscar Supervisores</a>
+                        <a class="dropdown-item" href="/pacientes" style="color: #18191A;">Buscar Pacientes</a>
+                        <a class="dropdown-item" href="/alunos" style="color: #18191A;">Buscar Alunos</a>
+                        <a class="dropdown-item" href="/supervisores" style="color: #18191A;">Buscar Supervisores</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="/pacientes/criar">Cadastrar Pacientes</a>
-                        <a class="dropdown-item" href="/alunos/criar">Cadastrar Alunos</a>
-                        <a class="dropdown-item" href="/supervisores/criar">Cadastrar Supervisores</a>
+                        <a class="dropdown-item" href="/pacientes/criar" style="color: #18191A;">Cadastrar Pacientes</a>
+                        <a class="dropdown-item" href="/alunos/criar" style="color: #18191A;">Cadastrar Alunos</a>
+                        <a class="dropdown-item" href="/supervisores/criar" style="color: #18191A;">Cadastrar Supervisores</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown">
@@ -148,10 +209,10 @@
                         Consultas
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Something else here</a>
+                        <a class="dropdown-item" href="#" style="color: #18191A;">Action</a>
+                        <a class="dropdown-item" href="#" style="color: #18191A;">Another action</a>
+                        <div class="dropdown-divider" style="color: #18191A;"></div>
+                        <a class="dropdown-item" href="#" style="color: #18191A;">Something else here</a>
                     </div>
                 </li>
 
@@ -161,10 +222,10 @@
                         Agendamentos
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#" style="color: #18191A;">Action</a>
+                        <a class="dropdown-item" href="#" style="color: #18191A;">Another action</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Something else here</a>
+                        <a class="dropdown-item" href="#" style="color: #18191A;">Something else here</a>
                     </div>
                 </li>
             </ul>
@@ -192,7 +253,7 @@
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{ route('logout') }}"
+                            <a class="dropdown-item" href="{{ route('logout') }}" style="color: #18191A;"
                                onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                 {{ __('Logout') }}

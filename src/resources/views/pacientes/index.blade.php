@@ -22,7 +22,7 @@
                 </button>
             </div>
 
-            <a href="/pacientes/criar" class="btn btn-success ">Adicionar </a>
+            <a href="/pacientes/criar" class="btn btn-success text-white">Adicionar </a>
             {{ csrf_field() }}
 
         </form>
@@ -41,37 +41,37 @@
                 @foreach($pacientes as $paciente)
                     <tr>
                         <td>
-                            <a href="{{ url("/pacientes/show/$paciente->id") }}">
+                            <a class="text-white" href="{{ url("/pacientes/show/$paciente->id") }}">
                                 {{ $paciente->nome }}
                             </a>
                         </td>
                         <td>
-                            <a href="{{ url("/pacientes/show/$paciente->id") }}">
+                            <a class="text-white" href="{{ url("/pacientes/show/$paciente->id") }}">
                                 {{ $paciente->celular }}
                             </a>
                         </td>
                         <td>
-                            <a href="{{ url("/pacientes/show/$paciente->id") }}" cllink="black">
+                            <a class="text-white" href="{{ url("/pacientes/show/$paciente->id") }}" cllink="black">
                                 {{\Carbon\Carbon::parse($paciente->data_nascimento)->age}}
                             </a>
                         </td>
                         <td>
-                            <a href="{{ url("/pacientes/show/$paciente->id") }}" cllink="black">
+                            <a class="text-white" href="{{ url("/pacientes/show/$paciente->id") }}" cllink="black">
                                 {{ $paciente->cpf }}
                             </a>
                         </td>
-                        <td align="right">
-                            <form method="post" action="/consultas/buscar/{{ $paciente->id }}" style="height: 1px">
-                                @csrf
-                                <button class="btn btn-info mb-2 btn-sm" >consulta</button>
-                            </form>
-                        </td>
+{{--                        <td align="right">--}}
+{{--                            <form method="post" action="/consultas/buscar/{{ $paciente->id }}" style="height: 1px">--}}
+{{--                                @csrf--}}
+{{--                                <button class="btn btn-light mb-2 btn-sm" >consulta</button>--}}
+{{--                            </form>--}}
+{{--                        </td>--}}
                         <td align="right">
                             <form method="post" action="/pacientes/remover/{{ $paciente->id }}" style="height: 15px"
                                   onsubmit="return confirm ('Tem certeza que deseja excluir?')">
                                 @csrf
                                 @method('DELETE')
-                                <button class="btn btn-danger mb-2 btn-sm">
+                                <button class="btn btn-outline-danger mb-2 btn-sm">
                                     <i class="fas fa-trash-alt"></i>
                                 </button>
                             </form>
@@ -90,7 +90,7 @@
             <div class="col">
                 <form class="navbar-form">
                     <div class=text-right>
-                        <a href="/" class="btn btn-danger mb-2">Voltar</a>
+                        <a href="/" class="btn btn-danger mb-2 text-white">Voltar</a>
 
                     </div>
                 </form>
@@ -102,3 +102,4 @@
     </div>
 
 @endsection
+

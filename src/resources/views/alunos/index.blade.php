@@ -22,7 +22,7 @@
                 </button>
             </div>
 
-            <a href="/alunos/criar" class="btn btn-success ">Adicionar</a>
+            <a href="/alunos/criar" class="btn btn-success text-white">Adicionar</a>
             {{ csrf_field() }}
 
         </form>
@@ -41,22 +41,24 @@
                 @foreach($alunos as $aluno)
                     <tr>
                         <td>
-                            <a href="{{ url("/alunos/show/$aluno->id") }}">
+                            <a class="text-white" href="{{ url("/alunos/show/$aluno->id") }}">
                                 {{ $aluno->nome }}
                             </a>
                         </td>
                         <td>
-                            <a href="{{ url("/alunos/show/$aluno->id") }}">
+                            <a class="text-white" href="{{ url("/alunos/show/$aluno->id") }}">
                                 {{ $aluno->celular }}
                             </a>
                         </td>
                         <td>
-                            <a href="{{ url("/alunos/email/$aluno->id") }}" cllink="black">
+                            <a class="text-white" href="{{ url("/alunos/show/$aluno->id") }}" cllink="black">
+                                {{--("/alunos/email/$aluno->id")--}}
                                 {{ $aluno->email }}
                             </a>
                         </td>
                         <td>
-                            <a href="{{ url("/alunos/email/$aluno->id") }}" cllink="black">
+                            <a class="text-white" href="{{ url("/alunos/show/$aluno->id") }}" cllink="black">
+                                {{--("/alunos/email/$aluno->id")--}}
                                 GRUPO {{--{{ $aluno->email }}--}}
                             </a>
                         </td>
@@ -69,7 +71,7 @@
 
             <form class="navbar-form">
                 <div class=text-right>
-                    <a href="/" class="btn btn-danger mb-2">Voltar</a>
+                    <a href="/" class="btn btn-danger mb-2 text-white">Voltar</a>
 
                 </div>
             </form>

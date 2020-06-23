@@ -21,7 +21,7 @@
         <form method="post" id="formconsulta" class="col">
             @csrf
 
-            Período:<br/>
+            <a class="text-white">Período:</a>
             <div class="row">
                 <div class="col col-md-2">
                     <input class="form-control" placeholder="Ano" value="{{$ano->format('Y')}}" type="text" required
@@ -44,7 +44,7 @@
                 </div>
             </div>
             <br/>
-            Nome do Projeto:<br/>
+            <a class="text-white"> Nome do Projeto:</a>
             <div class="row">
                 <div class="col col-md-8">
                     <input class="form-control" placeholder="Nome do Projeto"
@@ -54,7 +54,7 @@
             <div class="row">
                 <div class="col">
                     <br/>
-                    Supervisor:<br/>
+                    <a class="text-white">Supervisor:</a>
                     <div id="searchbox-supervisor" class="autocompletegroup">
                         <input type="hidden" name="supervisor_id" id="idsupervisor"/>
                         <input class="form-control form-check-inline col-md-8 autocomplete" id="supervisor"
@@ -68,9 +68,10 @@
 
                     <div class="row">
                         <div class="col">
-                            Dia:
+                            <a class="text-white">Dia:</a>
                             <select class="form-control col-md-2" id="output" name="dia_da_semana"
-                                    onchange="verifica(this.value)">
+                                    onchange="verifica(this.value),esconderconsultahora2()">
+                                <option disabled selected>Escolha o dia</option>
                                 <option value="segunda">Segunda-feira</option>
                                 <option value="terça">Terça-feira</option>
                                 <option value="quarta">Quarta-feira</option>
@@ -83,40 +84,41 @@
                     </div>
                     <br/>
                     <div>
-                        <div class="row" >
-                            <div class="col" id>
-                                <h6>Hora de início:</h6>
-                                <input class="form-control col col-md-2" id="manhaca" type="time" min="08:00" max="11:00" required name="hora_inicio"/>
+                        <div class="row" id="manhac">
+                            <div class="col" >
+                                <h6 id="horacmanha" hidden class="text-white">Hora de início:</h6>
+                                <input class="form-control col col-md-2" id="manhaca" type="time" min="08:00" max="11:00" value="08:00" required name="hora_inicio"disabled hidden/>
                                 <br>
-                                <h6>Hora de término:</h6>
-                                <input class="form-control col col-md-2" id="manhac" type="time" min="08:10" max="12:00"required name="hora_fim"/>
+                                <h6 id="horacmanhat" hidden class="text-white">Hora de término:</h6>
+                                <input class="form-control col col-md-2" id="manhacat" type="time" min="08:10" max="12:00" value="09:00" required name="hora_fim"disabled hidden/>
                             </div>
 
                         </div>
                     </div>
-{{--                    <div>--}}
-{{--                        <div class="row" hidden>--}}
-{{--                            <div class="col">--}}
-{{--                                <h6>Hora de início:</h6>--}}
-{{--                                <input class="form-control col col-md-2" id="tardeca" type="time" min="13:00" max="20:00" required name="hora_inicio"/>--}}
-{{--                                <br>--}}
-{{--                                <h6>Hora de término:</h6>--}}
-{{--                                <input class="form-control col col-md-2" id="tardec" type="time" min="13:10" max="21:00"required name="hora_fim"/>--}}
-{{--                            </div>--}}
+                    <div>
+                        <div class="row" id="tardec" >
+                            <div class="col" >
+                                <h6 id="horactarde" hidden class="text-white">Hora de início:</h6>
+                                <input class="form-control col col-md-2" id="tardeca" type="time" min="13:00" max="20:00" value="13:00" required name="hora_inicio" disabled hidden/>
+                                <br>
+                                <h6 id="horactardet" hidden class="text-white">Hora de término:</h6>
+                                <input class="form-control col col-md-2" id="tardecat" type="time" min="13:10" max="21:00" value="14:00"required name="hora_fim" disabled hidden/>
+                            </div>
 
-{{--                        </div>--}}
-{{--                    </div>--}}
+                        </div>
+                    </div>
+
                     <br>
                     <div>
-                        Quantidade de vagas:
-                        <input class="form-control col-md-2" placeholder="somente números" type="text" name="vagas"
+                        <a class="text-white">Quantidade de vagas:</a>
+                        <input class="form-control col-md-2" placeholder="somente números" type="text" name="vagas" id="testes"
                                onkeypress="return isNumberKey(event)" required maxlength="2"/>
                     </div>
                     <br/><br/>
                     <div class="form-inline my-2 my-lg-0 justify-content-sm-around">
-                        <button class="btn btn-success" type="submit">Adicionar</button>
-                        <a href="{{ url("/projetos") }}" class="btn btn-danger">Voltar</a>
-                        <a href="{{ url("/") }}" class="btn btn-primary">Home</a>
+                        <button class="btn btn-success text-white" type="submit">Adicionar</button>
+                        <a href="{{ url("/projetos") }}" class="btn btn-danger text-white">Voltar</a>
+                        <a href="{{ url("/") }}" class="btn btn-primary text-white">Home</a>
                     </div>
                     <br/>
                 </div>

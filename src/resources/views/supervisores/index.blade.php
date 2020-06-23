@@ -21,7 +21,7 @@
                 </button>
             </div>
 
-            <a href="/supervisores/criar" class="btn btn-success ">Adicionar</a>
+            <a href="/supervisores/criar" class="btn btn-success text-white">Adicionar</a>
             {{ csrf_field() }}
 
         </form>
@@ -41,22 +41,22 @@
 
                     <tr>
                         <td>
-                            <a href="{{ url("/supervisores/show/$supervisor->id") }}">
+                            <a class="text-white" href="{{ url("/supervisores/show/$supervisor->id") }}">
                                 {{ $supervisor->nome }}
                             </a>
                         </td>
                         <td>
-                            <a href="{{ url("/supervisores/show/$supervisor->id") }}">
+                            <a class="text-white"  href="{{ url("/supervisores/show/$supervisor->id") }}">
                                 {{ $supervisor->celular }}
                             </a>
                         </td>
                         <td>
-                            <a href="{{ url("/supervisores/show/$supervisor->id") }}" cllink="black">
+                            <a class="text-white"  href="{{ url("/supervisores/show/$supervisor->id") }}" cllink="black">
                                 {{ $supervisor->email }}
                             </a>
                         </td>
                         <td>
-                            <a href="{{ url("/supervisores/show/$supervisor->id") }}" cllink="black">
+                            <a class="text-white"  href="{{ url("/supervisores/show/$supervisor->id") }}" cllink="black">
                                 {{ $supervisor->crp }}
                             </a>
                         </td>
@@ -69,7 +69,7 @@
         </div>
         <form class="navbar-form">
             <div class=text-right>
-                <a href="/" class="btn btn-danger mb-2">Voltar</a>
+                <a href="/" class="btn btn-danger mb-2 text-white">Voltar</a>
 
             </div>
         </form>

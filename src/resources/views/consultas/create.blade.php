@@ -29,7 +29,7 @@
             @csrf
             <div id="erro-box"></div>
               <br/>
-            Paciente:<br/>
+            <a class="text-white">Paciente:</a>
             <div id="searchbox-paciente" class="autocompletegroup">
                 <input type="hidden" name="idpaciente" id="idpaciente"/>
                 <input class="form-control form-check-inline col-md-8 autocomplete" id="paciente"
@@ -40,7 +40,7 @@
             <div class="row">
                 <div class="col">
                     <br/>
-                    Aluno:<br/>
+                    <a class="text-white">Aluno:</a>
                     <div id="searchbox-aluno" class="autocompletegroup">
                         <input type="hidden" name="idaluno" id="idaluno"/>
                         <input class="form-control form-check-inline col-md-8 autocomplete" id="aluno"
@@ -54,7 +54,7 @@
                     <div class="row">
                         <div class="col">
                             <br/>
-                            Supervisor:<br/>
+                            <a class="text-white">Supervisor:</a>
                             <div id="searchbox-supervisor" class="autocompletegroup">
                                 <input type="hidden" name="idsupervisor" id="idsupervisor"/>
                                 <input class="form-control form-check-inline col-md-8 autocomplete" id="supervisor"
@@ -67,7 +67,7 @@
                             <br/>
                             <div class="row">
                                 <div class="col-md-12">
-                                    Consultório:
+                                    <a class="text-white">Consultório:</a>
                                     <select class="form-control col-md-5" id="input11" name="consultorio"
 
                                             onchange="verifica(this.value)">
@@ -86,10 +86,9 @@
 
                                 <div class=" col-md-3 col-xs-2 ">
                                     <div class="row">
-                                        <div class="col-auto">
-                                            <h6>Dia da Consulta:&#160;</h6></div>
+                                        <div class="col-auto text-white">Dia da Consulta:&#160;</div>
                                         <div class="row">
-                                            <h6><b id="mostrardia" style="color:red;" value=""></b></h6>
+                                            <a><b id="mostrardia" style="color:red;" value=""></b></a>
                                         </div>
                                     </div>
                                     <input class="form-control col" id="dia" type="date" min="1800-12-31"
@@ -98,7 +97,7 @@
                                            onchange="identificardata(), esconderconsultahora(), mostrardata()"/>
                                 </div>
                                 <div class="col" id="tardec">
-                                    <div id="horactarde" hidden>Hora da Consulta:</div>
+                                    <div id="horactarde" class="text-white" hidden>Hora da Consulta:</div>
                                     <select class="form-control col-md-5" id="tardeca" name="hora" disabled hidden>
                                         {{--                                        onchange="verifica(this.value)">--}}
                                         <option value="13:00:00">13h</option>
@@ -114,7 +113,7 @@
                                     </select>
                                 </div>
                                 <div class="col" id="manhac">
-                                    <div id="horacmanha" hidden>Hora da Consulta:</div>
+                                    <div id="horacmanha" class="text-white" hidden>Hora da Consulta:</div>
                                     <select class="form-control col-md-5" id="manhaca" name="hora" disabled hidden>
                                         {{--onchange="verifica(this.value)"--}}
                                         <option value="08:00:00">08h</option>
@@ -136,9 +135,9 @@
 
                             <br/><br/>
                             <div class="form-inline my-2 my-lg-0 justify-content-sm-around">
-                                <button class="btn btn-success" type="submit">Adicionar</button>
-                                <a href="{{ url("/consultas") }}" class="btn btn-danger">Voltar</a>
-                                <a href="{{ url("/") }}" class="btn btn-primary">Home</a>
+                                <button class="btn btn-success text-white" type="submit">Adicionar</button>
+                                <a href="{{ url("/consultas") }}" class="btn btn-danger text-white">Voltar</a>
+                                <a href="{{ url("/") }}" class="btn btn-primary text-white">Home</a>
 
                             </div>
                             <br/>

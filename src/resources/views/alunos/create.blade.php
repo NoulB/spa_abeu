@@ -30,7 +30,7 @@
             <div class="row">
                 <div class="col">
                     <br/>
-                Nome:<br/>
+                    <a class="text-white">Nome:</a>
                 <input class="form-control" autocomplete="novo-nome" id="input1" placeholder="Nome completo"
                        type="text" name="nome" tabindex="1" required autofocus maxlength="250"/>
             </div>
@@ -45,7 +45,7 @@
     </div>
             <div class="row">
                 <div class="col">
-                    Matricula: <br/>
+                    <a class="text-white">Matricula:</a>
                     <input class="form-control" autocomplete="nova-matricula" id="input2" placeholder="somente números"
                            type="text" name="id" tabindex="2"
                            onkeypress="return isNumberKey(event)" maxlength="8" required/>
@@ -54,23 +54,23 @@
             </div>
             <div class="row">
                 <div class="col">
-                    CPF: <br/>
+                    <a class="text-white">CPF:</a>
                     <input class="form-control" autocomplete="novo=cpf" id="inputcpf" placeholder="somente números" type="text" name="cpf"
                            tabindex="3" onkeypress="return isNumberKey(event)" maxlength="11" OnBlur="ValidaCPF()" onclick="desvalidarCPF()" required/>
                 </div>
                 <div class=" col">
-                    RG: <br/>
+                    <a class="text-white">RG:</a>
                     <input class="form-control" autocomplete="novo-rg" id="input3" tabindex="4" placeholder="somente números"
                            type="text" name="rg" onkeypress="return isNumberKey(event)"
                            required maxlength="16"/>
                 </div>
                 <div class="col">
-                    Data de Nascimento:<br/>
+                    <a class="text-white">Data de Nascimento:</a>
                     <input class="form-control col-md-8" autocomplete="novo-nasc" id="data_nasc" type="date" min="1800-12-31" max="2999-12-31"  name="data_nascimento" tabindex="5" OnBlur="ValidaDATA()"
                             required/>
                 </div>
                 <div class="col">
-                    Sexo:
+                    <a class="text-white">Sexo:</a>
                     <select class="form-control col-md-8" name="sexo" id="input6" tabindex="6">
                         <option value="Masculino">Masculino</option>
                         <option value="Feminino">Feminino</option>
@@ -99,11 +99,11 @@
 {{--            </div>--}}
             <br/>
             <div>
-                <h4>Contatos:</h4>
+                <h4 class="text-white">Contatos:</h4>
             </div>
             <div class="row">
                 <div class="col">
-                Celular: <br/>
+                    <a class="text-white">Celular:</a>
                 <input class="form-control" autocomplete="novo-cel" id="inputcel"
                        placeholder="Celular - somente números" type="text" name="celular"
                        tabindex="7"  onkeypress="return isNumberKey(event)"   maxlength="11" OnBlur="ValidaCEL()" onclick="desvalidarCEL()"/>
@@ -112,7 +112,7 @@
             </div>
             <div class="row">
                 <div class="col">
-                E-mail:<br/>
+                    <a class="text-white">E-mail:</a>
                 <input class="form-control" autocomplete="novo-mail" id="input8" placeholder="e-mail" type="text" tabindex="8"
                        name="email" maxlength="64"/>
             </div>
@@ -121,9 +121,9 @@
 
                 <br/><br/>
             <div class="form-inline my-2 my-lg-0 justify-content-sm-around">
-                <button class="btn btn-success">Adicionar</button>
-                <a href="{{ url("/alunos") }}" class="btn btn-danger">Voltar</a>
-                <a href="{{ url("/") }}" class="btn btn-primary">Home</a>
+                <button class="btn btn-success text-white">Adicionar</button>
+                <a href="{{ url("/alunos") }}" class="btn btn-danger text-white">Voltar</a>
+                <a href="{{ url("/") }}" class="btn btn-primary text-white">Home</a>
             </div>
             <br/>
         </form>

@@ -29,14 +29,21 @@ class PacienteRequest extends FormRequest
             'rg' => 'required',
             'data_nascimento' => 'required',
             'sexo' => 'required',
+            'email',
+            'celular',
+            'telefone',
+            'pai',
             'mae' => 'required',
             'estado_civil' => 'required',
+            'conjuge',
             'logradouro' => 'required',
             'numero' => 'required|numeric',
             'bairro' => 'required',
             'cidade' => 'required',
             'cep' =>'required',
             'createate',
+            'disponibilidade',
+           ' horario',
         ];
     }
 }

@@ -76,7 +76,20 @@ Route::get('projetos/criar', 'ProjetosController@create')->name("form_cadastra_p
 Route::post('projetos/criar', 'ProjetosController@store')->name("salva_projeto");
 Route::get('projetos/busca', 'ProjetosController@busca')->name("busca_projeto");
 
+Route::get('PDFTDPacientesCadastrados','PdfController@gerarPDFTDPacientesCadastrados');
+Route::get('PDFTDPacientesDeletados','PdfController@gerarPDFTDPacientesDeletados');
+Route::get('PDFTDSupervisoresCadastrados','PdfController@gerarPDFTDSupervisoresCadastrados');
+Route::get('PDFTDSupervisoresDeletados','PdfController@gerarPDFTDSupervisoresDeletados');
+Route::get('PDFTDAlunosCadastrados','PdfController@gerarPDFTDAlunosCadastrados');
+Route::get('PDFTDAlunosDeletados','PdfController@gerarPDFTDAlunosDeletados');
+Route::get('PDFTDConsultas','PdfController@gerarPDFTDTDConsultas');
+Route::get('PDFTDConsultas2','PdfController@consultasteste');
+Route::get('PDFTDProjetos','PdfController@Projetos');
 
+//Route::get('PDFTDPacientesDownload','PdfController@gerarPDFTDPacientesDownload');
+//Route::get('PDFTDSupervisoresDownload','PdfController@gerarPDFTDSupervisoresDownload');
+//Route::get('PDFTDAlunosDownload','PdfController@gerarPDFTDAlunosDownload');
+//Route::get('PDFTDConsultasDownload','PdfController@gerarPDFTDTDConsultasDownload');
 
 Auth::routes();
 

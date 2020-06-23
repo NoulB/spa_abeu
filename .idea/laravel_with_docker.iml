@@ -7,12 +7,14 @@
       <sourceFolder url="file://$MODULE_DIR$/spec" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/asm89/stack-cors" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/barryvdh/laravel-dompdf" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/brick/math" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/composer" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/dnoegel/php-xdg-base-dir" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/doctrine/inflector" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/doctrine/instantiator" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/doctrine/lexer" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/dompdf/dompdf" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/dragonmantank/cron-expression" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/egulias/email-validator" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/facade/flare-client-php" />
@@ -42,6 +44,8 @@
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/opis/closure" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/phar-io/manifest" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/phar-io/version" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/phenx/php-font-lib" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/phenx/php-svg-lib" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/phpdocumentor/reflection-common" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/phpdocumentor/reflection-docblock" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/phpdocumentor/type-resolver" />
@@ -62,6 +66,7 @@
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/ralouphie/getallheaders" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/ramsey/collection" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/ramsey/uuid" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/sabberworm/php-css-parser" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/scrivo/highlight.php" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/sebastian/code-unit-reverse-lookup" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/sebastian/comparator" />

@@ -23,13 +23,17 @@ class ProjetosController extends Controller
 
     public function index(Request $request)
     {
+        $ldate = date('Y-m-d H:i:s');
+
         $projetos = DB::table('projetos')
             ->join('supervisores', 'supervisores.id', '=', 'projetos.supervisor_id')
 //            ->join('supervisoes', 'supervisoes.projetos_id', '=', 'projetos.id')
             ->select('projetos.dia_da_semana as dia', 'projetos.nome as projeto', 'supervisores.nome as supervisor',
                 'projetos.area_de_estagio', 'projetos.hora_inicio as inicio', 'projetos.hora_fim as fim', 'projetos.vagas')
             ->where('projetos.status', '=', 1)
-            ->orderBy('projetos.dia_da_semana')
+            ->orderByRaw( "FIELD(dia_da_semana,'segunda', 'terça', 'quarta', 'quinta', 'sexta', 'sabado')")
+
+
             ->orderBy('area_de_estagio')
             ->orderBy('hora_inicio')
             ->get();
