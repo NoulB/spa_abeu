@@ -90,7 +90,6 @@
         <form class="navbar-form">
             <div class=text-right>
                 <a href="/" class="btn btn-danger mb-2 text-white">Voltar</a>
-
             </div>
         </form>
     </div>
