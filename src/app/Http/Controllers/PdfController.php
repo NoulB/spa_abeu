@@ -39,7 +39,7 @@ class PdfController extends Controller
 //        ->get();
 //        $arr = explode(' ', $paciente4);
 //        $names = collect($arr)->slice(0, 2)->implode(' ');
-        $pdf = PDF::loadView('PDFTDPacientesCadastrados', compact('paciente',  'paciente2'));//,'names'));
+        $pdf = PDF::loadView('relatorios\PDFTDPacientesCadastrados', compact('paciente',  'paciente2'));//,'names'));
         return $pdf->setPaper('a4')->stream('Todos_os_Pacientes_Cadastrados.pdf');
 
     }
@@ -56,7 +56,7 @@ class PdfController extends Controller
 //            ->get();
 //        $arr = explode(' ', $paciente4);
 //        $names = collect($arr)->slice(0, 2)->implode(' ');
-        $pdf = PDF::loadView('PDFTDPacientesDeletados', compact( 'paciente1', 'paciente2'));//,'names'));
+        $pdf = PDF::loadView('relatorios\PDFTDPacientesDeletados', compact( 'paciente1', 'paciente2'));//,'names'));
         return $pdf->setPaper('a4')->stream('Todos_os_Pacientes_Deletados.pdf');
 
     }
@@ -67,7 +67,7 @@ class PdfController extends Controller
             ->orderBy('nome')
             ->simplePaginate(10);
         $supervisores2 = Carbon::now();
-        $pdf = PDF::loadView('PDFTDSupervisoresCadastrados', compact('supervisores3',  'supervisores2'));
+        $pdf = PDF::loadView('relatorios\PDFTDSupervisoresCadastrados', compact('supervisores3',  'supervisores2'));
         return $pdf->setPaper('a4')->stream('Todos_os_Supervisores_Cadastrados.pdf');
     }
     public function gerarPdfTDSupervisoresDeletados()
@@ -77,7 +77,7 @@ class PdfController extends Controller
             ->orderBy('nome')
             ->simplePaginate(10);
         $supervisores2 = Carbon::now();
-        $pdf = PDF::loadView('PDFTDSupervisoresDeletados', compact( 'supervisores1', 'supervisores2'));
+        $pdf = PDF::loadView('relatorios\PDFTDSupervisoresDeletados', compact( 'supervisores1', 'supervisores2'));
         return $pdf->setPaper('a4')->stream('Todos_os_Supervisores_Deletados.pdf');
     }
     public function gerarPDFTDAlunosCadastrados()
@@ -88,7 +88,7 @@ class PdfController extends Controller
             ->simplePaginate(10);
 
         $aluno2 = Carbon::now();
-        $pdf = PDF::loadView('PDFTDAlunosCadastrados', compact('aluno',  'aluno2'));
+        $pdf = PDF::loadView('relatorios\PDFTDAlunosCadastrados', compact('aluno',  'aluno2'));
         return $pdf->setPaper('a4')->stream('Todos_os_Alunos_Cadastrados.pdf');
     }
     public function gerarPDFTDAlunosDeletados()
@@ -98,7 +98,7 @@ class PdfController extends Controller
             ->orderBy('nome')
             ->simplePaginate(10);
         $aluno2 = Carbon::now();
-        $pdf = PDF::loadView('PDFTDAlunosDeletados', compact( 'aluno1', 'aluno2'));
+        $pdf = PDF::loadView('relatorios\PDFTDAlunosDeletados', compact( 'aluno1', 'aluno2'));
         return $pdf->setPaper('a4')->stream('Todos_os_Alunos_Deletados.pdf');
     }
     public function gerarPDFTDTDConsultas()
@@ -111,7 +111,7 @@ class PdfController extends Controller
         $consultas1 = Consulta::all()
             ->where('status', '=', 'não realizada');
         $consultas2 = Carbon::now();
-        $pdf = PDF::loadView('PDFTDTDConsulta', compact('consultas', 'consultas1', 'consultas2'));
+        $pdf = PDF::loadView('relatorios\PDFTDTDConsulta', compact('consultas', 'consultas1', 'consultas2'));
         return $pdf->setPaper('a4')->stream('Todos_os_Alunos.pdf');
     }
     public function consultasteste(Request $request)
@@ -186,7 +186,7 @@ class PdfController extends Controller
 //            ->orderBy('dia')
 //            ->simplePaginate(10);
         $mensagem = $request->session()->get('mensagem');
-        $pdf = PDF::loadView('PDFTDTDConsultas', compact('consultas1','consultas2','consultas3','consultas4','consultas5', 'mensagem'));
+        $pdf = PDF::loadView('relatorios\PDFTDTDConsultas', compact('consultas1','consultas2','consultas3','consultas4','consultas5', 'mensagem'));
         return $pdf->setPaper('a4')->stream('Todas_as_Consultas.pdf');}
 
 
@@ -206,7 +206,7 @@ class PdfController extends Controller
 
 
         $mensagem = $request->session()->get('mensagem');
-        $pdf = PDF::loadView('PDFTDProjetos', compact('projetos', 'projetos2','mensagem'));
+        $pdf = PDF::loadView('relatorios\PDFTDProjetos', compact('projetos', 'projetos2','mensagem'));
         return $pdf->setPaper('a4')->stream('Todas_as_Consultas.pdf');
 
     }
