@@ -1,4 +1,5 @@
 @extends('layout')
+<title>Início</title>
 
 @section('cabecalho')
     Consultas de Hoje

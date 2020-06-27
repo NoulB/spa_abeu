@@ -1,6 +1,8 @@
 <!doctype html>
 <html lang="pt-br">
 <head>
+    <title></title>
+
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -182,7 +184,7 @@
         <div class="collapse navbar-collapse  dual-nav w-100">
             <ul class="navbar-nav">
                 <li class="nav-item active">
-                    <a class="nav-link pl-0" href="/" >Home <span class="sr-only">Home</span></a>
+                    <a class="nav-link pl-0" href="/" >Início <span class="sr-only">Home</span></a>
                 </li>
               {{--  <li class="nav-item">
                     <a class="nav-link" href="#">Link</a>
@@ -192,27 +194,23 @@
 
                 <li class="nav-item dropdown" >
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >Pessoas</a>
+                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >Telas de Buscas</a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="/pacientes" style="color: #18191A;">Buscar Pacientes</a>
                         <a class="dropdown-item" href="/alunos" style="color: #18191A;">Buscar Alunos</a>
                         <a class="dropdown-item" href="/supervisores" style="color: #18191A;">Buscar Supervisores</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="/pacientes/criar" style="color: #18191A;">Cadastrar Pacientes</a>
-                        <a class="dropdown-item" href="/alunos/criar" style="color: #18191A;">Cadastrar Alunos</a>
-                        <a class="dropdown-item" href="/supervisores/criar" style="color: #18191A;">Cadastrar Supervisores</a>
+
                     </div>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Consultas
+                        Telas de Cadastros
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#" style="color: #18191A;">Action</a>
-                        <a class="dropdown-item" href="#" style="color: #18191A;">Another action</a>
-                        <div class="dropdown-divider" style="color: #18191A;"></div>
-                        <a class="dropdown-item" href="#" style="color: #18191A;">Something else here</a>
+                        <a class="dropdown-item" href="/pacientes/criar" style="color: #18191A;">Cadastrar Pacientes</a>
+                        <a class="dropdown-item" href="/alunos/criar" style="color: #18191A;">Cadastrar Alunos</a>
+                        <a class="dropdown-item" href="/supervisores/criar" style="color: #18191A;">Cadastrar Supervisores</a>
                     </div>
                 </li>
 
@@ -244,7 +242,7 @@
                 </li>
             </ul>
         </div>
-        <a href="#" class="navbar-brand col mx-auto d-block text-center w-100"><h3>@yield('cabecalho')</h3></a>
+        <a  class="navbar-brand col mx-auto d-block text-center w-100"><h3>@yield('cabecalho')</h3></a>
 
         <div class="navbar-collapse collapse dual-nav w-100">
             <!-- Right Side Of Navbar -->

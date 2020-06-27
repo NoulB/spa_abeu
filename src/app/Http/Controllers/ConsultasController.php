@@ -25,8 +25,8 @@ class ConsultasController extends Controller
             ->join('pacientes', 'pacientes.id', '=', 'pacientes_consultas.pacientes_id')
             ->select('consultas.id', 'alunos.nome as aluno', 'supervisores.nome as supervisor',
                 'consultas.consultorio', 'consultas.dia', 'consultas.hora', 'pacientes.nome as paciente', 'consultas.id as consulta')
-//            ->where("dia", "=", Carbon::now(-3)->toDateString())
-            ->where('consultas.status', '=', 'não realizada')
+            ->where("dia", "=", Carbon::now(-3)->toDateString())
+//            ->where('consultas.status', '=', 'não realizada')
             ->orderBy('consultas.hora')
 //            ->groupBy('consultas.id')
             ->get();

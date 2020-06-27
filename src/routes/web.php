@@ -20,6 +20,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('home/index');
 })->name("home")->middleware('auth');
+Route::get('/', 'ConsultasController@index')->name("listar_consultas")->middleware('auth');
 
 //Route::get('/', 'HomeController@index')->name('home');
 
@@ -58,7 +59,7 @@ Route::get('alunos/editar/{id}', 'AlunosController@edit')->name("form_editar_alu
 Route::post('alunos/update', 'AlunosController@update');
 
 
-Route::get('consultas', 'ConsultasController@index')->name("listar_consultas");
+//Route::get('consultas', 'ConsultasController@index')->name("listar_consultas");
 Route::get('consultas/criar', 'ConsultasController@create')->name("form_agenda_consulta");
 Route::post('consultas/criar', 'ConsultasController@store')->name("salva_consulta");
 Route::get('consultas/show/{id}', 'ConsultasController@show')->name("mostrar_consulta");

@@ -74,7 +74,7 @@
                             </div>
                             <br/><br/>
                             <div class="form-inline my-2 my-lg-0 justify-content-sm-around">
-                                <a href="{{ url("/consultas") }}" class="btn btn-danger text-white">Voltar</a>
+                                <a href="{{ url("/") }}" class="btn btn-danger text-white">Voltar</a>
                                 <a href="{{ url("/") }}" class="btn btn-primary text-white">Home</a>
                             </div>
                             <br/>
