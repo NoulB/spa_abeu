@@ -90,9 +90,7 @@
         </div>
         <form class="navbar-form">
             <div class=text-right>
-{{--                <a href="/consultas/criar" class="btn btn-success text-white ">Adicionar</a>--}}
-
-                                <a href="/consultas/criar" class="btn btn-success mb-2 text-white">Adicionar</a>
+                <a href="/consultas/criar" class="btn btn-success mb-2 text-white">Adicionar</a>
             </div>
         </form>
     </div>
