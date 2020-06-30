@@ -23,7 +23,7 @@
                 </button>
             </div>
 
-            <a href="/consultas/criar" class="btn btn-success text-white ">Adicionar</a>
+{{--            <a href="/consultas/criar" class="btn btn-success text-white ">Adicionar</a>--}}
             {{ csrf_field() }}
 
         </form>
@@ -90,7 +90,9 @@
         </div>
         <form class="navbar-form">
             <div class=text-right>
-                <a href="/" class="btn btn-danger mb-2 text-white">Voltar</a>
+{{--                <a href="/consultas/criar" class="btn btn-success text-white ">Adicionar</a>--}}
+
+                                <a href="/consultas/criar" class="btn btn-success mb-2 text-white">Adicionar</a>
             </div>
         </form>
     </div>

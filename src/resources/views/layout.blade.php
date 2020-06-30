@@ -175,6 +175,64 @@
 
 <body>
 
+    <div id="mySidebar" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+
+        <a href="/">Início</a>
+        <button class="dropdown-btn">Pacientes
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-container">
+            <a class="dropdown-item" href="/pacientes" >Buscar Pacientes</a>
+            <a class="dropdown-item" href="/pacientes/criar" >Cadastrar Pacientes</a>
+
+        </div>
+        <button class="dropdown-btn">Alunos
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-container">
+            <a class="dropdown-item" href="/alunos" >Buscar Alunos</a>
+            <a class="dropdown-item" href="/alunos/criar" >Cadastrar Alunos</a>
+        </div>
+        <button class="dropdown-btn">Supervisores
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-container">
+            <a class="dropdown-item" href="/supervisores" >Buscar Supervisores</a>
+            <a class="dropdown-item" href="/supervisores/criar" >Cadastrar Supervisores</a>
+        </div>
+        <button class="dropdown-btn">Consultas
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-container">
+            <a class="dropdown-item" href="/" >Buscar Consultas</a>
+            <a class="dropdown-item" href="/consultas/criar" >Cadastrar Consultas</a>
+        </div>
+        <button class="dropdown-btn">Projetos
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-container">
+            <a class="dropdown-item" href="/projetos" >Buscar Projetos</a>
+            <a class="dropdown-item" href="/projetos/criar" >Cadastrar Projetos</a>
+        </div>
+        <button class="dropdown-btn">Relatórios
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-container">
+            <a class="dropdown-item" href="/PDFTDPacientesCadastrados"target="_blank" >Relatório de Pacientes Ativos</a>
+            <a class="dropdown-item" href="/PDFTDSupervisoresCadastrados"target="_blank" >Relatório de Supervisores Cadastrados</a>
+            <a class="dropdown-item" href="/PDFTDAlunosCadastrados"target="_blank" >Relatório de Alunos Ativos</a>
+            <a class="dropdown-item" href="/PDFTDConsultas2" target="_blank" >Relatório de Consultas</a>
+            <a class="dropdown-item" href="/PDFTDProjetos" target="_blank">Relatório de Projetos</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="/PDFTDPacientesDeletados"target="_blank" >Relatório de Pacientes em Espera</a>
+            <a class="dropdown-item" href="/PDFTDSupervisoresDeletados"target="_blank" >Relatório de Supervisores Deletados</a>
+            <a class="dropdown-item" href="/PDFTDAlunosDeletados"target="_blank" >Relatório de Alunos em Espera</a>
+
+        </div>
+    </div>
+
+
 <nav class="navbar navbar-expand-lg navbar-dark justify-content-between" style="background-color: #18191A;">
 
     <div class="collapse navbar-collapse " >
@@ -183,14 +241,13 @@
         </button>
         <div class="collapse navbar-collapse  dual-nav w-100">
             <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link pl-0" href="#" onclick="openNav()">☰</a>
+                </li>
                 <li class="nav-item active">
                     <a class="nav-link pl-0" href="/" >Início <span class="sr-only">Home</span></a>
                 </li>
-              {{--  <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li>--}}
-               {{-- <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>--}}
+
 
                 <li class="nav-item dropdown" >
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -199,6 +256,8 @@
                         <a class="dropdown-item" href="/pacientes" style="color: #18191A;">Buscar Pacientes</a>
                         <a class="dropdown-item" href="/alunos" style="color: #18191A;">Buscar Alunos</a>
                         <a class="dropdown-item" href="/supervisores" style="color: #18191A;">Buscar Supervisores</a>
+                        <a class="dropdown-item" href="/" style="color: #18191A;">Buscar Consultas</a>
+                        <a class="dropdown-item" href="/projetos" style="color: #18191A;">Buscar Projetos</a>
 
                     </div>
                 </li>
@@ -211,6 +270,9 @@
                         <a class="dropdown-item" href="/pacientes/criar" style="color: #18191A;">Cadastrar Pacientes</a>
                         <a class="dropdown-item" href="/alunos/criar" style="color: #18191A;">Cadastrar Alunos</a>
                         <a class="dropdown-item" href="/supervisores/criar" style="color: #18191A;">Cadastrar Supervisores</a>
+                        <a class="dropdown-item" href="/consultas/criar" style="color: #18191A;">Cadastrar Consulta</a>
+                        <a class="dropdown-item" href="/projetos/criar" style="color: #18191A;">Cadastrar Projeto</a>
+
                     </div>
                 </li>
 
@@ -223,9 +285,8 @@
                         <a class="dropdown-item" href="/PDFTDPacientesCadastrados"target="_blank" style="color: #18191A;">Relatório de Pacientes Ativos</a>
                         <a class="dropdown-item" href="/PDFTDSupervisoresCadastrados"target="_blank" style="color: #18191A;">Relatório de Supervisores Cadastrados</a>
                         <a class="dropdown-item" href="/PDFTDAlunosCadastrados"target="_blank" style="color: #18191A;">Relatório de Alunos Ativos</a>
-                        {{--                        <a class="dropdown-item" href="/PDFTDConsultas" target="_blank">Relatório de Consultas</a>--}}
                         <a class="dropdown-item" href="/PDFTDConsultas2" target="_blank" style="color: #18191A;">Relatório de Consultas</a>
-                        {{--                        <a class="dropdown-item" href="/PDFTDProjetos" target="_blank">Relatório de Projetos</a>--}}
+                        <a class="dropdown-item" href="/PDFTDProjetos" target="_blank"style="color: #18191A;">Relatório de Projetos</a>
 
 
                         <div class="dropdown-divider"></div>
@@ -233,11 +294,11 @@
                         <a class="dropdown-item" href="/PDFTDSupervisoresDeletados"target="_blank" style="color: #18191A;">Relatório de Supervisores Deletados</a>
                         <a class="dropdown-item" href="/PDFTDAlunosDeletados"target="_blank" style="color: #18191A;">Relatório de Alunos em Espera</a>
 
-                        {{--                        <div class="dropdown-divider"></div>--}}
-                        {{--                        <a class="dropdown-item" href="/PDFTDPacientesDownload"target="_blank">Baixar Relatório de Pacientes</a>--}}
-                        {{--                        <a class="dropdown-item" href="/PDFTDSupervisoresDownload"target="_blank">Baixar Relatório de Supervisores</a>--}}
-                        {{--                        <a class="dropdown-item" href="/PDFTDAlunosDownload"target="_blank">Baixar Relatório de Alunos</a>--}}
-                        {{--                        <a class="dropdown-item" href="/PDFTDConsultasDownload" target="_blank">Baixar Relatório de Consultas</a>--}}
+{{--                                                <div class="dropdown-divider"></div>--}}
+{{--                                                <a class="dropdown-item" href="/PDFTDPacientesDownload"target="_blank">Baixar Relatório de Pacientes</a>--}}
+{{--                                                <a class="dropdown-item" href="/PDFTDSupervisoresDownload"target="_blank">Baixar Relatório de Supervisores</a>--}}
+{{--                                                <a class="dropdown-item" href="/PDFTDAlunosDownload"target="_blank">Baixar Relatório de Alunos</a>--}}
+{{--                                                <a class="dropdown-item" href="/PDFTDConsultasDownload" target="_blank">Baixar Relatório de Consultas</a>--}}
                     </div>
                 </li>
             </ul>

@@ -133,7 +133,7 @@ class ConsultasController extends Controller
             $pacienteconsulta->save();
         }
         $request->session();
-        return redirect('consultas');
+        return redirect('/');
     }
 
 
