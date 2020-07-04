@@ -166,7 +166,10 @@
             right: 2px;
             cursor: pointer;
         }
-
+        .active {
+            background-color: green;
+            color: white;
+        }
 
     </style>
 {{--    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>--}}
@@ -244,7 +247,7 @@
                 <li class="nav-item">
                     <a class="nav-link pl-0" href="#" onclick="openNav()">☰</a>
                 </li>
-                <li class="nav-item active">
+                <li class="nav-item ">
                     <a class="nav-link pl-0" href="/" >Início <span class="sr-only">Home</span></a>
                 </li>
 
@@ -261,6 +264,7 @@
 
                     </div>
                 </li>
+
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
